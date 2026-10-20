@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Famulus Repro</title>
+<meta name="description" content="Famulus Repro teilt die Reproduktionsaufgabe strikt zwischen Erfassungssensor (iPhone/iPad) und Verarbeitungs- und Ablageinstanz (Mac Backstage) auf: das eine Gerät beherrscht die Optik, das andere di">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+:root { --blue: #002147; --gold: #c8a22a; --paper: #faf8f3; --sheet: #fffdf9; --ink: #1c1915; --muted: #5b5648; }
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #121417; --sheet: #1a1d21; --ink: #ece6d6; --muted: #a59f90; }
+}
+body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.6 Georgia, "Source Serif 4", serif; }
+header { background: var(--blue); border-bottom: 3px solid var(--gold); }
+nav { max-width: 46rem; margin: 0 auto; padding: .8rem 16px; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem;
+       font: 600 14px/1.3 -apple-system, BlinkMacSystemFont, sans-serif; letter-spacing: .03em; }
+nav a { color: #f4ead0; text-decoration: none; } nav a:first-child { color: var(--gold); }
+main { max-width: 46rem; margin: 0 auto; padding: 2.6rem 16px 3rem; }
+h1 { font-weight: 500; font-size: clamp(2.2rem, 7vw, 3.2rem); line-height: 1.1; margin: 0 0 1.2rem; }
+h1 .f { color: var(--gold); } h1 .p { color: var(--blue); }
+@media (prefers-color-scheme: dark) { h1 .p { color: #9db8e0; } }
+.go { display: flex; flex-wrap: wrap; gap: .7rem; margin: 2rem 0 1rem; }
+.go a { background: var(--blue); color: #fff; padding: .6rem 1rem; text-decoration: none; border-bottom: 3px solid var(--gold);
+         font: 600 15px/1.2 -apple-system, BlinkMacSystemFont, sans-serif; }
+.go a.quiet { background: var(--sheet); color: var(--ink); border: 1px solid #d8d0bc; border-bottom: 3px solid var(--gold); }
+.src { color: var(--muted); font: 13px/1.5 -apple-system, BlinkMacSystemFont, sans-serif; margin-top: 2.4rem; }
+</style>
+</head>
+<body>
+<header><nav><a href="/">Famulus</a><a href="/news/">News</a><a href="/guide/">Wegweiser</a><a href="/docs/">Dokumentation</a><a href="/editions/">Editionen</a></nav></header>
+<main>
+<h1><span class="f">Famulus</span> <span class="p">Repro</span></h1>
+<p>Famulus Repro teilt die Reproduktionsaufgabe strikt zwischen Erfassungssensor (iPhone/iPad) und Verarbeitungs- und Ablageinstanz (Mac Backstage) auf: das eine Gerät beherrscht die Optik, das andere die Rechenarbeit.</p>
+<p>Famulus Repro verbindet iPhone oder iPad mit dem Mac zu einem integrierten Reproplatz. Das iPhone übernimmt ausschließlich die optische Erfassung: es liefert einen Live-Sucher mit Wasserwaage und Dokumenterkennung, löst mit voller Sensorauflösung aus und überträgt das Master-HEIC an den Mac. Dort läuft die gesamte rechnerische Verarbeitungskette: Trapez-Erkennung, Perspektivkorrektur, Falzerkennung, Tonwertoptimierung, Texterkennung und Ablage als PDAI-Dokumentbündel. Auf Wunsch steuert ein nachgelagerter Orchestrator eine semantische Partitur-Nachbearbeitung (Bibliographie, Belegextraktion, Regestierung) im lokalen Netz.</p>
+<p class="go"><a href="/docs/repro/">Dokumentation</a></p>
+<p class="src">Der Text ist der Anfang der Dokumentation von Famulus Repro.</p>
+</main>
+</body>
+</html>

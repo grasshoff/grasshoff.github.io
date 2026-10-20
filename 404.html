@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Famulus · page not found</title>
+<script>
+// Renamed repositories (platform/config/landings.yaml, old_repo -> repo): keep the rest of the path.
+var MOVED = {"ancient-sundials-2026": "/sundials/", "babylon-2026": "/babylon/", "bischoff-2026": "/medieval/", "brahe-2026": "/brahe/", "euler-2026": "/euler/", "famulus-news": "/news/", "karman-2026": "/karman/", "kausalitaet-2026": "/kausalitaet/", "kepler-2026": "/kepler/", "kepleriana-2026": "/kepleriana/", "kopernikus-2026": "/kopernikus/", "landings-2026": "/editions/", "tractatus-typoskripte-2026": "/tractatus-typoskripte/", "wittgenstein-mechanik-2026": "/wittgenstein-mechanik/"};
+(function () {
+  var p = location.pathname, seg = p.split("/")[1] || "";
+  if (Object.prototype.hasOwnProperty.call(MOVED, seg)) {
+    location.replace(MOVED[seg] + p.slice(seg.length + 2) + location.search + location.hash);
+  }
+})();
+</script>
+<style>
+:root { --ink: #002147; --gold: #c8a22a; --paper: #faf8f3; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.5 Georgia, serif; }
+main { max-width: 36rem; margin: 18vh auto; padding: 0 16px; }
+h1 { font-weight: 500; } a { color: var(--ink); text-decoration-color: var(--gold); }
+</style>
+</head>
+<body>
+<main>
+<h1>This page does not exist.</h1>
+<p><a href="/">Famulus</a> · <a href="/news/">Famulus News</a> · <a href="/guide/">Wegweiser</a> · <a href="/editions/">Editions</a></p>
+</main>
+</body>
+</html>

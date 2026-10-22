@@ -25,6 +25,8 @@ h1 .f { color: var(--gold); } h1 .p { color: var(--blue); }
          font: 600 15px/1.2 -apple-system, BlinkMacSystemFont, sans-serif; }
 .go a.quiet { background: var(--sheet); color: var(--ink); border: 1px solid #d8d0bc; border-bottom: 3px solid var(--gold); }
 .src { color: var(--muted); font: 13px/1.5 -apple-system, BlinkMacSystemFont, sans-serif; margin-top: 2.4rem; }
+figure { margin: 2rem 0 0; } figure img { max-width: 100%; height: auto; border: 1px solid #d8d0bc; background: #fff; }
+figcaption { color: var(--muted); font: 14px/1.5 -apple-system, BlinkMacSystemFont, sans-serif; margin-top: .5rem; }
 </style>
 </head>
 <body>
@@ -33,7 +35,8 @@ h1 .f { color: var(--gold); } h1 .p { color: var(--blue); }
 <h1><span class="f">Famulus</span> <span class="p">Visualization</span></h1>
 <p>Famulus Visualization macht aus einem Datennarrativ eine Abbildung: in einem Typst-Papier, auf einer HTML-Seite, als 3D-Szene oder als Animation. Jede Abbildung liest ihre Daten aus der Datei, in der sie stehen, und hebt genau die Elemente hervor, von denen die Aussage handelt.</p>
 <p>Eine Lernschleife prüft, welche Form ein Narrativ am besten trägt. Sie lässt die gerenderte Abbildung beurteilen, formuliert aus einem misslungenen Fall eine allgemeine Regel und übernimmt die Regel erst, wenn sie den Fall verbessert und kein anderes Narrativ verschlechtert.</p>
-<p class="go"><a href="/docs/visualization/">Dokumentation</a></p>
+<p class="go"><a href="/docs/visualization/">Dokumentation</a><a class="quiet" href="/docs/visualization/szenen.html">Szene im Raum</a><a class="quiet" href="/docs/visualization/referenz.html">Gelöste Aufgaben</a></p>
+<figure><img src="/docs/visualization/specimen/fig-1.png" alt="Winkelschritte zwischen benachbarten Stundenmarken der Sonnenuhr ObjID18; die drei Schritte unter 14° sind golden gezeichnet, die gestrichelte Linie markiert 15°." loading="lazy"><figcaption>Winkelschritte zwischen benachbarten Stundenmarken der Sonnenuhr ObjID18; die drei Schritte unter 14° sind golden gezeichnet, die gestrichelte Linie markiert 15°.</figcaption></figure><figure><img src="/docs/visualization/specimen/fig-2.png" alt="Tagkreisradien gegen die axiale Lage, mit der Mantellinie des Kegels und seiner extrapolierten Spitze." loading="lazy"><figcaption>Tagkreisradien gegen die axiale Lage, mit der Mantellinie des Kegels und seiner extrapolierten Spitze.</figcaption></figure><figure><img src="/docs/visualization/specimen/fig-3.png" alt="Strenger Wert jeder Konfiguration des Needle-Benchmarks; die beste ist golden gezeichnet." loading="lazy"><figcaption>Strenger Wert jeder Konfiguration des Needle-Benchmarks; die beste ist golden gezeichnet.</figcaption></figure>
 <p class="src">Der Text ist der Anfang der Dokumentation von Famulus Visualization.</p>
 </main>
 </body>

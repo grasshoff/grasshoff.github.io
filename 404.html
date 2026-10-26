@@ -7,9 +7,13 @@
 <script>
 // Renamed repositories (platform/config/landings.yaml, old_repo -> repo): keep the rest of the path.
 var MOVED = {"ancient-sundials-2026": "/sundials/", "babylon-2026": "/babylon/", "bischoff-2026": "/medieval/", "brahe-2026": "/brahe/", "euler-2026": "/euler/", "famulus-news": "/news/", "karman-2026": "/karman/", "kausalitaet-2026": "/kausalitaet/", "kepler-2026": "/kepler/", "kepleriana-2026": "/kepleriana/", "kopernikus-2026": "/kopernikus/", "landings-2026": "/editions/", "tractatus-typoskripte-2026": "/tractatus-typoskripte/", "wittgenstein-mechanik-2026": "/wittgenstein-mechanik/"};
+// The gateway into the live services (site.gateway -> ngrok_base): /live/<route> opens <ngrok_base>/<route>.
+var GATEWAY = "live", LIVE = "https://lettre.ngrok.dev";
 (function () {
   var p = location.pathname, seg = p.split("/")[1] || "";
-  if (Object.prototype.hasOwnProperty.call(MOVED, seg)) {
+  if (seg === GATEWAY) {
+    location.replace(LIVE + p.slice(seg.length + 1) + location.search + location.hash);
+  } else if (Object.prototype.hasOwnProperty.call(MOVED, seg)) {
     location.replace(MOVED[seg] + p.slice(seg.length + 2) + location.search + location.hash);
   }
 })();

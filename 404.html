@@ -5,19 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Famulus · page not found</title>
 <script>
-// Renamed repositories (platform/config/landings.yaml, old_repo -> repo): keep the rest of the path.
+// Written from platform/config/landings.yaml by famulus_namespace.not_found_page; do not edit by hand.
+// Renamed repositories (old_repo -> repo): keep the rest of the path.
 var MOVED = {"ancient-sundials-2026": "/sundials/", "babylon-2026": "/babylon/", "bischoff-2026": "/medieval/", "brahe-2026": "/brahe/", "euler-2026": "/euler/", "famulus-news": "/news/", "karman-2026": "/karman/", "kausalitaet-2026": "/kausalitaet/", "kepler-2026": "/kepler/", "kepleriana-2026": "/kepleriana/", "kopernikus-2026": "/kopernikus/", "landings-2026": "/editions/", "tractatus-typoskripte-2026": "/tractatus-typoskripte/", "wittgenstein-mechanik-2026": "/wittgenstein-mechanik/"};
-// The gateway into the live services (site.gateway -> ngrok_base): /live/<route> shows <ngrok_base>/<route> in a
-// full-page frame. The viewer reports its address (ai-viewer famulus-shell.js), and the address bar follows it, so
-// it always reads <base>/live/<path>.
-var GATEWAY = "live", LIVE = "https://lettre.ngrok.dev";
+// Live services (famulus_namespace.live_paths): <collection>/<rest> shows <ngrok_base><route>/<rest>, and the gateway
+// /live/<path> shows <ngrok_base>/<path>, in a full-page frame. The viewer reports its address (ai-viewer
+// famulus-shell.js) and the address bar follows it, so it always reads famulus.lettre.ai.
+var GATEWAY = "live", LIVE = "https://lettre.ngrok.dev", PATHS = {"/brahe-oo": "/brahe/", "/copernicus": "/kopernikus/", "/diaries": "/babylon/", "/euler-opera": "/euler/", "/karman": "/karman/", "/kepler-gw": "/kepler/", "/kepleriana-munich-2024": "/kepleriana/", "/medieval-sec": "/medieval/", "/tractatus-typoskripte": "/tractatus-typoskripte/", "/wittgenstein-mechanik": "/wittgenstein-mechanik/"};
+function service(p) {
+  var seg = p.split("/")[1] || "";
+  if (seg === GATEWAY) return p.slice(seg.length + 1);
+  for (var r in PATHS) {
+    if (p.indexOf(PATHS[r]) === 0 && p.length > PATHS[r].length) return r + "/" + p.slice(PATHS[r].length);
+  }
+  return null;
+}
+function publicPath(p) {
+  for (var r in PATHS) {
+    if (p.indexOf(r + "/") === 0 && p.length > r.length + 1) return PATHS[r] + p.slice(r.length + 1);
+  }
+  return "/" + GATEWAY + p;
+}
 (function () {
-  var p = location.pathname, seg = p.split("/")[1] || "";
-  if (seg === GATEWAY) {
+  var p = location.pathname, seg = p.split("/")[1] || "", s = service(p);
+  if (s) {
     document.documentElement.className = "live";
     document.addEventListener("DOMContentLoaded", function () {
       var f = document.createElement("iframe");
-      f.src = LIVE + p.slice(seg.length + 1) + location.search + location.hash;
+      f.src = LIVE + s + location.search + location.hash;
       f.title = "Famulus";
       f.allow = "clipboard-read; clipboard-write; fullscreen";
       f.allowFullscreen = true;
@@ -27,7 +42,7 @@ var GATEWAY = "live", LIVE = "https://lettre.ngrok.dev";
     window.addEventListener("message", function (e) {
       var d = e.data;
       if (e.origin !== LIVE || !d || d.famulus !== "loc" || typeof d.path !== "string" || d.path.charAt(0) !== "/") return;
-      history.replaceState(null, "", "/" + GATEWAY + d.path + (d.search || "") + (d.hash || ""));
+      history.replaceState(null, "", publicPath(d.path) + (d.search || "") + (d.hash || ""));
       if (d.title) document.title = d.title;
     });
   } else if (Object.prototype.hasOwnProperty.call(MOVED, seg)) {

@@ -73,8 +73,14 @@ gesetzt und nichts auf Ihrem Gerät gespeichert. Ihre IP-Adresse wird nicht gesp
 Tag ein nicht umkehrbarer Prüfwert gebildet, um Mehrfachaufrufe zu erkennen, und dieser Prüfwert wird am Tagesende
 verworfen. Der Zugang lettre.ngrok.dev wird über den Dienst ngrok (ngrok Inc., USA) bereitgestellt, der dabei
 technisch notwendige Verbindungsdaten verarbeitet.</p>
-<p>Rechtsgrundlage ist unser berechtigtes Interesse an der Wahrnehmung der gesetzlichen Vergütungsansprüche
-(Art. 6 Abs. 1 lit. f DSGVO).</p>
+<p>Damit wir erkennen, welche Seiten gelesen werden und wo wir sie verbessern können, sendet Ihr Browser beim Verlassen
+oder Ausblenden einer Seite außerdem: wie viele Sekunden die Seite sichtbar war, welcher Anteil der Seite (in Prozent)
+gesehen wurde und ob sie über einen Link innerhalb oder außerhalb unserer Seiten verlassen wurde. Beide Nachrichten
+tragen eine zufällige Kennung nur dieses einen Seitenaufrufs, damit sie einander zugeordnet werden können; sie wird
+nicht auf Ihrem Gerät gespeichert und erlaubt keinen Rückschluss auf Sie. Enthält die Adresse der Seite ein
+Kampagnenkürzel (etwa <code>?c=…</code> aus einer unserer E-Mails), wird es mitgezählt.</p>
+<p>Rechtsgrundlage ist unser berechtigtes Interesse an der Wahrnehmung der gesetzlichen Vergütungsansprüche und an der
+Verbesserung unseres Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
 <h2>Problemmeldungen</h2>
 <p>Auf den Seiten der Sammlungen können Sie ein Problem melden („Ein Problem gefunden?“). Der Text, den Sie eingeben,
 wird an lettre.ngrok.dev gesendet und zum Abgleich mit den bekannten Problemen an ein Sprachmodell übergeben (DeepSeek
@@ -91,7 +97,7 @@ Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde. Wenden Sie sich da
 </main>
 <!-- famulus:publisher:start -->
 <p class="famulus-publisher" style="max-width:46rem;margin:2.5rem auto 1.5rem;padding:.7rem 16px 0;border-top:2px solid #c8a22a;font:13px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;opacity:.8">Herausgegeben von der OpenScienceTechnology GmbH · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a></p>
-<script>(function(){try{var d=JSON.stringify({u:location.pathname,r:document.referrer,m:""});navigator.sendBeacon?navigator.sendBeacon("https://lettre.ngrok.dev/famulus-counter/api/hit",d):fetch("https://lettre.ngrok.dev/famulus-counter/api/hit",{method:'POST',body:d,keepalive:true,mode:'no-cors'})}catch(e){}})();</script>
+<script>(function(){try{var C="https://lettre.ngrok.dev/famulus-counter/api/hit",L=C.replace(/hit$/,'leave'),q=new URLSearchParams(location.search),v=Math.random().toString(36).slice(2,12),u=location.pathname;function S(a,b){navigator.sendBeacon?navigator.sendBeacon(a,b):fetch(a,{method:'POST',body:b,keepalive:true,mode:'no-cors'})}S(C,JSON.stringify({u:u,r:document.referrer,m:"",v:v,c:q.get('c')||q.get('utm_campaign')||''}));var a=0,t=document.visibilityState=='visible'?Date.now():0,s=0,x='';function sc(){var h=document.documentElement;s=Math.max(s,Math.min(100,Math.round((scrollY+innerHeight)/Math.max(h.scrollHeight,1)*100)))}addEventListener('scroll',sc,{passive:true});addEventListener('load',sc);sc();document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a[href]');if(l)x=l.host==location.host?'in':'out'},true);function F(){if(t){a+=Date.now()-t;t=0}S(L,JSON.stringify({u:u,v:v,d:Math.round(a/1000),s:s,x:x}))}document.addEventListener('visibilitychange',function(){document.visibilityState=='hidden'?F():t=Date.now()});addEventListener('pagehide',function(){if(t)F()})}catch(e){}})();</script>
 <noscript><img src="https://lettre.ngrok.dev/famulus-counter/api/hit.gif?u=/datenschutz/&amp;m=" width="1" height="1" alt=""></noscript>
 <!-- famulus:publisher:end -->
 </body>

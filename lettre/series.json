@@ -1,6 +1,6 @@
 {
  "series_title": "Famulus Lettre",
- "generated": "2026-11-10T16:46:18",
+ "generated": "2026-11-10T17:50:16",
  "issues": [
   {
    "landing": "euler",
@@ -16,7 +16,7 @@
    "status": "published",
    "url": "https://famulus.lettre.ai/euler/lettre/1/",
    "pdf": "https://famulus.lettre.ai/euler/lettre/1/tide-raising-force.pdf",
-   "metis": "eligible (9158 characters), no marker available",
+   "metis": "assigned",
    "revisions": [
     {
      "version": "1.0",
@@ -39,7 +39,7 @@
    "status": "published",
    "url": "https://famulus.lettre.ai/kepler/lettre/2/",
    "pdf": "https://famulus.lettre.ai/kepler/lettre/2/swerdlow-solar-theory.pdf",
-   "metis": "eligible (24114 characters), no marker available",
+   "metis": "assigned",
    "revisions": [
     {
      "version": "1.0",
@@ -62,7 +62,7 @@
    "status": "published",
    "url": "https://famulus.lettre.ai/kepler/lettre/1/",
    "pdf": "https://famulus.lettre.ai/kepler/lettre/1/equant-argument.pdf",
-   "metis": "eligible (18935 characters), no marker available",
+   "metis": "assigned",
    "revisions": [
     {
      "version": "1.0",
@@ -85,7 +85,7 @@
    "status": "published",
    "url": "https://famulus.lettre.ai/astra/lettre/2/",
    "pdf": "https://famulus.lettre.ai/astra/lettre/2/astra-model-language.pdf",
-   "metis": "eligible (44707 characters), no marker available",
+   "metis": "assigned",
    "revisions": [
     {
      "version": "1.0",
@@ -108,7 +108,7 @@
    "status": "published",
    "url": "https://famulus.lettre.ai/astra/lettre/1/",
    "pdf": "https://famulus.lettre.ai/astra/lettre/1/geometrical-reasoning-fundamentals.pdf",
-   "metis": "eligible (24214 characters), no marker available",
+   "metis": "assigned",
    "revisions": [
     {
      "version": "1.0",

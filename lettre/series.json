@@ -1,0 +1,121 @@
+{
+ "series_title": "Famulus Lettre",
+ "generated": "2026-11-10T14:36:33",
+ "issues": [
+  {
+   "landing": "euler",
+   "no": 1,
+   "id": "tide-raising-force",
+   "series": "Famulus Lettre · Euler",
+   "full_title": "Euler's Argument for the Tide-Raising Force, Reconstructed: One Segment of a Source, Passage by Passage, beside Its Formal Reconstruction",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "draft",
+   "url": "https://famulus.lettre.ai/euler/lettre/1/",
+   "pdf": "https://famulus.lettre.ai/euler/lettre/1/tide-raising-force.pdf",
+   "metis": "eligible (9158 characters), no marker available",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ]
+  },
+  {
+   "landing": "kepler",
+   "no": 2,
+   "id": "swerdlow-solar-theory",
+   "series": "Famulus Lettre · Kepler",
+   "full_title": "Reading Five Pages Deeply: Swerdlow on Ptolemy's Solar Model, Checked Assertion by Assertion, with Two Misprints Found",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "draft",
+   "url": "https://famulus.lettre.ai/kepler/lettre/2/",
+   "pdf": "https://famulus.lettre.ai/kepler/lettre/2/swerdlow-solar-theory.pdf",
+   "metis": "eligible (24114 characters), no marker available",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ]
+  },
+  {
+   "landing": "kepler",
+   "no": 1,
+   "id": "equant-argument",
+   "series": "Famulus Lettre · Kepler",
+   "full_title": "Reconstructing Kepler's Reasoning in the Astronomia Nova: A Compact Argument about the Equant, Made Explicit and Checked Step by Step",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "draft",
+   "url": "https://famulus.lettre.ai/kepler/lettre/1/",
+   "pdf": "https://famulus.lettre.ai/kepler/lettre/1/equant-argument.pdf",
+   "metis": "eligible (18935 characters), no marker available",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ]
+  },
+  {
+   "landing": "astra",
+   "no": 2,
+   "id": "astra-model-language",
+   "series": "Famulus Lettre · Astra",
+   "full_title": "astra/1: A Language for Historical Astronomical Models and the Geometrical Reasoning about Them",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "draft",
+   "url": "https://famulus.lettre.ai/astra/lettre/2/",
+   "pdf": "https://famulus.lettre.ai/astra/lettre/2/astra-model-language.pdf",
+   "metis": "eligible (44707 characters), no marker available",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ]
+  },
+  {
+   "landing": "astra",
+   "no": 1,
+   "id": "geometrical-reasoning-fundamentals",
+   "series": "Famulus Lettre · Astra",
+   "full_title": "Geometrical Reasoning in the History of Astronomy: Fundamentals: Models, Propositions, Steps, Rules, and What the Figure Supplies",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "draft",
+   "url": "https://famulus.lettre.ai/astra/lettre/1/",
+   "pdf": "https://famulus.lettre.ai/astra/lettre/1/geometrical-reasoning-fundamentals.pdf",
+   "metis": "eligible (24214 characters), no marker available",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ]
+  }
+ ]
+}

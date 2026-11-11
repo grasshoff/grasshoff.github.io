@@ -1,0 +1,209 @@
+{
+ "name": "famulus-expertise",
+ "title": "MCP server of Famulus Expertise",
+ "protocol": "Model Context Protocol, streamable HTTP",
+ "availability": "The server runs within the publisher's network. It has no public address yet; every answer it gives is built from the files named under `static`, which are public.",
+ "tool_prefix": "fx_",
+ "tools": [
+  {
+   "name": "fx_about",
+   "serves": "series profile",
+   "description": "The series: title, publisher, editor, licence, ISSN, its task, aim and audience, the publication rules, and the quality gates every issue is measured by.",
+   "input": {
+    "type": "object",
+    "properties": {}
+   },
+   "returns": "{series_title, url, editor, publisher, licence, issn, profile{assignment, task, aim, audience, rules[]}, gates[{gate_id, stage, titel, kriterium, sperrend}], catalogue}"
+  },
+  {
+   "name": "fx_series",
+   "serves": "identity",
+   "description": "The sub-series (one per edition) with scope, collections, address and number of issues.",
+   "input": {
+    "type": "object",
+    "properties": {}
+   },
+   "returns": "{subseries[{edition, title, scope, collections[], url, issues}]}"
+  },
+  {
+   "name": "fx_issues",
+   "serves": "identity",
+   "description": "The issues, optionally of one sub-series or status; each with numbers, title, authors, version, date, address and gate verdict.",
+   "input": {
+    "type": "object",
+    "properties": {
+     "edition": {
+      "type": "string",
+      "description": "slug of the sub-series, e.g. 'euler'; empty: all"
+     },
+     "status": {
+      "type": "string",
+      "description": "published | revised | withdrawn; empty: all public"
+     }
+    }
+   },
+   "returns": "{issues[{ref, edition, number, whole_number, title, authors[], version, date, status, url, pdf, gates}]}"
+  },
+  {
+   "name": "fx_issue",
+   "serves": "whole preamble",
+   "description": "The complete preamble famulus-expertise/1 of one issue: identity, responsibility, subject, claims, evidence, agent context, quality, counting; with title, abstract and keywords.",
+   "input": {
+    "type": "object",
+    "properties": {
+     "ref": {
+      "type": "string",
+      "description": "an issue: 'euler/1', 'fr:expertise/euler/1', its URL, or its whole number"
+     }
+    }
+   },
+   "returns": "{found, title, subtitle, abstract, keywords[], expertise{…}}"
+  },
+  {
+   "name": "fx_text",
+   "serves": "text",
+   "description": "The running text of an issue by section (without figures and embedded segments). Without `section`: the list of sections with their numbers.",
+   "input": {
+    "type": "object",
+    "properties": {
+     "ref": {
+      "type": "string",
+      "description": "an issue: 'euler/1', 'fr:expertise/euler/1', its URL, or its whole number"
+     },
+     "section": {
+      "type": "string",
+      "description": "section id (e.g. 'sec-results') or section number (e.g. '4'); empty: the list"
+     }
+    }
+   },
+   "returns": "{found, ref, sections[{number, title, id}]} or {found, ref, section, number, title, text, cite}"
+  },
+  {
+   "name": "fx_search",
+   "serves": "text",
+   "description": "Full-text search (BM25) over the sections of all issues; each hit names issue, section and how to cite the place.",
+   "input": {
+    "type": "object",
+    "properties": {
+     "q": {
+      "type": "string",
+      "description": "the words to search for"
+     },
+     "k": {
+      "type": "integer",
+      "description": "number of hits, default 8"
+     }
+    }
+   },
+   "returns": "{query, hits[{ref, title, section, number, score, snippet, cite}]}"
+  },
+  {
+   "name": "fx_claims",
+   "serves": "claims",
+   "description": "The main statements (Aussagen) of an issue, each with its status (grounded | gap), its grounds as Famulus references, and its section.",
+   "input": {
+    "type": "object",
+    "properties": {
+     "ref": {
+      "type": "string",
+      "description": "an issue: 'euler/1', 'fr:expertise/euler/1', its URL, or its whole number"
+     }
+    }
+   },
+   "returns": "{found, ref, confirmed_by, claims[{id, text, section, status, grounds[], gap}]}"
+  },
+  {
+   "name": "fx_references",
+   "serves": "evidence",
+   "description": "Every Famulus reference (fr: address) an issue uses, with its roles (segment | inline | subject | ground), plus citation keys and figures. Resolve an address with the tool fr_describe of the server famulus-reference.",
+   "input": {
+    "type": "object",
+    "properties": {
+     "ref": {
+      "type": "string",
+      "description": "an issue: 'euler/1', 'fr:expertise/euler/1', its URL, or its whole number"
+     },
+     "role": {
+      "type": "string",
+      "description": "only this role; empty: all"
+     }
+    }
+   },
+   "returns": "{found, ref, references[{ref, roles[], count}], citations[], figures[], resolver}"
+  },
+  {
+   "name": "fx_about_source",
+   "serves": "evidence (inverse)",
+   "description": "Which issues treat a place of a source: all issues whose references lie at, below or above the given fr: address.",
+   "input": {
+    "type": "object",
+    "properties": {
+     "fr": {
+      "type": "string",
+      "description": "a Famulus reference, e.g. 'fr:enestroem/E57' or 'fr:kepler-prim/kgw-03/0071/p05'"
+     }
+    }
+   },
+   "returns": "{fr, issues[{ref, title, url, matches[{ref, roles[]}], claims[{id, text}]}]}"
+  },
+  {
+   "name": "fx_cite",
+   "serves": "agent.cite",
+   "description": "How to cite an issue: text form or BibTeX, always with the version; with `section` the citation of that place (an HTML page has no page numbers).",
+   "input": {
+    "type": "object",
+    "properties": {
+     "ref": {
+      "type": "string",
+      "description": "an issue: 'euler/1', 'fr:expertise/euler/1', its URL, or its whole number"
+     },
+     "form": {
+      "type": "string",
+      "description": "text (default) | bibtex | all"
+     },
+     "section": {
+      "type": "string",
+      "description": "section id or number to cite a place; empty: the whole issue"
+     }
+    }
+   },
+   "returns": "{found, ref, version, cite, bibtex, section_cite, latex}"
+  },
+  {
+   "name": "fx_gates",
+   "serves": "quality",
+   "description": "The run of the quality gates of an issue: catalogue version, verdict (passed | blocked | inventory), counts, and every gate that is not fulfilled with its result.",
+   "input": {
+    "type": "object",
+    "properties": {
+     "ref": {
+      "type": "string",
+      "description": "an issue: 'euler/1', 'fr:expertise/euler/1', its URL, or its whole number"
+     }
+    }
+   },
+   "returns": "{found, ref, version, quality{catalogue, run, verdict, counts, open[]}, rules_url}"
+  }
+ ],
+ "resources": [
+  {
+   "uri": "expertise://reihe",
+   "description": "the series: profile, sub-series, issues (as fx_about + fx_issues)"
+  },
+  {
+   "uri": "expertise://{edition}/{number}",
+   "description": "the preamble of one issue (as fx_issue)"
+  }
+ ],
+ "answers": "JSON. What is not there is {\"found\": false, \"gap\": \"<reason>\"}, never an empty result. No tool calls a model.",
+ "static": {
+  "index": "https://famulus.lettre.ai/expertise/series.json",
+  "preamble_of_an_issue": "<address of the issue>heft.json",
+  "source_of_an_issue": "<address of the issue>heft.fam",
+  "preamble_schema": "https://famulus.lettre.ai/expertise/schema/famulus-expertise-1.schema.json",
+  "preamble_specification": "https://famulus.lettre.ai/expertise/schema/famulus-expertise-1.md",
+  "gates": "https://famulus.lettre.ai/expertise/regeln/gates.json",
+  "llms": "https://famulus.lettre.ai/expertise/llms.txt"
+ },
+ "references": "Famulus references (fr: addresses) are resolved by the server famulus-reference (tool fr_describe)."
+}

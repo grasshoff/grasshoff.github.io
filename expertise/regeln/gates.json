@@ -1,0 +1,798 @@
+{
+ "catalogue": "2026-11-11.1",
+ "in_force_since": "2026-11-11",
+ "rules": [
+  {
+   "id": "R1",
+   "de": "Jede Aussage über eine Quelle trägt eine scharfe Famulus Referenz: die Adresse eines Satzes, eines Absatzes, einer Textspanne, einer Abbildung oder eines Segments.",
+   "en": "Every statement about a source carries a sharp Famulus reference: the address of a sentence, a paragraph, a span of text, a figure or a segment."
+  },
+  {
+   "id": "R2",
+   "de": "Zitate stammen aus der Edition. Ein getippter Wortlaut steht an der genannten Fundstelle.",
+   "en": "Quotations come from the edition. A typed wording stands at the place named."
+  },
+  {
+   "id": "R3",
+   "de": "Keine Sachaussage ohne Begründung. Was nicht belegt ist, steht im Heft als Lücke.",
+   "en": "No factual statement without justification. What is not grounded is named in the issue as a gap."
+  },
+  {
+   "id": "R4",
+   "de": "Keine wertenden, verstärkenden oder metasprachlichen Einschübe und keine Füllprosa.",
+   "en": "No evaluative, intensifying or meta-linguistic insertions and no filler prose."
+  },
+  {
+   "id": "R5",
+   "de": "Die Termini folgen LWgrammar und den Wörterbüchern der Collections der Unterreihe.",
+   "en": "The terms follow LWgrammar and the dictionaries of the collections of the sub-series."
+  },
+  {
+   "id": "R6",
+   "de": "Die Bibliographie ist vollständig und geprüft. Nichts ist erfunden.",
+   "en": "The bibliography is complete and checked. Nothing is invented."
+  },
+  {
+   "id": "R7",
+   "de": "Eine veröffentlichte Version wird nicht verändert; eine Korrektur ist eine neue Version unter derselben Nummer und Adresse.",
+   "en": "A published version is not changed; a correction is a new version under the same number and address."
+  },
+  {
+   "id": "R8",
+   "de": "Jedes Heft trägt eine maschinenlesbare Präambel (famulus-expertise/1) und veröffentlicht das Urteil seiner Qualitätsgates.",
+   "en": "Every issue carries a machine-readable preamble (famulus-expertise/1) and publishes the verdict of its quality gates."
+  }
+ ],
+ "results": [
+  "erfuellt",
+  "verletzt",
+  "teilgeprueft",
+  "offen_modell",
+  "luecke",
+  "fehler",
+  "nicht_anwendbar"
+ ],
+ "gates": [
+  {
+   "gate_id": "register.vollstaendigkeit.felder.01",
+   "stage": "register",
+   "titel": "Das Register beschreibt das Heft vollständig",
+   "kriterium": "Das Register der Reihe nennt für das Heft Nummer, Gesamtnummer, Kennung, Projekt, Datum, Version, Status und Versionsgeschichte; Verlag, Lizenz und Reihenprofil sind vollständig.",
+   "einheit": "heft",
+   "eingabe": "publication/famulus-lettre/series.yaml, platform/config/landings.yaml",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R7"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "register.vollstaendigkeit.felder.01.r1",
+     "quellart": "reihe",
+     "wortlaut": "Eine veröffentlichte Version wird nicht verändert; eine Korrektur ist eine neue Version unter derselben Nummer und Adresse.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Eine veröffentlichte Version wird nicht verändert; eine Korrektur ist eine neue Version unter derselben Nummer und Adresse."
+      }
+     ]
+    },
+    {
+     "regel_id": "register.vollstaendigkeit.felder.01.r2",
+     "quellart": "owner",
+     "wortlaut": "Fehlende Angaben erscheinen als benannte Lücke, nie als stilles leeres Ergebnis.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "missing data surfaces as an explicit gap, never as silent empty"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "heft.kopf.angaben.01",
+   "stage": "heft",
+   "titel": "Der Kopf des Hefts nennt Titel, Autor, Datum, Sprache, Abstract, Schlagwörter und Lizenz",
+   "kriterium": "Der YAML-Kopf der .fam-Datei enthält einen Titel, mindestens einen Autor mit Name, ORCID und Affiliation, Datum, Sprache, ein Abstract von mindestens 200 Zeichen, Schlagwörter und die Lizenz des Registers; die genannte Bibliographie-Datei liegt im Projekt.",
+   "einheit": "heft",
+   "eingabe": "<projekt>/<id>.fam, YAML-Kopf",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R8"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "heft.kopf.angaben.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Bibliographische Angaben und Affiliationen werden nicht erfunden.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "Never fabricate bibliographic data, affiliations, citations, page numbers or quotations"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "heft.praeambel.aussagen.01",
+   "stage": "heft",
+   "titel": "Jede Aussage der Präambel hat Gründe im Heft oder ist als Lücke benannt",
+   "kriterium": "Jede Aussage unter `claims` hat entweder den Status `grounded` und nennt mindestens eine Famulus Referenz, die im Text des Hefts vorkommt, oder den Status `gap` mit einem Grund; genannte Abschnitte und Quellenstellen kommen im Heft vor.",
+   "einheit": "aussage",
+   "eingabe": "Präambel (claims, subject.sources, agent.read_first) und Text des Hefts",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R3",
+    "R8"
+   ],
+   "abgrenzung": [
+    "Ob die genannte Fundstelle die Aussage trägt, prüft dieses Gate nicht; das ist Sache von validitaet.sachlich."
+   ],
+   "regeln": [
+    {
+     "regel_id": "heft.praeambel.aussagen.01.r1",
+     "quellart": "reihe",
+     "wortlaut": "Keine Sachaussage ohne Begründung. Was nicht belegt ist, steht im Heft als Lücke.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Keine Sachaussage ohne Begründung. Was nicht belegt ist, steht im Heft als Lücke."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "heft.praeambel.bestaetigung.01",
+   "stage": "heft",
+   "titel": "Der Autor hat die Präambel bestätigt",
+   "kriterium": "Der Block `review` nennt unter `confirmed_by` den Autor und unter `confirmed_on` das Datum der Bestätigung.",
+   "einheit": "heft",
+   "eingabe": "Präambel, Block review",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R8"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "heft.praeambel.bestaetigung.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Was nicht geprüft werden kann, wird gekennzeichnet; ein Entwurf gilt nicht als bestätigt.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "mark what can't be verified"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "heft.praeambel.ki_erklaerung.01",
+   "stage": "heft",
+   "titel": "Der Anteil von KI-Systemen am Heft ist erklärt",
+   "kriterium": "Der Block `responsibility` nennt unter `ai_contribution`, welche Teile des Hefts mit KI-Systemen entworfen wurden, oder `none`.",
+   "einheit": "heft",
+   "eingabe": "Präambel, Block responsibility",
+   "pruefart": "deterministisch",
+   "schwere": "mittel",
+   "sperrend": true,
+   "reihenregeln": [
+    "R8"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "heft.praeambel.ki_erklaerung.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Die Präambel enthält alle Metadaten des Hefts.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "mit präambel, die alle möglichen Metadaten"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "heft.praeambel.schema.01",
+   "stage": "heft",
+   "titel": "Die Präambel ist gültig nach famulus-expertise/1",
+   "kriterium": "Der Block `expertise` des Hefts, vom Bau um die gestempelten Blöcke ergänzt, erfüllt das JSON-Schema famulus-expertise/1: jeder Pflichtblock und jedes Pflichtfeld ist vorhanden und hat den verlangten Typ.",
+   "einheit": "heft",
+   "eingabe": "<projekt>/<id>.fam (Schlüssel expertise) + Register",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R8"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "heft.praeambel.schema.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Jedes Heft trägt eine Präambel mit allen Metadaten und dem Kontext, den Agenten zur Verarbeitung brauchen.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "mit präambel, die alle möglichen Metadaten + für die Verwarbeitung von Agenten erforderlichhen Kontextinformationen enhalten"
+      }
+     ]
+    },
+    {
+     "regel_id": "heft.praeambel.schema.01.r2",
+     "quellart": "reihe",
+     "wortlaut": "Jedes Heft trägt eine maschinenlesbare Präambel (famulus-expertise/1) und veröffentlicht das Urteil seiner Qualitätsgates.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Jedes Heft trägt eine maschinenlesbare Präambel (famulus-expertise/1) und veröffentlicht das Urteil seiner Qualitätsgates."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "referenz.abdeckung.quellenaussage.01",
+   "stage": "referenz",
+   "titel": "Jede Aussage über eine Quelle trägt eine Referenz",
+   "kriterium": "Jeder Satz des Hefts, der etwas über den Wortlaut, den Inhalt oder den Aufbau einer Quelle behauptet, nennt im selben Absatz eine Famulus Referenz, einen Literaturschlüssel mit Fundstelle oder steht in einem Segment, das die Quelle selbst zeigt.",
+   "einheit": "satz",
+   "eingabe": "Fließtext der .fam-Datei, absatzweise",
+   "pruefart": "modell",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R1"
+   ],
+   "abgrenzung": [
+    "Aussagen über die eigene Rekonstruktion, über die Methode oder über das Heft selbst sind keine Aussagen über eine Quelle.",
+    "Ein Absatz, der eine Stelle weiter behandelt, die der vorangehende Absatz desselben Abschnitts adressiert hat, ist gedeckt."
+   ],
+   "regeln": [
+    {
+     "regel_id": "referenz.abdeckung.quellenaussage.01.r1",
+     "quellart": "reihe",
+     "wortlaut": "Jede Aussage über eine Quelle trägt eine scharfe Famulus Referenz: die Adresse eines Satzes, eines Absatzes, einer Textspanne, einer Abbildung oder eines Segments.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Jede Aussage über eine Quelle trägt eine scharfe Famulus Referenz"
+      }
+     ]
+    },
+    {
+     "regel_id": "referenz.abdeckung.quellenaussage.01.r2",
+     "quellart": "lwgrammar",
+     "wortlaut": "Jedes Zitat, jede übernommene Behauptung und jede zugeschriebene These trägt im selben Satz einen Schlüssel mit Fundstelle.",
+     "herkunft": [
+      {
+       "datei": "LWgrammar/guides/writing/famulus-writingguide-1/guide.md",
+       "zitat": "Every quotation, borrowed claim, number taken from a source and attributed thesis carries a citation key with locus in the same sentence"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "referenz.adresse.aufloesung.01",
+   "stage": "referenz",
+   "titel": "Jede Famulus Referenz des Hefts löst auf",
+   "kriterium": "Jede Adresse `fr:…` im Text und in der Präambel des Hefts wird vom Auflöser ihres Namensraums gefunden (Famulus-Referenz-Dienst; für `fr:astra/…` Famulus Astra).",
+   "einheit": "adresse",
+   "eingabe": "Text der .fam-Datei (Segmente und Fließtext), Präambel",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R1"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "referenz.adresse.aufloesung.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Der Maßstab ist die Richtigkeit und die Validierung an der Famulus Referenz.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "Es ist der Masstab, der die Richtigkeit, validiertheit an der Famulus Referenz"
+      }
+     ]
+    },
+    {
+     "regel_id": "referenz.adresse.aufloesung.01.r2",
+     "quellart": "owner",
+     "wortlaut": "Jede Fundstelle wird am Quellentext geprüft.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "check every quotation and"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "referenz.adresse.schaerfe.01",
+   "stage": "referenz",
+   "titel": "Jede Famulus Referenz ist scharf",
+   "kriterium": "Jede Adresse des Hefts bezeichnet genau ein Objekt unterhalb der Seite: einen Satz, einen Absatz, eine Textspanne, eine Abbildung, ein Segment oder ein Objekt von Famulus Astra; sie steht in kanonischer Form und ist nicht durch eine neuere Adresse ersetzt.",
+   "einheit": "adresse",
+   "eingabe": "Text der .fam-Datei, Präambel",
+   "pruefart": "hybrid",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R1"
+   ],
+   "abgrenzung": [
+    "Die Adresse eines ganzen Werks ist zulässig, wenn der Satz über das ganze Werk spricht; das Gate meldet sie als `teilgeprueft`, bis ein Urteil eingetragen ist.",
+    "Die Adresse einer Seite ist ein Verstoß, sobald die Edition Absätze, Sätze oder Abbildungen der Seite adressiert."
+   ],
+   "regeln": [
+    {
+     "regel_id": "referenz.adresse.schaerfe.01.r1",
+     "quellart": "reihe",
+     "wortlaut": "Jede Aussage über eine Quelle trägt eine scharfe Famulus Referenz: die Adresse eines Satzes, eines Absatzes, einer Textspanne, einer Abbildung oder eines Segments.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Jede Aussage über eine Quelle trägt eine scharfe Famulus Referenz: die Adresse eines Satzes, eines Absatzes, einer Textspanne, einer Abbildung oder eines Segments."
+      }
+     ]
+    },
+    {
+     "regel_id": "referenz.adresse.schaerfe.01.r2",
+     "quellart": "lwgrammar",
+     "wortlaut": "Die Fundstelle ist genau; ein Schlüssel ohne Fundstelle ist nur zulässig, wenn der Satz etwas über das ganze Werk behauptet.",
+     "herkunft": [
+      {
+       "datei": "LWgrammar/guides/writing/famulus-writingguide-1/guide.md",
+       "zitat": "A key without locus is admitted only when the sentence claims something about the whole work."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "zitat.wortlaut.fundstelle.01",
+   "stage": "zitat",
+   "titel": "Ein getippter Wortlaut steht an der genannten Fundstelle",
+   "kriterium": "Jedes im Heft getippte Zitat von mindestens 40 Zeichen (Blockzitat oder Anführungszeichen) nennt im selben Absatz eine Famulus Referenz, und der Wortlaut steht im Text dieser Fundstelle; verglichen wird ohne Unterschied von Groß- und Kleinschreibung, Akzenten, Strichen, Anführungszeichen und Leerraum.",
+   "einheit": "zitat",
+   "eingabe": "Fließtext der .fam-Datei; Text der Fundstelle vom Famulus-Referenz-Dienst",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R2"
+   ],
+   "abgrenzung": [
+    "Text, den ein Segment aus der Edition holt, ist nicht getippt und fällt nicht unter dieses Gate.",
+    "Ein Zitat, das nur einen Literaturschlüssel ohne Famulus Referenz trägt, ist eine Lücke: der Wortlaut ist nicht prüfbar."
+   ],
+   "regeln": [
+    {
+     "regel_id": "zitat.wortlaut.fundstelle.01.r1",
+     "quellart": "reihe",
+     "wortlaut": "Zitate stammen aus der Edition. Ein getippter Wortlaut steht an der genannten Fundstelle.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Zitate stammen aus der Edition. Ein getippter Wortlaut steht an der genannten Fundstelle."
+      }
+     ]
+    },
+    {
+     "regel_id": "zitat.wortlaut.fundstelle.01.r2",
+     "quellart": "owner",
+     "wortlaut": "Jedes Zitat und jede Fundstelle wird am Quellentext geprüft; Zitate werden nicht erfunden.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "Never fabricate bibliographic data, affiliations, citations, page numbers or quotations"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "validitaet.astra.vollstaendigkeit.01",
+   "stage": "validitaet",
+   "titel": "Die Objekte von Famulus Astra, die das Heft zeigt, sind vollständig geprüft",
+   "kriterium": "Jedes Modell, jede Abbildung und jede Ableitung von Famulus Astra, die das Heft adressiert, erreicht in `famulus-astra check` die höchste Stufe seiner Art (`complete`).",
+   "einheit": "objekt",
+   "eingabe": "Adressen fr:astra/<id> des Hefts",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R3"
+   ],
+   "abgrenzung": [
+    "Eine Exposition (Quelle neben Rekonstruktion) hat in `famulus-astra check` keine Stufen; sie wird als `teilgeprueft` gemeldet."
+   ],
+   "regeln": [
+    {
+     "regel_id": "validitaet.astra.vollstaendigkeit.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Die Hefte erfüllen weitere methodologische Qualitätskriterien.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "und weitere methodologscher Qualitätskriterien erfüllen"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "validitaet.sachlich.aussagen.01",
+   "stage": "validitaet",
+   "titel": "Die Sachaussagen des Hefts sind sachlich validiert",
+   "kriterium": "Jede Sachaussage des Hefts hat in der Prüfung der sachlichen Validität (ai-lektorat, Prüfschritte P1 bis P3) das Urteil „sachlich validiert“ oder „keine Sachaussage“.",
+   "einheit": "satz",
+   "eingabe": "Text des Hefts; Prüfung ai_lektorat.viewer.validity",
+   "pruefart": "modell",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R3"
+   ],
+   "abgrenzung": [
+    "Maßstab ist die Begründung der Aussage, nicht ihre Wahrheit: eine falsche Prämisse macht ein Argument unschlüssig, nicht seine Konklusion falsch."
+   ],
+   "regeln": [
+    {
+     "regel_id": "validitaet.sachlich.aussagen.01.r1",
+     "quellart": "reihe",
+     "wortlaut": "Keine Sachaussage ohne Begründung. Was nicht belegt ist, steht im Heft als Lücke.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Keine Sachaussage ohne Begründung."
+      }
+     ]
+    },
+    {
+     "regel_id": "validitaet.sachlich.aussagen.01.r2",
+     "quellart": "owner",
+     "wortlaut": "Kriterium ist die Begründung, nicht die Verifikation.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "\"justification\", not \"verification\", as the criterion"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "sprache.nononsense.einschuebe.01",
+   "stage": "sprache",
+   "titel": "Keine wertenden, verstärkenden oder metasprachlichen Einschübe",
+   "kriterium": "Kein Abschnitt des Hefts enthält einen Einschub, den LWgrammar als wertend, verstärkend oder metasprachlich misst (Messungen `evaluative_insertions`, `intensifier_insertions`, `meta_insertions`), und keine Metapher im begrifflichen Text (`fwg1_metaphor`).",
+   "einheit": "abschnitt",
+   "eingabe": "Fließtext je Abschnitt; LWgrammar `check_generated`, Aufgabe notebook-text",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R4"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "sprache.nononsense.einschuebe.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Die Publikation ist eine No-Nonsense-Publikation.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "Ein wichtiger Aspekt der Publikation - no nonesense Publikattion."
+      }
+     ]
+    },
+    {
+     "regel_id": "sprache.nononsense.einschuebe.01.r2",
+     "quellart": "reihe",
+     "wortlaut": "Keine wertenden, verstärkenden oder metasprachlichen Einschübe und keine Füllprosa.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Keine wertenden, verstärkenden oder metasprachlichen Einschübe und keine Füllprosa."
+      }
+     ]
+    },
+    {
+     "regel_id": "sprache.nononsense.einschuebe.01.r3",
+     "quellart": "lwgrammar",
+     "wortlaut": "Begrifflicher Text ist frei von Metaphern; an ihrer Stelle stehen genaue Fachtermini.",
+     "herkunft": [
+      {
+       "datei": "LWgrammar/guides/writing/famulus-writingguide-1/guide.md",
+       "zitat": "Metaphor-free conceptual prose: no metaphor nouns as predicates"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "sprache.schreibregeln.leitfaden.01",
+   "stage": "sprache",
+   "titel": "Der Text erfüllt die sperrenden Regeln des Famulus-Schreibleitfadens",
+   "kriterium": "Kein Abschnitt des Hefts verletzt eine Regel des Schreibleitfadens famulus-writingguide-1, die LWgrammar als sperrend misst (Messungen `fwg1_…` mit Rang blocking).",
+   "einheit": "abschnitt",
+   "eingabe": "Fließtext je Abschnitt; LWgrammar `check_generated`, Aufgabe notebook-text",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R5"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "sprache.schreibregeln.leitfaden.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Die Gates schließen die Regeln von LWgrammar ein.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "Schliesst auch lwgrammar regeln der collection mit ein"
+      }
+     ]
+    },
+    {
+     "regel_id": "sprache.schreibregeln.leitfaden.01.r2",
+     "quellart": "lwgrammar",
+     "wortlaut": "Die Fundstelle ist genau.",
+     "herkunft": [
+      {
+       "datei": "LWgrammar/guides/writing/famulus-writingguide-1/guide.md",
+       "zitat": "A citation without locus cannot be checked against the source."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "sprache.termini.collection.01",
+   "stage": "sprache",
+   "titel": "Die Termini folgen den Wörterbüchern der Collections der Unterreihe",
+   "kriterium": "Jeder Terminus, den die Präambel des Hefts unter `agent.terms` festlegt und der Stichwort im LWgrammar-Wörterbuch einer Collection der Unterreihe ist, wird im Heft in einem dort belegten Sinn gebraucht; jede Collection der Unterreihe hat ein Wörterbuch.",
+   "einheit": "terminus",
+   "eingabe": "Präambel (agent.terms); <collection>_lwgrammar.duckdb der Collections der Unterreihe",
+   "pruefart": "hybrid",
+   "schwere": "mittel",
+   "sperrend": true,
+   "reihenregeln": [
+    "R5"
+   ],
+   "abgrenzung": [
+    "Eine Unterreihe ohne Collections hat kein Wörterbuch; das Gate ist dann nicht anwendbar.",
+    "Das Programm stellt fest, welche Termini Stichwörter sind und welche Sinne belegt sind; ob der Gebrauch im Heft einem belegten Sinn entspricht, ist ein Urteil (`teilgeprueft`, bis es eingetragen ist)."
+   ],
+   "regeln": [
+    {
+     "regel_id": "sprache.termini.collection.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Die Gates schließen die LWgrammar-Regeln der Collection ein.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "Schliesst auch lwgrammar regeln der collection mit ein"
+      }
+     ]
+    },
+    {
+     "regel_id": "sprache.termini.collection.01.r2",
+     "quellart": "reihe",
+     "wortlaut": "Die Termini folgen LWgrammar und den Wörterbüchern der Collections der Unterreihe.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Die Termini folgen LWgrammar und den Wörterbüchern der Collections der Unterreihe."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "sprache.termini.fest.01",
+   "stage": "sprache",
+   "titel": "Die feste Terminologie des Hauses ist eingehalten",
+   "kriterium": "Der Terminologie-Scan von ai-lektorat (`ai-lektorat scan`) meldet im Fließtext des Hefts keinen Treffer.",
+   "einheit": "treffer",
+   "eingabe": "Fließtext der .fam-Datei ohne YAML-Kopf",
+   "pruefart": "deterministisch",
+   "schwere": "mittel",
+   "sperrend": true,
+   "reihenregeln": [
+    "R5"
+   ],
+   "abgrenzung": [
+    "Ein Treffer in einem wörtlichen Zitat oder in einem erwähnten (nicht gebrauchten) Ausdruck ist kein Verstoß; der Owner trägt ihn als Fehlalarm ein."
+   ],
+   "regeln": [
+    {
+     "regel_id": "sprache.termini.fest.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Folgerung besteht zwischen Aussagen, nicht zwischen Sätzen; Kriterium ist die Begründung, nicht die Verifikation.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "Terminology: entailment holds between propositions (Aussagen), not sentences; only Aussagen are true or false;"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "apparat.abbildung.datei.01",
+   "stage": "apparat",
+   "titel": "Jede Abbildung hat ihre Datei, eine Legende und eine Kennung",
+   "kriterium": "Jede Abbildung `![Legende](Datei){#fig-…}` des Hefts nennt eine Datei, die im Projekt liegt, eine Legende von mindestens 20 Zeichen und eine Kennung `fig-…`.",
+   "einheit": "abbildung",
+   "eingabe": "Text der .fam-Datei, Ordner des Projekts",
+   "pruefart": "deterministisch",
+   "schwere": "mittel",
+   "sperrend": true,
+   "reihenregeln": [
+    "R6"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "apparat.abbildung.datei.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Gebaut wird auf wirklichen Daten, nie auf Platzhaltern.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "Build on real data, never mocks or placeholders"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "apparat.bibliographie.schluessel.01",
+   "stage": "apparat",
+   "titel": "Jeder Literaturschlüssel löst auf, jeder Eintrag ist vollständig",
+   "kriterium": "Jeder Schlüssel `@key` des Hefts hat einen Eintrag in der Bibliographie des Projekts, und jeder zitierte Eintrag nennt Autor oder Herausgeber, Titel und Jahr sowie die Pflichtangaben seiner Art (Zeitschrift, Verlag oder Sammelband).",
+   "einheit": "eintrag",
+   "eingabe": "Text der .fam-Datei, <projekt>/bibliography.bib",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R6"
+   ],
+   "abgrenzung": [
+    "Der Abgleich der Einträge mit Crossref und OpenAlex gehört nicht zu diesem Gate; er ist nicht eingerichtet."
+   ],
+   "regeln": [
+    {
+     "regel_id": "apparat.bibliographie.schluessel.01.r1",
+     "quellart": "reihe",
+     "wortlaut": "Die Bibliographie ist vollständig und geprüft. Nichts ist erfunden.",
+     "herkunft": [
+      {
+       "datei": "publication/famulus-lettre/series.yaml",
+       "zitat": "Die Bibliographie ist vollständig und geprüft. Nichts ist erfunden."
+      }
+     ]
+    },
+    {
+     "regel_id": "apparat.bibliographie.schluessel.01.r2",
+     "quellart": "owner",
+     "wortlaut": "Bibliographische Angaben werden nicht erfunden.",
+     "herkunft": [
+      {
+       "datei": "~/AGENTS.md",
+       "zitat": "Never fabricate bibliographic data"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "apparat.zitierform.version.01",
+   "stage": "apparat",
+   "titel": "Das Heft nennt seine Zitierform mit Version, einen BibTeX-Eintrag und ein Beispiel mit Abschnittsnummer",
+   "kriterium": "Die Zitierform des Hefts nennt Reihe, Nummer, Gesamtnummer, Version und Adresse; der BibTeX-Eintrag trägt dieselben Angaben mit dem Feld `version`; das Zitierbeispiel nennt einen nummerierten Abschnitt, den das Heft enthält.",
+   "einheit": "heft",
+   "eingabe": "Beschreibung des Hefts aus Register und Kopf (export_lettre.describe)",
+   "pruefart": "deterministisch",
+   "schwere": "mittel",
+   "sperrend": true,
+   "reihenregeln": [
+    "R7"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "apparat.zitierform.version.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Jedes Heft hat einen BibTeX-Eintrag; zitiert wird mit Version.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "make sure that each Heft has also a bibtex citation description, and include versioning, i.e. you cite with version."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "ausgabe.seite.bestand.01",
+   "stage": "ausgabe",
+   "titel": "Seite, PDF, Präambel und Quelltext des Hefts sind gebaut und ohne Leck",
+   "kriterium": "Im Ausgabeordner des Hefts liegen `index.html`, das PDF, `heft.json` und `heft.fam`; die Seite nennt im Kopf ihre kanonische Adresse und die Lizenz; keine der Dateien enthält eine lokale Adresse, eine Tailnet-Adresse, einen Schlüssel oder einen privaten VG-Wort-Code.",
+   "einheit": "datei",
+   "eingabe": "publication/famulus-lettre/_site/<edition>/lettre/<nr>/",
+   "pruefart": "deterministisch",
+   "schwere": "hoch",
+   "sperrend": true,
+   "reihenregeln": [
+    "R8"
+   ],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "ausgabe.seite.bestand.01.r1",
+     "quellart": "owner",
+     "wortlaut": "Die Hefte tragen auch die Syntax des Famulus Notebook.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "Die Hefte sollen auch als famulus-notebook syntax tragen"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "gate_id": "ausgabe.zaehlung.metis.01",
+   "stage": "ausgabe",
+   "titel": "Das Heft ist für die Zählung der VG WORT geeignet und trägt eine Zählmarke",
+   "kriterium": "Der Nettotext der Seite hat mindestens 1.800 Zeichen, und für die Adresse des Hefts ist eine Zählmarke vergeben.",
+   "einheit": "heft",
+   "eingabe": "gebaute Seite; privat/privatkanzlei/data/metis/public_markers.json",
+   "pruefart": "deterministisch",
+   "schwere": "niedrig",
+   "sperrend": false,
+   "reihenregeln": [],
+   "abgrenzung": null,
+   "regeln": [
+    {
+     "regel_id": "ausgabe.zaehlung.metis.01.r1",
+     "quellart": "standard",
+     "wortlaut": "Ein Text ist ab 1.800 Zeichen zählbar; je Text eine Zählmarke.",
+     "herkunft": [
+      {
+       "datei": "dossiers/publications.md",
+       "zitat": "removed when it falls below 1,800"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

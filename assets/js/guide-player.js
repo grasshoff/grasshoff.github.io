@@ -221,7 +221,9 @@
     // the picture of a step, with spotlight and camera; `now` without transitions
     show(s, now) {
       if (s.kind === 'card') { this.card_(s, now); return; }
+      if (s.kind === 'scene') { this.scene_(s, now); return; }
       (this.evTimers || []).forEach(clearTimeout); this.evTimers = [];
+      this.sceneOff();
       this.slide.classList.remove('on');
       const src = q(this.base + lang() + '/' + s.frame);
       const [on, off] = this.imgA.classList.contains('on') ? [this.imgA, this.imgB] : [this.imgB, this.imgA];
@@ -239,6 +241,7 @@
     card_(s, now) {
       const c = s.card || {};
       (this.evTimers || []).forEach(clearTimeout); this.evTimers = [];
+      this.sceneOff();
       this.slide.innerHTML = '';
       this.slide.classList.toggle('gp-ev-slide', !!c.evidence);
       if (c.evidence) { this.evidence(s, c, now); return; }
@@ -348,6 +351,49 @@
       }));
       at(0.86, on('.gp-ev-fazit'));
       if (now) requestAnimationFrame(lines);
+    }
+
+    // a drawn scene (step kind `scene`): the step names a scene that a project script has registered,
+    //   window.GuideScenes[name] = (el, step, ctx) => ({ frame(p, ms) { … }, stop() { … } })
+    //   ctx = { lang, duration (ms), still, w, h, base }
+    // The scene draws inside the slide and keeps no clock, timer or transition of its own: the player calls frame(p)
+    // with the progress of the step (0…1), so pause, jump, a still picture (`now`) and reduced motion hold for every
+    // scene. A scene name nobody registered falls back to the step's card.
+    scene_(s, now) {
+      const make = (window.GuideScenes || {})[s.scene];
+      if (!make) { this.card_(s, now); return; }
+      (this.evTimers || []).forEach(clearTimeout); this.evTimers = [];
+      this.sceneOff();
+      const S = this.slide;
+      S.innerHTML = '';
+      S.className = 'gp-slide gp-scene';
+      this.spot.classList.remove('on'); this.cursor.classList.remove('on'); this.cam.style.transform = '';
+      this.url.textContent = s.url ? s.url.replace(/^https?:\/\//, '') : '';
+      this.win.classList.toggle('gp-full', s.chrome === false);
+      S.classList.toggle('gp-now', !!now);
+      S.classList.add('on');
+      const ms = Math.max(600, this.dur(s) - 600);
+      const sc = make(S, s, { lang: lang(), duration: ms, still: !!now || RM, w: S.clientWidth, h: S.clientHeight, base: this.base });
+      const run = { sc, held: false };
+      this.scene = run;
+      if (RM) { sc.frame(1, ms); return; }                 // reduced motion: the finished picture, turned with the buttons
+      if (now) { sc.frame(0, 0); return; }
+      const t0 = performance.now();
+      const f = t => {
+        if (this.scene !== run || run.held) return;
+        const p = Math.min(1, (t - t0) / ms);
+        sc.frame(p, t - t0);
+        if (p < 1) requestAnimationFrame(f);
+      };
+      requestAnimationFrame(f);
+    }
+
+    sceneOff() {
+      if (!this.scene) return;
+      const sc = this.scene.sc;
+      this.scene = null;
+      if (sc && sc.stop) sc.stop();
+      this.slide.classList.remove('gp-scene');
     }
 
     count(v) {
@@ -538,6 +584,7 @@
     pause(user) {
       this.token++;
       this.stopAudio();
+      if (this.scene) this.scene.held = true;               // a drawn scene stands still where it is
       this.playing = false;
       if (user) this.userPaused = true;
       this.labels();
@@ -571,7 +618,9 @@
       e.innerHTML = '';
       const last = this.steps[this.steps.length - 1];
       const first = this.steps.find(s => s.url) || last;
-      const a = el('a', 'gp-go', t('open') + ' →'); a.href = (this.root.dataset.open || first.url); a.target = '_blank'; a.rel = 'noopener';
+      // data-open="none": a tour that is not of one viewer page has no page to open; data-open-label names another one
+      const noOpen = this.root.dataset.open === 'none';
+      const a = el('a', 'gp-go', (this.root.dataset.openLabel || t('open')) + ' →'); a.href = (this.root.dataset.open || first.url); a.target = '_blank'; a.rel = 'noopener';
       const again = el('button', 'gp-go quiet', '↻ ' + t('again')); again.type = 'button';
       again.onclick = () => { this.i = 0; this.ended = false; this.pos = { x: 0.62, y: 0.55 }; this.show(this.steps[0], true); this.play(true); };
       // the tour as an excursion (the sticker, full screen) ends back on the page that opened it; the tour page goes
@@ -586,7 +635,7 @@
         };
         e.append(back);
       }
-      e.append(a);
+      if (!noOpen) e.append(a);
       if (this.root.dataset.all && !this.root.classList.contains('gp-nur-vollbild')) { const b = el('a', 'gp-go quiet', t('all')); b.href = this.root.dataset.all; e.append(b); }
       e.append(again);
       e.hidden = false;
@@ -625,6 +674,13 @@
     tour.unlock(false);
     tour.userPaused = false; tour.ended = false; tour.i = 0; tour.pos = { x: 0.62, y: 0.55 };
     tour.show(tour.steps[0], true);
+    // data-rm="steps": under reduced motion the tour opens on its first picture and is turned with the buttons
+    if (RM && tour.root.dataset.rm === 'steps') {
+      tour.started = true;
+      if (tour.cover) tour.cover.hidden = true;
+      tour.caption(tour.steps[0]); tour.labels(); tour.tick(0);
+      return;
+    }
     tour.play(true);
   });
   function screenOn(r) {

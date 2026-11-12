@@ -106,6 +106,7 @@ section.band.apps-band { background: linear-gradient(180deg, transparent, rgba(0
 .app .go { margin: auto 0 0; align-self: flex-start; padding: 0; background: none; color: var(--gold-deep); font-family: var(--sans); font-weight: 650; font-size: 0.9rem; }
 .app:hover .go { color: var(--oxford); }
 .app .txt + .go { margin-top: auto; }
+div.app:hover { transform: none; box-shadow: 0 10px 26px rgba(0, 21, 46, 0.05); border-top-color: var(--oxford); }  /* a card that is not a link does not lift */
 
 /* ---------------------------------------------------------------- specialists */
 .specialists .track { margin: 0 0 1.6rem; }

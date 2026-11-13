@@ -1,0 +1,621 @@
+{
+ "schema": "famulus-expertise/1",
+ "series_title": "Famulus Expertise",
+ "url": "https://famulus.lettre.ai/expertise/",
+ "issn": null,
+ "editor": "Gerd Graßhoff",
+ "licence": {
+  "name": "CC BY-NC-ND 4.0",
+  "long": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+  "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+ },
+ "profile": {
+  "assignment": {
+   "de": "Famulus Expertise erscheint im Verlag OpenScienceTechnology GmbH auf der Plattform famulus.lettre.ai. Jede Unterreihe gehört zu einer Edition und zu deren Collections; die Hefte entstehen aus der Arbeit an diesen Quellen.",
+   "en": "Famulus Expertise is published by OpenScienceTechnology GmbH on the platform famulus.lettre.ai. Each sub-series belongs to one edition and its collections; the issues come from the work on these sources."
+  },
+  "task": {
+   "de": "Ein Heft rekonstruiert ein Argument oder eine Stelle einer Quelle und belegt jeden Schritt an der Edition.",
+   "en": "An issue reconstructs one argument or one passage of a source and grounds every step in the edition."
+  },
+  "aim": {
+   "de": "Nachprüfbare Einzelstudien: Jede Aussage über die Quelle lässt sich an ihrer Fundstelle prüfen, von Lesern und von Programmen.",
+   "en": "Single studies that can be checked: every statement about the source can be tested at its place in the source, by readers and by programs."
+  },
+  "audience": {
+   "de": "Fachleute der Wissenschaftsgeschichte und der Wissenschaftsphilosophie, Editorinnen und Editoren, Leserinnen und Leser der Editionen sowie Agenten, die mit den Editionen arbeiten.",
+   "en": "Scholars of the history and philosophy of science, editors, readers of the editions, and agents that work with the editions."
+  },
+  "rules": [
+   {
+    "id": "R1",
+    "de": "Jede Aussage über eine Quelle trägt eine scharfe Famulus Referenz: die Adresse eines Satzes, eines Absatzes, einer Textspanne, einer Abbildung oder eines Segments.",
+    "en": "Every statement about a source carries a sharp Famulus reference: the address of a sentence, a paragraph, a span of text, a figure or a segment."
+   },
+   {
+    "id": "R2",
+    "de": "Zitate stammen aus der Edition. Ein getippter Wortlaut steht an der genannten Fundstelle.",
+    "en": "Quotations come from the edition. A typed wording stands at the place named."
+   },
+   {
+    "id": "R3",
+    "de": "Keine Sachaussage ohne Begründung. Was nicht belegt ist, steht im Heft als Lücke.",
+    "en": "No factual statement without justification. What is not grounded is named in the issue as a gap."
+   },
+   {
+    "id": "R4",
+    "de": "Keine wertenden, verstärkenden oder metasprachlichen Einschübe und keine Füllprosa.",
+    "en": "No evaluative, intensifying or meta-linguistic insertions and no filler prose."
+   },
+   {
+    "id": "R5",
+    "de": "Die Termini folgen LWgrammar und den Wörterbüchern der Collections der Unterreihe.",
+    "en": "The terms follow LWgrammar and the dictionaries of the collections of the sub-series."
+   },
+   {
+    "id": "R6",
+    "de": "Die Bibliographie ist vollständig und geprüft. Nichts ist erfunden.",
+    "en": "The bibliography is complete and checked. Nothing is invented."
+   },
+   {
+    "id": "R7",
+    "de": "Eine veröffentlichte Version wird nicht verändert; eine Korrektur ist eine neue Version unter derselben Nummer und Adresse.",
+    "en": "A published version is not changed; a correction is a new version under the same number and address."
+   },
+   {
+    "id": "R8",
+    "de": "Jedes Heft trägt eine maschinenlesbare Präambel (famulus-expertise/1) und veröffentlicht das Urteil seiner Qualitätsgates.",
+    "en": "Every issue carries a machine-readable preamble (famulus-expertise/1) and publishes the verdict of its quality gates."
+   },
+   {
+    "id": "R9",
+    "de": "Der Autor ist der allein verantwortliche Autor der Aussagen des Hefts. Verfahren, Referenzen und Gates sind notwendige Bedingungen; sie ersetzen seine Verantwortung nicht.",
+    "en": "The author alone is responsible for the statements of the issue. Procedure, references and gates are necessary conditions; they do not replace his responsibility."
+   },
+   {
+    "id": "R10",
+    "de": "Kein Heft ist dem Irrtum enthoben. Ein Einwand gegen eine These oder Annahme, der der Prüfung standhält, wird in einer neuen Version am betroffenen Punkt annotiert, für Leser und für Agenten.",
+    "en": "No issue is beyond error. An objection to a thesis or an assumption that stands up to examination is annotated at the point concerned in a new version, for readers and for agents."
+   }
+  ],
+  "seal": {
+   "title": {
+    "de": "Gütesiegel Famulus Expertise",
+    "en": "Famulus Expertise quality seal"
+   },
+   "statement": {
+    "de": "Ein Heft trägt das Gütesiegel, wenn drei notwendige Bedingungen erfüllt sind und der Autor genau diese Version freigegeben hat.",
+    "en": "An issue carries the quality seal when three necessary conditions hold and the author has released exactly this version."
+   },
+   "conditions": [
+    {
+     "id": "procedure",
+     "stages": [
+      "lektor"
+     ],
+     "de": "Verfahren: Das Heft hat den Durchlauf durch Famulus Lektor abgeschlossen. Der Autor hat jeder These, jeder Voraussetzung und jedem Schritt der Beweisführung ausdrücklich zugestimmt.",
+     "en": "Procedure: the issue has completed the pass through Famulus Lektor. The author has explicitly agreed to every thesis, every premise and every step of the proof."
+    },
+    {
+     "id": "grounding",
+     "stages": [
+      "referenz",
+      "zitat"
+     ],
+     "de": "Grounding-Evidenz: Jede Aussage über eine Quelle ruht auf einer scharfen Famulus Referenz, die auflöst; ein zitierter Wortlaut steht an seiner Fundstelle.",
+     "en": "Grounding evidence: every statement about a source rests on a sharp Famulus reference that resolves; a quoted wording stands at its place."
+    },
+    {
+     "id": "correctness",
+     "stages": [
+      "register",
+      "heft",
+      "validitaet",
+      "sprache",
+      "apparat",
+      "kritik",
+      "ausgabe"
+     ],
+     "de": "Argumentative Korrektheit: Die methodischen Kriterien der Reihe sind erfüllt, das heißt jedes sperrende Qualitätsgate.",
+     "en": "Argumentative correctness: the methodological criteria of the series are fulfilled, that is, every blocking quality gate."
+    }
+   ],
+   "release": {
+    "de": "Freigabe: Der Autor gibt jede Version ausdrücklich frei. Ohne Freigabe erscheint nichts.",
+    "en": "Release: the author releases every version explicitly. Nothing appears without release."
+   },
+   "critique": {
+    "de": "Offene Kritik: Einwände gegen ein Heft werden erfasst, mit demselben Maßstab geprüft und mit ihrem Ergebnis geführt. Ein Einwand, der überzeugt, steht in der nächsten Version am betroffenen Punkt.",
+    "en": "Open critique: objections to an issue are recorded, examined by the same standard and kept with their outcome. An objection that convinces stands at the point concerned in the next version."
+   }
+  },
+  "objections_to": "gerd.grasshoff@opensciencetechnology.com"
+ },
+ "generated": "2026-11-13T02:01:50",
+ "subseries": [
+  {
+   "edition": "euler",
+   "title": "Famulus Expertise Euler",
+   "scope": "Reconstructions and studies on the works and letters of Leonhard Euler.",
+   "collections": [
+    "enestroem",
+    "eulerOO",
+    "eulerOO-IVA"
+   ],
+   "url": "https://famulus.lettre.ai/euler/lettre/"
+  },
+  {
+   "edition": "kepler",
+   "title": "Famulus Expertise Kepler",
+   "scope": "Reconstructions and studies on Johannes Kepler's works and on the literature about them.",
+   "collections": [
+    "kepler-prim",
+    "kepler-sec"
+   ],
+   "url": "https://famulus.lettre.ai/kepler/lettre/"
+  },
+  {
+   "edition": "astra",
+   "title": "Famulus Expertise Astra",
+   "scope": "Method and language of the reconstruction of geometrical arguments in historical astronomy.",
+   "collections": [],
+   "url": "https://famulus.lettre.ai/astra/lettre/"
+  }
+ ],
+ "issues": [
+  {
+   "landing": "euler",
+   "no": 1,
+   "gesamt": 1,
+   "id": "tide-raising-force",
+   "ref": "fr:expertise/euler/1",
+   "series": "Famulus Expertise Euler",
+   "full_title": "Euler's Argument for the Tide-Raising Force, Reconstructed: One Segment of a Source, Passage by Passage, beside Its Formal Reconstruction",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "published",
+   "url": "https://famulus.lettre.ai/euler/lettre/1/",
+   "pdf": "https://famulus.lettre.ai/euler/lettre/1/tide-raising-force.pdf",
+   "cite": "Graßhoff, Gerd. Euler's Argument for the Tide-Raising Force, Reconstructed: One Segment of a Source, Passage by Passage, beside Its Formal Reconstruction. Famulus Expertise Euler, No. 1 (whole no. 1). Duisburg: OpenScienceTechnology, 2026. Version 1.0. https://famulus.lettre.ai/euler/lettre/1/",
+   "bibtex": "@article{grasshoff2026expertise-euler-1,\n  author = {Graßhoff, Gerd},\n  title = {{Euler's Argument for the Tide-Raising Force, Reconstructed: One Segment of a Source, Passage by Passage, beside Its Formal Reconstruction}},\n  journal = {Famulus Expertise Euler},\n  number = {1},\n  year = {2026},\n  date = {2026-11-10},\n  version = {1.0},\n  publisher = {OpenScienceTechnology},\n  address = {Duisburg},\n  url = {https://famulus.lettre.ai/euler/lettre/1/},\n  note = {Version 1.0. Famulus Expertise, whole no. 1},\n  langid = {english}\n}",
+   "metis": "assigned",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ],
+   "gates": {
+    "catalogue": "2026-11-11.2",
+    "run": "2026-11-11T12:28:27",
+    "verdict": "blocked",
+    "counts": {
+     "erfuellt": 10,
+     "luecke": 7,
+     "verletzt": 5,
+     "teilgeprueft": 3,
+     "nicht_anwendbar": 1
+    }
+   },
+   "seal": {
+    "granted": false,
+    "date": null,
+    "version": null,
+    "released_by": null,
+    "conditions": [
+     {
+      "id": "procedure",
+      "fulfilled": false,
+      "stages": [
+       "lektor"
+      ]
+     },
+     {
+      "id": "grounding",
+      "fulfilled": false,
+      "stages": [
+       "referenz",
+       "zitat"
+      ]
+     },
+     {
+      "id": "correctness",
+      "fulfilled": false,
+      "stages": [
+       "register",
+       "heft",
+       "validitaet",
+       "sprache",
+       "apparat",
+       "kritik",
+       "ausgabe"
+      ]
+     }
+    ],
+    "missing": [
+     "The author has confirmed the preamble: gap",
+     "The contribution of AI systems to the issue is declared: gap",
+     "The preamble is valid famulus-expertise/1: violated",
+     "Every statement about a source carries a reference: violated",
+     "Every Famulus reference is sharp: violated",
+     "A typed wording stands at the place named: gap",
+     "The objects of Famulus Astra shown in the issue are completely checked: partly tested",
+     "The factual statements of the issue are justified (sachliche Validität): gap",
+     "No evaluative, intensifying or meta-linguistic insertions: violated",
+     "The terms follow the dictionaries of the collections of the sub-series: partly tested",
+     "The fixed terminology of the house is kept: violated",
+     "The cited entries agree with Crossref or OpenAlex: partly tested",
+     "Every citation key resolves, every entry is complete: gap",
+     "The author has agreed to every thesis, every premise and every step of the proof: gap",
+     "The author has released exactly this version of this text: gap"
+    ]
+   }
+  },
+  {
+   "landing": "kepler",
+   "no": 2,
+   "gesamt": 3,
+   "id": "swerdlow-solar-theory",
+   "ref": "fr:expertise/kepler/2",
+   "series": "Famulus Expertise Kepler",
+   "full_title": "Reading Five Pages Deeply: Swerdlow on Ptolemy's Solar Model, Checked Assertion by Assertion, with Two Misprints Found",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "published",
+   "url": "https://famulus.lettre.ai/kepler/lettre/2/",
+   "pdf": "https://famulus.lettre.ai/kepler/lettre/2/swerdlow-solar-theory.pdf",
+   "cite": "Graßhoff, Gerd. Reading Five Pages Deeply: Swerdlow on Ptolemy's Solar Model, Checked Assertion by Assertion, with Two Misprints Found. Famulus Expertise Kepler, No. 2 (whole no. 3). Duisburg: OpenScienceTechnology, 2026. Version 1.0. https://famulus.lettre.ai/kepler/lettre/2/",
+   "bibtex": "@article{grasshoff2026expertise-kepler-2,\n  author = {Graßhoff, Gerd},\n  title = {{Reading Five Pages Deeply: Swerdlow on Ptolemy's Solar Model, Checked Assertion by Assertion, with Two Misprints Found}},\n  journal = {Famulus Expertise Kepler},\n  number = {2},\n  year = {2026},\n  date = {2026-11-10},\n  version = {1.0},\n  publisher = {OpenScienceTechnology},\n  address = {Duisburg},\n  url = {https://famulus.lettre.ai/kepler/lettre/2/},\n  note = {Version 1.0. Famulus Expertise, whole no. 3},\n  langid = {english}\n}",
+   "metis": "assigned",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ],
+   "gates": {
+    "catalogue": "2026-11-11.2",
+    "run": "2026-11-11T12:29:04",
+    "verdict": "blocked",
+    "counts": {
+     "erfuellt": 12,
+     "luecke": 7,
+     "verletzt": 4,
+     "teilgeprueft": 2,
+     "nicht_anwendbar": 1
+    }
+   },
+   "seal": {
+    "granted": false,
+    "date": null,
+    "version": null,
+    "released_by": null,
+    "conditions": [
+     {
+      "id": "procedure",
+      "fulfilled": false,
+      "stages": [
+       "lektor"
+      ]
+     },
+     {
+      "id": "grounding",
+      "fulfilled": false,
+      "stages": [
+       "referenz",
+       "zitat"
+      ]
+     },
+     {
+      "id": "correctness",
+      "fulfilled": false,
+      "stages": [
+       "register",
+       "heft",
+       "validitaet",
+       "sprache",
+       "apparat",
+       "kritik",
+       "ausgabe"
+      ]
+     }
+    ],
+    "missing": [
+     "The author has confirmed the preamble: gap",
+     "The contribution of AI systems to the issue is declared: gap",
+     "The preamble is valid famulus-expertise/1: violated",
+     "Every statement about a source carries a reference: violated",
+     "A typed wording stands at the place named: gap",
+     "The factual statements of the issue are justified (sachliche Validität): gap",
+     "No evaluative, intensifying or meta-linguistic insertions: violated",
+     "The terms follow the dictionaries of the collections of the sub-series: partly tested",
+     "The fixed terminology of the house is kept: violated",
+     "The cited entries agree with Crossref or OpenAlex: partly tested",
+     "Every citation key resolves, every entry is complete: gap",
+     "The author has agreed to every thesis, every premise and every step of the proof: gap",
+     "The author has released exactly this version of this text: gap"
+    ]
+   }
+  },
+  {
+   "landing": "kepler",
+   "no": 1,
+   "gesamt": 2,
+   "id": "equant-argument",
+   "ref": "fr:expertise/kepler/1",
+   "series": "Famulus Expertise Kepler",
+   "full_title": "Reconstructing Kepler's Reasoning in the Astronomia Nova: A Compact Argument about the Equant, Made Explicit and Checked Step by Step",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "published",
+   "url": "https://famulus.lettre.ai/kepler/lettre/1/",
+   "pdf": "https://famulus.lettre.ai/kepler/lettre/1/equant-argument.pdf",
+   "cite": "Graßhoff, Gerd. Reconstructing Kepler's Reasoning in the Astronomia Nova: A Compact Argument about the Equant, Made Explicit and Checked Step by Step. Famulus Expertise Kepler, No. 1 (whole no. 2). Duisburg: OpenScienceTechnology, 2026. Version 1.0. https://famulus.lettre.ai/kepler/lettre/1/",
+   "bibtex": "@article{grasshoff2026expertise-kepler-1,\n  author = {Graßhoff, Gerd},\n  title = {{Reconstructing Kepler's Reasoning in the Astronomia Nova: A Compact Argument about the Equant, Made Explicit and Checked Step by Step}},\n  journal = {Famulus Expertise Kepler},\n  number = {1},\n  year = {2026},\n  date = {2026-11-10},\n  version = {1.0},\n  publisher = {OpenScienceTechnology},\n  address = {Duisburg},\n  url = {https://famulus.lettre.ai/kepler/lettre/1/},\n  note = {Version 1.0. Famulus Expertise, whole no. 2},\n  langid = {english}\n}",
+   "metis": "assigned",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ],
+   "gates": {
+    "catalogue": "2026-11-11.2",
+    "run": "2026-11-11T12:28:50",
+    "verdict": "blocked",
+    "counts": {
+     "erfuellt": 11,
+     "luecke": 6,
+     "verletzt": 7,
+     "teilgeprueft": 1,
+     "nicht_anwendbar": 1
+    }
+   },
+   "seal": {
+    "granted": false,
+    "date": null,
+    "version": null,
+    "released_by": null,
+    "conditions": [
+     {
+      "id": "procedure",
+      "fulfilled": false,
+      "stages": [
+       "lektor"
+      ]
+     },
+     {
+      "id": "grounding",
+      "fulfilled": false,
+      "stages": [
+       "referenz",
+       "zitat"
+      ]
+     },
+     {
+      "id": "correctness",
+      "fulfilled": false,
+      "stages": [
+       "register",
+       "heft",
+       "validitaet",
+       "sprache",
+       "apparat",
+       "kritik",
+       "ausgabe"
+      ]
+     }
+    ],
+    "missing": [
+     "The author has confirmed the preamble: gap",
+     "The contribution of AI systems to the issue is declared: gap",
+     "The preamble is valid famulus-expertise/1: violated",
+     "Every statement about a source carries a reference: violated",
+     "A typed wording stands at the place named: violated",
+     "The factual statements of the issue are justified (sachliche Validität): gap",
+     "No evaluative, intensifying or meta-linguistic insertions: violated",
+     "The text fulfils the blocking rules of the Famulus writing guide: violated",
+     "The terms follow the dictionaries of the collections of the sub-series: partly tested",
+     "The fixed terminology of the house is kept: violated",
+     "The cited entries agree with Crossref or OpenAlex: violated",
+     "Every citation key resolves, every entry is complete: gap",
+     "The author has agreed to every thesis, every premise and every step of the proof: gap",
+     "The author has released exactly this version of this text: gap"
+    ]
+   }
+  },
+  {
+   "landing": "astra",
+   "no": 2,
+   "gesamt": 5,
+   "id": "astra-model-language",
+   "ref": "fr:expertise/astra/2",
+   "series": "Famulus Expertise Astra",
+   "full_title": "astra/1: A Language for Historical Astronomical Models and the Geometrical Reasoning about Them",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "published",
+   "url": "https://famulus.lettre.ai/astra/lettre/2/",
+   "pdf": "https://famulus.lettre.ai/astra/lettre/2/astra-model-language.pdf",
+   "cite": "Graßhoff, Gerd. astra/1: A Language for Historical Astronomical Models and the Geometrical Reasoning about Them. Famulus Expertise Astra, No. 2 (whole no. 5). Duisburg: OpenScienceTechnology, 2026. Version 1.0. https://famulus.lettre.ai/astra/lettre/2/",
+   "bibtex": "@article{grasshoff2026expertise-astra-2,\n  author = {Graßhoff, Gerd},\n  title = {{astra/1: A Language for Historical Astronomical Models and the Geometrical Reasoning about Them}},\n  journal = {Famulus Expertise Astra},\n  number = {2},\n  year = {2026},\n  date = {2026-11-10},\n  version = {1.0},\n  publisher = {OpenScienceTechnology},\n  address = {Duisburg},\n  url = {https://famulus.lettre.ai/astra/lettre/2/},\n  note = {Version 1.0. Famulus Expertise, whole no. 5},\n  langid = {english}\n}",
+   "metis": "assigned",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ],
+   "gates": {
+    "catalogue": "2026-11-11.2",
+    "run": "2026-11-11T12:29:46",
+    "verdict": "blocked",
+    "counts": {
+     "erfuellt": 9,
+     "luecke": 8,
+     "verletzt": 6,
+     "teilgeprueft": 1,
+     "nicht_anwendbar": 2
+    }
+   },
+   "seal": {
+    "granted": false,
+    "date": null,
+    "version": null,
+    "released_by": null,
+    "conditions": [
+     {
+      "id": "procedure",
+      "fulfilled": false,
+      "stages": [
+       "lektor"
+      ]
+     },
+     {
+      "id": "grounding",
+      "fulfilled": false,
+      "stages": [
+       "referenz",
+       "zitat"
+      ]
+     },
+     {
+      "id": "correctness",
+      "fulfilled": false,
+      "stages": [
+       "register",
+       "heft",
+       "validitaet",
+       "sprache",
+       "apparat",
+       "kritik",
+       "ausgabe"
+      ]
+     }
+    ],
+    "missing": [
+     "The author has confirmed the preamble: gap",
+     "The contribution of AI systems to the issue is declared: gap",
+     "The preamble is valid famulus-expertise/1: violated",
+     "Every statement about a source carries a reference: violated",
+     "Every Famulus reference is sharp: partly tested",
+     "A typed wording stands at the place named: gap",
+     "The factual statements of the issue are justified (sachliche Validität): gap",
+     "No evaluative, intensifying or meta-linguistic insertions: violated",
+     "The text fulfils the blocking rules of the Famulus writing guide: violated",
+     "The fixed terminology of the house is kept: violated",
+     "The cited entries agree with Crossref or OpenAlex: violated",
+     "Every citation key resolves, every entry is complete: gap",
+     "The issue has passed through Famulus Lektor for exactly this text: gap",
+     "The author has agreed to every thesis, every premise and every step of the proof: gap",
+     "The author has released exactly this version of this text: gap"
+    ]
+   }
+  },
+  {
+   "landing": "astra",
+   "no": 1,
+   "gesamt": 4,
+   "id": "geometrical-reasoning-fundamentals",
+   "ref": "fr:expertise/astra/1",
+   "series": "Famulus Expertise Astra",
+   "full_title": "Geometrical Reasoning in the History of Astronomy: Fundamentals: Models, Propositions, Steps, Rules, and What the Figure Supplies",
+   "names": [
+    "Gerd Graßhoff"
+   ],
+   "date": "2026-11-10",
+   "version": "1.0",
+   "status": "published",
+   "url": "https://famulus.lettre.ai/astra/lettre/1/",
+   "pdf": "https://famulus.lettre.ai/astra/lettre/1/geometrical-reasoning-fundamentals.pdf",
+   "cite": "Graßhoff, Gerd. Geometrical Reasoning in the History of Astronomy: Fundamentals: Models, Propositions, Steps, Rules, and What the Figure Supplies. Famulus Expertise Astra, No. 1 (whole no. 4). Duisburg: OpenScienceTechnology, 2026. Version 1.0. https://famulus.lettre.ai/astra/lettre/1/",
+   "bibtex": "@article{grasshoff2026expertise-astra-1,\n  author = {Graßhoff, Gerd},\n  title = {{Geometrical Reasoning in the History of Astronomy: Fundamentals: Models, Propositions, Steps, Rules, and What the Figure Supplies}},\n  journal = {Famulus Expertise Astra},\n  number = {1},\n  year = {2026},\n  date = {2026-11-10},\n  version = {1.0},\n  publisher = {OpenScienceTechnology},\n  address = {Duisburg},\n  url = {https://famulus.lettre.ai/astra/lettre/1/},\n  note = {Version 1.0. Famulus Expertise, whole no. 4},\n  langid = {english}\n}",
+   "metis": "assigned",
+   "revisions": [
+    {
+     "version": "1.0",
+     "date": "2026-11-10",
+     "note": "First publication."
+    }
+   ],
+   "gates": {
+    "catalogue": "2026-11-11.2",
+    "run": "2026-11-11T12:29:26",
+    "verdict": "blocked",
+    "counts": {
+     "erfuellt": 11,
+     "luecke": 7,
+     "verletzt": 6,
+     "nicht_anwendbar": 2
+    }
+   },
+   "seal": {
+    "granted": false,
+    "date": null,
+    "version": null,
+    "released_by": null,
+    "conditions": [
+     {
+      "id": "procedure",
+      "fulfilled": false,
+      "stages": [
+       "lektor"
+      ]
+     },
+     {
+      "id": "grounding",
+      "fulfilled": false,
+      "stages": [
+       "referenz",
+       "zitat"
+      ]
+     },
+     {
+      "id": "correctness",
+      "fulfilled": false,
+      "stages": [
+       "register",
+       "heft",
+       "validitaet",
+       "sprache",
+       "apparat",
+       "kritik",
+       "ausgabe"
+      ]
+     }
+    ],
+    "missing": [
+     "The author has confirmed the preamble: gap",
+     "The contribution of AI systems to the issue is declared: gap",
+     "The preamble is valid famulus-expertise/1: violated",
+     "Every statement about a source carries a reference: violated",
+     "A typed wording stands at the place named: gap",
+     "The factual statements of the issue are justified (sachliche Validität): gap",
+     "No evaluative, intensifying or meta-linguistic insertions: violated",
+     "The text fulfils the blocking rules of the Famulus writing guide: violated",
+     "The fixed terminology of the house is kept: violated",
+     "The cited entries agree with Crossref or OpenAlex: violated",
+     "Every citation key resolves, every entry is complete: gap",
+     "The author has agreed to every thesis, every premise and every step of the proof: gap",
+     "The author has released exactly this version of this text: gap"
+    ]
+   }
+  }
+ ]
+}

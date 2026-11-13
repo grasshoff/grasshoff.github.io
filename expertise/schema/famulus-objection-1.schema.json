@@ -1,0 +1,17 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://famulus.lettre.ai/expertise/schema/famulus-objection-1.schema.json",
+ "title": "famulus-objection/1: an objection to an issue of Famulus Expertise",
+ "type": "object",
+ "required": ["schema", "issue", "version", "point", "statement", "grounds", "by", "date"],
+ "properties": {
+  "schema": {"enum": ["famulus-objection/1"]},
+  "issue": {"type": "string", "pattern": "^fr:expertise/[a-z0-9][a-z0-9-]*/[1-9][0-9]*$"},
+  "version": {"type": "string"},
+  "point": {"type": "object", "properties": {"claim": {"type": "string", "pattern": "^C[0-9]+$"}, "thesis": {"type": "string", "minLength": 10}, "section": {"type": "string"}}},
+  "statement": {"type": "string", "minLength": 20},
+  "grounds": {"type": "array", "minItems": 1, "items": {"type": "object", "properties": {"ref": {"type": "string", "pattern": "^fr:[A-Za-z0-9_]"}, "note": {"type": "string"}, "citation": {"type": "string"}, "argument": {"type": "string"}}}},
+  "by": {"type": "object", "required": ["name", "kind"], "properties": {"name": {"type": "string", "minLength": 2}, "kind": {"enum": ["person", "agent"]}, "contact": {"type": "string"}}},
+  "date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"}
+ }
+}

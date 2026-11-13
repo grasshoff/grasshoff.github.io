@@ -1,0 +1,47 @@
+# Famulus Expertise
+
+> An issue reconstructs one argument or one passage of a source and grounds every step in the edition. Single studies that can be checked: every statement about the source can be tested at its place in the source, by readers and by programs.
+
+Publisher: OpenScienceTechnology GmbH. Editor: Gerd Graßhoff. Licence: CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/): issues may be quoted with their citation and passed on unchanged for non-commercial purposes; no adapted versions.
+Cite an issue with its version; cite a place by version and section number (the pages have no page numbers).
+
+## Publication rules
+
+- R1: Every statement about a source carries a sharp Famulus reference: the address of a sentence, a paragraph, a span of text, a figure or a segment.
+- R2: Quotations come from the edition. A typed wording stands at the place named.
+- R3: No factual statement without justification. What is not grounded is named in the issue as a gap.
+- R4: No evaluative, intensifying or meta-linguistic insertions and no filler prose.
+- R5: The terms follow LWgrammar and the dictionaries of the collections of the sub-series.
+- R6: The bibliography is complete and checked. Nothing is invented.
+- R7: A published version is not changed; a correction is a new version under the same number and address.
+- R8: Every issue carries a machine-readable preamble (famulus-expertise/1) and publishes the verdict of its quality gates.
+- R9: The author alone is responsible for the statements of the issue. Procedure, references and gates are necessary conditions; they do not replace his responsibility.
+- R10: No issue is beyond error. An objection to a thesis or an assumption that stands up to examination is annotated at the point concerned in a new version, for readers and for agents.
+
+## Quality seal
+
+An issue carries the quality seal when three necessary conditions hold and the author has released exactly this version.
+- Procedure: the issue has completed the pass through Famulus Lektor. The author has explicitly agreed to every thesis, every premise and every step of the proof.
+- Grounding evidence: every statement about a source rests on a sharp Famulus reference that resolves; a quoted wording stands at its place.
+- Argumentative correctness: the methodological criteria of the series are fulfilled, that is, every blocking quality gate.
+- Release: the author releases every version explicitly. Nothing appears without release.
+
+## Open critique
+
+Open critique: objections to an issue are recorded, examined by the same standard and kept with their outcome. An objection that convinces stands at the point concerned in the next version.
+Objections go to gerd.grasshoff@opensciencetechnology.com in the format famulus-objection/1 (https://famulus.lettre.ai/expertise/schema/famulus-objection-1.md); persons and agents may file them.
+
+## Issues
+
+- [Famulus Expertise Euler, No. 1 (whole no. 1), version 1.0: Euler's Argument for the Tide-Raising Force, Reconstructed: One Segment of a Source, Passage by Passage, beside Its Formal Reconstruction](https://famulus.lettre.ai/euler/lettre/1/) — online as first published; the quality seal is not yet granted
+- [Famulus Expertise Kepler, No. 1 (whole no. 2), version 1.0: Reconstructing Kepler's Reasoning in the Astronomia Nova: A Compact Argument about the Equant, Made Explicit and Checked Step by Step](https://famulus.lettre.ai/kepler/lettre/1/) — online as first published; the quality seal is not yet granted
+- [Famulus Expertise Kepler, No. 2 (whole no. 3), version 1.0: Reading Five Pages Deeply: Swerdlow on Ptolemy's Solar Model, Checked Assertion by Assertion, with Two Misprints Found](https://famulus.lettre.ai/kepler/lettre/2/) — online as first published; the quality seal is not yet granted
+- [Famulus Expertise Astra, No. 1 (whole no. 4), version 1.0: Geometrical Reasoning in the History of Astronomy: Fundamentals: Models, Propositions, Steps, Rules, and What the Figure Supplies](https://famulus.lettre.ai/astra/lettre/1/) — online as first published; the quality seal is not yet granted
+- [Famulus Expertise Astra, No. 2 (whole no. 5), version 1.0: astra/1: A Language for Historical Astronomical Models and the Geometrical Reasoning about Them](https://famulus.lettre.ai/astra/lettre/2/) — online as first published; the quality seal is not yet granted
+
+## Machine-readable
+
+- [Index of the series](https://famulus.lettre.ai/expertise/series.json): every issue with citation, BibTeX, gate verdict
+- [Preamble famulus-expertise/1](https://famulus.lettre.ai/expertise/schema/famulus-expertise-1.md): identity, subject, claims with grounds, evidence, agent context, quality
+- [Publication rules and quality gates](https://famulus.lettre.ai/expertise/regeln/), [gate catalogue as JSON](https://famulus.lettre.ai/expertise/regeln/gates.json)
+- [MCP server famulus-expertise](https://famulus.lettre.ai/expertise/mcp.json): tools fx_about, fx_issues, fx_issue, fx_text, fx_search, fx_claims, fx_references, fx_about_source, fx_cite, fx_gates, fx_seal, fx_objections

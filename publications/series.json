@@ -1,0 +1,46 @@
+{
+ "schema": "famulus-publications/1",
+ "url": "https://famulus.lettre.ai/publications/",
+ "generated": "2026-11-19T10:59:58",
+ "series": [
+  {
+   "key": "expertise",
+   "title": "Famulus Expertise",
+   "url": "https://famulus.lettre.ai/expertise/",
+   "issn": null,
+   "aim": {
+    "de": "Nachprüfbare Einzelstudien: Jede Aussage über die Quelle lässt sich an ihrer Fundstelle prüfen, von Lesern und von Programmen.",
+    "en": "Single studies that can be checked: every statement about the source can be tested at its place in the source, by readers and by programs."
+   },
+   "published": 5,
+   "in_preparation": 0,
+   "machine_readable": "https://famulus.lettre.ai/expertise/series.json"
+  },
+  {
+   "key": "platform",
+   "title": "Famulus Platform",
+   "url": null,
+   "issn": null,
+   "aim": {
+    "de": "Eine umfassende, zitierfähige Beschreibung der Plattform. Jedes Heft gibt die Fassung auf arXiv wieder und trägt deren DOI.",
+    "en": "A comprehensive, citable description of the platform. Every issue mirrors its version on arXiv and carries its DOI."
+   },
+   "published": 0,
+   "in_preparation": 22,
+   "machine_readable": null
+  },
+  {
+   "key": "fundamentals",
+   "title": "Famulus Fundamentals",
+   "url": null,
+   "issn": null,
+   "aim": {
+    "de": "Eine zitierfähige Grundlegung, auf die sich die Hefte von Famulus Platform und Famulus Expertise berufen können. Jedes Heft gibt die Fassung auf arXiv wieder und trägt deren DOI.",
+    "en": "A citable foundation on which the issues of Famulus Platform and Famulus Expertise can rely. Every issue mirrors its version on arXiv and carries its DOI."
+   },
+   "published": 0,
+   "in_preparation": 14,
+   "machine_readable": null
+  }
+ ]
+}

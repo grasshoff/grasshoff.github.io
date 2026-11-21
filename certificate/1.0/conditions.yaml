@@ -37,6 +37,116 @@ purpose:
     und jedes Urteil, das kein Programm entscheidet, aufgelistet und von einer namentlich genannten Person
     unterzeichnet. Es bescheinigt ein Verfahren und dessen Protokoll. Es bescheinigt nicht, dass eine Aussage wahr ist.
 
+# Why the certificate exists, on what it rests, and how it becomes binding (owner, 21 Nov 2026, dossier
+# publications.md, "Famulus Certificate: motivation"). The deeds, the specification (§§2–4) and the paper
+# "Computational Epistemology: Foundations" (§9.2) state the same.
+motivation:
+  - id: aim
+    title: {en: "Reliable research", de: "Verlässliche Forschung"}
+    en: >-
+      The certificate serves reliable research: a state of science of the highest quality at a time when the tools of
+      artificial intelligence grow ever more powerful. Its object is the growth of knowledge — claims that a community
+      can examine and accept for reasons — on a sound foundation in the theory of science.
+    de: >-
+      Das Zertifikat dient verlässlicher Forschung: einem Wissenschaftsstand höchster Qualität in einer Zeit immer
+      mächtigerer Werkzeuge der künstlichen Intelligenz. Sein Gegenstand ist die Förderung von Erkenntnis — von
+      Aussagen, die eine Gemeinschaft prüfen und aus Gründen annehmen kann — auf solider wissenschaftstheoretischer
+      Grundlage.
+  - id: flood
+    title: {en: "Against a flood of unchecked texts", de: "Gegen eine Flut ungeprüfter Texte"}
+    en: >-
+      Generative systems write texts faster than any community can read them. Without standards, scientific
+      information is flooded with unchecked texts, fabrications and unreliable output that meet none of the standards
+      of scientific communication. A store full of such texts is an archive of claims, not a body of knowledge.
+    de: >-
+      Generative Systeme schreiben Texte schneller, als eine Gemeinschaft sie lesen kann. Ohne Standards wird die
+      wissenschaftliche Information von ungeprüften, gefälschten und unzuverlässig erzeugten Texten überschwemmt, die
+      keinen Standard wissenschaftlicher Kommunikation erfüllen. Ein Speicher voller solcher Texte ist ein Archiv von
+      Behauptungen, kein Wissensbestand.
+  - id: no-way-back
+    title: {en: "No way back", de: "Kein Weg zurück"}
+    en: >-
+      There is no way back to classical publishing. A text written by a human author alone, with at most a correction
+      of its spelling, is unrealistic, and it is not desirable for method: the tools can reconstruct an argument,
+      replay a computation and check a quotation at its source more completely than a reader can. What matters is not
+      who typed a sentence but whether its justification can be examined and who answers for it.
+    de: >-
+      Es gibt keinen Weg zurück zum klassischen Publikationswesen. Ein allein von einem Menschen geschriebener Text,
+      allenfalls maschinell in der Rechtschreibung korrigiert, ist unrealistisch und methodisch nicht wünschenswert:
+      Die Werkzeuge können ein Argument rekonstruieren, eine Rechnung nachrechnen und ein Zitat an seiner Fundstelle
+      prüfen, vollständiger als ein Leser. Entscheidend ist nicht, wer einen Satz getippt hat, sondern ob seine
+      Begründung prüfbar ist und wer für ihn einsteht.
+  - id: peer-review
+    title: {en: "Peer review, continued", de: "Peer Review, weitergeführt"}
+    en: >-
+      Peer review reads a text and judges it; it cannot re-run every step. Automated scientific lectors that work under
+      certified, openly stated standards take over the mechanical part of review completely: every ground at its
+      place, every computation re-run, every argument made explicit. They leave to named referees, item by item, the
+      judgements that no program settles. The thesis of this certificate is that in this division they fulfil the role
+      of peer review better than a reading of the text alone. Famulus Lektor is the instrument that reconstructs the
+      argument; the certificate continues its work into publication.
+    de: >-
+      Peer Review liest einen Text und beurteilt ihn; es kann nicht jeden Schritt nachrechnen. Automatisierte
+      wissenschaftliche Lektoren, die nach zertifizierten, offen formulierten Standards arbeiten, übernehmen den
+      mechanischen Teil der Begutachtung vollständig: jeder Grund an seiner Stelle, jede Rechnung nachgerechnet, jedes
+      Argument ausdrücklich gemacht. Sie überlassen namentlich genannten Gutachtern Punkt für Punkt die Urteile, die
+      kein Programm entscheidet. Die These dieses Zertifikats ist, dass sie in dieser Arbeitsteilung die Rolle des
+      Peer Review besser erfüllen als eine Lektüre des Textes allein. Famulus Lektor ist das Instrument, das das
+      Argument rekonstruiert; das Zertifikat führt seine Arbeit in die Publikation weiter.
+  - id: open-standard
+    title: {en: "An open standard", de: "Ein offener Standard"}
+    en: >-
+      The standards are put openly to discussion and then adopted with the broadest possible support (see "Open to discussion").
+    de: >-
+      Die Standards werden offen zur Diskussion gestellt und danach mit möglichst breiter Unterstützung verabschiedet
+      (siehe „Offen zur Diskussion“).
+
+# The foundation: computational epistemology (G. Graßhoff, "Computational Epistemology: Foundations", Famulus
+# Fundamentals No. 1, 2026). Each tenet in the paper's own terms; `elements` names the elements that implement it.
+foundation:
+  title: {en: "Computational epistemology", de: "Computational Epistemology"}
+  tenets:
+    - id: justification
+      elements: [GR, AR, IC]
+      en: "A statement is justified relative to a declared space of evidence when it follows from addressed premises by the rules of the discipline and nothing in that space refutes it. Evidence justifies only as a premise of an argument. Not justified is not false: a missing ground justifies nothing and refutes nothing."
+      de: "Eine Aussage ist relativ zu einem erklärten Evidenzraum begründet, wenn sie aus adressierten Prämissen nach den Regeln der Disziplin folgt und nichts in diesem Raum sie widerlegt. Evidenz begründet nur als Prämisse eines Arguments. Nicht begründet heißt nicht falsch: Ein fehlender Grund begründet nichts und widerlegt nichts."
+    - id: witness
+      elements: [IC, NV]
+      en: "A compiled answer is a dependent witness. It restates its sources, adds no evidence, and its agreement with them confirms nothing — as a manuscript copied from an extant exemplar is no witness to the text. The output of a language model is therefore a reading to be checked, never a check."
+      de: "Eine kompilierte Antwort ist ein abhängiger Zeuge. Sie gibt ihre Quellen wieder, fügt keine Evidenz hinzu, und ihre Übereinstimmung mit ihnen bestätigt nichts — so wie eine Handschrift, die von einer erhaltenen Vorlage abgeschrieben ist, kein Zeuge des Textes ist. Die Ausgabe eines Sprachmodells ist deshalb eine zu prüfende Lesart, nie eine Prüfung."
+    - id: best-explanation
+      elements: [AR, RF]
+      en: "Where a question is open, the best explanation is the answer that survives the evidence discriminating between the candidates, not the answer that agrees with the most observations."
+      de: "Wo eine Frage offen ist, ist die beste Erklärung die Antwort, die der zwischen den Kandidaten unterscheidenden Evidenz standhält, nicht die, die mit den meisten Beobachtungen übereinstimmt."
+    - id: instrument
+      elements: [AC, CL]
+      en: "A system that serves research is an instrument with which the scholar acts. It does not hold a proposition true and does not answer for one; the scholar who adopts its result asserts the proposition and answers for it."
+      de: "Ein System, das der Forschung dient, ist ein Instrument, mit dem der Wissenschaftler handelt. Es hält keine Aussage für wahr und steht für keine ein; der Wissenschaftler, der sein Ergebnis übernimmt, behauptet die Aussage und steht für sie ein."
+    - id: knowledge
+      elements: [CL, NV, GR, AR, IC, RF, EX, AC]
+      en: "A claim enters the body of knowledge of a community that includes generative agents when six conditions hold: truth, accountable assertion, novelty, best attestation, communicability and scrutiny. Truth cannot be checked from outside; the other five can be checked at publication, and the eight elements of the certificate measure them."
+      de: "Eine Aussage geht in den Wissensbestand einer Gemeinschaft, zu der generative Agenten gehören, ein, wenn sechs Bedingungen erfüllt sind: Wahrheit, verantwortete Behauptung, Neuheit, beste Bezeugung, Mitteilbarkeit und Prüfung durch andere. Wahrheit lässt sich nicht von außen prüfen; die anderen fünf lassen sich bei der Publikation prüfen, und die acht Elemente des Zertifikats messen sie."
+  mapping:   # condition of knowledge -> elements of the certificate
+    - {condition: {en: "Accountable assertion", de: "Verantwortete Behauptung"}, elements: [AC, CL]}
+    - {condition: {en: "Novelty", de: "Neuheit"}, elements: [NV]}
+    - {condition: {en: "Best attestation", de: "Beste Bezeugung"}, elements: [GR, AR, IC]}
+    - {condition: {en: "Communicability", de: "Mitteilbarkeit"}, elements: [CL, EX]}
+    - {condition: {en: "Scrutiny", de: "Prüfung durch andere"}, elements: [RF, AC]}
+
+# How the specification becomes binding (owner, 21 Nov 2026: "Die Standards werden offen zur Diskussion gestellt und
+# danach mit möglichst breiter Unterstützung verabschiedet").
+governance:
+  stage: {en: "draft for discussion", de: "Entwurf zur Diskussion"}
+  steps:
+    - en: "Discussion. From 21 November 2026 the draft is open to anyone. A comment or objection names the condition it concerns (e.g. GR2) and gives its reasons; it is sent to the address below, by persons or by agents."
+      de: "Diskussion. Seit dem 21. November 2026 steht der Entwurf allen offen. Ein Kommentar oder Einwand nennt die Bedingung, die er betrifft (z. B. GR2), und seine Gründe; er geht an die Adresse unten, von Personen oder Agenten."
+    - en: "Record. Every objection is recorded with its outcome and answered; one that convinces changes the draft. The record is public beside the specification."
+      de: "Protokoll. Jeder Einwand wird mit seinem Ergebnis verzeichnet und beantwortet; einer, der überzeugt, ändert den Entwurf. Das Protokoll ist neben der Spezifikation öffentlich."
+    - en: "Adoption. After the discussion the version is adopted with the broadest possible support: persons and institutions that support it are named on its page. From then on it is in force, and it is never changed; a change is a new version."
+      de: "Verabschiedung. Nach der Diskussion wird die Fassung mit möglichst breiter Unterstützung verabschiedet: Personen und Institutionen, die sie unterstützen, werden auf ihrer Seite genannt. Von da an gilt sie und wird nicht mehr verändert; eine Änderung ist eine neue Fassung."
+  comments_to: gerd.grasshoff@opensciencetechnology.com
+  record: discussion.html
+
 # Who settles a condition. `checker`: the independent checker re-runs it from the certificate files alone.
 # `gate`: a gate of the publishing series measures it on the publisher's side (re-run by the checker where it can).
 # `author`: the named author decides it in his own terminal or in Famulus Lektor. `referee`: a named person other

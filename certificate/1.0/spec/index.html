@@ -13,7 +13,7 @@ h2{font-weight:400;font-style:italic;font-size:1.35rem;border-bottom:1px solid v
 .el h3{display:inline;font-size:1.02rem;font-weight:600}.el p{margin:.5em 0 0;font-size:.95rem}
 pre,code{font-family:"DejaVu Sans Mono",Menlo,monospace;font-size:.82rem}pre{background:var(--tile);border:1px solid var(--rule);padding:10px;overflow-x:auto;white-space:pre-wrap}
 table{border-collapse:collapse;width:100%;font-size:.92rem}td,th{border-bottom:1px solid var(--rule);padding:6px 6px;text-align:left;vertical-align:top}
-.not{border:1px solid var(--rule);padding:10px 14px}.files li{margin:.25em 0}footer{margin-top:48px;font:13px system-ui,sans-serif;color:var(--muted);border-top:1px solid var(--rule);padding-top:12px}
+.not{border:1px solid var(--rule);padding:10px 14px}h3.why{font-size:1.05rem;margin:1.2em 0 .2em;color:var(--blue)}ol.tenets li{margin:.45em 0}.files li{margin:.25em 0}footer{margin-top:48px;font:13px system-ui,sans-serif;color:var(--muted);border-top:1px solid var(--rule);padding-top:12px}
 </style><!-- famulus:publisher:start -->
 <meta name="referrer" content="no-referrer-when-downgrade">
 <meta name="publisher" content="OpenScienceTechnology GmbH">
@@ -24,8 +24,9 @@ table{border-collapse:collapse;width:100%;font-size:.92rem}td,th{border-bottom:1
 </head><body><header class="top"><a href="../../"><b>Famulus Certificate</b></a><span><a href="../../1.0/">Deed</a> · <a href="../../1.0/de/">Kurzfassung</a> · <a href="../../1.0/spec/">Specification</a> · <a href="https://famulus.lettre.ai/publications/">Famulus Publications</a></span></header><main><h1 id="famulus-certificate-10--specification">Famulus Certificate 1.0 —
 Specification</h1>
 <p>Format <code>famulus-certificate/1</code> · version 1.0 · 21 November
-2026 · status: draft · steward: OpenScienceTechnology GmbH (editor Gerd
-Graßhoff) · this text: CC BY 4.0 · address: <a
+2026 · status: draft for discussion (§11) · steward:
+OpenScienceTechnology GmbH (editor Gerd Graßhoff) · this text: CC BY 4.0
+· address: <a
 href="https://famulus.lettre.ai/certificate/1.0/">https://famulus.lettre.ai/certificate/1.0/</a></p>
 <p>This is the normative text. The deed (the short form for readers) and
 the machine-readable description (<code>fc-1.0.jsonld</code>) are
@@ -50,7 +51,102 @@ claim false.</p>
 <p>The certificate is written for publications made with computer
 programs and language models, and applies to any publication. It is
 independent of the subject, the language and the publisher.</p>
-<h2 id="2-trust-model">2. Trust model</h2>
+<h2 id="2-why-the-certificate-exists">2. Why the certificate exists</h2>
+<p><strong>Reliable research.</strong> The certificate serves reliable
+research: a state of science of the highest quality at a time when the
+tools of artificial intelligence grow ever more powerful. Its object is
+the growth of knowledge — claims that a community can examine and accept
+for reasons — on a sound foundation in the theory of science.</p>
+<p><strong>Against a flood of unchecked texts.</strong> Generative
+systems write texts faster than any community can read them. Without
+standards, scientific information is flooded with unchecked texts,
+fabrications and unreliable output that meet none of the standards of
+scientific communication. A store full of such texts is an archive of
+claims, not a body of knowledge.</p>
+<p><strong>No way back.</strong> There is no way back to classical
+publishing. A text written by a human author alone, with at most a
+correction of its spelling, is unrealistic, and it is not desirable for
+method: the tools can reconstruct an argument, replay a computation and
+check a quotation at its source more completely than a reader can. What
+matters is not who typed a sentence but whether its justification can be
+examined and who answers for it.</p>
+<p><strong>Peer review, continued.</strong> Peer review reads a text and
+judges it; it cannot re-run every step. Automated scientific lectors
+that work under certified, openly stated standards take over the
+mechanical part of review completely: every ground at its place, every
+computation re-run, every argument made explicit. They leave to named
+referees, item by item, the judgements that no program settles. The
+thesis of this certificate is that in this division they fulfil the role
+of peer review better than a reading of the text alone. Famulus Lektor
+is the instrument that reconstructs the argument; the certificate
+continues its work into publication.</p>
+<p><strong>An open standard.</strong> The standards are put openly to
+discussion and then adopted with the broadest possible support (see
+"Open to discussion").</p>
+<h2 id="3-the-foundation-computational-epistemology">3. The foundation:
+computational epistemology</h2>
+<p>The certificate rests on the account of justification of
+computational epistemology (G. Graßhoff, <em>Computational Epistemology:
+Foundations</em>, Famulus Fundamentals No. 1, 2026). Its tenets, with
+the elements that implement them:</p>
+<ol type="1">
+<li>A statement is justified relative to a declared space of evidence
+when it follows from addressed premises by the rules of the discipline
+and nothing in that space refutes it. Evidence justifies only as a
+premise of an argument. Not justified is not false: a missing ground
+justifies nothing and refutes nothing. (→ GR, AR, IC)</li>
+<li>A compiled answer is a dependent witness. It restates its sources,
+adds no evidence, and its agreement with them confirms nothing — as a
+manuscript copied from an extant exemplar is no witness to the text. The
+output of a language model is therefore a reading to be checked, never a
+check. (→ IC, NV)</li>
+<li>Where a question is open, the best explanation is the answer that
+survives the evidence discriminating between the candidates, not the
+answer that agrees with the most observations. (→ AR, RF)</li>
+<li>A system that serves research is an instrument with which the
+scholar acts. It does not hold a proposition true and does not answer
+for one; the scholar who adopts its result asserts the proposition and
+answers for it. (→ AC, CL)</li>
+<li>A claim enters the body of knowledge of a community that includes
+generative agents when six conditions hold: truth, accountable
+assertion, novelty, best attestation, communicability and scrutiny.
+Truth cannot be checked from outside; the other five can be checked at
+publication, and the eight elements of the certificate measure them. (→
+CL, NV, GR, AR, IC, RF, EX, AC)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>condition of knowledge</th>
+<th>measured by the elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accountable assertion</td>
+<td>AC, CL</td>
+</tr>
+<tr>
+<td>Novelty</td>
+<td>NV</td>
+</tr>
+<tr>
+<td>Best attestation</td>
+<td>GR, AR, IC</td>
+</tr>
+<tr>
+<td>Communicability</td>
+<td>CL, EX</td>
+</tr>
+<tr>
+<td>Scrutiny</td>
+<td>RF, AC</td>
+</tr>
+</tbody>
+</table>
+<p>Truth, the first condition, is not measured: it cannot be checked
+from outside.</p>
+<h2 id="4-trust-model">4. Trust model</h2>
 <ul>
 <li><strong>Untrusted:</strong> everything that produces the publication
 and its argument — the author's tools, agents, language models, the
@@ -61,8 +157,8 @@ the decisions of named persons, each bound to the hash of the text and
 of the argument they decided on.</li>
 </ul>
 <p>Whatever the checker cannot re-run MUST appear on the residual list
-(§6) and be signed. Nothing else is trusted.</p>
-<h2 id="3-elements-and-conditions">3. Elements and conditions</h2>
+(§8) and be signed. Nothing else is trusted.</p>
+<h2 id="5-elements-and-conditions">5. Elements and conditions</h2>
 <p>The certificate has eight elements. An element holds when every one
 of its conditions has passed. A publication is
 <strong>certified</strong> when all eight elements hold. There are no
@@ -371,7 +467,7 @@ version it read.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="4-states">4. States</h2>
+<h2 id="6-states">6. States</h2>
 <table>
 <thead>
 <tr>
@@ -397,7 +493,7 @@ or a referee outstanding, or a gap)</td>
 </table>
 <p>A condition is <em>passed</em>, <em>failed</em> or <em>open</em>. A
 gap is open, never passed. A service that does not answer is a gap.</p>
-<h2 id="5-files">5. Files</h2>
+<h2 id="7-files">7. Files</h2>
 <p>A certificate is a folder <code>certificate/</code> published beside
 the editions of the version it certifies. All files are UTF-8 JSON.
 Paths are relative to the folder.</p>
@@ -488,7 +584,7 @@ it)</td>
 </tr>
 <tr>
 <td><code>residual.json</code></td>
-<td>the residual list (§6): <code>id</code>, <code>kind</code>,
+<td>the residual list (§8): <code>id</code>, <code>kind</code>,
 <code>about</code>, <code>text</code></td>
 </tr>
 <tr>
@@ -538,7 +634,7 @@ addresses.</p>
 every run of white space replaced by one space; leading and trailing
 space removed. Hashes of cited content and the search for quotations use
 it.</p>
-<h2 id="6-the-residual-list">6. The residual list</h2>
+<h2 id="8-the-residual-list">8. The residual list</h2>
 <p>The residual list holds the judgements no program settles. It MUST
 contain, at least:</p>
 <table>
@@ -600,7 +696,7 @@ faithfully</td>
 <code>text_sha</code> or <code>argument_sha</code> does not count. A
 referee who disagrees makes the item fail unless the claim is withdrawn
 or marked as contested in that version.</p>
-<h2 id="7-the-checker">7. The checker</h2>
+<h2 id="9-the-checker">9. The checker</h2>
 <p>A conforming checker:</p>
 <ol type="1">
 <li>imports no code of the producer and calls none of its services; it
@@ -612,13 +708,13 @@ reports a difference as drift, not as failure;</li>
 open, and reads the records of the author, the referees and the series
 for the others;</li>
 <li>reports the state, the number of elements that hold and the mark
-(§8).</li>
+(§10).</li>
 </ol>
 <p>The reference implementation is <code>fc_check.py</code> (Python
 standard library only), published with this specification together with
 test vectors (<code>vectors/</code>): every implementation MUST
 reproduce the expected state of every vector.</p>
-<h2 id="8-the-mark">8. The mark</h2>
+<h2 id="10-the-mark">10. The mark</h2>
 <p>A certified publication MUST carry the mark, in its page edition and
 its print edition:</p>
 <blockquote>
@@ -643,14 +739,31 @@ of an item of <code>hasPart</code> with <code>@type</code>
 <code>CreativeWork</code> and <code>name</code>
 <code>Famulus Certificate FC 1.0</code> (see
 <code>fc-1.0.jsonld</code>).</p>
-<h2 id="9-versions-of-the-specification">9. Versions of the
-specification</h2>
-<p>A published version of this specification is never changed. A change
-is a new version at a new address
+<h2 id="11-discussion-adoption-versions">11. Discussion, adoption,
+versions</h2>
+<p>Status: <strong>draft for discussion</strong>.</p>
+<ol type="1">
+<li>Discussion. From 21 November 2026 the draft is open to anyone. A
+comment or objection names the condition it concerns (e.g. GR2) and
+gives its reasons; it is sent to the address below, by persons or by
+agents.</li>
+<li>Record. Every objection is recorded with its outcome and answered;
+one that convinces changes the draft. The record is public beside the
+specification.</li>
+<li>Adoption. After the discussion the version is adopted with the
+broadest possible support: persons and institutions that support it are
+named on its page. From then on it is in force, and it is never changed;
+a change is a new version.</li>
+</ol>
+<p>Address for comments and objections: <a
+href="mailto:gerd.grasshoff@opensciencetechnology.com">gerd.grasshoff@opensciencetechnology.com</a>.
+Record: <a href="../discussion.html">discussion.html</a>.</p>
+<p>A published version of this specification is never changed once it is
+adopted. A change is a new version at a new address
 (<code>/certificate/&lt;version&gt;/</code>); what was certified under
 an earlier version stays certified under it. Each version lists its
 changes.</p>
-<h2 id="10-relation-to-the-famulus-expertise-series">10. Relation to the
+<h2 id="12-relation-to-the-famulus-expertise-series">12. Relation to the
 Famulus Expertise series</h2>
 <p>Famulus Expertise requires the certificate for every issue (rule R11
 of the series). The quality seal of the series is the certificate plus

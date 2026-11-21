@@ -1,7 +1,7 @@
 {
  "schema": "famulus-publications/1",
  "url": "https://famulus.lettre.ai/publications/",
- "generated": "2026-11-19T10:59:58",
+ "generated": "2026-11-21T12:28:58",
  "series": [
   {
    "key": "expertise",
@@ -13,7 +13,7 @@
     "en": "Single studies that can be checked: every statement about the source can be tested at its place in the source, by readers and by programs."
    },
    "published": 5,
-   "in_preparation": 0,
+   "in_preparation": 1,
    "machine_readable": "https://famulus.lettre.ai/expertise/series.json"
   },
   {

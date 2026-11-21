@@ -1,0 +1,154 @@
+# Famulus Certificate — the one statement of its elements and conditions.
+#
+# Owner, 21 Nov 2026 (dossier publications.md, "Famulus Certificate"): every computer-generated publication of Famulus
+# Expertise must pass a certificate; the certificate is labelled like a Creative Commons licence, with a specification
+# of its own that is published the way the Creative Commons rules are published and so made generally usable.
+#
+# Everything that states the certificate is written from this file: the deed (DE, EN), the specification, the
+# machine-readable description (JSON-LD), the badge, the gates of the series that measure an element
+# (gates/katalog/zertifikat.yaml names the element), the colophon of an issue, the Comment for Nature Computational
+# Science. The independent checker (checker/fc_check.py) does not read this file: it is written from the
+# specification, so that a defect here cannot hide a defect there.
+#
+# Lifecycle: a published version is never changed. A change is a new version with its own address
+# (/certificate/<version>/); the old version keeps its address and stays valid for what was certified under it.
+
+certificate: Famulus Certificate
+short: FC
+version: "1.0"
+status: draft            # draft | in-force | superseded. In force when the owner adopts it; until then every mark says "draft".
+date: 2026-11-21
+steward: {name: OpenScienceTechnology GmbH, place: Duisburg, editor: Gerd Graßhoff}
+url: https://famulus.lettre.ai/certificate/1.0/
+licence_of_the_text: {name: CC BY 4.0, url: https://creativecommons.org/licenses/by/4.0/}
+format: famulus-certificate/1
+
+purpose:
+  en: >-
+    The Famulus Certificate states that a publication carries the justification of its claims in a form that others
+    can examine: every claim as a proposition, every ground at a pinned address, the argument as an explicit structure,
+    everything mechanical re-run by a checker that is not the producer's, and every judgement that no program settles
+    listed and signed by a named person. It certifies a procedure and its record. It does not certify that a claim is
+    true.
+  de: >-
+    Das Famulus-Zertifikat bescheinigt, dass eine Publikation die Begründung ihrer Aussagen in einer Form trägt, die
+    andere prüfen können: jede Aussage als Proposition, jeder Grund an einer gepinnten Adresse, das Argument als
+    ausdrückliche Struktur, alles Mechanische von einem Prüfprogramm nachgerechnet, das nicht das des Herstellers ist,
+    und jedes Urteil, das kein Programm entscheidet, aufgelistet und von einer namentlich genannten Person
+    unterzeichnet. Es bescheinigt ein Verfahren und dessen Protokoll. Es bescheinigt nicht, dass eine Aussage wahr ist.
+
+# Who settles a condition. `checker`: the independent checker re-runs it from the certificate files alone.
+# `gate`: a gate of the publishing series measures it on the publisher's side (re-run by the checker where it can).
+# `author`: the named author decides it in his own terminal or in Famulus Lektor. `referee`: a named person other
+# than the author signs it item by item.
+settled_by: [checker, gate, author, referee]
+
+# The eight elements. Their order and codes are fixed for version 1.0. A publication carries the mark only when every
+# element holds; there are no partial marks. A preprint shows the state of each element instead (see `marks`).
+elements:
+  - code: CL
+    id: claims
+    title: {en: Claim ledger, de: Aussagenverzeichnis}
+    requirement:
+      en: Every claim of the publication is stated as a proposition, with its place in the text, and marked as grounded, as a thesis, or as a gap.
+      de: Jede Aussage der Publikation steht als Proposition mit ihrer Stelle im Text und ist als begründet, als These oder als Lücke gekennzeichnet.
+    conditions:
+      - {id: CL1, settled_by: checker, en: "The ledger lists at least one claim; every claim has an id, a text, a section of the publication and a status grounded | thesis | gap.", de: "Das Verzeichnis nennt mindestens eine Aussage; jede hat eine Kennung, einen Wortlaut, einen Abschnitt der Publikation und einen Status begründet | These | Lücke."}
+      - {id: CL2, settled_by: checker, en: "A grounded claim names at least one ground; a gap names what is missing.", de: "Eine begründete Aussage nennt mindestens einen Grund; eine Lücke nennt, was fehlt."}
+      - {id: CL3, settled_by: author, en: "The author has agreed to the ledger for exactly this text.", de: "Der Autor hat dem Verzeichnis für genau diesen Text zugestimmt."}
+  - code: NV
+    id: novelty
+    title: {en: Novelty statement, de: Neuheitserklärung}
+    requirement:
+      en: The publication states what it adds, against prior work cited at its addresses.
+      de: Die Publikation erklärt, was sie hinzufügt, gegenüber früheren Arbeiten, die an ihren Adressen zitiert sind.
+    conditions:
+      - {id: NV1, settled_by: checker, en: "The certificate holds a novelty statement with at least one item; every item names the claims it concerns and at least one prior work by address or bibliographic key, or states that no prior work is known and where it was searched.", de: "Das Zertifikat enthält eine Neuheitserklärung mit mindestens einem Punkt; jeder Punkt nennt die betroffenen Aussagen und mindestens eine frühere Arbeit mit Adresse oder bibliographischem Schlüssel, oder erklärt, dass keine bekannt ist und wo gesucht wurde."}
+      - {id: NV2, settled_by: referee, en: "A referee has judged the novelty statement adequate.", de: "Ein Gutachter hat die Neuheitserklärung als zutreffend beurteilt."}
+  - code: GR
+    id: grounds
+    title: {en: Pinned grounds, de: Gepinnte Gründe}
+    requirement:
+      en: Every ground stands at an address that resolves at a fixed version, and the content cited there is identified by its hash.
+      de: Jeder Grund steht an einer Adresse, die in einer festen Fassung auflöst, und der dort zitierte Inhalt ist durch seinen Hash bestimmt.
+    conditions:
+      - {id: GR1, settled_by: checker, en: "Every ground of the ledger is a Famulus reference (famulus-ref/2) pinned by @rel:, @snap: or @sha:.", de: "Jeder Grund des Verzeichnisses ist eine Famulus-Referenz (famulus-ref/2), gepinnt mit @rel:, @snap: oder @sha:."}
+      - {id: GR2, settled_by: checker, en: "For every ground the certificate holds the cited content; its SHA-256 under the declared normalisation equals the pin or the recorded hash.", de: "Für jeden Grund enthält das Zertifikat den zitierten Inhalt; sein SHA-256 unter der erklärten Normalisierung gleicht dem Pin oder dem verzeichneten Hash."}
+      - {id: GR3, settled_by: checker, en: "Every quotation recorded as verbatim stands, under the declared normalisation, in the cited content of its ground; a quotation that is a rendering (a translation, a paraphrase in quotation marks) is recorded as such and appears on the residual list.", de: "Jedes als wörtlich verzeichnete Zitat steht unter der erklärten Normalisierung im zitierten Inhalt seines Grundes; ein Zitat, das eine Wiedergabe ist (Übersetzung, Paraphrase in Anführungszeichen), ist als solche verzeichnet und steht auf der Restliste."}
+      - {id: GR4, settled_by: referee, en: "For every load-bearing premise a referee has confirmed an independent witness, or the premise is listed as resting on one witness.", de: "Für jede tragende Voraussetzung hat ein Gutachter einen unabhängigen Zeugen bestätigt, oder die Voraussetzung ist als auf einem Zeugen ruhend verzeichnet."}
+  - code: AR
+    id: argument
+    title: {en: Explicit argument, de: Ausdrückliches Argument}
+    requirement:
+      en: The inference from grounds to claims is an explicit graph with typed edges; for every explanatory claim the rivals and the cases that discriminate between them are named.
+      de: Der Schluss von den Gründen auf die Aussagen ist ein ausdrücklicher Graph mit typisierten Kanten; für jede erklärende Aussage sind die Rivalen und die unterscheidenden Fälle genannt.
+    conditions:
+      - {id: AR1, settled_by: checker, en: "The certificate holds the argument graph; its hash equals argument_sha of the manifest.", de: "Das Zertifikat enthält den Argumentgraphen; sein Hash gleicht argument_sha des Manifests."}
+      - {id: AR2, settled_by: checker, en: "Every edge has a kind from the declared list; every node an edge names exists; the support relation has no cycle.", de: "Jede Kante hat eine Art aus der erklärten Liste; jeder Knoten, den eine Kante nennt, existiert; die Stützrelation hat keinen Zyklus."}
+      - {id: AR3, settled_by: checker, en: "Every claim marked explanatory names at least one rival and, for each rival, the discriminating cases at addresses, or states why the case that would discriminate is not available (the condition is then open); or it carries the gap 'no rival examined'.", de: "Jede als erklärend gekennzeichnete Aussage nennt mindestens einen Rivalen und für jeden die unterscheidenden Fälle an Adressen, oder sagt, warum der unterscheidende Fall nicht verfügbar ist (die Bedingung ist dann offen); oder sie trägt die Lücke „kein Rivale geprüft“."}
+      - {id: AR4, settled_by: author, en: "The author has agreed to every thesis, premise and step of the reconstructed argument for exactly this text.", de: "Der Autor hat jeder These, jeder Voraussetzung und jedem Schritt des rekonstruierten Arguments für genau diesen Text zugestimmt."}
+  - code: IC
+    id: independent-check
+    title: {en: Independent check, de: Unabhängige Prüfung}
+    requirement:
+      en: Everything mechanical is re-run by a checker written apart from the producer's software. Outputs of language models count as readings, never as checks.
+      de: Alles Mechanische rechnet ein Prüfprogramm nach, das getrennt von der Software des Herstellers geschrieben ist. Ausgaben von Sprachmodellen zählen als Lesarten, nie als Prüfungen.
+    conditions:
+      - {id: IC1, settled_by: checker, en: "Every file of the certificate has the hash the manifest names.", de: "Jede Datei des Zertifikats hat den Hash, den das Manifest nennt."}
+      - {id: IC2, settled_by: checker, en: "Every computation of the certificate recomputes from its inputs to its recorded output, or is listed as not re-runnable on the residual list.", de: "Jede Rechnung des Zertifikats ergibt aus ihren Eingaben die verzeichnete Ausgabe, oder sie steht als nicht nachrechenbar auf der Restliste."}
+      - {id: IC3, settled_by: checker, en: "Every output of a language model on which a verdict depends is recorded as a reading (model, instruction version, hashes of input and output) and appears on the residual list.", de: "Jede Ausgabe eines Sprachmodells, von der ein Urteil abhängt, ist als Lesart verzeichnet (Modell, Instruktionsversion, Hashes von Eingabe und Ausgabe) und steht auf der Restliste."}
+      - {id: IC4, settled_by: checker, en: "A checker run of this certificate, by a program that is not the producer's, reports every checker condition passed.", de: "Ein Prüflauf dieses Zertifikats durch ein Programm, das nicht das des Herstellers ist, meldet jede Prüfbedingung als bestanden."}
+  - code: RF
+    id: referee
+    title: {en: Referee sign-off, de: Gutachterliche Zeichnung}
+    requirement:
+      en: What no program settles is listed item by item, and a named referee other than the author signs each item.
+      de: Was kein Programm entscheidet, ist Punkt für Punkt aufgelistet, und ein namentlich genannter Gutachter, der nicht der Autor ist, zeichnet jeden Punkt.
+    conditions:
+      - {id: RF1, settled_by: checker, en: "The residual list holds, for every grounded claim, the item 'the ground carries the claim'; for every claim, 'the claim means what the text asserts'; for every reading, 'the reading is right'; for every explanatory claim, 'the rivals are adequate'; and the item 'the novelty statement is adequate'.", de: "Die Restliste enthält für jede begründete Aussage den Punkt „der Grund trägt die Aussage“; für jede Aussage „die Aussage meint, was der Text behauptet“; für jede Lesart „die Lesart ist richtig“; für jede erklärende Aussage „die Rivalen sind angemessen“; und den Punkt „die Neuheitserklärung trifft zu“."}
+      - {id: RF2, settled_by: referee, en: "Every item of the residual list carries a signature: referee, date, decision (agree | disagree), reason; the referee is not an author.", de: "Jeder Punkt der Restliste trägt eine Zeichnung: Gutachter, Datum, Entscheidung (stimmt | stimmt nicht), Grund; der Gutachter ist kein Autor."}
+      - {id: RF3, settled_by: checker, en: "Every signature is bound to the current text_sha and argument_sha; a signature to another hash does not count.", de: "Jede Zeichnung ist an den aktuellen text_sha und argument_sha gebunden; eine Zeichnung zu einem anderen Hash zählt nicht."}
+      - {id: RF4, settled_by: checker, en: "No item is signed 'disagree' unless the claim it concerns is withdrawn or marked as contested in this version.", de: "Kein Punkt ist mit „stimmt nicht“ gezeichnet, es sei denn, die betroffene Aussage ist in dieser Fassung zurückgenommen oder als bestritten gekennzeichnet."}
+  - code: EX
+    id: exposition
+    title: {en: Readable exposition, de: Lesbare Darstellung}
+    requirement:
+      en: A readable account links each claim to its place in the checked structure, in a page edition and a print edition with the same text.
+      de: Eine lesbare Darstellung verbindet jede Aussage mit ihrer Stelle in der geprüften Struktur, in einer Seiten- und einer Druckausgabe mit demselben Text.
+    conditions:
+      - {id: EX1, settled_by: checker, en: "The page edition has an anchor for every claim of the ledger (#claim-<id>).", de: "Die Seitenausgabe hat für jede Aussage des Verzeichnisses einen Anker (#claim-<id>)."}
+      - {id: EX2, settled_by: checker, en: "The page edition and the print edition are files of the manifest with their hashes, and the page edition carries the mark of this certificate with its state.", de: "Seiten- und Druckausgabe sind Dateien des Manifests mit ihren Hashes, und die Seitenausgabe trägt die Marke dieses Zertifikats mit ihrem Stand."}
+      - {id: EX3, settled_by: gate, en: "The print edition carries the same mark; the publishing series reads it from the rendered PDF.", de: "Die Druckausgabe trägt dieselbe Marke; die Reihe liest sie aus dem gesetzten PDF."}
+  - code: AC
+    id: accountability
+    title: {en: Accountability, de: Verantwortung}
+    requirement:
+      en: A named author answers for the claims; contributions of AI systems are declared by part; the version is identified by content hashes; objections are recorded and answered.
+      de: Ein namentlich genannter Autor steht für die Aussagen ein; Beiträge von KI-Systemen sind nach Teilen erklärt; die Fassung ist durch Inhalts-Hashes bestimmt; Einwände werden verzeichnet und beantwortet.
+    conditions:
+      - {id: AC1, settled_by: checker, en: "The manifest names at least one author with an identifier (ORCID or address) and the version with text_sha.", de: "Das Manifest nennt mindestens einen Autor mit Kennung (ORCID oder Adresse) und die Fassung mit text_sha."}
+      - {id: AC2, settled_by: checker, en: "The AI declaration lists every part of the publication (text, preamble, argument, figures, computations, translations) with the systems that contributed and their role (none | assistive | drafting | evaluative); a part without an entry is a gap.", de: "Die KI-Erklärung führt jeden Teil der Publikation (Text, Präambel, Argument, Abbildungen, Rechnungen, Übersetzungen) mit den beteiligten Systemen und ihrer Rolle (keine | unterstützend | entwerfend | bewertend); ein Teil ohne Eintrag ist eine Lücke."}
+      - {id: AC3, settled_by: author, en: "The author has confirmed the AI declaration and released exactly this version (text_sha).", de: "Der Autor hat die KI-Erklärung bestätigt und genau diese Fassung (text_sha) freigegeben."}
+      - {id: AC4, settled_by: checker, en: "Every objection on record has a decided status, and every convincing objection is annotated in this version or an earlier one later than the version it read.", de: "Jeder verzeichnete Einwand hat einen entschiedenen Stand, und jeder überzeugende Einwand ist in dieser Fassung annotiert oder in einer früheren, die später ist als die gelesene."}
+
+# The state of a certificate, computed by the checker from the conditions; never entered by hand.
+states:
+  certified: {en: "certified", de: "zertifiziert", rule: "every condition of every element passed"}
+  pending: {en: "pending", de: "ausstehend", rule: "no condition failed, at least one is open (author, referee or gap)"}
+  failed: {en: "failed", de: "nicht bestanden", rule: "at least one condition failed"}
+
+# How the mark is written. `{elements}` are the eight codes in order, joined by the middle dot.
+marks:
+  certified:
+    en: "Published according to the Famulus Certificate FC 1.0 [CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
+    de: "Veröffentlicht nach dem Famulus-Zertifikat FC 1.0 [CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
+  pending:
+    en: "Famulus Certificate FC 1.0: pending — {held} of 8 elements hold [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+    de: "Famulus-Zertifikat FC 1.0: ausstehend — {held} von 8 Elementen erfüllt [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+  failed:
+    en: "Famulus Certificate FC 1.0: not passed [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+    de: "Famulus-Zertifikat FC 1.0: nicht bestanden [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+  # In `{state}` an element that holds is written with its code, an open one in lower case, a failed one struck: ~~GR~~.
+
+# Normalisation for hashes of cited content (GR2, GR3): Unicode NFC, every run of white space one space, trimmed.
+normalisation: nfc-ws1

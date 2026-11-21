@@ -1,0 +1,301 @@
+{
+ "@context": {
+  "@vocab": "https://schema.org/",
+  "fc": "https://famulus.lettre.ai/certificate/1.0/#"
+ },
+ "@type": "CreativeWork",
+ "@id": "https://famulus.lettre.ai/certificate/1.0/",
+ "name": "Famulus Certificate FC 1.0",
+ "version": "1.0",
+ "creativeWorkStatus": "draft",
+ "dateCreated": "2026-11-21",
+ "encodingFormat": "famulus-certificate/1",
+ "publisher": {
+  "@type": "Organization",
+  "name": "OpenScienceTechnology GmbH"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "description": "The Famulus Certificate states that a publication carries the justification of its claims in a form that others can examine: every claim as a proposition, every ground at a pinned address, the argument as an explicit structure, everything mechanical re-run by a checker that is not the producer's, and every judgement that no program settles listed and signed by a named person. It certifies a procedure and its record. It does not certify that a claim is true.",
+ "url": "https://famulus.lettre.ai/certificate/1.0/",
+ "hasPart": [
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#CL",
+   "termCode": "CL",
+   "name": "Claim ledger",
+   "alternateName": "Aussagenverzeichnis",
+   "description": "Every claim of the publication is stated as a proposition, with its place in the text, and marked as grounded, as a thesis, or as a gap.",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "CL1",
+     "description": "The ledger lists at least one claim; every claim has an id, a text, a section of the publication and a status grounded | thesis | gap.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "CL2",
+     "description": "A grounded claim names at least one ground; a gap names what is missing.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "CL3",
+     "description": "The author has agreed to the ledger for exactly this text.",
+     "fc:settledBy": "author"
+    }
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#NV",
+   "termCode": "NV",
+   "name": "Novelty statement",
+   "alternateName": "Neuheitserklärung",
+   "description": "The publication states what it adds, against prior work cited at its addresses.",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "NV1",
+     "description": "The certificate holds a novelty statement with at least one item; every item names the claims it concerns and at least one prior work by address or bibliographic key, or states that no prior work is known and where it was searched.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "NV2",
+     "description": "A referee has judged the novelty statement adequate.",
+     "fc:settledBy": "referee"
+    }
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#GR",
+   "termCode": "GR",
+   "name": "Pinned grounds",
+   "alternateName": "Gepinnte Gründe",
+   "description": "Every ground stands at an address that resolves at a fixed version, and the content cited there is identified by its hash.",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "GR1",
+     "description": "Every ground of the ledger is a Famulus reference (famulus-ref/2) pinned by @rel:, @snap: or @sha:.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "GR2",
+     "description": "For every ground the certificate holds the cited content; its SHA-256 under the declared normalisation equals the pin or the recorded hash.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "GR3",
+     "description": "Every quotation recorded as verbatim stands, under the declared normalisation, in the cited content of its ground; a quotation that is a rendering (a translation, a paraphrase in quotation marks) is recorded as such and appears on the residual list.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "GR4",
+     "description": "For every load-bearing premise a referee has confirmed an independent witness, or the premise is listed as resting on one witness.",
+     "fc:settledBy": "referee"
+    }
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#AR",
+   "termCode": "AR",
+   "name": "Explicit argument",
+   "alternateName": "Ausdrückliches Argument",
+   "description": "The inference from grounds to claims is an explicit graph with typed edges; for every explanatory claim the rivals and the cases that discriminate between them are named.",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AR1",
+     "description": "The certificate holds the argument graph; its hash equals argument_sha of the manifest.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AR2",
+     "description": "Every edge has a kind from the declared list; every node an edge names exists; the support relation has no cycle.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AR3",
+     "description": "Every claim marked explanatory names at least one rival and, for each rival, the discriminating cases at addresses, or states why the case that would discriminate is not available (the condition is then open); or it carries the gap 'no rival examined'.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AR4",
+     "description": "The author has agreed to every thesis, premise and step of the reconstructed argument for exactly this text.",
+     "fc:settledBy": "author"
+    }
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#IC",
+   "termCode": "IC",
+   "name": "Independent check",
+   "alternateName": "Unabhängige Prüfung",
+   "description": "Everything mechanical is re-run by a checker written apart from the producer's software. Outputs of language models count as readings, never as checks.",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "IC1",
+     "description": "Every file of the certificate has the hash the manifest names.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "IC2",
+     "description": "Every computation of the certificate recomputes from its inputs to its recorded output, or is listed as not re-runnable on the residual list.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "IC3",
+     "description": "Every output of a language model on which a verdict depends is recorded as a reading (model, instruction version, hashes of input and output) and appears on the residual list.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "IC4",
+     "description": "A checker run of this certificate, by a program that is not the producer's, reports every checker condition passed.",
+     "fc:settledBy": "checker"
+    }
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#RF",
+   "termCode": "RF",
+   "name": "Referee sign-off",
+   "alternateName": "Gutachterliche Zeichnung",
+   "description": "What no program settles is listed item by item, and a named referee other than the author signs each item.",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "RF1",
+     "description": "The residual list holds, for every grounded claim, the item 'the ground carries the claim'; for every claim, 'the claim means what the text asserts'; for every reading, 'the reading is right'; for every explanatory claim, 'the rivals are adequate'; and the item 'the novelty statement is adequate'.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "RF2",
+     "description": "Every item of the residual list carries a signature: referee, date, decision (agree | disagree), reason; the referee is not an author.",
+     "fc:settledBy": "referee"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "RF3",
+     "description": "Every signature is bound to the current text_sha and argument_sha; a signature to another hash does not count.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "RF4",
+     "description": "No item is signed 'disagree' unless the claim it concerns is withdrawn or marked as contested in this version.",
+     "fc:settledBy": "checker"
+    }
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#EX",
+   "termCode": "EX",
+   "name": "Readable exposition",
+   "alternateName": "Lesbare Darstellung",
+   "description": "A readable account links each claim to its place in the checked structure, in a page edition and a print edition with the same text.",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "EX1",
+     "description": "The page edition has an anchor for every claim of the ledger (#claim-<id>).",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "EX2",
+     "description": "The page edition and the print edition are files of the manifest with their hashes, and the page edition carries the mark of this certificate with its state.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "EX3",
+     "description": "The print edition carries the same mark; the publishing series reads it from the rendered PDF.",
+     "fc:settledBy": "gate"
+    }
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#AC",
+   "termCode": "AC",
+   "name": "Accountability",
+   "alternateName": "Verantwortung",
+   "description": "A named author answers for the claims; contributions of AI systems are declared by part; the version is identified by content hashes; objections are recorded and answered.",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AC1",
+     "description": "The manifest names at least one author with an identifier (ORCID or address) and the version with text_sha.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AC2",
+     "description": "The AI declaration lists every part of the publication (text, preamble, argument, figures, computations, translations) with the systems that contributed and their role (none | assistive | drafting | evaluative); a part without an entry is a gap.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AC3",
+     "description": "The author has confirmed the AI declaration and released exactly this version (text_sha).",
+     "fc:settledBy": "author"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AC4",
+     "description": "Every objection on record has a decided status, and every convincing objection is annotated in this version or an earlier one later than the version it read.",
+     "fc:settledBy": "checker"
+    }
+   ]
+  }
+ ],
+ "fc:marks": {
+  "certified": {
+   "en": "Published according to the Famulus Certificate FC 1.0 [CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/",
+   "de": "Veröffentlicht nach dem Famulus-Zertifikat FC 1.0 [CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
+  },
+  "pending": {
+   "en": "Famulus Certificate FC 1.0: pending — {held} of 8 elements hold [{state}] — https://famulus.lettre.ai/certificate/1.0/",
+   "de": "Famulus-Zertifikat FC 1.0: ausstehend — {held} von 8 Elementen erfüllt [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+  },
+  "failed": {
+   "en": "Famulus Certificate FC 1.0: not passed [{state}] — https://famulus.lettre.ai/certificate/1.0/",
+   "de": "Famulus-Zertifikat FC 1.0: nicht bestanden [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+  }
+ },
+ "fc:states": {
+  "certified": {
+   "en": "certified",
+   "de": "zertifiziert",
+   "rule": "every condition of every element passed"
+  },
+  "pending": {
+   "en": "pending",
+   "de": "ausstehend",
+   "rule": "no condition failed, at least one is open (author, referee or gap)"
+  },
+  "failed": {
+   "en": "failed",
+   "de": "nicht bestanden",
+   "rule": "at least one condition failed"
+  }
+ }
+}

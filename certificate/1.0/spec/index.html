@@ -1,0 +1,664 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Famulus Certificate FC 1.0 — Specification</title><link rel="alternate" type="application/ld+json" href="../../1.0/fc-1.0.jsonld"><style>
+:root{--ink:#1d2433;--blue:#002147;--gold:#b08d3c;--muted:#5d6676;--rule:#d9d2bf;--paper:#fffdf8;--tile:#f4efe2}
+@media (prefers-color-scheme:dark){:root{--ink:#e8e4da;--blue:#9fb7da;--gold:#d8b864;--muted:#a9adb6;--rule:#3b4152;--paper:#12161f;--tile:#1c2230}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Libertinus Serif","Iowan Old Style",Georgia,serif}
+main{max-width:860px;margin:0 auto;padding:28px 16px 64px}a{color:var(--blue)}
+header.top{border-bottom:1px solid var(--rule);padding:10px 16px;font:14px/1.4 system-ui,sans-serif;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+header.top a{text-decoration:none}h1{font-weight:400;font-style:italic;font-size:2.1rem;margin:.6em 0 .2em;color:var(--blue)}
+h2{font-weight:400;font-style:italic;font-size:1.35rem;border-bottom:1px solid var(--gold);padding-bottom:.15em;margin-top:2em;color:var(--blue)}
+.lead{font-size:1.15rem}.muted{color:var(--muted)}.status{display:inline-block;font:13px system-ui,sans-serif;border:1px solid var(--gold);color:var(--gold);padding:1px 8px;border-radius:3px;margin-left:8px;vertical-align:middle}
+.mark{border:1px solid var(--rule);border-left:4px solid var(--gold);background:var(--tile);padding:12px 16px;margin:18px 0;font-size:1.02rem}
+.els{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:14px 0}
+.el{border:1px solid var(--rule);padding:12px;background:var(--tile)}.el b.code{display:inline-block;min-width:2.6em;text-align:center;background:var(--blue);color:#fff;font:600 14px system-ui,sans-serif;padding:3px 6px;border-radius:3px;margin-right:8px}
+.el h3{display:inline;font-size:1.02rem;font-weight:600}.el p{margin:.5em 0 0;font-size:.95rem}
+pre,code{font-family:"DejaVu Sans Mono",Menlo,monospace;font-size:.82rem}pre{background:var(--tile);border:1px solid var(--rule);padding:10px;overflow-x:auto;white-space:pre-wrap}
+table{border-collapse:collapse;width:100%;font-size:.92rem}td,th{border-bottom:1px solid var(--rule);padding:6px 6px;text-align:left;vertical-align:top}
+.not{border:1px solid var(--rule);padding:10px 14px}.files li{margin:.25em 0}footer{margin-top:48px;font:13px system-ui,sans-serif;color:var(--muted);border-top:1px solid var(--rule);padding-top:12px}
+</style><!-- famulus:publisher:start -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="publisher" content="OpenScienceTechnology GmbH">
+<meta name="DC.publisher" content="OpenScienceTechnology GmbH">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://famulus.lettre.ai/certificate/1.0/spec/", "publisher": {"@type": "Organization", "name": "OpenScienceTechnology GmbH", "address": {"@type": "PostalAddress", "streetAddress": "Im Wiesengrund 15A", "addressLocality": "47198 Duisburg", "addressCountry": "Deutschland"}}}</script>
+<!-- famulus:publisher:end -->
+</head><body><header class="top"><a href="../../"><b>Famulus Certificate</b></a><span><a href="../../1.0/">Deed</a> · <a href="../../1.0/de/">Kurzfassung</a> · <a href="../../1.0/spec/">Specification</a> · <a href="https://famulus.lettre.ai/publications/">Famulus Publications</a></span></header><main><h1 id="famulus-certificate-10--specification">Famulus Certificate 1.0 —
+Specification</h1>
+<p>Format <code>famulus-certificate/1</code> · version 1.0 · 21 November
+2026 · status: draft · steward: OpenScienceTechnology GmbH (editor Gerd
+Graßhoff) · this text: CC BY 4.0 · address: <a
+href="https://famulus.lettre.ai/certificate/1.0/">https://famulus.lettre.ai/certificate/1.0/</a></p>
+<p>This is the normative text. The deed (the short form for readers) and
+the machine-readable description (<code>fc-1.0.jsonld</code>) are
+written from the same list of elements and conditions, so that the three
+cannot disagree. Where they appear to differ, this text decides. The key
+words MUST, MUST NOT and MAY are used as in RFC 2119.</p>
+<h2 id="1-what-the-certificate-states">1. What the certificate
+states</h2>
+<p>A publication carries the Famulus Certificate when the justification
+of its claims is laid out in a form that others can examine and the
+examination is on record. The certificate is a set of files published
+with one version of the publication. Its state is computed from those
+files by a checker; nobody enters it by hand.</p>
+<p>The certificate certifies a procedure and its record. <strong>It does
+not certify that a claim is true.</strong> Truth cannot be checked from
+outside; the certificate secures the conditions under which a community
+can examine a claim: an accountable assertion, the grounds at fixed
+addresses, the explicit argument, an independent re-run of everything
+mechanical, and a finite list of human judgements, each signed. A
+missing justification leaves a claim unjustified; it does not make the
+claim false.</p>
+<p>The certificate is written for publications made with computer
+programs and language models, and applies to any publication. It is
+independent of the subject, the language and the publisher.</p>
+<h2 id="2-trust-model">2. Trust model</h2>
+<ul>
+<li><strong>Untrusted:</strong> everything that produces the publication
+and its argument — the author's tools, agents, language models, the
+publisher's services and quality gates.</li>
+<li><strong>Trusted:</strong> (a) a checker that anyone can run, written
+apart from the producer's software, small enough to be read in full; (b)
+the decisions of named persons, each bound to the hash of the text and
+of the argument they decided on.</li>
+</ul>
+<p>Whatever the checker cannot re-run MUST appear on the residual list
+(§6) and be signed. Nothing else is trusted.</p>
+<h2 id="3-elements-and-conditions">3. Elements and conditions</h2>
+<p>The certificate has eight elements. An element holds when every one
+of its conditions has passed. A publication is
+<strong>certified</strong> when all eight elements hold. There are no
+partial marks.</p>
+<p>Each condition names who settles it: the <strong>checker</strong>
+re-runs it from the certificate files; a <strong>gate</strong> of the
+publishing series measures it; the <strong>author</strong> decides it; a
+<strong>referee</strong> — a named person who is not an author — signs
+it.</p>
+<h3 id="cl--claim-ledger">CL — Claim ledger</h3>
+<p>Every claim of the publication is stated as a proposition, with its
+place in the text, and marked as grounded, as a thesis, or as a gap.</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CL1</td>
+<td>checker</td>
+<td>The ledger lists at least one claim; every claim has an id, a text,
+a section of the publication and a status grounded | thesis | gap.</td>
+</tr>
+<tr>
+<td>CL2</td>
+<td>checker</td>
+<td>A grounded claim names at least one ground; a gap names what is
+missing.</td>
+</tr>
+<tr>
+<td>CL3</td>
+<td>author</td>
+<td>The author has agreed to the ledger for exactly this text.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nv--novelty-statement">NV — Novelty statement</h3>
+<p>The publication states what it adds, against prior work cited at its
+addresses.</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NV1</td>
+<td>checker</td>
+<td>The certificate holds a novelty statement with at least one item;
+every item names the claims it concerns and at least one prior work by
+address or bibliographic key, or states that no prior work is known and
+where it was searched.</td>
+</tr>
+<tr>
+<td>NV2</td>
+<td>referee</td>
+<td>A referee has judged the novelty statement adequate.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gr--pinned-grounds">GR — Pinned grounds</h3>
+<p>Every ground stands at an address that resolves at a fixed version,
+and the content cited there is identified by its hash.</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GR1</td>
+<td>checker</td>
+<td>Every ground of the ledger is a Famulus reference (famulus-ref/2)
+pinned by <code>@rel:</code>, <code>@snap:</code> or
+<code>@sha:</code>.</td>
+</tr>
+<tr>
+<td>GR2</td>
+<td>checker</td>
+<td>For every ground the certificate holds the cited content; its
+SHA-256 under the declared normalisation equals the pin or the recorded
+hash.</td>
+</tr>
+<tr>
+<td>GR3</td>
+<td>checker</td>
+<td>Every quotation recorded as verbatim stands, under the declared
+normalisation, in the cited content of its ground; a quotation that is a
+rendering (a translation, a paraphrase in quotation marks) is recorded
+as such and appears on the residual list.</td>
+</tr>
+<tr>
+<td>GR4</td>
+<td>referee</td>
+<td>For every load-bearing premise a referee has confirmed an
+independent witness, or the premise is listed as resting on one
+witness.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ar--explicit-argument">AR — Explicit argument</h3>
+<p>The inference from grounds to claims is an explicit graph with typed
+edges; for every explanatory claim the rivals and the cases that
+discriminate between them are named.</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AR1</td>
+<td>checker</td>
+<td>The certificate holds the argument graph; its hash equals
+<code>argument_sha</code> of the manifest.</td>
+</tr>
+<tr>
+<td>AR2</td>
+<td>checker</td>
+<td>Every edge has a kind from the declared list; every node an edge
+names exists; the support relation has no cycle.</td>
+</tr>
+<tr>
+<td>AR3</td>
+<td>checker</td>
+<td>Every claim marked explanatory names at least one rival and, for
+each rival, the discriminating cases at addresses, or states why the
+case that would discriminate is not available (the condition is then
+open); or it carries the gap 'no rival examined'.</td>
+</tr>
+<tr>
+<td>AR4</td>
+<td>author</td>
+<td>The author has agreed to every thesis, premise and step of the
+reconstructed argument for exactly this text.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ic--independent-check">IC — Independent check</h3>
+<p>Everything mechanical is re-run by a checker written apart from the
+producer's software. Outputs of language models count as readings, never
+as checks.</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IC1</td>
+<td>checker</td>
+<td>Every file of the certificate has the hash the manifest names.</td>
+</tr>
+<tr>
+<td>IC2</td>
+<td>checker</td>
+<td>Every computation of the certificate recomputes from its inputs to
+its recorded output, or is listed as not re-runnable on the residual
+list.</td>
+</tr>
+<tr>
+<td>IC3</td>
+<td>checker</td>
+<td>Every output of a language model on which a verdict depends is
+recorded as a reading (model, instruction version, hashes of input and
+output) and appears on the residual list.</td>
+</tr>
+<tr>
+<td>IC4</td>
+<td>checker</td>
+<td>A checker run of this certificate, by a program that is not the
+producer's, reports every checker condition passed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rf--referee-sign-off">RF — Referee sign-off</h3>
+<p>What no program settles is listed item by item, and a named referee
+other than the author signs each item.</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RF1</td>
+<td>checker</td>
+<td>The residual list holds, for every grounded claim, the item 'the
+ground carries the claim'; for every claim, 'the claim means what the
+text asserts'; for every reading, 'the reading is right'; for every
+explanatory claim, 'the rivals are adequate'; and the item 'the novelty
+statement is adequate'.</td>
+</tr>
+<tr>
+<td>RF2</td>
+<td>referee</td>
+<td>Every item of the residual list carries a signature: referee, date,
+decision (agree | disagree), reason; the referee is not an author.</td>
+</tr>
+<tr>
+<td>RF3</td>
+<td>checker</td>
+<td>Every signature is bound to the current <code>text_sha</code> and
+<code>argument_sha</code>; a signature to another hash does not
+count.</td>
+</tr>
+<tr>
+<td>RF4</td>
+<td>checker</td>
+<td>No item is signed 'disagree' unless the claim it concerns is
+withdrawn or marked as contested in this version.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ex--readable-exposition">EX — Readable exposition</h3>
+<p>A readable account links each claim to its place in the checked
+structure, in a page edition and a print edition with the same text.</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EX1</td>
+<td>checker</td>
+<td>The page edition has an anchor for every claim of the ledger
+(<code>#claim-&lt;id&gt;</code>).</td>
+</tr>
+<tr>
+<td>EX2</td>
+<td>checker</td>
+<td>The page edition and the print edition are files of the manifest
+with their hashes, and the page edition carries the mark of this
+certificate with its state.</td>
+</tr>
+<tr>
+<td>EX3</td>
+<td>gate</td>
+<td>The print edition carries the same mark; the publishing series reads
+it from the rendered PDF.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ac--accountability">AC — Accountability</h3>
+<p>A named author answers for the claims; contributions of AI systems
+are declared by part; the version is identified by content hashes;
+objections are recorded and answered.</p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AC1</td>
+<td>checker</td>
+<td>The manifest names at least one author with an identifier (ORCID or
+address) and the version with <code>text_sha</code>.</td>
+</tr>
+<tr>
+<td>AC2</td>
+<td>checker</td>
+<td>The AI declaration lists every part of the publication (text,
+preamble, argument, figures, computations, translations) with the
+systems that contributed and their role (none | assistive | drafting |
+evaluative); a part without an entry is a gap.</td>
+</tr>
+<tr>
+<td>AC3</td>
+<td>author</td>
+<td>The author has confirmed the AI declaration and released exactly
+this version (<code>text_sha</code>).</td>
+</tr>
+<tr>
+<td>AC4</td>
+<td>checker</td>
+<td>Every objection on record has a decided status, and every convincing
+objection is annotated in this version or an earlier one later than the
+version it read.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-states">4. States</h2>
+<table>
+<thead>
+<tr>
+<th>state</th>
+<th>rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>certified</td>
+<td>every condition of every element passed</td>
+</tr>
+<tr>
+<td>pending</td>
+<td>no condition failed, at least one is open (a decision of the author
+or a referee outstanding, or a gap)</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>at least one condition failed</td>
+</tr>
+</tbody>
+</table>
+<p>A condition is <em>passed</em>, <em>failed</em> or <em>open</em>. A
+gap is open, never passed. A service that does not answer is a gap.</p>
+<h2 id="5-files">5. Files</h2>
+<p>A certificate is a folder <code>certificate/</code> published beside
+the editions of the version it certifies. All files are UTF-8 JSON.
+Paths are relative to the folder.</p>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>manifest.json</code></td>
+<td><code>format</code> (<code>famulus-certificate/1</code>),
+<code>certificate</code> (<code>FC 1.0</code>),
+<code>specification</code> (URL), <code>publication</code>
+{<code>address</code>, <code>title</code>, <code>version</code>,
+<code>date</code>, <code>text_sha</code>, <code>argument_sha</code>,
+<code>authors</code> [{<code>name</code>, <code>orcid</code> or
+<code>address</code>}]}, <code>editions</code> {<code>page</code>,
+<code>print</code>} (paths), <code>files</code> {path: SHA-256 of the
+bytes} for every other file of the certificate and both editions,
+<code>normalisation</code> (<code>nfc-ws1</code>),
+<code>produced_by</code> {<code>name</code>, <code>version</code>},
+<code>series_checks</code> {condition: passed | failed | open} for
+conditions settled by a gate</td>
+</tr>
+<tr>
+<td><code>claims.json</code></td>
+<td>list of claims: <code>id</code>, <code>text</code>,
+<code>section</code>, <code>status</code> (grounded | thesis | gap),
+<code>grounds</code> [pinned addresses], <code>gap</code>,
+<code>explanatory</code> (bool), <code>rivals</code>
+[{<code>text</code>, <code>discriminating</code> [addresses]}],
+<code>rivals_gap</code>, <code>contested</code> [objection ids],
+<code>withdrawn</code></td>
+</tr>
+<tr>
+<td><code>novelty.json</code></td>
+<td>{<code>items</code> [{<code>text</code>, <code>claims</code> [ids],
+<code>prior</code> [addresses or bibliography keys],
+<code>searched</code>}]} or {<code>gap</code>}</td>
+</tr>
+<tr>
+<td><code>grounds.json</code></td>
+<td>list: <code>address</code> (pinned), <code>base</code> (the address
+without pin), <code>layer</code>, <code>content</code> (path of the
+cited content), <code>sha256</code> (of the normalised content),
+<code>gap</code></td>
+</tr>
+<tr>
+<td><code>grounds/&lt;n&gt;.txt</code></td>
+<td>the cited content of a ground, as the resolver gave it at the time
+of the pin</td>
+</tr>
+<tr>
+<td><code>quotations.json</code></td>
+<td>list: <code>id</code>, <code>text</code>, <code>ground</code>,
+<code>section</code>, <code>kind</code> (verbatim | rendering)</td>
+</tr>
+<tr>
+<td><code>argument.json</code></td>
+<td>the argument graph: <code>nodes</code> [{<code>id</code>, …}],
+<code>edges</code> [{<code>id</code>, <code>kind</code>,
+<code>head</code>, <code>tail</code> [ids], …}];
+<code>argument_sha</code> is the SHA-256 of this file</td>
+</tr>
+<tr>
+<td><code>computations.json</code></td>
+<td>list: <code>id</code>, <code>kind</code>, <code>inputs</code>,
+<code>program</code>, <code>output</code>; kind <code>arith</code> with
+<code>expression</code> and <code>decimals</code> is re-run by every
+checker</td>
+</tr>
+<tr>
+<td><code>readings.json</code></td>
+<td>list: <code>id</code>, <code>model</code>,
+<code>instruction_version</code>, <code>input_sha</code>,
+<code>output_sha</code>, <code>verdict_of</code> (what depends on
+it)</td>
+</tr>
+<tr>
+<td><code>assents.json</code></td>
+<td>the author's decisions: <code>author</code>, <code>text_sha</code>,
+<code>argument_sha</code>, <code>items</code>, <code>agreed</code>,
+<code>disagreed</code>, <code>open</code>,
+<code>ledger_agreed</code></td>
+</tr>
+<tr>
+<td><code>residual.json</code></td>
+<td>the residual list (§6): <code>id</code>, <code>kind</code>,
+<code>about</code>, <code>text</code></td>
+</tr>
+<tr>
+<td><code>signatures.json</code></td>
+<td>list: <code>item</code>, <code>referee</code> {<code>name</code>,
+<code>orcid</code>}, <code>date</code>, <code>decision</code> (agree |
+disagree), <code>reason</code>, <code>text_sha</code>,
+<code>argument_sha</code></td>
+</tr>
+<tr>
+<td><code>declaration.json</code></td>
+<td>the AI declaration: <code>parts</code> [{<code>part</code>,
+<code>systems</code> [{<code>name</code>, <code>role</code>}],
+<code>note</code>}], <code>confirmed_by</code>,
+<code>confirmed_on</code></td>
+</tr>
+<tr>
+<td><code>critique.json</code></td>
+<td>objections: <code>id</code>, <code>status</code>,
+<code>annotation</code> {<code>since_version</code>,
+<code>text</code>}</td>
+</tr>
+<tr>
+<td><code>release.json</code></td>
+<td>the author's release: <code>by</code>, <code>on</code>,
+<code>version</code>, <code>text_sha</code>, or <code>{}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Edge kinds: <code>deductive</code>, <code>defeasible</code>,
+<code>computational</code>, <code>explanatory</code>,
+<code>attack</code>, <code>summary</code>. Parts of the AI declaration:
+<code>text</code>, <code>preamble</code>, <code>argument</code>,
+<code>figures</code>, <code>computations</code>,
+<code>translations</code>. Roles: <code>none</code>,
+<code>assistive</code>, <code>drafting</code>,
+<code>evaluative</code>.</p>
+<p><strong>Pins.</strong> A ground is a Famulus reference
+(<code>famulus-ref/2</code>) with a version selector:
+<code>@rel:&lt;tag&gt;</code> (a release), <code>@snap:&lt;n&gt;</code>
+(a snapshot) or <code>@sha:&lt;hex&gt;</code> (8 to 64 lower-case hex
+digits, a prefix of the SHA-256 of the normalised cited content). A
+short reference <code>fr:&lt;Sigle&gt;[&lt;Teil&gt;]</code> is expanded
+to its full address before it is pinned; the certificate holds only full
+addresses.</p>
+<p><strong>Normalisation <code>nfc-ws1</code>.</strong> Unicode NFC;
+every run of white space replaced by one space; leading and trailing
+space removed. Hashes of cited content and the search for quotations use
+it.</p>
+<h2 id="6-the-residual-list">6. The residual list</h2>
+<p>The residual list holds the judgements no program settles. It MUST
+contain, at least:</p>
+<table>
+<thead>
+<tr>
+<th>kind</th>
+<th>about</th>
+<th>one item for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>support</code></td>
+<td><code>&lt;claim&gt;</code>, <code>&lt;ground&gt;</code></td>
+<td>each ground of each grounded claim: the ground carries the
+claim</td>
+</tr>
+<tr>
+<td><code>witness</code></td>
+<td><code>&lt;claim&gt;</code></td>
+<td>each grounded claim: an independent witness confirms the
+load-bearing premise, or it rests on one</td>
+</tr>
+<tr>
+<td><code>meaning</code></td>
+<td><code>&lt;claim&gt;</code></td>
+<td>each claim: the claim means what the text asserts</td>
+</tr>
+<tr>
+<td><code>rivals</code></td>
+<td><code>&lt;claim&gt;</code></td>
+<td>each explanatory claim: the rivals and discriminating cases are
+adequate</td>
+</tr>
+<tr>
+<td><code>reading</code></td>
+<td><code>&lt;reading id&gt;</code></td>
+<td>each reading of a language model: the reading is right</td>
+</tr>
+<tr>
+<td><code>rendering</code></td>
+<td><code>&lt;quotation id&gt;</code></td>
+<td>each quotation that is a rendering: it renders the source
+faithfully</td>
+</tr>
+<tr>
+<td><code>computation</code></td>
+<td><code>&lt;computation id&gt;</code></td>
+<td>each computation the checker cannot re-run</td>
+</tr>
+<tr>
+<td><code>novelty</code></td>
+<td><code>statement</code></td>
+<td>the novelty statement is adequate</td>
+</tr>
+</tbody>
+</table>
+<p>A referee signs items, not the publication. A signature to another
+<code>text_sha</code> or <code>argument_sha</code> does not count. A
+referee who disagrees makes the item fail unless the claim is withdrawn
+or marked as contested in that version.</p>
+<h2 id="7-the-checker">7. The checker</h2>
+<p>A conforming checker:</p>
+<ol type="1">
+<li>imports no code of the producer and calls none of its services; it
+MAY ask a public resolver for the current content of a ground, and
+reports a difference as drift, not as failure;</li>
+<li>never calls a language model;</li>
+<li>reads only the certificate folder and the editions it names;</li>
+<li>reports each condition settled by the checker as passed, failed or
+open, and reads the records of the author, the referees and the series
+for the others;</li>
+<li>reports the state, the number of elements that hold and the mark
+(§8).</li>
+</ol>
+<p>The reference implementation is <code>fc_check.py</code> (Python
+standard library only), published with this specification together with
+test vectors (<code>vectors/</code>): every implementation MUST
+reproduce the expected state of every vector.</p>
+<h2 id="8-the-mark">8. The mark</h2>
+<p>A certified publication MUST carry the mark, in its page edition and
+its print edition:</p>
+<blockquote>
+<p><strong>Published according to the Famulus Certificate FC 1.0
+[CL·NV·GR·AR·IC·RF·EX·AC]</strong> — <a
+href="https://famulus.lettre.ai/certificate/1.0/">https://famulus.lettre.ai/certificate/1.0/</a></p>
+</blockquote>
+<p>A publication that is not certified MAY show its state, never the
+mark itself:</p>
+<blockquote>
+<p>Famulus Certificate FC 1.0: pending — 3 of 8 elements hold
+[CL·nv·gr·ar·ic·rf·EX·AC]</p>
+</blockquote>
+<p>In the state code an element that holds is written in capitals, an
+open one in lower case, a failed one struck through. The mark links to
+this specification; the page edition links the certificate folder.
+Machine-readable: the page head carries
+<code>&lt;link rel="famulus-certificate" href="certificate/manifest.json"&gt;</code>,
+and the JSON-LD of the publication names the specification as
+<code>usageInfo</code> and the state as <code>creativeWorkStatus</code>
+of an item of <code>hasPart</code> with <code>@type</code>
+<code>CreativeWork</code> and <code>name</code>
+<code>Famulus Certificate FC 1.0</code> (see
+<code>fc-1.0.jsonld</code>).</p>
+<h2 id="9-versions-of-the-specification">9. Versions of the
+specification</h2>
+<p>A published version of this specification is never changed. A change
+is a new version at a new address
+(<code>/certificate/&lt;version&gt;/</code>); what was certified under
+an earlier version stays certified under it. Each version lists its
+changes.</p>
+<h2 id="10-relation-to-the-famulus-expertise-series">10. Relation to the
+Famulus Expertise series</h2>
+<p>Famulus Expertise requires the certificate for every issue (rule R11
+of the series). The quality seal of the series is the certificate plus
+the publication conditions of the series (register, files, citation
+form, counting mark, licence) plus the author's release. The gates of
+the series that measure an element name its code.</p>
+</main><!-- famulus:publisher:start -->
+<p class="famulus-publisher" style="max-width:46rem;margin:2.5rem auto 1.5rem;padding:.7rem 16px 0;border-top:2px solid #c8a22a;font:13px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;opacity:.8">Published by OpenScienceTechnology GmbH · <a style="color:inherit" href="/impressum/">Legal notice</a> · <a style="color:inherit" href="/datenschutz/">Privacy</a></p>
+<script>(function(){try{var C="https://lettre.ngrok.dev/famulus-counter/api/hit",L=C.replace(/hit$/,'leave'),q=new URLSearchParams(location.search),v=Math.random().toString(36).slice(2,12),u=location.pathname;function S(a,b){navigator.sendBeacon?navigator.sendBeacon(a,b):fetch(a,{method:'POST',body:b,keepalive:true,mode:'no-cors'})}S(C,JSON.stringify({u:u,r:document.referrer,m:"",v:v,c:q.get('c')||q.get('utm_campaign')||''}));var a=0,t=document.visibilityState=='visible'?Date.now():0,s=0,x='',g='',k='';function sc(){var h=document.documentElement;s=Math.max(s,Math.min(100,Math.round((scrollY+innerHeight)/Math.max(h.scrollHeight,1)*100)))}addEventListener('scroll',sc,{passive:true});addEventListener('load',sc);sc();document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a[href]');if(l&&/^https?:$/.test(l.protocol)){var i=l.host==location.host;x=i?'in':'out';g=i?l.pathname+l.hash:l.host;k=(l.getAttribute('aria-label')||l.textContent||'').replace(/\s+/g,' ').trim().slice(0,80);B()}},true);function B(){S(L,JSON.stringify({u:u,v:v,d:Math.round((a+(t?Date.now()-t:0))/1000),s:s,x:x,t:g,k:k}))}function F(){if(t){a+=Date.now()-t;t=0}B()}document.addEventListener('visibilitychange',function(){document.visibilityState=='hidden'?F():t=Date.now()});addEventListener('pagehide',function(){if(t)F()})}catch(e){}})();</script>
+<noscript><img src="https://lettre.ngrok.dev/famulus-counter/api/hit.gif?u=/certificate/1.0/spec/&amp;m=" width="1" height="1" alt=""></noscript>
+<!-- famulus:publisher:end -->
+</body></html>

@@ -1,0 +1,16 @@
+{
+ "reihe": "Famulus Lectures",
+ "url": "https://famulus.lettre.ai/lectures/",
+ "issn": null,
+ "ausgaben": [
+  {
+   "number": 1,
+   "id": "karman-nachlass-2026",
+   "title": "Der Kármán-Nachlass, mit Famulus gesichtet",
+   "speaker": "Gerd Graßhoff",
+   "place": "Deutsches Museum, München, Seminarraum Forschung",
+   "date": "2026-11-23",
+   "status": "angekuendigt"
+  }
+ ]
+}

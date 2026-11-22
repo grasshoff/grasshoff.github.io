@@ -1,7 +1,7 @@
 {
  "schema": "famulus-publications/1",
  "url": "https://famulus.lettre.ai/publications/",
- "generated": "2026-11-22T12:59:41",
+ "generated": "2026-11-22T13:13:21",
  "series": [
   {
    "key": "expertise",
@@ -41,6 +41,19 @@
    "published": 0,
    "in_preparation": 14,
    "machine_readable": null
+  },
+  {
+   "key": "lectures",
+   "title": "Famulus Lectures",
+   "url": "https://famulus.lettre.ai/lectures/",
+   "issn": null,
+   "aim": {
+    "de": "Vorträge, wie sie gehalten wurden: das gesprochene Wort, geordnet nach den Folien, mit Zeitmarken und Belegen.",
+    "en": "Talks as they were given: the spoken word, ordered by the slides, with time stamps and sources."
+   },
+   "published": 0,
+   "in_preparation": 1,
+   "machine_readable": "https://famulus.lettre.ai/lectures/series.json"
   }
  ]
 }

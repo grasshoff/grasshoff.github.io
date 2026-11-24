@@ -25,11 +25,11 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-CHECKER = {"name": "fc_check", "version": "1.0.0", "implements": "famulus-certificate/1"}
+CHECKER = {"name": "fc_check", "version": "1.1.0", "implements": "famulus-certificate/1"}
 FORMAT = "famulus-certificate/1"
-ELEMENTS = ["CL", "NV", "GR", "AR", "IC", "RF", "EX", "AC"]
+ELEMENTS = ["AU", "CL", "NV", "GR", "AR", "IC", "RF", "EX", "AC"]
 CONDITIONS = {
-    "CL": ["CL1", "CL2", "CL3"], "NV": ["NV1", "NV2"], "GR": ["GR1", "GR2", "GR3", "GR4"],
+    "AU": ["AU1", "AU2", "AU3", "AU4", "AU5"], "CL": ["CL1", "CL2", "CL3"], "NV": ["NV1", "NV2"], "GR": ["GR1", "GR2", "GR3", "GR4"],
     "AR": ["AR1", "AR2", "AR3", "AR4"], "IC": ["IC1", "IC2", "IC3", "IC4"], "RF": ["RF1", "RF2", "RF3", "RF4"],
     "EX": ["EX1", "EX2", "EX3"], "AC": ["AC1", "AC2", "AC3", "AC4"],
 }
@@ -37,10 +37,13 @@ EDGE_KINDS = {"deductive", "defeasible", "computational", "explanatory", "attack
 SUPPORT = {"deductive", "defeasible", "computational", "explanatory", "summary"}
 PARTS = ["text", "preamble", "argument", "figures", "computations", "translations"]
 ROLES = {"none", "assistive", "drafting", "evaluative"}
+SOURCE_KINDS = {"recording", "dictation", "manuscript", "outline", "annotations"}
+RULE_ID = re.compile(r"^[BQSLATVP][0-9]{1,2}$")
+HEX64 = re.compile(r"^[0-9a-f]{64}$")
 PIN = re.compile(r"^fr:[A-Za-z0-9_][A-Za-z0-9_./~-]*@(snap:[0-9]+|rel:[A-Za-z0-9][A-Za-z0-9._-]*|sha:[0-9a-f]{8,64})$")
 FILES = ["manifest.json", "claims.json", "novelty.json", "grounds.json", "quotations.json", "argument.json",
          "computations.json", "readings.json", "assents.json", "residual.json", "signatures.json",
-         "declaration.json", "critique.json", "release.json"]
+         "declaration.json", "critique.json", "release.json", "authorship.json"]
 
 
 def norm(text: str) -> str:
@@ -383,6 +386,52 @@ def check(folder: Path, resolve: str | None = None) -> dict:
     else:
         r.put("AC3", "open", "no release of this text" if rel.get("text_sha") != text_sha else "AI declaration not confirmed")
 
+    # AU1–AU5 — authorship: the author's sources, theses and structure, the editing record, the rules, the release
+    au = data["authorship.json"]
+    if not isinstance(au, dict) or not au:
+        for c in ("AU1", "AU2", "AU3", "AU4", "AU5"):
+            r.put(c, "open", "no authorship record")
+    else:
+        srcs = au.get("sources") or []
+        sid = {x.get("id") for x in srcs}
+        p = [f"{x.get('id')}: kind {x.get('kind')}" for x in srcs if x.get("kind") not in SOURCE_KINDS]
+        p += [f"{x.get('id')}: no sha256 of the source" for x in srcs if not HEX64.match(str(x.get("sha256") or ""))]
+        if not srcs:
+            r.put("AU1", "open", "no source of the author named")
+        else:
+            r.ok("AU1", p, f"{len(srcs)} source(s)")
+        th, se = au.get("theses") or [], au.get("sections") or []
+        p = [f"{x.get('id')}: origin {x.get('origin')}" for x in th + se if x.get("origin") != "author"]
+        p += [f"{x.get('id')}: source {x.get('source')} not among the sources" for x in th + se
+              if x.get("origin") == "author" and x.get("source") not in sid]
+        if not th or not se:
+            r.put("AU2", "failed" if p else "open", "theses or structure not recorded", p)
+        else:
+            r.ok("AU2", p, f"{len(th)} thesis/theses, {len(se)} section(s)")
+        pr = au.get("protocol")
+        if not isinstance(pr, dict):
+            r.put("AU3", "open", "no editing record")
+        else:
+            p = [f"{v.get('id')}: version without sha256" for v in pr.get("versions") or [] if not HEX64.match(str(v.get("sha256") or ""))]
+            if int(pr.get("unseen_changes") or 0):
+                p.append(f"{pr['unseen_changes']} machine change(s) the author did not take over")
+            r.ok("AU3", p, f"{pr.get('author_notes', 0)} notes, {pr.get('proposals_inserted', 0)} taken over, "
+                           f"{pr.get('proposals_discarded', 0)} discarded, {pr.get('hand_edits', 0)} by hand, "
+                           f"{len(pr.get('versions') or [])} version(s)")
+        fnd = au.get("findings") or []
+        bad = [f"{f.get('id')}: rule {f.get('rule')}" for f in fnd if not RULE_ID.match(str(f.get("rule") or ""))]
+        bad += [f"{f.get('id')}: status {f.get('status')}" for f in fnd if f.get("status") not in ("decided", "open")]
+        wait = [f"{f.get('id')} ({f.get('rule')}): open" for f in fnd if f.get("status") == "open"]
+        if bad:
+            r.put("AU4", "failed", f"{len(fnd)} finding(s)", bad + wait)
+        else:
+            r.ok("AU4", wait, f"{len(fnd)} finding(s) under the rules", open_=True)
+        rel_au = data["release.json"] or {}
+        if au.get("confirmed_by") and au.get("text_sha") == text_sha and rel_au.get("text_sha") == text_sha:
+            r.put("AU5", "passed", f"confirmed by {au['confirmed_by']} on {au.get('confirmed_on')}")
+        else:
+            r.put("AU5", "open", "authorship not confirmed for this text" if not au.get("confirmed_by") else "bound to another text")
+
     # EX3 is the series' condition (the PDF mark); the manifest records the series' reading of it
     ex3 = (man.get("series_checks") or {}).get("EX3")
     r.put("EX3", ex3 if ex3 in ("passed", "failed") else "open", "read by the publishing series from the PDF")
@@ -390,7 +439,7 @@ def check(folder: Path, resolve: str | None = None) -> dict:
     # IC4 — this run is by a program that is not the producer's, and every other checker condition passed
     prod = (man.get("produced_by") or {}).get("name")
     others = [c for c, v in r.rows.items() if v["result"] != "passed" and c not in
-              ("CL3", "AR4", "AC3", "NV2", "GR4", "RF2", "EX3")]
+              ("CL3", "AR4", "AC3", "NV2", "GR4", "RF2", "EX3", "AU5")]
     if prod == CHECKER["name"]:
         r.put("IC4", "failed", "the producer and the checker are the same program")
     else:
@@ -425,7 +474,7 @@ def main(argv: list[str]) -> int:
     if "--json" in argv:
         print(json.dumps(out, ensure_ascii=False, indent=1))
     else:
-        print(f"{out['publication']} · version {out['version']} · FC 1.0: {out['state']} [{out['code']}] ({out['held']} of 8 elements)")
+        print(f"{out['publication']} · version {out['version']} · FC 1.0: {out['state']} [{out['code']}] ({out['held']} of {len(ELEMENTS)} elements)")
         for el in ELEMENTS:
             print(f"  {el}  {out['elements'][el]}")
             for c in CONDITIONS[el]:

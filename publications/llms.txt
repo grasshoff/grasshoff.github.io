@@ -7,4 +7,4 @@
 - Famulus Expertise: Single studies that can be checked: every statement about the source can be tested at its place in the source, by readers and by programs. <https://famulus.lettre.ai/expertise/>
 - Famulus Platform: A comprehensive, citable description of the platform. Every issue mirrors its version on arXiv and carries its DOI. (in preparation)
 - Famulus Fundamentals: A citable foundation on which the issues of Famulus Platform and Famulus Expertise can rely. Every issue mirrors its version on arXiv and carries its DOI. (in preparation)
-- Famulus Lectures: Talks as they were given: the spoken word, ordered by the slides, with time stamps and sources. <https://famulus.lettre.ai/lectures/>
+- Famulus Lectures: Talks as edited reading texts: in the speaker's voice, ordered by the acts of the talk, with the slides and their animations, time stamps, sources and the discussion – no transcript, and nothing added. <https://famulus.lettre.ai/lectures/>

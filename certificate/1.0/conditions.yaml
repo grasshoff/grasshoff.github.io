@@ -119,15 +119,15 @@ foundation:
       en: "Where a question is open, the best explanation is the answer that survives the evidence discriminating between the candidates, not the answer that agrees with the most observations."
       de: "Wo eine Frage offen ist, ist die beste Erklärung die Antwort, die der zwischen den Kandidaten unterscheidenden Evidenz standhält, nicht die, die mit den meisten Beobachtungen übereinstimmt."
     - id: instrument
-      elements: [AC, CL]
+      elements: [AU, AC, CL]
       en: "A system that serves research is an instrument with which the scholar acts. It does not hold a proposition true and does not answer for one; the scholar who adopts its result asserts the proposition and answers for it."
       de: "Ein System, das der Forschung dient, ist ein Instrument, mit dem der Wissenschaftler handelt. Es hält keine Aussage für wahr und steht für keine ein; der Wissenschaftler, der sein Ergebnis übernimmt, behauptet die Aussage und steht für sie ein."
     - id: knowledge
-      elements: [CL, NV, GR, AR, IC, RF, EX, AC]
-      en: "A claim enters the body of knowledge of a community that includes generative agents when six conditions hold: truth, accountable assertion, novelty, best attestation, communicability and scrutiny. Truth cannot be checked from outside; the other five can be checked at publication, and the eight elements of the certificate measure them."
-      de: "Eine Aussage geht in den Wissensbestand einer Gemeinschaft, zu der generative Agenten gehören, ein, wenn sechs Bedingungen erfüllt sind: Wahrheit, verantwortete Behauptung, Neuheit, beste Bezeugung, Mitteilbarkeit und Prüfung durch andere. Wahrheit lässt sich nicht von außen prüfen; die anderen fünf lassen sich bei der Publikation prüfen, und die acht Elemente des Zertifikats messen sie."
+      elements: [AU, CL, NV, GR, AR, IC, RF, EX, AC]
+      en: "A claim enters the body of knowledge of a community that includes generative agents when six conditions hold: truth, accountable assertion, novelty, best attestation, communicability and scrutiny. Truth cannot be checked from outside; the other five can be checked at publication, and the nine elements of the certificate measure them."
+      de: "Eine Aussage geht in den Wissensbestand einer Gemeinschaft, zu der generative Agenten gehören, ein, wenn sechs Bedingungen erfüllt sind: Wahrheit, verantwortete Behauptung, Neuheit, beste Bezeugung, Mitteilbarkeit und Prüfung durch andere. Wahrheit lässt sich nicht von außen prüfen; die anderen fünf lassen sich bei der Publikation prüfen, und die neun Elemente des Zertifikats messen sie."
   mapping:   # condition of knowledge -> elements of the certificate
-    - {condition: {en: "Accountable assertion", de: "Verantwortete Behauptung"}, elements: [AC, CL]}
+    - {condition: {en: "Accountable assertion", de: "Verantwortete Behauptung"}, elements: [AU, AC, CL]}
     - {condition: {en: "Novelty", de: "Neuheit"}, elements: [NV]}
     - {condition: {en: "Best attestation", de: "Beste Bezeugung"}, elements: [GR, AR, IC]}
     - {condition: {en: "Communicability", de: "Mitteilbarkeit"}, elements: [CL, EX]}
@@ -153,9 +153,22 @@ governance:
 # than the author signs it item by item.
 settled_by: [checker, gate, author, referee]
 
-# The eight elements. Their order and codes are fixed for version 1.0. A publication carries the mark only when every
+# The nine elements (AU added 24 Nov 2026, while 1.0 is a draft; discussion.yaml). Their order and codes are fixed
+# once 1.0 is adopted. A publication carries the mark only when every
 # element holds; there are no partial marks. A preprint shows the state of each element instead (see `marks`).
 elements:
+  - code: AU
+    id: authorship
+    title: {en: Authorship, de: Autorschaft}
+    requirement:
+      en: The design of the content, the argument, the thesis and the structure of the document come from the author; every draft text is edited by the author and answered for by him; Famulus has worked only under the editing rules of this certificate (rules B, S, T).
+      de: Die inhaltliche Gestaltung, die Argumentation, die These und der Aufbau des Dokuments stammen vom Autor; jeder Textentwurf ist vom Autor redigiert und wird von ihm verantwortet; Famulus hat nur nach den Bearbeitungsregeln dieses Zertifikats gearbeitet (Regeln B, S, T).
+    conditions:
+      - {id: AU1, settled_by: checker, en: "The authorship record names the author's sources of the text (recording of a talk, dictation, manuscript, outline, annotations), each with its SHA-256.", de: "Die Autorschaftsakte nennt die Quellen des Autors für den Text (Aufnahme eines Vortrags, Diktat, Manuskript, Gliederung, Anmerkungen), jede mit ihrem SHA-256."}
+      - {id: AU2, settled_by: checker, en: "The theses and the sections of the document are listed, each with origin 'author' and the source it comes from; a thesis or section of machine origin fails.", de: "Die Thesen und die Abschnitte des Dokuments sind verzeichnet, jeweils mit der Herkunft „Autor“ und der Quelle, aus der sie stammen; eine These oder ein Abschnitt maschineller Herkunft lässt die Bedingung scheitern."}
+      - {id: AU3, settled_by: checker, en: "The editing record lists every version with its SHA-256 and counts the author's notes and the proposals taken over, discarded and edited by hand; no machine change entered the text without the author taking it over.", de: "Das Redaktionsprotokoll führt jede Fassung mit ihrem SHA-256 und zählt die Anmerkungen des Autors sowie die übernommenen, verworfenen und von Hand bearbeiteten Vorschläge; keine maschinelle Änderung ist in den Text gelangt, ohne dass der Autor sie übernommen hat."}
+      - {id: AU4, settled_by: checker, en: "Every finding under the rules of this certificate is recorded with its rule and decided; an undecided finding leaves the condition open.", de: "Jeder Befund nach den Regeln dieses Zertifikats ist mit seiner Regel verzeichnet und entschieden; ein unentschiedener Befund lässt die Bedingung offen."}
+      - {id: AU5, settled_by: author, en: "The author has confirmed the authorship record and released exactly this text (text_sha).", de: "Der Autor hat die Autorschaftsakte bestätigt und genau diesen Text (text_sha) freigegeben."}
   - code: CL
     id: claims
     title: {en: Claim ledger, de: Aussagenverzeichnis}
@@ -247,14 +260,14 @@ states:
   pending: {en: "pending", de: "ausstehend", rule: "no condition failed, at least one is open (author, referee or gap)"}
   failed: {en: "failed", de: "nicht bestanden", rule: "at least one condition failed"}
 
-# How the mark is written. `{elements}` are the eight codes in order, joined by the middle dot.
+# How the mark is written. `{elements}` are the nine codes in order, joined by the middle dot.
 marks:
   certified:
-    en: "Published according to the Famulus Certificate FC 1.0 [CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
-    de: "Veröffentlicht nach dem Famulus-Zertifikat FC 1.0 [CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
+    en: "Published according to the Famulus Certificate FC 1.0 [AU·CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
+    de: "Veröffentlicht nach dem Famulus-Zertifikat FC 1.0 [AU·CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
   pending:
-    en: "Famulus Certificate FC 1.0: pending — {held} of 8 elements hold [{state}] — https://famulus.lettre.ai/certificate/1.0/"
-    de: "Famulus-Zertifikat FC 1.0: ausstehend — {held} von 8 Elementen erfüllt [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+    en: "Famulus Certificate FC 1.0: pending — {held} of 9 elements hold [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+    de: "Famulus-Zertifikat FC 1.0: ausstehend — {held} von 9 Elementen erfüllt [{state}] — https://famulus.lettre.ai/certificate/1.0/"
   failed:
     en: "Famulus Certificate FC 1.0: not passed [{state}] — https://famulus.lettre.ai/certificate/1.0/"
     de: "Famulus-Zertifikat FC 1.0: nicht bestanden [{state}] — https://famulus.lettre.ai/certificate/1.0/"
@@ -262,3 +275,168 @@ marks:
 
 # Normalisation for hashes of cited content (GR2, GR3): Unicode NFC, every run of white space one space, trimmed.
 normalisation: nfc-ws1
+
+# The rules of examination, validation and editing (owner, 24 Nov 2026: "Die Zertifizierung stellt sicher, dass die
+# inhaltliche Gestaltung, Argumentation, These und Dokumentenaufbau vom Autor stammt sowie die Textentwürfe vom Autor
+# redaktionell überarbeitet und verantwortet werden. Die Zertifikatsregeln geben dir Bearbeitungsregeln für Famulus
+# vor."). One list, fixed ids. Per rule: text (de, en); `anweisung` — the sentence Famulus gives every engine that edits
+# a text (famulus-notebook annotator reads it from here); `pruefung` — how the rule is examined: code (a program decides),
+# quelle (checked at the source), lesart (a language model reads; a reading, never a check — IC3), autor (the author
+# decides); `element` — the element of the certificate it serves; `umgesetzt_in` — where it is implemented.
+# Published at /certificate/<version>/regeln/ and linked from the Impressum of every publication.
+rules:
+  groups:
+    - {id: B, title: {de: "Bearbeitung durch Famulus", en: "Editing by Famulus"}, lead: {de: "Was Famulus an einem Text des Autors tun darf und was nicht.", en: "What Famulus may and may not do to the author's text."}}
+    - {id: Q, title: {de: "Quellen und Belege", en: "Sources and evidence"}, lead: {de: "Jede Angabe, die sich auf eine Quelle stützt, wird an der Quelle geprüft.", en: "Every statement resting on a source is checked at the source."}}
+    - {id: S, title: {de: "Sprache und Form", en: "Language and form"}, lead: {de: "Syntax, Rechtschreibung und Register nach den großen Regelwerken der Sprache und nach LWgrammar.", en: "Syntax, spelling and register by the standard references of the language and by LWgrammar."}}
+    - {id: L, title: {de: "Fußnoten, Literatur, Referenzen", en: "Notes, literature, references"}, lead: {de: "Fußnoten und bibliographische Angaben sind vollständig, auflösbar und geprüft.", en: "Notes and bibliographical references are complete, resolvable and checked."}}
+    - {id: A, title: {de: "Argumentationsqualität", en: "Quality of argument"}, lead: {de: "These, Aufbau und Schlüssigkeit des Arguments.", en: "Thesis, structure and soundness of the argument."}}
+    - {id: T, title: {de: "Begriffe und Terminologie", en: "Concepts and terminology"}, lead: {de: "Begriffe werden eingeführt, konsistent verwendet und an den terminologischen Referenzwerken geprüft.", en: "Terms are introduced, used consistently and checked against the terminological references."}}
+    - {id: V, title: {de: "Verfahren und Nachweis", en: "Procedure and record"}, lead: {de: "Wie die Bearbeitung festgehalten wird.", en: "How the editing is recorded."}}
+    - {id: P, title: {de: "Veröffentlichung", en: "Publication"}, lead: {de: "Was vor und bei der Veröffentlichung gilt.", en: "What holds before and at publication."}}
+  list:
+    # B — editing by Famulus
+    - {id: B1, element: AU, pruefung: autor, umgesetzt_in: "annotator (Anweisung), AU2",
+       de: "Famulus fügt keinen Inhalt, keine These und keine Wertung hinzu, die nicht vom Autor stammt (Aufnahme, Diktat, Manuskript, Anmerkung).",
+       en: "Famulus adds no content, thesis or evaluation that does not come from the author (recording, dictation, manuscript, note).",
+       anweisung: "Füge keinen Inhalt, keine These und keine Wertung hinzu, die nicht vom Autor stammt."}
+    - {id: B2, element: AU, pruefung: code, umgesetzt_in: "annotator.planen (Reichweite), Redaktionsprotokoll",
+       de: "Aufbau, Gliederung und Reihenfolge des Dokuments ändern sich nur auf eine Anmerkung des Autors.",
+       en: "Structure, outline and order of the document change only on a note of the author.",
+       anweisung: "Ändere Aufbau und Reihenfolge nur, wenn die Anmerkung des Autors es verlangt."}
+    - {id: B3, element: AU, pruefung: lesart, umgesetzt_in: "annotator (Anweisung); Befund bei Abweichung",
+       de: "Kein Inhaltswort wird durch eines anderer Bedeutung ersetzt; Namen, Daten und Zitate bleiben, wie sie sind, außer der Autor verlangt es.",
+       en: "No content word is replaced by one of another meaning; names, dates and quotations stay as they are unless the author asks otherwise.",
+       anweisung: "Ersetze kein Inhaltswort durch eines anderer Bedeutung; Namen, Daten und Zitate bleiben, wie sie sind."}
+    - {id: B4, element: AU, pruefung: code, umgesetzt_in: "revision.yaml anweisung.vorrang",
+       de: "Die Anmerkung des Autors geht allen allgemeinen Regeln vor.",
+       en: "The author's note takes precedence over every general rule.",
+       anweisung: "Die Anmerkung des Autors geht allen allgemeinen Regeln vor."}
+    - {id: B5, element: AU, pruefung: code, umgesetzt_in: "annotator (Nachfrage, kein leerer Vorschlag)",
+       de: "Fehlt der Inhalt für eine Änderung, gibt Famulus die Stelle unverändert zurück und sagt, was fehlt; nichts wird erfunden.",
+       en: "Where the content for a change is missing, Famulus returns the passage unchanged and says what is missing; nothing is invented.",
+       anweisung: "Fehlt dir der Inhalt, gib die Stelle unverändert zurück und sage, was fehlt; erfinde nichts."}
+    - {id: B6, element: AU, pruefung: code, umgesetzt_in: "outputs (Vorschlag), Ersetzen nur durch den Autor; AU3",
+       de: "Jede Änderung von Famulus ist ein Vorschlag; in den Text gelangt sie erst, wenn der Autor sie übernimmt (Ersetzen oder von Hand).",
+       en: "Every change by Famulus is a proposal; it enters the text only when the author takes it over (replace or by hand).",
+       anweisung: "Deine Änderung ist ein Vorschlag an den Autor."}
+    - {id: B7, element: AU, pruefung: code, umgesetzt_in: "vortrag.pruefen_code (saalbemerkung, zeitmarke); Lesetext-Regeln",
+       de: "Im Lesetext eines Vortrags entfallen Bemerkungen zur Bedienung, zum Blättern, zur Zeit und zum Saal; nichts wird hinzugefügt, was nicht gesagt wurde.",
+       en: "In the reading text of a talk, remarks on operating, turning slides, time and the room are left out; nothing is added that was not said.",
+       anweisung: "Im Lesetext eines Vortrags: Bemerkungen zur Bedienung, zum Blättern, zur Zeit und zum Saal entfallen; füge nichts hinzu, was nicht gesagt wurde."}
+    - {id: B8, element: AU, pruefung: code, umgesetzt_in: "news_lektorat.merge ({{key}}); quellen",
+       de: "Zahlen stammen aus erfassten Fakten oder aus Quellen; keine Zahl wird geschätzt oder gerundet, ohne dass es gesagt wird.",
+       en: "Figures come from recorded facts or from sources; no figure is estimated or rounded without saying so.",
+       anweisung: "Zahlen nur aus erfassten Fakten oder Quellen; schätze keine Zahl."}
+    # Q — sources and evidence
+    - {id: Q1, element: GR, pruefung: quelle, umgesetzt_in: "famulus-notebook quellen.check_quote (Transkript, Faksimile)",
+       de: "Jedes wörtliche Zitat ist an seiner Quelle geprüft (Transkript oder Faksimile); eine Wiedergabe ist als solche gekennzeichnet.",
+       en: "Every verbatim quotation is checked at its source (transcript or facsimile); a rendering is marked as such."}
+    - {id: Q2, element: GR, pruefung: quelle, umgesetzt_in: "quellen.check_picture (Museums-Katalog)",
+       de: "Jeder Bildnachweis ist am Katalog der besitzenden Einrichtung geprüft (Inventarnummer, Urheber, Jahr, Rechte).",
+       en: "Every picture credit is checked at the catalogue of the holding institution (inventory number, maker, year, rights)."}
+    - {id: Q3, element: GR, pruefung: code, umgesetzt_in: "vortrag.pruefen_code (zuschreibung)",
+       de: "Jede Zuschreibung (wer schreibt wem) stimmt mit Legende und Quelle überein.",
+       en: "Every attribution (who writes to whom) agrees with caption and source."}
+    - {id: Q4, element: GR, pruefung: code, umgesetzt_in: "Famulus-Referenz-Resolver; GR1, GR2",
+       de: "Jede fr:-Adresse löst auf und ist gepinnt.",
+       en: "Every fr: address resolves and is pinned."}
+    - {id: Q5, element: GR, pruefung: quelle, umgesetzt_in: "quellen.pruefe; Befund bei Nichtprüfbarkeit",
+       de: "Daten und Namen sind gegen die Quelle geprüft; was nicht prüfbar ist, bleibt ein Befund mit seinem Grund.",
+       en: "Dates and names are checked against the source; what cannot be checked stays a finding with its reason."}
+    # S — language and form
+    - {id: S1, element: EX, pruefung: lesart, umgesetzt_in: "LWgrammar lw_rule_conformity (syntax); pruefregeln",
+       de: "Syntax: vollständige, grammatisch korrekte Sätze; keine Satzbrüche und Anakoluthe aus dem gesprochenen Text.",
+       en: "Syntax: complete, grammatically correct sentences; no broken sentences or anacolutha from the spoken text.",
+       anweisung: "Bilde vollständige, grammatisch korrekte Sätze; keine Satzbrüche."}
+    - {id: S2, element: EX, pruefung: code, umgesetzt_in: "LWgrammar lw_writingguide_check; pruefregeln",
+       de: "Rechtschreibung und Zeichensetzung nach dem Regelwerk der Sprache: Deutsch nach Duden (amtliches Regelwerk), Englisch nach Oxford (Shorter Oxford English Dictionary, New Hart's Rules), Französisch, Italienisch und Spanisch nach ihren Akademie-Regelwerken; dazu die Regeln von LWgrammar (famulus-writingguide-1).",
+       en: "Spelling and punctuation by the standard of the language: German by Duden (official rules), English by Oxford (Shorter Oxford English Dictionary, New Hart's Rules), French, Italian and Spanish by their academies; together with the rules of LWgrammar (famulus-writingguide-1).",
+       anweisung: "Rechtschreibung und Zeichensetzung nach Duden (Deutsch) bzw. Oxford (Englisch)."}
+    - {id: S3, element: EX, pruefung: lesart, umgesetzt_in: "LWgrammar lw_sprachformen, Stilprofil des Autors",
+       de: "Register und Stil folgen der Sprachform der Reihe und dem Stil des Autors; keine Floskeln, keine Wertung ohne Beleg.",
+       en: "Register and style follow the series' language form and the author's style; no stock phrases, no evaluation without evidence.",
+       anweisung: "Halte Register und Stil des Autors; keine Floskeln, keine Wertung ohne Beleg."}
+    - {id: S4, element: EX, pruefung: code, umgesetzt_in: "pruefregeln (Muster); Quarto-Vorlage arxivai (language)",
+       de: "Generisches Maskulinum; keine Genderzeichen (Doppelpunkt, Sternchen, Unterstrich, Binnen-I, Schrägstrich) und keine Paarformen; in anderen Sprachen ebenso die Normalform.",
+       en: "Generic masculine in German; no gender signs (colon, asterisk, underscore, internal capital, slash) and no paired forms; the standard form in other languages as well.",
+       anweisung: "Generisches Maskulinum („der Autor“, „die Leser“); keine Genderzeichen, keine Paarformen."}
+    # L — notes, literature, references
+    - {id: L1, element: GR, pruefung: code, umgesetzt_in: "pruefregeln (Fußnoten)",
+       de: "Jede Fußnote oder Randnotiz gehört zu einer Stelle und belegt oder erläutert sie; keine verwaisten und keine doppelten Noten.",
+       en: "Every footnote or side note belongs to a place and documents or explains it; no orphaned and no duplicate notes."}
+    - {id: L2, element: GR, pruefung: code, umgesetzt_in: "pruefregeln (Literatur: .bib ↔ Zitate, Katalog)",
+       de: "Jede bibliographische Referenz löst im Literaturverzeichnis auf; jeder Eintrag ist vollständig (Autor, Titel, Jahr, Ort oder Zeitschrift, Seiten) und an einem Katalog geprüft (DOI, ISBN, Bibliothekskatalog); die Zitierweise folgt der Reihe.",
+       en: "Every bibliographical reference resolves in the bibliography; every entry is complete (author, title, year, place or journal, pages) and checked at a catalogue (DOI, ISBN, library catalogue); the citation style follows the series."}
+    - {id: L3, element: GR, pruefung: code, umgesetzt_in: "GR1, GR2",
+       de: "Jede Referenz auf eine Famulus-Sammlung ist eine gepinnte fr:-Adresse mit dem zitierten Inhalt.",
+       en: "Every reference to a Famulus collection is a pinned fr: address with its cited content."}
+    - {id: L4, element: GR, pruefung: code, umgesetzt_in: "pruefregeln (Literatur)",
+       de: "Kein Eintrag des Literaturverzeichnisses ohne Zitat im Text und kein Zitat ohne Eintrag.",
+       en: "No bibliography entry without a citation in the text and no citation without an entry."}
+    # A — quality of argument
+    - {id: A1, element: AU, pruefung: autor, umgesetzt_in: "AU2",
+       de: "Die These ist ausdrücklich genannt und stammt vom Autor.",
+       en: "The thesis is stated explicitly and comes from the author."}
+    - {id: A2, element: AR, pruefung: code, umgesetzt_in: "Famulus-Lektor (Argumentrekonstruktion); CL, AR",
+       de: "Der Aufbau des Arguments ist als Graph rekonstruiert; jede Aussage ist begründet, als These gekennzeichnet oder als Lücke verzeichnet.",
+       en: "The structure of the argument is reconstructed as a graph; every claim is grounded, marked as a thesis or recorded as a gap."}
+    - {id: A3, element: AR, pruefung: code, umgesetzt_in: "famulus-proof (resolution, derive, Validitätsbaum); AR2",
+       de: "Güte des Aufbaus: jeder Schritt hat seine Art (deduktiv, defeasibel, rechnend, erklärend); kein Zirkel; keine Lücke zwischen Prämissen und Konklusion; keine Konklusion behauptet mehr, als ihre Gründe tragen.",
+       en: "Quality of structure: every step has its kind (deductive, defeasible, computational, explanatory); no circle; no gap between premises and conclusion; no conclusion asserts more than its grounds carry."}
+    - {id: A4, element: AR, pruefung: code, umgesetzt_in: "AR3",
+       de: "Für jede erklärende Aussage sind Rivalen und unterscheidende Fälle genannt.",
+       en: "For every explanatory claim rivals and discriminating cases are named."}
+    - {id: A5, element: AR, pruefung: lesart, umgesetzt_in: "LWgrammar lw_logical_relations (contradicts)",
+       de: "Die Aussagen des Textes widersprechen einander nicht.",
+       en: "The claims of the text do not contradict one another."}
+    - {id: A6, element: AU, pruefung: autor, umgesetzt_in: "AU2",
+       de: "Die Gliederung trägt das Argument: jeder Abschnitt hat seine Funktion im Aufbau (Fragestellung, Befund, Begründung, Folgerung); der Autor bestätigt sie.",
+       en: "The outline carries the argument: every section has its function in the structure (question, finding, justification, conclusion); the author confirms it."}
+    # T — concepts and terminology
+    - {id: T1, element: EX, pruefung: lesart, umgesetzt_in: "pruefregeln (Einführung); LWgrammar lw_lector",
+       de: "Jeder Fachbegriff ist bei seiner ersten Verwendung eingeführt (Bestimmung oder Verweis).",
+       en: "Every technical term is introduced at its first use (definition or reference).",
+       anweisung: "Führe einen Fachbegriff bei seiner ersten Verwendung ein, wenn der Autor es nicht getan hat, und sage es."}
+    - {id: T2, element: EX, pruefung: lesart, umgesetzt_in: "LWgrammar lw_lector (Begriffsinventar, Bedeutungen)",
+       de: "Jeder Begriff wird semantisch konsistent verwendet: derselbe Begriff in demselben Sinn, kein stiller Bedeutungswechsel, keine wechselnden Wörter für denselben Begriff.",
+       en: "Every term is used consistently: the same term in the same sense, no silent shift of meaning, no changing words for the same concept.",
+       anweisung: "Verwende jeden Begriff durchgehend in demselben Sinn und mit demselben Wort."}
+    - {id: T3, element: EX, pruefung: code, umgesetzt_in: "LWgrammar lw_term, lw_usage_rules (R-GG, R-LG), Fachwörterbücher",
+       de: "Die Begriffe sind an den terminologischen Referenzwerken von LWgrammar geprüft (Regeln R-GG und R-LG, Fachwörterbücher, Register); die Bedeutung ist autor-, werk- und zeitrelativ.",
+       en: "Terms are checked against the terminological references of LWgrammar (rules R-GG and R-LG, technical dictionaries, registers); meaning is relative to author, work and period."}
+    - {id: T4, element: EX, pruefung: lesart, umgesetzt_in: "LWgrammar lw_consult_understanding",
+       de: "Historische Termini stehen in der Bedeutung ihrer Zeit, mit Beleg.",
+       en: "Historical terms stand in the meaning of their time, with evidence."}
+    - {id: T5, element: AU, pruefung: code, umgesetzt_in: "LWgrammar lw_gate (0 blockierende Konflikte)",
+       de: "Ein blockierender Verstoß gegen eine Regel von LWgrammar ist ein sperrender Befund.",
+       en: "A blocking violation of a LWgrammar rule is a blocking finding."}
+    # V — procedure and record
+    - {id: V1, element: AU, pruefung: code, umgesetzt_in: "vortrag.festhalten, news_lektorat (fassungen/)",
+       de: "Jede Fassung ist eingefroren und durch ihren Hash bestimmt.",
+       en: "Every version is frozen and identified by its hash."}
+    - {id: V2, element: AU, pruefung: code, umgesetzt_in: "annotations (Journal anmerkungen.jsonl)",
+       de: "Jede Anmerkung und jede Entscheidung steht im Journal.",
+       en: "Every note and every decision is in the journal."}
+    - {id: V3, element: AU, pruefung: code, umgesetzt_in: "vortrag.freigeben, publikation.start",
+       de: "Ein sperrender Befund verhindert die Freigabe.",
+       en: "A blocking finding prevents the release."}
+    - {id: V4, element: IC, pruefung: code, umgesetzt_in: "IC3",
+       de: "Die Ausgabe eines Sprachmodells ist eine Lesart, keine Prüfung; sie steht mit Modell und Hashes auf der Restliste.",
+       en: "The output of a language model is a reading, not a check; it is on the residual list with model and hashes."}
+    - {id: V5, element: AC, pruefung: code, umgesetzt_in: "AC2; Veröffentlichen-Ansicht (Stand der Sprachfassungen)",
+       de: "Maschinelle Übersetzungen sind als solche erklärt und tragen den Stand ihrer Vorlage.",
+       en: "Machine translations are declared as such and carry the state of their source."}
+    # P — publication
+    - {id: P1, element: AC, pruefung: code, umgesetzt_in: "lecture_publish.run, news_publish.run (sha)",
+       de: "Veröffentlicht wird nur die angezeigte, freigegebene Fassung (ihr Hash).",
+       en: "Only the shown, released version (its hash) is published."}
+    - {id: P2, element: AC, pruefung: code, umgesetzt_in: "famulus_publisher, metis (Vergaberegel)",
+       de: "Jede Seite trägt Impressum, Zähler und – nach der Vergaberegel – ihre METIS-Zählmarke.",
+       en: "Every page carries imprint, counter and – by the assignment rule – its METIS counting mark."}
+    - {id: P3, element: AC, pruefung: code, umgesetzt_in: "Leck-Gate (export_lettre._leaks)",
+       de: "Keine Seite enthält lokale Pfade oder interne Adressen.",
+       en: "No page contains local paths or internal addresses."}
+    - {id: P4, element: AC, pruefung: autor, umgesetzt_in: "Veröffentlichen-Ansicht (URL, Fassung, Sprachen)",
+       de: "Wo und unter welcher Adresse eine Seite erscheint, ist dem Autor vor der Freigabe gezeigt.",
+       en: "Where and at which address a page appears is shown to the author before the release."}

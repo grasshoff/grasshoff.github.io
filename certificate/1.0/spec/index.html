@@ -21,7 +21,7 @@ table{border-collapse:collapse;width:100%;font-size:.92rem}td,th{border-bottom:1
 <meta name="DC.creator" content="Gerd Graßhoff">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://famulus.lettre.ai/certificate/1.0/spec/", "publisher": {"@type": "Organization", "name": "OpenScienceTechnology GmbH", "address": {"@type": "PostalAddress", "streetAddress": "Im Wiesengrund 15A", "addressLocality": "47198 Duisburg", "addressCountry": "Deutschland"}}, "author": [{"@type": "Person", "name": "Gerd Graßhoff"}]}</script>
 <!-- famulus:publisher:end -->
-</head><body><header class="top"><a href="../../"><b>Famulus Certificate</b></a><span><a href="../../1.0/">Deed</a> · <a href="../../1.0/de/">Kurzfassung</a> · <a href="../../1.0/spec/">Specification</a> · <a href="https://famulus.lettre.ai/publications/">Famulus Publications</a></span></header><main><h1 id="famulus-certificate-10--specification">Famulus Certificate 1.0 —
+</head><body><header class="top"><a href="../../"><b>Famulus Certificate</b></a><span><a href="../../1.0/">Deed</a> · <a href="../../1.0/de/">Kurzfassung</a> · <a href="../../1.0/spec/">Specification</a> · <a href="../../1.0/regeln/">Regeln</a> · <a href="../../1.0/regeln/en/">Rules</a> · <a href="https://famulus.lettre.ai/publications/">Famulus Publications</a></span></header><main><h1 id="famulus-certificate-10--specification">Famulus Certificate 1.0 —
 Specification</h1>
 <p>Format <code>famulus-certificate/1</code> · version 1.0 · 21 November
 2026 · status: draft for discussion (§11) · steward:
@@ -37,9 +37,11 @@ words MUST, MUST NOT and MAY are used as in RFC 2119.</p>
 states</h2>
 <p>A publication carries the Famulus Certificate when the justification
 of its claims is laid out in a form that others can examine and the
-examination is on record. The certificate is a set of files published
-with one version of the publication. Its state is computed from those
-files by a checker; nobody enters it by hand.</p>
+examination is on record, and when its content, argument, thesis and
+structure come from its author, who edited every draft text and answers
+for it (element AU, rules §13). The certificate is a set of files
+published with one version of the publication. Its state is computed
+from those files by a checker; nobody enters it by hand.</p>
 <p>The certificate certifies a procedure and its record. <strong>It does
 not certify that a claim is true.</strong> Truth cannot be checked from
 outside; the certificate secures the conditions under which a community
@@ -106,13 +108,13 @@ answer that agrees with the most observations. (→ AR, RF)</li>
 <li>A system that serves research is an instrument with which the
 scholar acts. It does not hold a proposition true and does not answer
 for one; the scholar who adopts its result asserts the proposition and
-answers for it. (→ AC, CL)</li>
+answers for it. (→ AU, AC, CL)</li>
 <li>A claim enters the body of knowledge of a community that includes
 generative agents when six conditions hold: truth, accountable
 assertion, novelty, best attestation, communicability and scrutiny.
 Truth cannot be checked from outside; the other five can be checked at
-publication, and the eight elements of the certificate measure them. (→
-CL, NV, GR, AR, IC, RF, EX, AC)</li>
+publication, and the nine elements of the certificate measure them. (→
+AU, CL, NV, GR, AR, IC, RF, EX, AC)</li>
 </ol>
 <table>
 <thead>
@@ -124,7 +126,7 @@ CL, NV, GR, AR, IC, RF, EX, AC)</li>
 <tbody>
 <tr>
 <td>Accountable assertion</td>
-<td>AC, CL</td>
+<td>AU, AC, CL</td>
 </tr>
 <tr>
 <td>Novelty</td>
@@ -159,15 +161,67 @@ of the argument they decided on.</li>
 <p>Whatever the checker cannot re-run MUST appear on the residual list
 (§8) and be signed. Nothing else is trusted.</p>
 <h2 id="5-elements-and-conditions">5. Elements and conditions</h2>
-<p>The certificate has eight elements. An element holds when every one
-of its conditions has passed. A publication is
-<strong>certified</strong> when all eight elements hold. There are no
-partial marks.</p>
+<p>The certificate has nine elements. An element holds when every one of
+its conditions has passed. A publication is <strong>certified</strong>
+when all nine elements hold. (AU, Authorship, was added on 24 November
+2026 while version 1.0 is a draft; discussion.yaml records it.) There
+are no partial marks.</p>
 <p>Each condition names who settles it: the <strong>checker</strong>
 re-runs it from the certificate files; a <strong>gate</strong> of the
 publishing series measures it; the <strong>author</strong> decides it; a
 <strong>referee</strong> — a named person who is not an author — signs
 it.</p>
+<h3 id="au--authorship">AU — Authorship</h3>
+<p>The design of the content, the argument, the thesis and the structure
+of the document come from the author; every draft text is edited by the
+author and answered for by him; Famulus has worked only under the
+editing rules of this certificate (rules B, S, T).</p>
+<table>
+<thead>
+<tr>
+<th>no.</th>
+<th>by</th>
+<th>requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AU1</td>
+<td>checker</td>
+<td>The authorship record names the author's sources of the text
+(recording of a talk, dictation, manuscript, outline, annotations), each
+with its SHA-256.</td>
+</tr>
+<tr>
+<td>AU2</td>
+<td>checker</td>
+<td>The theses and the sections of the document are listed, each with
+origin 'author' and the source it comes from; a thesis or section of
+machine origin fails.</td>
+</tr>
+<tr>
+<td>AU3</td>
+<td>checker</td>
+<td>The editing record lists every version with its SHA-256 and counts
+the author's notes and the proposals taken over, discarded and edited by
+hand; no machine change entered the text without the author taking it
+over.</td>
+</tr>
+<tr>
+<td>AU4</td>
+<td>checker</td>
+<td>Every finding under the rules of this certificate is recorded with
+its rule and decided; an undecided finding leaves the condition
+open.</td>
+</tr>
+<tr>
+<td>AU5</td>
+<td>author</td>
+<td>The author has confirmed the authorship record and released exactly
+this text (<code>text_sha</code>).</td>
+</tr>
+</tbody>
+</table>
 <h3 id="cl--claim-ledger">CL — Claim ledger</h3>
 <p>Every claim of the publication is stated as a proposition, with its
 place in the text, and marked as grounded, as a thesis, or as a gap.</p>
@@ -612,6 +666,23 @@ disagree), <code>reason</code>, <code>text_sha</code>,
 <td>the author's release: <code>by</code>, <code>on</code>,
 <code>version</code>, <code>text_sha</code>, or <code>{}</code></td>
 </tr>
+<tr>
+<td><code>authorship.json</code></td>
+<td>the authorship record (AU): <code>author</code>,
+<code>text_sha</code>, <code>sources</code> [{<code>id</code>,
+<code>kind</code> (recording | dictation | manuscript | outline |
+annotations), <code>sha256</code>, <code>note</code>}],
+<code>theses</code> and <code>sections</code> [{<code>id</code>,
+<code>text</code>/<code>title</code>, <code>origin</code> (author |
+machine), <code>source</code>}], <code>protocol</code>
+{<code>versions</code> [{<code>id</code>, <code>kind</code>,
+<code>sha256</code>}], <code>author_notes</code>,
+<code>proposals_inserted</code>, <code>proposals_discarded</code>,
+<code>hand_edits</code>, <code>unseen_changes</code>},
+<code>findings</code> [{<code>id</code>, <code>rule</code> (an id of
+§13), <code>status</code> (decided | open)}], <code>rules</code> (URL),
+<code>confirmed_by</code>, <code>confirmed_on</code></td>
+</tr>
 </tbody>
 </table>
 <p>Edge kinds: <code>deductive</code>, <code>defeasible</code>,
@@ -719,14 +790,14 @@ reproduce the expected state of every vector.</p>
 its print edition:</p>
 <blockquote>
 <p><strong>Published according to the Famulus Certificate FC 1.0
-[CL·NV·GR·AR·IC·RF·EX·AC]</strong> — <a
+[AU·CL·NV·GR·AR·IC·RF·EX·AC]</strong> — <a
 href="https://famulus.lettre.ai/certificate/1.0/">https://famulus.lettre.ai/certificate/1.0/</a></p>
 </blockquote>
 <p>A publication that is not certified MAY show its state, never the
 mark itself:</p>
 <blockquote>
-<p>Famulus Certificate FC 1.0: pending — 3 of 8 elements hold
-[CL·nv·gr·ar·ic·rf·EX·AC]</p>
+<p>Famulus Certificate FC 1.0: pending — 3 of 9 elements hold
+[au·CL·nv·gr·ar·ic·rf·EX·AC]</p>
 </blockquote>
 <p>In the state code an element that holds is written in capitals, an
 open one in lower case, a failed one struck through. The mark links to
@@ -770,8 +841,423 @@ of the series). The quality seal of the series is the certificate plus
 the publication conditions of the series (register, files, citation
 form, counting mark, licence) plus the author's release. The gates of
 the series that measure an element name its code.</p>
+<h2 id="13-rules-of-examination-validation-and-editing">13. Rules of
+examination, validation and editing</h2>
+<p>The certificate gives Famulus its rules of editing, and it names the
+examinations and validations a publication passes. Each rule has a fixed
+id; a finding under a rule is recorded with that id in
+<code>authorship.json</code> (AU4). A rule examined by a language model
+(<code>lesart</code>) yields a reading, never a check (IC3): it appears
+on the residual list and is signed by a referee. The rules are published
+at <a
+href="https://famulus.lettre.ai/certificate/1.0/regeln/">https://famulus.lettre.ai/certificate/1.0/regeln/</a>
+and linked from the Impressum of every publication made under this
+certificate.</p>
+<h3 id="b--editing-by-famulus">B — Editing by Famulus</h3>
+<p>What Famulus may and may not do to the author's text.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>rule</th>
+<th>examined by</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>Famulus adds no content, thesis or evaluation that does not come
+from the author (recording, dictation, manuscript, note).</td>
+<td>autor</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>Structure, outline and order of the document change only on a note
+of the author.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>No content word is replaced by one of another meaning; names, dates
+and quotations stay as they are unless the author asks otherwise.</td>
+<td>lesart</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>The author's note takes precedence over every general rule.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>B5</td>
+<td>Where the content for a change is missing, Famulus returns the
+passage unchanged and says what is missing; nothing is invented.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>B6</td>
+<td>Every change by Famulus is a proposal; it enters the text only when
+the author takes it over (replace or by hand).</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>B7</td>
+<td>In the reading text of a talk, remarks on operating, turning slides,
+time and the room are left out; nothing is added that was not said.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>B8</td>
+<td>Figures come from recorded facts or from sources; no figure is
+estimated or rounded without saying so.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+</tbody>
+</table>
+<h3 id="q--sources-and-evidence">Q — Sources and evidence</h3>
+<p>Every statement resting on a source is checked at the source.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>rule</th>
+<th>examined by</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>Every verbatim quotation is checked at its source (transcript or
+facsimile); a rendering is marked as such.</td>
+<td>quelle</td>
+<td>GR</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>Every picture credit is checked at the catalogue of the holding
+institution (inventory number, maker, year, rights).</td>
+<td>quelle</td>
+<td>GR</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>Every attribution (who writes to whom) agrees with caption and
+source.</td>
+<td>code</td>
+<td>GR</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>Every fr: address resolves and is pinned.</td>
+<td>code</td>
+<td>GR</td>
+</tr>
+<tr>
+<td>Q5</td>
+<td>Dates and names are checked against the source; what cannot be
+checked stays a finding with its reason.</td>
+<td>quelle</td>
+<td>GR</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s--language-and-form">S — Language and form</h3>
+<p>Syntax, spelling and register by the standard references of the
+language and by LWgrammar.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>rule</th>
+<th>examined by</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>Syntax: complete, grammatically correct sentences; no broken
+sentences or anacolutha from the spoken text.</td>
+<td>lesart</td>
+<td>EX</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Spelling and punctuation by the standard of the language: German by
+Duden (official rules), English by Oxford (Shorter Oxford English
+Dictionary, New Hart's Rules), French, Italian and Spanish by their
+academies; together with the rules of LWgrammar
+(famulus-writingguide-1).</td>
+<td>code</td>
+<td>EX</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Register and style follow the series' language form and the author's
+style; no stock phrases, no evaluation without evidence.</td>
+<td>lesart</td>
+<td>EX</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>Generic masculine in German; no gender signs (colon, asterisk,
+underscore, internal capital, slash) and no paired forms; the standard
+form in other languages as well.</td>
+<td>code</td>
+<td>EX</td>
+</tr>
+</tbody>
+</table>
+<h3 id="l--notes-literature-references">L — Notes, literature,
+references</h3>
+<p>Notes and bibliographical references are complete, resolvable and
+checked.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>rule</th>
+<th>examined by</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>Every footnote or side note belongs to a place and documents or
+explains it; no orphaned and no duplicate notes.</td>
+<td>code</td>
+<td>GR</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Every bibliographical reference resolves in the bibliography; every
+entry is complete (author, title, year, place or journal, pages) and
+checked at a catalogue (DOI, ISBN, library catalogue); the citation
+style follows the series.</td>
+<td>code</td>
+<td>GR</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>Every reference to a Famulus collection is a pinned fr: address with
+its cited content.</td>
+<td>code</td>
+<td>GR</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>No bibliography entry without a citation in the text and no citation
+without an entry.</td>
+<td>code</td>
+<td>GR</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a--quality-of-argument">A — Quality of argument</h3>
+<p>Thesis, structure and soundness of the argument.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>rule</th>
+<th>examined by</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>The thesis is stated explicitly and comes from the author.</td>
+<td>autor</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>The structure of the argument is reconstructed as a graph; every
+claim is grounded, marked as a thesis or recorded as a gap.</td>
+<td>code</td>
+<td>AR</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Quality of structure: every step has its kind (deductive,
+defeasible, computational, explanatory); no circle; no gap between
+premises and conclusion; no conclusion asserts more than its grounds
+carry.</td>
+<td>code</td>
+<td>AR</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>For every explanatory claim rivals and discriminating cases are
+named.</td>
+<td>code</td>
+<td>AR</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>The claims of the text do not contradict one another.</td>
+<td>lesart</td>
+<td>AR</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>The outline carries the argument: every section has its function in
+the structure (question, finding, justification, conclusion); the author
+confirms it.</td>
+<td>autor</td>
+<td>AU</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t--concepts-and-terminology">T — Concepts and terminology</h3>
+<p>Terms are introduced, used consistently and checked against the
+terminological references.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>rule</th>
+<th>examined by</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>Every technical term is introduced at its first use (definition or
+reference).</td>
+<td>lesart</td>
+<td>EX</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>Every term is used consistently: the same term in the same sense, no
+silent shift of meaning, no changing words for the same concept.</td>
+<td>lesart</td>
+<td>EX</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>Terms are checked against the terminological references of LWgrammar
+(rules R-GG and R-LG, technical dictionaries, registers); meaning is
+relative to author, work and period.</td>
+<td>code</td>
+<td>EX</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>Historical terms stand in the meaning of their time, with
+evidence.</td>
+<td>lesart</td>
+<td>EX</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>A blocking violation of a LWgrammar rule is a blocking finding.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+</tbody>
+</table>
+<h3 id="v--procedure-and-record">V — Procedure and record</h3>
+<p>How the editing is recorded.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>rule</th>
+<th>examined by</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>Every version is frozen and identified by its hash.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>V2</td>
+<td>Every note and every decision is in the journal.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>V3</td>
+<td>A blocking finding prevents the release.</td>
+<td>code</td>
+<td>AU</td>
+</tr>
+<tr>
+<td>V4</td>
+<td>The output of a language model is a reading, not a check; it is on
+the residual list with model and hashes.</td>
+<td>code</td>
+<td>IC</td>
+</tr>
+<tr>
+<td>V5</td>
+<td>Machine translations are declared as such and carry the state of
+their source.</td>
+<td>code</td>
+<td>AC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p--publication">P — Publication</h3>
+<p>What holds before and at publication.</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>rule</th>
+<th>examined by</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>Only the shown, released version (its hash) is published.</td>
+<td>code</td>
+<td>AC</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Every page carries imprint, counter and – by the assignment rule –
+its METIS counting mark.</td>
+<td>code</td>
+<td>AC</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>No page contains local paths or internal addresses.</td>
+<td>code</td>
+<td>AC</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>Where and at which address a page appears is shown to the author
+before the release.</td>
+<td>autor</td>
+<td>AC</td>
+</tr>
+</tbody>
+</table>
 </main><!-- famulus:publisher:start -->
-<p class="famulus-publisher" style="max-width:46rem;margin:2.5rem auto 1.5rem;padding:.7rem 16px 0;border-top:2px solid #c8a22a;font:13px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;opacity:.8">Published by OpenScienceTechnology GmbH · <a style="color:inherit" href="/impressum/">Legal notice</a> · <a style="color:inherit" href="/datenschutz/">Privacy</a></p>
+<p class="famulus-publisher" style="max-width:46rem;margin:2.5rem auto 1.5rem;padding:.7rem 16px 0;border-top:2px solid #c8a22a;font:13px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;opacity:.8">Published by OpenScienceTechnology GmbH · <a style="color:inherit" href="/impressum/">Legal notice</a> · <a style="color:inherit" href="/datenschutz/">Privacy</a> · <a style="color:inherit" href="/certificate/1.0/regeln/en/">Certificate and rules</a></p>
 <img class="famulus-publisher" src="https://vg05.met.vgwort.de/na/e24c322071474c77b01833532f9d37c1" width="1" height="1" alt="" loading="eager" referrerpolicy="no-referrer-when-downgrade" style="position:absolute">
 <script>(function(){try{var C="https://lettre.ngrok.dev/famulus-counter/api/hit",L=C.replace(/hit$/,'leave'),q=new URLSearchParams(location.search),v=Math.random().toString(36).slice(2,12),u=location.pathname;function S(a,b){navigator.sendBeacon?navigator.sendBeacon(a,b):fetch(a,{method:'POST',body:b,keepalive:true,mode:'no-cors'})}S(C,JSON.stringify({u:u,r:document.referrer,m:"e24c322071474c77b01833532f9d37c1",v:v,c:q.get('c')||q.get('utm_campaign')||''}));var a=0,t=document.visibilityState=='visible'?Date.now():0,s=0,x='',g='',k='';function sc(){var h=document.documentElement;s=Math.max(s,Math.min(100,Math.round((scrollY+innerHeight)/Math.max(h.scrollHeight,1)*100)))}addEventListener('scroll',sc,{passive:true});addEventListener('load',sc);sc();document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a[href]');if(l&&/^https?:$/.test(l.protocol)){var i=l.host==location.host;x=i?'in':'out';g=i?l.pathname+l.hash:l.host;k=(l.getAttribute('aria-label')||l.textContent||'').replace(/\s+/g,' ').trim().slice(0,80);B()}},true);function B(){S(L,JSON.stringify({u:u,v:v,d:Math.round((a+(t?Date.now()-t:0))/1000),s:s,x:x,t:g,k:k}))}function F(){if(t){a+=Date.now()-t;t=0}B()}document.addEventListener('visibilitychange',function(){document.visibilityState=='hidden'?F():t=Date.now()});addEventListener('pagehide',function(){if(t)F()})}catch(e){}})();</script>
 <noscript><img src="https://lettre.ngrok.dev/famulus-counter/api/hit.gif?u=/certificate/1.0/spec/&amp;m=e24c322071474c77b01833532f9d37c1" width="1" height="1" alt=""></noscript>

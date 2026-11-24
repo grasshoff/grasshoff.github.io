@@ -20,6 +20,46 @@
  "hasPart": [
   {
    "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/#AU",
+   "termCode": "AU",
+   "name": "Authorship",
+   "alternateName": "Autorschaft",
+   "description": "The design of the content, the argument, the thesis and the structure of the document come from the author; every draft text is edited by the author and answered for by him; Famulus has worked only under the editing rules of this certificate (rules B, S, T).",
+   "hasDefinedTerm": [
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AU1",
+     "description": "The authorship record names the author's sources of the text (recording of a talk, dictation, manuscript, outline, annotations), each with its SHA-256.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AU2",
+     "description": "The theses and the sections of the document are listed, each with origin 'author' and the source it comes from; a thesis or section of machine origin fails.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AU3",
+     "description": "The editing record lists every version with its SHA-256 and counts the author's notes and the proposals taken over, discarded and edited by hand; no machine change entered the text without the author taking it over.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AU4",
+     "description": "Every finding under the rules of this certificate is recorded with its rule and decided; an undecided finding leaves the condition open.",
+     "fc:settledBy": "checker"
+    },
+    {
+     "@type": "DefinedTerm",
+     "termCode": "AU5",
+     "description": "The author has confirmed the authorship record and released exactly this text (text_sha).",
+     "fc:settledBy": "author"
+    }
+   ]
+  },
+  {
+   "@type": "DefinedTerm",
    "@id": "https://famulus.lettre.ai/certificate/1.0/#CL",
    "termCode": "CL",
    "name": "Claim ledger",
@@ -269,12 +309,12 @@
  ],
  "fc:marks": {
   "certified": {
-   "en": "Published according to the Famulus Certificate FC 1.0 [CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/",
-   "de": "Veröffentlicht nach dem Famulus-Zertifikat FC 1.0 [CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
+   "en": "Published according to the Famulus Certificate FC 1.0 [AU·CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/",
+   "de": "Veröffentlicht nach dem Famulus-Zertifikat FC 1.0 [AU·CL·NV·GR·AR·IC·RF·EX·AC] — https://famulus.lettre.ai/certificate/1.0/"
   },
   "pending": {
-   "en": "Famulus Certificate FC 1.0: pending — {held} of 8 elements hold [{state}] — https://famulus.lettre.ai/certificate/1.0/",
-   "de": "Famulus-Zertifikat FC 1.0: ausstehend — {held} von 8 Elementen erfüllt [{state}] — https://famulus.lettre.ai/certificate/1.0/"
+   "en": "Famulus Certificate FC 1.0: pending — {held} of 9 elements hold [{state}] — https://famulus.lettre.ai/certificate/1.0/",
+   "de": "Famulus-Zertifikat FC 1.0: ausstehend — {held} von 9 Elementen erfüllt [{state}] — https://famulus.lettre.ai/certificate/1.0/"
   },
   "failed": {
    "en": "Famulus Certificate FC 1.0: not passed [{state}] — https://famulus.lettre.ai/certificate/1.0/",
@@ -297,5 +337,335 @@
    "de": "nicht bestanden",
    "rule": "at least one condition failed"
   }
- }
+ },
+ "fc:rules": [
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#B1",
+   "termCode": "B1",
+   "description": "Famulus adds no content, thesis or evaluation that does not come from the author (recording, dictation, manuscript, note).",
+   "fc:examinedBy": "autor",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#B2",
+   "termCode": "B2",
+   "description": "Structure, outline and order of the document change only on a note of the author.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#B3",
+   "termCode": "B3",
+   "description": "No content word is replaced by one of another meaning; names, dates and quotations stay as they are unless the author asks otherwise.",
+   "fc:examinedBy": "lesart",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#B4",
+   "termCode": "B4",
+   "description": "The author's note takes precedence over every general rule.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#B5",
+   "termCode": "B5",
+   "description": "Where the content for a change is missing, Famulus returns the passage unchanged and says what is missing; nothing is invented.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#B6",
+   "termCode": "B6",
+   "description": "Every change by Famulus is a proposal; it enters the text only when the author takes it over (replace or by hand).",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#B7",
+   "termCode": "B7",
+   "description": "In the reading text of a talk, remarks on operating, turning slides, time and the room are left out; nothing is added that was not said.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#B8",
+   "termCode": "B8",
+   "description": "Figures come from recorded facts or from sources; no figure is estimated or rounded without saying so.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#Q1",
+   "termCode": "Q1",
+   "description": "Every verbatim quotation is checked at its source (transcript or facsimile); a rendering is marked as such.",
+   "fc:examinedBy": "quelle",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#Q2",
+   "termCode": "Q2",
+   "description": "Every picture credit is checked at the catalogue of the holding institution (inventory number, maker, year, rights).",
+   "fc:examinedBy": "quelle",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#Q3",
+   "termCode": "Q3",
+   "description": "Every attribution (who writes to whom) agrees with caption and source.",
+   "fc:examinedBy": "code",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#Q4",
+   "termCode": "Q4",
+   "description": "Every fr: address resolves and is pinned.",
+   "fc:examinedBy": "code",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#Q5",
+   "termCode": "Q5",
+   "description": "Dates and names are checked against the source; what cannot be checked stays a finding with its reason.",
+   "fc:examinedBy": "quelle",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#S1",
+   "termCode": "S1",
+   "description": "Syntax: complete, grammatically correct sentences; no broken sentences or anacolutha from the spoken text.",
+   "fc:examinedBy": "lesart",
+   "fc:element": "EX"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#S2",
+   "termCode": "S2",
+   "description": "Spelling and punctuation by the standard of the language: German by Duden (official rules), English by Oxford (Shorter Oxford English Dictionary, New Hart's Rules), French, Italian and Spanish by their academies; together with the rules of LWgrammar (famulus-writingguide-1).",
+   "fc:examinedBy": "code",
+   "fc:element": "EX"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#S3",
+   "termCode": "S3",
+   "description": "Register and style follow the series' language form and the author's style; no stock phrases, no evaluation without evidence.",
+   "fc:examinedBy": "lesart",
+   "fc:element": "EX"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#S4",
+   "termCode": "S4",
+   "description": "Generic masculine in German; no gender signs (colon, asterisk, underscore, internal capital, slash) and no paired forms; the standard form in other languages as well.",
+   "fc:examinedBy": "code",
+   "fc:element": "EX"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#L1",
+   "termCode": "L1",
+   "description": "Every footnote or side note belongs to a place and documents or explains it; no orphaned and no duplicate notes.",
+   "fc:examinedBy": "code",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#L2",
+   "termCode": "L2",
+   "description": "Every bibliographical reference resolves in the bibliography; every entry is complete (author, title, year, place or journal, pages) and checked at a catalogue (DOI, ISBN, library catalogue); the citation style follows the series.",
+   "fc:examinedBy": "code",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#L3",
+   "termCode": "L3",
+   "description": "Every reference to a Famulus collection is a pinned fr: address with its cited content.",
+   "fc:examinedBy": "code",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#L4",
+   "termCode": "L4",
+   "description": "No bibliography entry without a citation in the text and no citation without an entry.",
+   "fc:examinedBy": "code",
+   "fc:element": "GR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#A1",
+   "termCode": "A1",
+   "description": "The thesis is stated explicitly and comes from the author.",
+   "fc:examinedBy": "autor",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#A2",
+   "termCode": "A2",
+   "description": "The structure of the argument is reconstructed as a graph; every claim is grounded, marked as a thesis or recorded as a gap.",
+   "fc:examinedBy": "code",
+   "fc:element": "AR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#A3",
+   "termCode": "A3",
+   "description": "Quality of structure: every step has its kind (deductive, defeasible, computational, explanatory); no circle; no gap between premises and conclusion; no conclusion asserts more than its grounds carry.",
+   "fc:examinedBy": "code",
+   "fc:element": "AR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#A4",
+   "termCode": "A4",
+   "description": "For every explanatory claim rivals and discriminating cases are named.",
+   "fc:examinedBy": "code",
+   "fc:element": "AR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#A5",
+   "termCode": "A5",
+   "description": "The claims of the text do not contradict one another.",
+   "fc:examinedBy": "lesart",
+   "fc:element": "AR"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#A6",
+   "termCode": "A6",
+   "description": "The outline carries the argument: every section has its function in the structure (question, finding, justification, conclusion); the author confirms it.",
+   "fc:examinedBy": "autor",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#T1",
+   "termCode": "T1",
+   "description": "Every technical term is introduced at its first use (definition or reference).",
+   "fc:examinedBy": "lesart",
+   "fc:element": "EX"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#T2",
+   "termCode": "T2",
+   "description": "Every term is used consistently: the same term in the same sense, no silent shift of meaning, no changing words for the same concept.",
+   "fc:examinedBy": "lesart",
+   "fc:element": "EX"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#T3",
+   "termCode": "T3",
+   "description": "Terms are checked against the terminological references of LWgrammar (rules R-GG and R-LG, technical dictionaries, registers); meaning is relative to author, work and period.",
+   "fc:examinedBy": "code",
+   "fc:element": "EX"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#T4",
+   "termCode": "T4",
+   "description": "Historical terms stand in the meaning of their time, with evidence.",
+   "fc:examinedBy": "lesart",
+   "fc:element": "EX"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#T5",
+   "termCode": "T5",
+   "description": "A blocking violation of a LWgrammar rule is a blocking finding.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#V1",
+   "termCode": "V1",
+   "description": "Every version is frozen and identified by its hash.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#V2",
+   "termCode": "V2",
+   "description": "Every note and every decision is in the journal.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#V3",
+   "termCode": "V3",
+   "description": "A blocking finding prevents the release.",
+   "fc:examinedBy": "code",
+   "fc:element": "AU"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#V4",
+   "termCode": "V4",
+   "description": "The output of a language model is a reading, not a check; it is on the residual list with model and hashes.",
+   "fc:examinedBy": "code",
+   "fc:element": "IC"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#V5",
+   "termCode": "V5",
+   "description": "Machine translations are declared as such and carry the state of their source.",
+   "fc:examinedBy": "code",
+   "fc:element": "AC"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#P1",
+   "termCode": "P1",
+   "description": "Only the shown, released version (its hash) is published.",
+   "fc:examinedBy": "code",
+   "fc:element": "AC"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#P2",
+   "termCode": "P2",
+   "description": "Every page carries imprint, counter and – by the assignment rule – its METIS counting mark.",
+   "fc:examinedBy": "code",
+   "fc:element": "AC"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#P3",
+   "termCode": "P3",
+   "description": "No page contains local paths or internal addresses.",
+   "fc:examinedBy": "code",
+   "fc:element": "AC"
+  },
+  {
+   "@type": "DefinedTerm",
+   "@id": "https://famulus.lettre.ai/certificate/1.0/regeln/#P4",
+   "termCode": "P4",
+   "description": "Where and at which address a page appears is shown to the author before the release.",
+   "fc:examinedBy": "autor",
+   "fc:element": "AC"
+  }
+ ]
 }

@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.12.3">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gerd Graßhoff">
+
+<title>El legado de Kármán, examinado con Famulus</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}@media print {
+  html {
+    color-scheme: light only;
+  }
+  html, body, pre, code {
+    background-color: transparent;
+  }
+  body, a, a:visited, blockquote {
+    color: black;
+  }
+  pre, code {
+    padding: 0;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3, h4 {
+    page-break-after: avoid;
+  }
+}</style>
+
+
+<script src="manuskript_files/libs/clipboard/clipboard.min.js"></script>
+<script src="manuskript_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="manuskript_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="manuskript_files/libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="manuskript_files/libs/quarto-html/popper.min.js"></script>
+<script src="manuskript_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="manuskript_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="manuskript_files/libs/quarto-html/quarto-syntax-highlighting-c98d46286ea6717abcfd108b4e902a4d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="manuskript_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="manuskript_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="manuskript_files/libs/bootstrap/bootstrap-1b56a5ca560d3ea7efc71d2c17a8296f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="_extensions/aiplatform/arxivai/tufte-html.css">
+</head>
+
+<body class="quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Saltar al contenido principal</a>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#k1" id="toc-k1" class="nav-link active" data-scroll-target="#k1">Apertura</a></li>
+  <li><a href="#k2" id="toc-k2" class="nav-link" data-scroll-target="#k2">¿Qué es Famulus y qué puede hacer?</a></li>
+  <li><a href="#k3" id="toc-k3" class="nav-link" data-scroll-target="#k3">El legado es digital</a></li>
+  <li><a href="#k4" id="toc-k4" class="nav-link" data-scroll-target="#k4">Famulus lee con</a></li>
+  <li><a href="#k5" id="toc-k5" class="nav-link" data-scroll-target="#k5">Una pregunta de investigación</a></li>
+  <li><a href="#k6" id="toc-k6" class="nav-link" data-scroll-target="#k6">El camino recorrido hasta ahora</a></li>
+  <li><a href="#k7" id="toc-k7" class="nav-link" data-scroll-target="#k7">Con Famulus</a></li>
+  <li><a href="#k8" id="toc-k8" class="nav-link" data-scroll-target="#k8">El espacio de evidencia crece</a></li>
+  <li><a href="#k9" id="toc-k9" class="nav-link" data-scroll-target="#k9">¿Se puede confiar en la respuesta?</a></li>
+  <li><a href="#k10" id="toc-k10" class="nav-link" data-scroll-target="#k10">Seguir trabajando en el Notebook</a></li>
+  <li><a href="#k11" id="toc-k11" class="nav-link" data-scroll-target="#k11">De vuelta a Kármán</a></li>
+  <li><a href="#diskussion" id="toc-diskussion" class="nav-link" data-scroll-target="#diskussion">Discusión</a>
+  <ul class="collapse">
+  <li><a href="#vorrede" id="toc-vorrede" class="nav-link" data-scroll-target="#vorrede">Bienvenida</a></li>
+  </ul></li>
+  <li><a href="#anhang" id="toc-anhang" class="nav-link" data-scroll-target="#anhang">Sobre este manuscrito</a></li>
+  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Bibliografía</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content page-columns page-full" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">El legado de Kármán, examinado con Famulus</h1>
+<p class="subtitle lead">Famulus Deep Reading</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor/a</div>
+  <div class="quarto-title-meta-heading">Afiliaciones</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Gerd Graßhoff </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Humboldt-Universität zu Berlin
+          </p>
+        <p class="affiliation">
+            Deutsches Museum
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">23 de noviembre de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+.kicker{font-variant:small-caps;letter-spacing:.06em;color:#8a6d1d;font-size:.9em}
+.zeit{font-variant-numeric:tabular-nums;color:#002147;font-size:.8em}
+.luecke{color:#6b6b6b;font-style:italic}.sprecher{font-variant:small-caps;color:#002147}
+.ausgabenkopf{border-top:2px solid #cfb53b;border-bottom:1px solid #cfb53b;padding:.6em 0 .8em;margin:0 0 1.4em;font-size:.95em}
+.ausgabenkopf .reihe{letter-spacing:.18em;text-transform:uppercase;color:#002147;font-weight:600;font-size:.8em}
+.sprachen{font-size:.85em;margin:.3em 0 .6em}.sprachen a{color:#002147}.sprachen .aktiv{font-weight:700;color:#8a6d1d}
+.zitiervorschlag{font-size:.88em;color:#333}.abb{font-size:.88em;color:#333}.abb b{color:#002147}
+.unsicher,.ungeprueft{font-size:.8em;color:#8a6d1d}
+figure.szene-figur{margin:1.2em 0}figure.szene-figur .szene,figure.szene-figur .st-rahmen{width:100%;max-width:100%}
+figure.szene-figur .standbild{display:none;width:100%}figure.szene-figur video{width:100%}
+.st-skala{width:100%;overflow:hidden;position:relative}.st-skala>.st-rahmen{transform-origin:0 0;position:absolute;top:0;left:0}
+@media print{figure.szene-figur .szene,figure.szene-figur .st-skala,figure.szene-figur video{display:none!important}
+figure.szene-figur .standbild{display:block}}
+@media (prefers-reduced-motion: reduce){figure.szene-figur video{display:none}figure.szene-figur .standbild.video{display:block}}
+</style>
+<div class="ausgabenkopf">
+<p><span class="reihe">Famulus Lectures · N.º 1</span></p>
+<div class="sprachen"><a href="../manuskript.html" hreflang="de" lang="de" class="sprachwahl" data-lang="de">Deutsch</a> · <a href="../en/manuskript.html" hreflang="en" lang="en" class="sprachwahl" data-lang="en">English</a> · <a href="../fr/manuskript.html" hreflang="fr" lang="fr" class="sprachwahl" data-lang="fr">Français</a> · <a href="../it/manuskript.html" hreflang="it" lang="it" class="sprachwahl" data-lang="it">Italiano</a> · <span class="aktiv" lang="es">Español</span> · <a href="../pl/manuskript.html" hreflang="pl" lang="pl" class="sprachwahl" data-lang="pl">Polski</a> · <a href="../nl/manuskript.html" hreflang="nl" lang="nl" class="sprachwahl" data-lang="nl">Nederlands</a></div>
+<script>document.querySelectorAll('a.sprachwahl').forEach(a=>a.addEventListener('click',()=>{if(location.hash)a.href=a.href.split('#')[0]+location.hash;}));</script>
+<p>Gerd Graßhoff · Philosophisches Institut, Humboldt-Universität zu Berlin; Forschungsinstitut, Deutsches Museum</p>
+<p>Deutsches Museum, Múnich, sala de seminarios de investigación · 23 noviembre 2026 · Conferencia en el Deutsches Museum</p>
+<p><em>Versión revisada de la conferencia del 23 noviembre 2026, elaborada con Famulus.</em> Traducción del alemán; la versión alemana es la determinante.</p>
+<p>Licencia: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> · Versión 1.0 (Entwurf) · Estado 2026-11-23</p>
+<p><span class="zitiervorschlag">Propuesta de cita: Gerd Graßhoff: El legado de Kármán, examinado con Famulus. Famulus Deep Reading. Famulus Lectures 1, Deutsches Museum, Múnich, sala de seminarios de investigación, 23 noviembre 2026. https://famulus.lettre.ai/lectures/1/es/</span></p>
+</div>
+<section id="k1" class="level2 page-columns page-full">
+<h2 data-anchor-id="k1">Apertura</h2>
+<div class="page-columns page-full"><p><span id="k1b1"></span> Muchas gracias por la oportunidad y por la temprana visita en un lunes por la mañana. Intento ceñirme con mucha concentración al punto que quiero exponerles y someter a su valoración. Estamos considerando si podemos poner en marcha una solicitud de financiación para mostrar lo que presento no solo como una técnica con efecto sorpresa, sino como un instrumento útil para la investigación, para el museo y para quienes trabajan con ello. De eso quiero argumentar hoy. Voy a grabar la ponencia para presentar una herramienta de conferencia de Famulus: la grabación se transcribirá al finalizar, se combinará con las diapositivas y se publicará de modo que los participantes puedan leer la ponencia anotada con las diapositivas. En este prototipo, hoy eso todavía no funciona de inmediato.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">1:11</span></span></div></div>
+<p><img src="../folien/003.jpg" class="img-fluid" alt="Diapositiva de título con el grabado en cobre de Erasmo de Róterdam de Albrecht Durero de 1526; en el monograma, la D bajo la A está sustituida por una F."></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Fig. 1</strong> · El legado de Kármán, revisado con Famulus <span class="zeit">(Diapositiva 3)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k1b2"></span> No me apoyo en la tecnología más reciente, sino en la gran tradición de la historia de la ciencia con Erasmus (→ Fig. 1). Me he situado en esa tradición, y aquello de lo que quiero argumentar no quiero llamarlo IA. Es ante todo una cuestión de terminología: de qué hablamos. No hablamos de agentes como Claude u otros actores personalizados, sino de algo que quiero llamar Famulus, en alusión al uso lingüístico del Renacimiento y del humanismo en Erasmus.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">2:30</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k1b3"></span> Erasmus emplea la expresión Famulus en sus obras. Vemos aquí a Dürer en una de sus inimitables intuiciones de la terminología: Erasmus escribiendo con la mano derecha, en la mano izquierda sostiene algo. Como siempre en los grabados de Dürer, la gran pregunta es qué vemos aquí en realidad. A la derecha escribe evidentemente, a la izquierda lo interpreto como un tintero, pero permítanme el chiste para llevar más lejos la metáfora: eso es en mi lectura Famulus. Famulus, traducido del latín, es el ayudante. Y sabemos por muchas cartas de Erasmus que el Famulus es el ayudante, que puede ser muy erudito.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">3:25</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k1b4"></span> Tiene una red de ayudantes que trabajaban para él. En ese trabajo auxiliar podían aportar toda su competencia, salvo una cosa: aportar un juicio científico propio.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">4:21</span></span></div></div>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-2" aria-label="Diapositiva 9: Riemann: cuatro días en todos los canales"><div class="st-skala" data-breite="1180" data-hoehe="560"><div class="st-rahmen" data-szene="stapel" data-dauer="32000"></div></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/stapel.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 2</strong> · Riemann: cuatro días en todos los canales <span class="zeit">(Diapositiva 9)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k1b5"></span> Trasladado a las actividades de los últimos cuatro días, intento aquí retomar una vez más por qué en lo que ha ocurrido en los últimos cuatro días, con la referencia al teorema de Riemann, qué actos de comunicación tuvieron lugar en los últimos cuatro días en la comunidad científica (→ Fig. 2). Eso se monitorea en vivo. Tengo un monitor de ciencia que registra, documenta y evalúa todas las publicaciones, todas las comunicaciones en general que son accesibles. Para entender, para ver cómo funciona este proceso de creación científica. Y aquí hubo un anuncio, a mediados de la semana pasada, de que el teorema de Riemann está demostrado. Eso es por ahora solo una afirmación audaz, sobre todo cuando se ve que la demostración no se produjo en forma matemática convencional, sino mediante la entrega de 250000 páginas de código impreso.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">4:34</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/012.jpg" class="img-fluid figure-img" alt="Diapositiva 12: Un nuevo agente"></p>
+<figcaption><strong>Fig. 3</strong> · Un nuevo agente <span class="zeit">(Diapositiva 12)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k1b6"></span> Ese es el primer problema: ¿quién verifica el código (→ Fig. 3)? ¿Es ya conocimiento? Naturalmente que no. Pero —y ese es el proceso que muestro aquí— tiene lugar un intenso proceso de comunicación científica que, a partir de lo que sigue al anuncio, acaba produciendo algo de lo que estoy convencido de que o bien resulta ser conocimiento o bien un anuncio pretencioso con lagunas que ya no se pueden cerrar. Cómo termina el juego, no lo sabemos.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">5:40</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k1b7"></span> Quiero aprovechar el paralelismo: ya en estos diálogos de los científicos con el empleo de la técnica encontramos afirmaciones como en el anuncio inicial: sí, he encontrado esta demostración, working with Claude [trad.: trabajando con Claude]. ¿Quién es Claude? Claude es la tecnología. Debido a la denominación, se la personaliza desde Tropics —precisamente eso quiero evitar, pues sugiere que aquí tenemos un actor científico. Según mi lectura, no lo tenemos.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">6:18</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k1b8"></span> Lean, el demostrador, es una técnica matemática de demostración automática que se emplea aquí. Esta técnica ha procesado estas 250.000 páginas y ha demostrado que esta demostración es completa y correcta según toda la comprensión del empleo de esta tecnología por parte de la comunidad.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">6:55</span></span></div></div>
+</section>
+<section id="k2" class="level2 page-columns page-full">
+<h2 data-anchor-id="k2">¿Qué es Famulus y qué puede hacer?</h2>
+<p><span class="kicker">Prólogo</span></p>
+<p><img src="../folien/013.jpg" class="img-fluid" alt="Diapositiva 13: La plataforma Kármán"></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Fig. 4</strong> · La plataforma Kármán. El legado comprende 1.066 carpetas con 38.213 páginas y es accesible como plataforma con un clic. <span class="zeit">(Diapositiva 13)</span></span></p>
+</div><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/014.jpg" class="img-fluid figure-img" alt="Diapositiva 14: Lo que Famulus puede hacer"></p>
+<figcaption><strong>Fig. 5</strong> · Lo que Famulus puede hacer <span class="zeit">(Diapositiva 14)</span></figcaption>
+</figure>
+</div>
+</div></div>
+<div class="page-columns page-full"><p><span id="k2b1"></span> Mi lectura es: lo que Lean es para la matemática, quisiera introducirlo como Famulus para la historia de la técnica y de la ciencia (→ Fig. 4, Fig. 5). Es un gran anuncio un lunes por la mañana – perdónenme, entre amigos este es mi intento de sacar un poco la cabeza. Para mostrarlo, quisiera vincularlo con la publicación del legado de Kármán, tal como lo he trabajado y preparado. El legado que ven aquí está accesible en la medida de lo posible; todavía se trabaja en él, de modo que actualmente de 1066 cajas 328 están completamente digitalizadas.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">7:20</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b2"></span> Las máquinas funcionan todas en segundo plano y dominan mi pensión. Ya estamos en un tercio, y en las próximas dos semanas previsiblemente se digitalizarán todas las páginas restantes. Aquí ya encuentran una categorización automática. Ven que este legado comprende aproximadamente 204 corresponsales, lo que no se ve en el libro de localización. Las cifras pueden cambiar todavía debido al trabajo; esto es provisional.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">8:15</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b3"></span> 240 papeles, 142 manuscritos de Kármán y así sucesivamente. Patentes, pero también temas como turbinas, tubulina, funciones de peritaje, puentes que colapsaron debido a fenómenos de vibración, y similares. Esto está sistematizado y Famulus ya lo ha dividido automáticamente en categorías.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">8:50</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b4"></span> Todo esto ya es consultable y utilizable. Ven en el lado izquierdo del sitio web un registro que puede filtrarse por las categorías, es decir, si se trata ahora de manuscritos, de correspondencia; entonces se enumeran todas las correspondencias, que pueden agruparse. En el centro se verá que se pueden abrir los distintos documentos. A la izquierda aquí ajustados los facsímiles, es decir, todos los facsímiles son visibles de inmediato. A la derecha la transcripción. También es capaz de transcribir matemática y textos similares más complicados, también todos los textos en lenguas extranjeras, de forma apta para OCR.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">9:26</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b5"></span> Se pueden copiar para crear con ello Latte u otros documentos de publicación. Arriba se puede navegar, y esto puede hacerse tan rápido que en la pantalla también queda garantizada, creo, una buena legibilidad. Aquí está la variante de edición facsímil de esta carta. Luego se tienen en este entorno ya herramientas de trabajo. Esto es ahora la perspectiva del usuario, cómo puedo utilizar el acceso a este estado. Han visto, son aproximadamente 700.000 frases identificadas individualmente digitalizadas.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">10:17</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b6"></span> Famulus no solo es capaz, por tanto, de mostrar facsímiles en traducción; el análisis que ahora puedo mostrarles trabaja con precisión de frase y mucho más preciso aún, incluyendo añadidos mediales, denominaciones y otros portadores de información. Se pueden clicar frases. Al clicarlas, se selecciona un segmento – así lo he llamado en la terminología – para hacer algo con él. Un efecto secundario es que cada uno de estos segmentos puede citarse y consignarse como cita en publicaciones propias; el medio de publicación de esta cita se marca entonces como enlace clicable, y el lugar enlazado se muestra al usuario. Se puede citar, por tanto, con precisión de frase. Y no solo eso: al seleccionar – ahora voy un poco rápido –, también se puede, y esto es lo que la IA, lo que Famulus debe lograr de todos modos, interpretar el sentido de forma completamente transparente.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">10:57</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/020.jpg" class="img-fluid figure-img" alt="Diapositiva 20: Las herramientas de la derecha"></p>
+<figcaption><strong>Fig. 6</strong> · Las herramientas de la derecha. Si se marca un lugar, Famulus lo explica en el contexto de la página, lo traduce y muestra a través del diccionario todos los testimonios. <span class="zeit">(Diapositiva 20)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k2b7"></span> Es decir, mostrar la comprensión del texto (→ Fig. 6). ¿Qué se dice aquí en realidad? ¿Cuáles son las premisas tácitas de este pasaje? Todo eso se ve indicado en la barra derecha. Se puede este, es decir, este sistema aprendería; a partir de documentos más recientes esta comprensión del texto se actualizará y revisará una y otra vez, y con ello será también cada vez más validada, más correcta y más segura.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">12:18</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b8"></span> Las traducciones pueden ajustarse a voluntad. He configurado las principales lenguas europeas, pero puede traducirse a voluntad a todas las lenguas, a 140 o 70 lenguas. También pueden traducirse pasajes enteros en vivo; no hay que conservar nada. Esto va tan rápido que una traducción se produce en pocos segundos.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">12:50</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b9"></span> En pocos clics también pueden seleccionarse párrafos enteros. Luego puede preguntarse por nombres y áreas temáticas y hacerse abrir las carpetas correspondientes. O – Famulus crea automáticamente dosieres mediante el procesamiento de estas fuentes.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">13:20</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b10"></span> También los procesa con otras obras de referencia bibliográficas o biográficas, de modo que los dosieres se vuelven cada vez más validados, más amplios y más acertados. Aquí, en la columna derecha, en una página determinada puedo abrir el dosier, como puede intuirse aquí, y mostrar un dosier sobre una persona que se menciona aquí. Contiene típicamente las principales etapas biográficas, las obras principales y lo que podría ser especialmente interesante para el contexto. También pueden formularse consultas, preguntas de cualquier tipo sobre este lugar, sobre este texto, pero también en lo que en conjunto llamo el espacio de evidencia – es decir, lo que entra en consideración como evidencia para una respuesta. Quisiera explicar enseguida por qué la respuesta no se nutre y valida como en una consulta a ChatGPT a partir de cualquier Wikipedia, sino que la validación aquí es una justificación de la corrección de la respuesta estrictamente fundamentada en la teoría de la ciencia. A eso lo llamo validación.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">13:48</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b11"></span> Pueden formularse, por tanto, consultas a voluntad, aquí algo sobre la correspondencia de Prandtl. Solo lo muestro; estas son las posibilidades que obtienen si Famulus fuera utilizable. Tienen comprensión del texto, tienen la traducción, tienen diccionarios. Los diccionarios los he construido a partir de un concepto del Oxford English Dictionary combinado con la filosofía del lenguaje de Wittgenstein del seguir reglas. Es decir, estos diccionarios son creados por Famulus mismo a partir del espacio de documentos de evidencia, y ello en el estilo de todos los lugares característicos relevantes, con explicaciones de la terminología en la lengua original.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">15:33</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b12"></span> Da igual si húngaro, latín, griego o inglés. El diccionario no solo está creado universalmente según los mejores procedimientos de la lexicografía lingüística, sino también relativo al contexto. Pueden seleccionarse significados para un período determinado. Incluso pueden identificarse significados para determinados autores y modos de hablar relativos. Y si en la investigación lo quieren de verdad con rigor, también pueden elaborar diferencias del uso lingüístico de terminología entre dos autores diferentes de la misma época. Estos son los diccionarios.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">16:31</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b13"></span> Las traducciones están vinculadas a ellos. Esto debe estar tan finamente armonizado que las traducciones utilicen también los análisis de comprensión del texto de los diccionarios. Estas son las herramientas que el investigador usuario ya puede utilizar con un fondo de archivo de este tipo. Un ejemplo más, para mostrar que esto no debería ser todavía todo.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">17:20</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b14"></span> Volvamos a lo que hace tan interesante a Lean o al debate actual sobre Riemann: el demostrador participa en la comunicación científica, es un partícipe de esta generación de conocimiento. Así entiendo también a Famulus: un instrumento en el sentido de Erasmo, sin capacidad de juicio propia y sin licencia para ello. Ese es el papel del investigador, del erudito; Famulus es el productor de medios auxiliares.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">17:54</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b15"></span> En la ejecución y realización de los medios auxiliares trabajan ambas manos de Erasmo: el investigador que escribe, el productor del tintero, que trabaja con Famulus.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">18:35</span></span><span class="cite-note"><span class="citation" data-cites="grasshoff2026erasmus"><a href="#ref-grasshoff2026erasmus" role="doc-biblioref">Graßhoff 2026</a></span>, <em>The New Erasmus</em></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b16"></span> Bien, esto es todavía la visualización al respecto. Ups. Oh, ahora lamentablemente he pasado la página mal.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">18:56</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b17"></span> Llegamos al legado. El legado consta ahora de 38.000 páginas digitalizadas; el legado completo está digitalizado.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">19:10</span></span></div></div>
+</section>
+<section id="k3" class="level2 page-columns page-full">
+<h2 data-anchor-id="k3">El legado es digital</h2>
+<p><span class="kicker">Acto I</span></p>
+<p><img src="../folien/024.jpg" class="img-fluid" alt="Diapositiva con la indicación de 38.213 páginas digitalizadas y un visor de facsímiles que muestra 32 páginas del legado extraídas al azar."></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Fig. 7</strong> · El legado de Kármán: todo en línea. 32 páginas extraídas al azar muestran la forma medial mixta del legado, cada una como facsímil, transcripción, traducción y comentario. <span class="zeit">(Diapositiva 24)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k3b1"></span> Como pueden ver aquí: una forma medial mixta (→ Fig. 7). Texto impreso y mecanografiado, manuscritos, diagramas: de todo hay en un archivo. La calidad del OCR en Famulus está tan desarrollada que incluso cartas húngaras con todo tipo de acentos, que yo mismo no entiendo, pueden transcribirse y traducirse bien. Tenemos facsímil, transcripción, traducción y comentario.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">19:24</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/025.jpg" class="img-fluid figure-img" alt="Diapositiva con las cifras 1.066 carpetas, 38.213 páginas, 668.346 frases y 8.726 piezas fechadas de 1839 a 1980."></p>
+<figcaption><strong>Fig. 8</strong> · Un objeto sin original en casa <span class="zeit">(Diapositiva 25)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k3b2"></span> ¿Qué más podemos hacer con Famulus (→ Fig. 8)? Para ilustrarlo brevemente con este ejemplo: aquí tenemos objetos sin tener los originales en casa. Los originales están en Caltech y allí fueron digitalizados en una amplia acción. Pude comprar los microfiches de la Universidad de Berna, con la posibilidad de trabajar con ellos.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">20:02</span></span></div></div>
+</section>
+<section id="k4" class="level2 page-columns page-full">
+<h2 data-anchor-id="k4">Famulus lee con</h2>
+<p><span class="kicker">Acto II</span></p>
+<div class="page-columns page-full"><p><span id="k4b1"></span> Eso lo digitalicé por completo hace diez años; estos facsímiles digitales son la base y ahora los he preparado. Este legado de Kármán lo acabamos de ver. Ahora hay preguntas de investigación interesantes.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">20:34</span></span></div></div>
+<p><img src="../folien/029.jpg" class="img-fluid" alt="Diapositiva 29: Anotar con referencia"></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Fig. 9</strong> · Anotar con referencia. En el dosier se anotan hechos sobre Hopf con referencia, se aceptan, se descartan y se corrigen; prevalece el juicio de la investigadora. <span class="zeit">(Diapositiva 29)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k4b2"></span> Solo unos pocos ejemplos para que intuyan de qué se trata (→ Fig. 9). Pueden identificar preguntas del legado que les sigan interesando en la investigación; pueden traducir: todo eso lo hemos hecho.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">20:52</span></span></div></div>
+</section>
+<section id="k5" class="level2 page-columns page-full">
+<h2 data-anchor-id="k5">Una pregunta de investigación</h2>
+<p><span class="kicker">Acto III</span></p>
+<p><img src="../folien/031.jpg" class="img-fluid" alt="Diapositiva 31: ¿Qué vio Kármán en Aquisgrán?"></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Fig. 10</strong> · ¿Qué vio Kármán en Aquisgrán? <span class="zeit">(Diapositiva 31)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k5b1"></span> Pero también podemos encontrar preguntas interesantes, como en esta carta a Fromm de Kármán de la época posterior a la toma del poder por los nazis (→ Fig. 10). Es una carta de Kármán desde Pasadena, 26 de noviembre de 1934, con la indicación de que acababa de estar de nuevo en Aquisgrán. Como ven aquí – o no ven, en todo caso he intentado subrayarlo –: ¿Qué dice Kármán sobre Aquisgrán, cómo encontró su visita a Aquisgrán?</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">21:08</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k5b2"></span> I was in Aachen this summer and found conditions quite unchanged. [trad.: Estuve en Aquisgrán este verano y encontré las condiciones bastante sin cambios.] Bueno, eso es en principio sorprendente. 34, está en el exilio y encuentra la situación o las circunstancias sin cambios. Escribe a Fromm. Escribe un poco más adelante, not advisable to express one’s disapproval in a café. [trad.: no es aconsejable expresar el propio desacuerdo en un café.] Así que ahí entran algunas notas a pie de página, donde la situación probablemente no era del todo como antes.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">21:45</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/035.jpg" class="img-fluid figure-img" alt="Diapositiva 35: Hopf a Kármán, 15.5.1933"></p>
+<figcaption><strong>Fig. 11</strong> · Hopf a Kármán, 15.5.1933. Hopf escribe el 15 de mayo de 1933 que «wohl nur als Jude entfernt» [trad.: probablemente solo removido por ser judío]; lo que eso significa es una cuestión de interpretación. <span class="zeit">(Diapositiva 35)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k5b3"></span> Y luego Fromm responde: «und zwar bin ich wohl nur als Jude entfernt» [trad.: y ciertamente probablemente solo fui removido por ser judío] (→ Fig. 11). Lo que quería decir exactamente con eso es una cuestión de interpretación de este texto, con la que se puede molestar a Famulus. Si uno queda satisfecho con la respuesta es, en esta fase, por lo pronto otra cosa. Pero esas son las preguntas de investigación interesantes que se pueden discutir con un instrumento así – aunque sea solo como Famulus, como asistente auxiliar, si se quiere. La capacidad de juicio recae en el investigador que tiene el instrumento mismo.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">22:22</span></span></div></div>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-12" aria-label="Diapositiva 37: ¿Quién pidió ayuda a Kármán?"><div class="szene" data-szene="zeitleiste" data-dauer="9000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/zeitleiste.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 12</strong> · ¿Quién pidió ayuda a Kármán? <span class="zeit">(Diapositiva 37)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k5b4"></span> Entonces: sin cambios – ¿para quién (→ Fig. 12)? ¿Por qué escribe Kármán eso? ¿Quién pidió ayuda a Kármán? Ahora ven posibilidades de uso de este archivo que ya no se pueden realizar prácticamente de forma manual: recorrer todo el archivo. Y ante esta simple pregunta – ¿quién pidió ayuda a Kármán? – fallan las técnicas normales de indización del trato con tales archivos activos; no se pueden responder. Aquí se pueden resolver directamente con Kármán, y ven una cronología de todos los documentos en los que algún corresponsal pide ayuda.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">23:04</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k5b5"></span> Pero luego sigue: ¿Qué podía hacer Kármán? Kármán dice que su influencia es muy escasa; aconseja a Hopf buscar otra fuente. A la derecha – lamentablemente el contraste no es bueno – ven un diagrama de todas las cajas que contiene el archivo, y una referencia a los lugares donde se encuentran todos los corresponsales que pidieron ayuda. Ven que eso se distribuye entre distintas cajas.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">23:50</span></span></div></div>
+</section>
+<section id="k6" class="level2 page-columns page-full">
+<h2 data-anchor-id="k6">El camino recorrido hasta ahora</h2>
+<p><span class="kicker">Acto IV</span></p>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-13" aria-label="Diapositiva 40: Cada pieza clasificada"><div class="szene" data-szene="klassen" data-dauer="8000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/klassen.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 13</strong> · Cada pieza clasificada. Cada pieza está clasificada según su tipo: 5.676 cartas, 3.903 notas, 3.347 informes, además patentes en 64 carpetas. <span class="zeit">(Diapositiva 40)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k6b1"></span> Con un libro de localización en un archivo no tiene ninguna posibilidad de responder a una pregunta tan sencilla (→ Fig. 13). Famulus puede hacerlo. Aquí se muestra un caso en el que se pueden responder preguntas de investigación que, de forma tradicional, no se pueden resolver solo por la magnitud del archivo. Cada pieza individual está clasificada, y cada frase individual puede citarla y reutilizarla en cualquier publicación.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">24:15</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/043.jpg" class="img-fluid figure-img" alt="Diapositiva 43: Encontrar no es comprender"></p>
+<figcaption><strong>Fig. 14</strong> · Encontrar no es comprender <span class="zeit">(Diapositiva 43)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-15" aria-label="Diapositiva 42: Milisegundos"><div class="szene" data-szene="tempo" data-dauer="6000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/tempo.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 15</strong> · Milisegundos. La búsqueda por lema de «beurlauben» encuentra en 8.745.834 palabras seis resultados en 0,7 milisegundos. <span class="zeit">(Diapositiva 42)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k6b2"></span> Lo decisivo para que esto llegue en general a resultados finitos es la velocidad con la que sucede todo (→ Fig. 14, Fig. 15). Fue una gran parte en la que ciertamente me pasé algunos meses, para una búsqueda por un lema, es decir, por la forma básica lingüística de las formas gramaticalmente flexivas, es decir, no solo ayuda, si alguien escribe, cómo pide alguien ayuda en una carta, entonces no se puede buscar por ayuda, sino que hay que tener en cuenta también las distintas formas de expresión con las que se pide ayuda. Eso es lo que permite esta búsqueda, y concretamente, como ve, la búsqueda por lema en todo el fondo de 700000 frases muestra seis resultados en 0,7 milisegundos. Esta velocidad la necesita para poder aprovechar tales velocidades para poder recorrer también las relaciones mayores y poder trabajarlas también en tiempo finito. Es decir, consultas al dosier sobre una persona y sus antecedentes, cuando se invocan en un intervalo de 1,3 milisegundos.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">24:51</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k6b3"></span> Famulus tiene a disposición los perfiles personales de todas las personas de las que se habla en un texto en 1,3 milisegundos. Pero encontrar todavía no es comprender: el siguiente paso es la pregunta al legado. Cuando tiene todos los lugares encontrados, tiene que procesarlos para producir a partir de ellos un resultado comprensivo, correcto y sustancioso con el que pueda seguir trabajando.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">26:13</span></span></div></div>
+</section>
+<section id="k7" class="level2 page-columns page-full">
+<h2 data-anchor-id="k7">Con Famulus</h2>
+<p><span class="kicker">Acto V</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/046.jpg" class="img-fluid figure-img" alt="Diapositiva 46: Cada pasaje tiene una dirección"></p>
+<figcaption><strong>Fig. 16</strong> · Cada pasaje tiene una dirección. Cada pasaje encontrado lleva una dirección hasta la frase, para que Famulus pueda justificar con la divulgación de toda la evidencia. <span class="zeit">(Diapositiva 46)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-17" aria-label="Diapositiva 45: De cuatro cajas, un expediente"><div class="szene" data-szene="vorgang" data-dauer="9000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/vorgang.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 17</strong> · De cuatro cajas, un expediente <span class="zeit">(Diapositiva 45)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k7b1"></span> Así que puede usted plantear preguntas al legado (→ Fig. 16, Fig. 17). La búsqueda en cajas es extensa, como ahora podemos intuir, pero requiere esta velocidad para encontrar en pocos segundos una recopilación de todos los pasajes relevantes. Cada pasaje tiene una dirección. Esto es importante para que Famulus pueda justificar con la divulgación de toda la evidencia. Ninguna caja negra, nada oculto.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">26:53</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/050.jpg" class="img-fluid figure-img" alt="Diapositiva 50: Un «viaje»"></p>
+<figcaption><strong>Fig. 18</strong> · Un «viaje». Kármán aconseja a Hopf el 15.7.1936 que encuentre otra fuente para financiar su «viaje». <span class="zeit">(Diapositiva 50)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k7b2"></span> Así encontramos respuestas en esta correspondencia, en la que Kármán, ante una petición concreta de ayuda y apoyo, dice: «Leider muss ich gestehen, dass mein Einfluss sehr gering ist.» [trad.: Lamentablemente debo confesar que mi influencia es muy escasa.] En esta carta se muestra una situación típica: Hopf escribe a Kármán, usted escribió una vez a Courant (→ Fig. 18). Para los iniciados es un verdadero consejo sobre cómo obtener más ayuda, que Kármán evidentemente no puede dar. Y en la carta a Hopf, Kármán escribe que debe encontrar otra fuente para financiar su viaje, es decir, el exilio.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">27:26</span></span></div></div>
+</section>
+<section id="k8" class="level2 page-columns page-full">
+<h2 data-anchor-id="k8">El espacio de evidencia crece</h2>
+<p><span class="kicker">Acto VI</span></p>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-19" aria-label="Diapositiva 51: La respuesta tiene finales abiertos"><div class="szene" data-szene="zeitleiste" data-dauer="7000" data-luecken="1"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/zeitleiste-luecken.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 19</strong> · La respuesta tiene finales abiertos. La cronología termina de forma abierta: se menciona a Courant y a Heisenberg, pero sus fondos no están documentados en el legado. <span class="zeit">(Diapositiva 51)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k8b1"></span> Dublín, diciembre del 39 (→ Fig. 19). Bueno, todas estas son todavía referencias del sector Encuentra algo relevante. Ahora tenemos aquí algo: si reunimos todas estas referencias, vemos que, naturalmente, también este legado Kármán —lo he llamado con las manos abiertas—, precisamente esta indicación de Courant. Pero Courant no forma parte de este legado. O se menciona a Heisenberg, pero la correspondencia de Heisenberg o todo lo que concierne a su legado no está recogido aquí.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">28:23</span></span></div></div>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-20" aria-label="Diapositiva con una red de fondos: Deutsches Museum, Hochschularchiv RWTH Aachen, legado Courant, Caltech Archives, bibliotecas y HU Berlin."><div class="szene" data-szene="netz" data-dauer="7000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/netz.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 20</strong> · Una red de fondos. Nodos registrados y firmados vinculan fondos ajenos, de modo que cada punto sigue siendo identificable y citable de forma descentralizada. <span class="zeit">(Diapositiva 52)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k8b2"></span> La idea es construir una red Famulus: Famulus Reference (→ Fig. 20). Con ella se vinculan fondos, y técnicamente debe ser tan fácil de instalar que cualquier institución interesada que custodie tales fondos de archivo pueda registrarse e inscribirse. Se necesita una instalación técnica mínima, también un acceso a Internet, todo debe ser seguro, todo se calcula localmente, se cumplen las normas habituales de la UE. Famulus puede entonces, con esta velocidad, no solo procesar los fondos locales, sino una red de todos los fondos vinculados entre sí de forma relevante. Descentralizado, firmado: cada punto individual, cada frase individual es identificable y citable.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">29:01</span></span></div></div>
+</section>
+<section id="k9" class="level2 page-columns page-full">
+<h2 data-anchor-id="k9">¿Se puede confiar en la respuesta?</h2>
+<p><span class="kicker">Acto VII</span></p>
+<div class="page-columns page-full"><p><span id="k9b1"></span> Los errores siempre son posibles, también en un Famulus, por bueno que sea. No hay que reemplazarlo ni desecharlo de inmediato solo porque aparezcan errores – como aquí en un OCR, en el que se produce un error de reconocimiento y en lugar de «Zensur» se reconoce «Lessor». Eso ocurre, sobre todo en el reconocimiento de escritura manuscrita. Es mucho mejor que Transkribus, muy bueno, pero aparecen errores. Famulus permite una curación del fondo, y de manera sumamente eficiente: una vez identificado un error, puede corregirse con control de versiones y pasa a formar parte de la mejora de los fondos.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">30:10</span></span></div></div>
+<p><img src="../folien/058.jpg" class="img-fluid" alt="Diapositiva con una contraposición: modelo de lenguaje solo frente a Famulus, en cuanto a plausibilidad, fuente, lagunas y verificabilidad."></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Fig. 21</strong> · Validado objetivamente. Un modelo de lenguaje por sí solo suena plausible y suaviza las lagunas; Famulus da cada dato con dirección e indica las lagunas. <span class="zeit">(Diapositiva 58)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k9b2"></span> No voy a entrar más en esto (→ Fig. 21). Importante es el aspecto de la exigencia de Famulus, que lo distingue de todas las demás ofertas de IA – en mi afirmación, de manera bastante drástica: los resultados que se obtienen aquí están validados objetivamente.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">31:08</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/063.jpg" class="img-fluid figure-img" alt="Diapositiva 63: Deep Reading"></p>
+<figcaption><strong>Fig. 22</strong> · Deep Reading. Una frase de la Astronomia nova de Kepler, cap. 23, se capta con sus magnitudes, ángulos y la proporción como Deep Reading. <span class="zeit">(Diapositiva 63)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k9b3"></span> Es decir, su corrección se puede seguir y verificar por el investigador (→ Fig. 22). Y aquí volvemos a la analogía con Lean. Lean es ahora un programa, análogo a Famulus, que ha realizado el cálculo de la demostración de la hipótesis de Riemann, que en detalle nadie puede seguir por sí mismo. Y lo que ustedes ven, lo que está ocurriendo ahora mismo en la comunicación científica, es precisamente una equiparación lingüística del lenguaje del procesamiento simbólico de Lean, indigesto para el ser humano, a un nivel en el que esta demostración se traduce a una prueba comprensible para matemáticos. Y eso ya ha dado primeros resultados y propuestas tras cinco días. Así, las 250000 páginas de código impreso están ahora reducidas a 55 páginas de texto científico de demostración comprimido, y en ello trabaja ahora mismo toda la comunidad.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">31:31</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b4"></span> Típico de que el conocimiento no es un proceso individual y el conocimiento es un aspecto colaborativo de la investigación global. Ahora llegamos al Deep Reading. En el libro homenaje a Lieber Tauch introduje el término Deep Reading: existe el Distant Reading, el Close Reading, y ahora hay algo tercero, y eso lo hace Famulus – Deep Reading. Las técnicas de IA permiten preguntar por los significados de las expresiones y de los textos científicos. No solo por la simbología, no solo por la sintaxis, por expresiones, por modos de expresión, por strings, sino por contenidos.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">32:40</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b5"></span> Eso lo muestro en el estudio de las obras completas de Kepler.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">33:41</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b6"></span> Aquí ven un pasaje del capítulo 23, en el que Kepler introduce una frase. Ha publicado un resultado para un modelo astronómico con el que trabaja, y establece el dato numérico de que una determinada magnitud, abreviada DC, tiene el valor 61 148. Todavía no he visto ninguna publicación que yo conozca que haya recalculado este valor. ¿De dónde procede en realidad? ¿Cómo llega Kepler a ello? Los historiadores de la ciencia normales pasan por alto tales pasajes y dicen que alguna vez alguien lo calculará. Eso ya no ocurre ahora. Ahora tenemos a Famulus.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">33:46</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b7"></span> ¿Qué hace Famulus? Como con Kármán, ha analizado todo el texto hasta cada símbolo individual y cada diagrama individual. Eso permite indicios plausibles. Kepler expone su modo de trabajo con bastante claridad, pero no siempre de forma consistente – un autor sumamente difícil, pero generoso con la información sobre cómo hace algo. Y efectivamente, en las obras completas, capítulo 15, hay un pasaje en el que dice que aquí utiliza tablas para calcular.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">34:45</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b8"></span> Solo de manera muy general, a saber, las tablas de Landsbergius, tablas de triángulos, es decir, si ustedes quieren, tablas de senos y tablas trigonométricas afines. Bien, ¿qué ha hecho Famulus? Ha cargado automáticamente desde la ETH de Zúrich el facsímil de esta tabla, se ha incorporado de inmediato al fondo, se ha digitalizado, lo que requiere también medio día hasta digitalizar correctamente una tabla. Todas las tablas individuales, esta es una página de tablas, deben digitalizarse de modo que cada celda de cálculo individual se reproduzca correctamente. Así, las exigencias al OCR son muy altas. Bien, y ahora la tarea de Famulus: tú eres un Famulus, no necesitas juzgar, tarea simple, recalcula los números, ¿ha utilizado él esta tabla, estas tablas?</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">35:28</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b9"></span> Y si es así, ¿cómo?</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">36:27</span></span></div></div>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-23" aria-label="Diapositiva 71: El cálculo reconstruido"><div class="szene" data-szene="division" data-dauer="9000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/division.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 23</strong> · El cálculo reconstruido. El cálculo da, tras recalcular, 61145, impreso figura 61148: se descartaron las dos últimas cifras. <span class="zeit">(Diapositiva 71)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k9b10"></span> Esta tarea todavía no la ha realizado ningún investigador de Kepler, y entre ellos me cuento yo (→ Fig. 23). Simplemente demasiado molesta, costosa, intensiva en tiempo. A Famulus se le puede encargar la tarea. Hay que captar la situación problemática de que se trata, transformar una función seno – eso se realiza automáticamente en el Deep Reading –, y luego se ejecuta el cálculo.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">36:29</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b11"></span> Y ustedes ven entretanto por qué son necesarias las altas velocidades. La tabla, cada celda individual se multiplica tal como lo exige el manejo de estas tablas. Y ustedes obtienen, tras recalcular, que en la impresión aparece 61148, en el recálculo 61145. Pequeña desviación todavía, pero ya tal que como historiador uno puede quedar satisfecho con ello. Las demás preguntas son ya de nuevo interesantes y ricas, por qué esta diferencia. ¿Ha utilizado quizá otra tabla, otra edición, se ha equivocado en el cálculo, cosa que Kepler hace a menudo?</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">37:00</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b12"></span> Tampoco calculaba siempre él mismo, sino que tenía, como Erasmus, algunos Famuli no considerados por lo demás en la literatura, que trabajaban para él, precisamente para realizar los cálculos. Cada paso individual se verifica. La validación de un resultado permite preguntar en cada cálculo, lo que el Deep Reading de un texto como la Astronomia permite: ¿cómo ha llegado Kepler paso a paso a este resultado? Cada paso individual se muestra. Eso puede utilizarse para generar series de publicaciones propias nuevas. Las he llamado Expertise.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">37:39</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b13"></span> Las Expertise reconstruirían determinados bloques de cálculo en una obra como la de Kepler, los calcularían y comentarían – aquí la bipartición de la excentricidad sobre la base de la hipótesis vicaria –, tal como lo hace también un buen editor crítico de estas obras.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">38:35</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b14"></span> Generado automáticamente. Luego hay requisitos para la publicación, que he reunido en un certificado Famulus: condiciones que este texto debe cumplir para satisfacer la alta exigencia de corrección. Cuando se tiene este certificado, se obtiene una publicación que no solo aclara de manera completamente transparente la demostración, sino que también interpreta y muestra los medios gráficos utilizados, los diagramas.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">38:58</span></span></div></div>
+</section>
+<section id="k10" class="level2 page-columns page-full">
+<h2 data-anchor-id="k10">Seguir trabajando en el Notebook</h2>
+<p><span class="kicker">Acto VIII</span></p>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-24" aria-label="Diapositiva con el modelo de la Fig. 4.10 de Kepler, 14 objetos, la Tierra en su círculo y Marte visto desde dos lugares."><video data-video="1" src="../deck/assets/notebook/modell.mp4" poster="../deck/assets/notebook/modell-ende.png" muted="" playsinline="" loop="" preload="none"></video><img class="standbild video figure-img column-page-right" src="../deck/assets/notebook/modell-ende.png" alt=""></figure>
+<p><span class="abb"><strong>Fig. 24</strong> · El modelo se mueve. La Fig. 4.10 de Kepler se mueve como modelo con 14 objetos y se comprueba a través del espacio de parámetros. <span class="zeit">(Diapositiva 83)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k10b1"></span> Para entender qué ocurre realmente en los modelos geométricos utilizados: todos estos dibujos han sido generados por Famulus; no son dibujos tomados de publicaciones (→ Fig. 24).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">39:33</span></span><span class="cite-note"><span class="citation" data-cites="swerdlow2026renaissance"><a href="#ref-swerdlow2026renaissance" role="doc-biblioref">Swerdlow 2026</a></span>, <em>The Renaissance of Astronomy</em>, 522–529</span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/087.jpg" class="img-fluid figure-img" alt="Diapositiva con la contraposición de Lean y Famulus, las reglas Euclides I.4, III.7, III.20 y el resultado de las actas de comprobación."></p>
+<figcaption><strong>Fig. 25</strong> · Lo que Lean es para Riemann, Lean comprueba cada paso en el cálculo, Famulus cada paso en el modelo; 165 actas de comprobación, 14 de 14 textos superados en todos los niveles. <span class="zeit">(Diapositiva 87)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k10b2"></span> Debo llegar ya al final (→ Fig. 25). ¿Qué, entonces? Lo que Lean es para Riemann, Famulus lo es para Kepler. Y espero haber podido comunicarles que, según mi comprensión, es un demostrador y un instrumento que conduce demostraciones para la historia de la ciencia y de la técnica, así lo espero, en un conjunto tal de obras de la historia de la astronomía.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">39:58</span></span></div></div>
+</section>
+<section id="k11" class="level2 page-columns page-full">
+<h2 data-anchor-id="k11">De vuelta a Kármán</h2>
+<p><span class="kicker">Epílogo</span></p>
+<p><img src="../folien/090.jpg" class="img-fluid" alt="Diapositiva 90: Una máquina para esta casa"></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Fig. 26</strong> · Una máquina para esta casa. Kármán escribe el 2 de noviembre de 1923 al Deutsches Museum porque los primeros motores de aceite de Junkers van a ser desguazados. <span class="zeit">(Diapositiva 90)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k11b1"></span> Ahora que estamos en el Deutsches Museum, podría surgir la pregunta de si hay algo en el legado de Kármán donde ya se mencione el Deutsches Museum (→ Fig. 26). Con Famulus es una pregunta sencilla. A través del libro de localización, creo que esta pregunta no se puede responder; no lo he comprobado realmente. Famulus encuentra una correspondencia del 2 de noviembre de 1923, concretamente de Kármán al Deutsches Museum. Aquí había una consulta de un colega de Viena sobre qué pasaba con los primeros motores de aceite de Junkers, pues debían desguazarse en Aquisgrán. Primera generación, a la chatarra.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">40:28</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k11b2"></span> Luego llegó la consulta: ¿no son estas piezas únicas muy importantes, no deberíamos hacer algo con ellas? La consulta dice precisamente que consideraría un gran daño en el interés general que los objetos sumamente interesantes e instructivos se convirtieran en chatarra.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">41:16</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/093.jpg" class="img-fluid figure-img" alt="Diapositiva 93: ¿Llegó el motor al museo?"></p>
+<figcaption><strong>Fig. 27</strong> · ¿Llegó el motor al museo? El museo responde el 20 de noviembre de 1923 que se dirigirá directamente a Junkers en Dessau; si el motor llegó, queda abierto. <span class="zeit">(Diapositiva 93)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k11b3"></span> Así (→ Fig. 27). Escritura inversa.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">41:36</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k11b4"></span> Ahora tengo que ver a quién – pero al Deutsches Museum con la consulta de si no se podrían incorporar estos objetos al fondo del museo. Nos dirigiremos directamente, conforme a su propuesta, al señor profesor Junkers en Dessau con la petición de que ceda uno u otro de los motores experimentales mencionados. Y ya tiene usted de nuevo una red de comunicaciones de este tipo que al final llevan, supongo, a que estos instrumentos, estas máquinas, hayan estado al menos temporalmente en el fondo del Deutsches Museum. La respuesta está en el archivo, pero los márgenes están abiertos: espera a ser vinculada con los fondos de archivo del Deutsches Museum para completar la imagen y aumentar la densidad de investigación de tal modo que el beneficio de Famulus en una red así se refuerce aún más. Muchas gracias, esto quería presentárselo.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">41:42</span></span></div></div>
+</section>
+<section id="diskussion" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered" data-anchor-id="diskussion">Discusión</h2>
+<section id="vorrede" class="level3 unnumbered page-columns page-full">
+<h3 class="unnumbered" data-anchor-id="vorrede">Bienvenida</h3>
+<div class="page-columns page-full"><p> <span class="sprecher">Hablante 1:</span> Bueno, también hemos tenido personas influyentes en el Jobcenter y desde enero del año pasado es Senior Scholar aquí con nosotros en el Deutsches Museum. Y como nosotros, es decir, yo he visto lo que Gerd Kasseckert había desarrollado, en realidad también en la dirección de ediciones con IA, proyectos de IA en el futuro, queremos hacer mucho, ahora hemos reunido primero un círculo de interesados para presentarlo y discutirlo. Y creo que ustedes necesitarían de algún modo retroalimentación al respecto.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">0:43</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d3"></span> <span class="sprecher">Hablante 1:</span> Muchas gracias por la presentación tan ilustrativa y por la idea de reunir en una mesa distintas experticias de archivo, biblioteca e instituto de investigación. ¿Qué se puede hacer bajo tecnología, y cómo podría combinarse eso con proyectos como el ejemplo de los legados de Seelenplan, que emplean los medios y estos colores? En los últimos meses y años se ha desarrollado bastante, preguntas en cuanto a la catalogación, también en la catalogación de fondos aquí en el museo. Ahora paro y hago comentarios, impresiones y preguntas.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">42:55</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d4"></span> <span class="sprecher">Gerd Graßhoff:</span> ¿Lo he entendido correctamente: todo tendría que estar digitalizado para poder aplicar Famulus a un conjunto de documentos? Hay interfaces que permiten en la investigación de velocidad algo así como un registro, de modo que se sabe que en un catálogo un determinado objeto se encuentra en algún lugar, luego se emite un encargo de fotografía o digitalización y se envía al departamento correspondiente; en cuanto se cumple, se sigue procesando la preparación de la información. Tengo la mayor colección digital de fondos de relojes de sol antiguos, de 700 hallazgos conservados, incluida la digitalización 3D de 250 objetos. Hay un proyecto en marcha en Suiza, y está en marcha un registro de más hallazgos de relojes de sol en Israel, quizá 10, 15 objetos, que entonces también se digitalizarían, en la forma que sea, y que se pueden integrar. Una plataforma de investigación así tiene que ser muy flexible y poder acoger nuevos fondos de forma integradora. Antes discutíamos en interminables sesiones de comisión sobre normas y estándares; hoy eso ya no es necesario. La IA establece en 5 minutos un sistema de notación completo sobre el propio. El análisis estructural de los textos, sobre el que se discutía largamente si tenía que ser TEI estándar versión 18 o 19, uno se lo puede ahorrar. He introducido una nueva notación, FR para Famulus Register, con un código detrás que lo identifica todo de forma inequívoca, y se puede mapear entre sí. Espero poder hablar en los próximos días con la colega [nombre omitido] de Basilea sobre el legado de Bennington. Ellos lo intentaron manualmente según TEI durante varios años, esfuerzo. Para Famulus es igual si la numeración usa TEI u otra cosa; transformarlo de modo que sea integrable es 0 esfuerzo. La flexibilidad de la integridad es tal que lo que antes era el primer dolor de cabeza, si eso se puede aplicar siquiera, desaparece. Tenemos 400 años de tradición de registro en nuestros catálogos, eso no hay que redigerirlo.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">43:46</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d5"></span> <span class="sprecher">Hablante 2:</span> <em>Me interesa cómo evaluamos el legado. Mi pregunta: ¿qué podría hacer el Deutsches Museum, cómo podría no solo participar, sino aportar su fortaleza específica como espacio de conocimiento integrado, como espacio que no solo suministra documentos bidimensionales a la biblioteca, sino también objetos tridimensionales —de eso aún no se ha hablado—, al lado hay un laboratorio de digitalización de objetos, y movilizar ese valor añadido? Yo fui corresponsable de un gran proyecto, todos los museos de investigación alemanes, la plataforma abierta de información de colecciones, donde registraríamos conjuntamente unos estimados 160 millones de objetos en museos de Alemania, desde museos de historia natural hasta museos de arte y museos técnicos, para crear ese espacio de conocimiento. Herramientas así serían útiles; de los 54 millones de euros que solicitamos, eso cubriría bastante. ¿Cómo han pensado ustedes esto, esta posibilidad de integración, qué significaría eso para las instituciones del Deutsches Museum, para poder movilizar esta fortaleza específica?</em></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">47:10</span></span><span class="cite-note"><span class="citation" data-cites="misof2023bibliothek"><a href="#ref-misof2023bibliothek" role="doc-biblioref">Misof et&nbsp;al. 2023</a></span>, <em>Die Bibliothek des biologischen, technischen…</em></span></div></div>
+<div class="page-columns page-full"><p><span id="d6"></span> <span class="sprecher">Gerd Graßhoff:</span> La magnitud de esta colección está más allá de todas las posibilidades que tengo como individuo. Todo esto crece de la experiencia que he tenido con [nombre omitido], donde el ponente de [nombre omitido] ya tenía muchos medios y precisamente esta tarea de integración. Esa no era posible sin esta tecnología en esta magnitud, hace un año esto no era posible así. El desarrollo de esta tecnología es rápido; el TEI se publicó en algún momento como Elements y la convocatoria del ministerio federal. Element en el fondo es primero solo un Large Language Model, es decir, competencia de procesamiento del lenguaje. Lo que hemos visto aquí es un componente de procesamiento del conocimiento, va más allá de las competencias individuales hacia una asociación de una red a través de las aplicaciones. Esta tecnología se necesita con la posibilidad de vinculación para ir a la red, con todas las posibilidades de las interfaces, transformación, que ocurre ad hoc. Una red así necesita para el usuario una estructura unificadora, pero la estructura subyacente puede estar distribuida globalmente, a través de muchas instituciones, y puede mantener su infraestructura, arquitectura. No importa si está muy distribuida; el usuario es un ordenador local con poca competencia de cómputo en el lugar y alta velocidad de transmisión por internet, una topología de interconexión no es un problema. En grandes fondos de objetos materiales hay distintas versiones y esfuerzos de distinto alcance en cómo se registran estos objetos. Aquí en la casa tenemos tres registros 3D extensos. Se tiene un 3D-Mesh con el que se puede hacer algo. Con un grupo, hace 20 años, digitalicé el primer y hasta hoy único modelo 3D del Panteón de Roma, por fuera y por dentro, superficie completamente cerrada. Eso es entretanto un estándar de TI de la formación arquitectónica en América. Este modelo se segmenta en los textos, de modo que se puede abordar cada una de las partes de un edificio así, para estudiarlas luego. Eso se hace en una mezcla de los digitalizados creados localmente, es decir, del modelo 3D en el lugar, con la posibilidad de evaluarlo mediante Famulus en otro lugar. El procesamiento mismo está distribuido. Así se pueden hacer los modelos 3D en bruto o la interpretación digitalizada; en relojes de sol se puede leer automáticamente la transcripción, determinar, evaluar, se evalúa un modelo 3D de un reloj de sol, se evalúan las formas de las escalas, el tipo, y entonces se puede decir para qué latitud geográfica estaba hecho este objeto. Con información adicional sobre la naturaleza del material se tiene tanta información que en parte se puede identificar al fabricante por su nombre. La institución que lo proporciona suele tener también el conocimiento. El conocimiento puede dividirse en distintas secciones y contribuciones, que luego se unen para encontrar una afirmación global sobre este objeto. El conocimiento no es una capacidad individual, no la competencia de un individuo como investigador, sino per se colaborativo, colectivo. Eso debería reflejarse en un modelo así. La infraestructura de las instituciones sigue existiendo. Hay que organizar una especie de registro. En un Deutsches Museum debería poder sobrevivir una figura guía. Yo solo puedo poner a Famulus en marcha, pero no puedo operarlo. Para eso necesitamos instituciones faro como el Deutsches Museum. En Kármán hay archivos 24/7 del legado en Nueva York, y prearchivos, allí ya está digitalizado mucho del legado. Si todos estos fondos se procesaran, el esfuerzo ya no es tan alto. Antes eran solicitudes que ascendían a 1000000. Ahora el esfuerzo también es alto, pero factible en un tiempo planificado. Cuanto más se añade, más significativo se vuelve. No se puede esperar que un fondo, un archivo solo, ponga a disposición localmente todas las preguntas, sino que eso tiene que reunirse en la red. Un trabajo previo así, que ustedes han hecho, es exactamente lo que habría que establecer ahora.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">49:45</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d7"></span> <span class="sprecher">Hablante 1:</span> Has mencionado la palabra tiempo. Estamos sujetos a un límite, tenemos las 11 en punto, el instituto necesita otra sesión, pero esto es el comienzo de una discusión y no el final. Todavía he recibido 2 intervenciones, con preguntas breves.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">56:34</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d8"></span> <span class="sprecher">Hablante 3:</span> <em>Como director del archivo aquí del Deutsches Museum, me interesan estas herramientas. Justamente en lo que respecta a las redes, se podría tomar a muchos físicos u otros científicos y no procesarlos. Mi pregunta quizá va todavía a estas cámaras: ¿qué había encontrado usted como metadatos cuando habló de cajas? Estas unidades físicas son importantes para digitalizar cosas, de lo contrario sería un enorme montón de documentos que quizá no se podrían evaluar. ¿Qué encontró usted?</em></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">56:57</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d9"></span> <span class="sprecher">Hablante 4:</span> <em>Sí, eso ha sido ahora muy, muy esclarecedor, muchas gracias por estos 2 minutos, ha sido estupendo. Quizá tome entonces primero una pregunta, es decir, me interesaría mucho saber cuál es, por así decirlo, cuál es su base técnica, de qué, de qué modelo base LLLLM han partido ustedes y dónde está. Bueno, intenta muy brevemente, sobre el…</em></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">57:39</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d11"></span> <span class="sprecher">Gerd Graßhoff:</span> Lo que encontré fue la posibilidad de procesamiento en cajas, los fondos del librillo. Eso sirve primero solo para el orden groseramente sistemático. Ya solo la siguiente línea es entonces un manuscrito o 3 textos básicos, eso lo prescribe automáticamente el sistema. Los digitalizados que he recibido están en cajas por microfilm, todavía los tengo aquí en la casa. Los he mandado digitalizar a mi propio costo. Con estos digitalizados hay que aclarar varias cuestiones jurídicas con el Caltech. Jurídicamente está claro que en la casa se puede usar, también citar y usar públicamente al respecto, también usar y citar científicamente, en el sentido clásico de la cita. Lo que jurídicamente aún hay que aclarar es si eso también se puede poner a disposición del público general. Eso todavía no lo he hecho. Técnicamente uso todo lo que alguna vez ha funcionado; las vías de solución de problemas se separan en las más diversas subtareas. La arquitectura actual vigente prevé para cada subtarea un modelo lo más bueno posible pero económico. Ya no opera un modelo de lenguaje solo; para determinadas tareas se toma el más caro o ni siquiera el más caro, sino porque es el mejor, para otras tareas los índices. El objetivo es que al final del próximo medio año, según mi estimación, estos modelos corran esencialmente en la casa. No hay vendor lock-in en una tecnología propietaria. Si las exigencias son bajas, se puede hacer con un Mac, creo que Mac es la mejor máquina en este momento para la gestión de memoria virtual, pero también se puede adquirir IBM. Una máquina así cuesta actualmente 26.000, si hay que comprarla. Con ella se pueden procesar en la casa todos estos procesos.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">58:02</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d12"></span> <span class="sprecher">Hablante 1:</span> Permítanme señalar para concluir que tenemos casi toda la semana dos congresos en el Deutsches Museum Digital: el Energie Community Forum, que comienza el miércoles, y el objeto digital el jueves y viernes, muchas oportunidades para continuar las conversaciones sobre digitalidad y digitalización. Muchas gracias por esta primera velada y a todos ustedes un buen comienzo.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">61:02</span></span></div></div>
+</section>
+</section>
+<section id="anhang" class="level2 unnumbered">
+<h2 class="unnumbered" data-anchor-id="anhang">Sobre este manuscrito</h2>
+<p>Los pasajes se basan en la grabación; cada uno lleva su marca temporal al margen. Las citas de diapositivas figuran en el texto literal de la diapositiva; lo que no se pudo oír se indica como laguna.</p>
+<p><strong>Validación de las afirmaciones.</strong> Cada afirmación del texto se comprobó en cuanto a su fundamento: en lo hablado (marca temporal), en la diapositiva y, en el caso de datos sobre fuentes, en los archivos de origen de la conferencia. Justificación, no verificación: la falta de fundamento no es un juicio sobre la verdad de la afirmación. documentado: 35 · solo hablado: 193 · sin verificar: 0 · Contradicción: 0.</p>
+<ul>
+<li>Errores de reconocimiento corregidos: «FileMaker» → «Famulus» (register:title; lectura apple «Alphamulus»); «verseh» → «verstehen» (notizen name-famulus); «Erstan» → «Stand» (folie erkenntnis); «Karmann-Nachlasses» → «Kármán-Nachlasses» (register:title; lectura apple «Kan-Nachlasses»); «Karmann» → «Kármán» (folie schau); «Beweisar» → «Beweiser» (notizen riemann; lectura apple «Beweiser»); «Kaltech» → «Caltech» (notizen bibliothek); «Kammer-Nachlass» → «Kármán-Nachlass» (register:title; lectura apple «Karma-Nachlass»); «Kurand» → «Courant» (notizen einfluss); «twenty third, second November» → «2. November 1923» (folie (Datum)); «Inskription» → «Transkription» (folie schau); «Pamulus» → «Famulus» (register:title); «Kalttech» → «Caltech» (notizen bibliothek)</li>
+<li>Reconocimiento inseguro (sin cambios, marcado): Partizipient, Passav, Kuratierung, kollaborativer, zeitgiemig, Ähm, Pinarddrücke, Distributiert, kollaborativ</li>
+<li>Voces de la discusión: 5 voces, determinadas por stimmabdruck+inhalt; todas anónimas excepto la del ponente.</li>
+<li>Diapositivas sin texto hablado: plattform, dossier, finden, anfrage, vorgang, einfluss, reference, conductor, kepler-notebook, fuer-sie, schluss, danke</li>
+<li>Ciclo de corrección: ronda 1: nota 0.50, gate no superado; ronda 2: nota 0.51, gate superado; ronda 3: nota 0.53, gate superado; ronda 4: nota 0.51, gate superado (mejor ronda 3).</li>
+<li>Pasajes corregidos: 50; literales: 11; citas de diapositivas textuales: 0; lagunas: 0.</li>
+<li>Laguna: 11 pasaje(s) en versión literal (prueba de la versión del manuscrito no superada u omitida por el modelo)</li>
+<li>Laguna: 12 diapositiva(s) sin texto hablado (mostradas u omitidas en la ponencia): Die Kármán-Plattform, Notieren mit Beleg, Finden ist nicht Verstehen, Eine Frage an den Nachlass, Aus vier Boxen ein Vorgang, «Mein Einfluss sehr gering», Dezentral, signiert, zitierbar, Der Dirigent, Astronomia nova, erläutert, Was das für Sie heißt, Der Nachlass ist offen, Danke</li>
+<li>es: 71 · 9 → 5</li>
+</ul>
+<p><strong>Párrafos con hallazgo pendiente de la revisión de la traducción (tras tres rondas de reparación):</strong></p>
+<ul>
+<li><a href="#k11b3">k11b3</a>: Rückübersetzung: Inhaltswörter verloren (0% erhalten)</li>
+<li><a href="#d1">d1</a>: Rückübersetzung: neuer Name „KI-Editionen“</li>
+<li><a href="#d4">d4</a>: Rückübersetzung: neuer Name „TEI-Standard“</li>
+<li><a href="#d6">d6</a>: Namen fehlen: New, Pantheon; Rückübersetzung: neue Zahl „7-Archive“</li>
+<li><a href="#k8b1">k8b1</a>: Namen fehlen: Dublin</li>
+</ul>
+<p><strong>Pruebas pendientes (aún no verificadas):</strong></p>
+<ul>
+<li>Met 19.73.120 (Titelfolie, Bildnachweis) — ungeprüft</li>
+</ul>
+</section>
+<section id="literatur" class="level2 unnumbered">
+<h2 class="unnumbered" data-anchor-id="literatur">Bibliografía</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-grasshoff2026erasmus" class="csl-entry" role="listitem">
+Graßhoff, Gerd. 2026. <em>The New Erasmus. The Philosophy of an AI Famulus for Scholars</em>. OpenScienceTechnology GmbH.
+</div>
+<div id="ref-misof2023bibliothek" class="csl-entry" role="listitem">
+Misof, Bernhard, Klement Tockner, y Helmuth Trischler. 2023. <span>«Die Bibliothek des biologischen, technischen und kulturellen Wissens – Warum brauchen wir eine integrierte Sammlungsinfrastruktur?»</span> <em>Bibliothek Forschung und Praxis</em> 47 (3): 495-502. <a href="https://doi.org/10.1515/bfp-2023-0054">https://doi.org/10.1515/bfp-2023-0054</a>.
+</div>
+<div id="ref-swerdlow2026renaissance" class="csl-entry" role="listitem">
+Swerdlow, Noel M. 2026. <em>The Renaissance of Astronomy</em>. Sources y Studies en the History of Mathematics y Physical Sciences. Springer Nature Switzerland. <a href="https://doi.org/10.1007/978-3-031-84760-8">https://doi.org/10.1007/978-3-031-84760-8</a>.
+</div>
+</div>
+<link rel="stylesheet" href="../deck/assets/szenen.css">
+<script src="../deck/assets/facts.js"></script>
+<script type="module">
+import { starte } from './../deck/assets/szenen.mjs';   // a relative specifier (a bare one is refused)
+const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function skala(){ document.querySelectorAll('.st-skala').forEach(s => { const r = s.firstElementChild,
+  b = +s.dataset.breite, h = +s.dataset.hoehe, k = s.clientWidth / b; r.style.width = b + 'px'; r.style.height = h + 'px';
+  r.style.transform = 'scale(' + k + ')'; s.style.height = (h * k) + 'px'; }); }
+addEventListener('resize', skala); skala();
+const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; io.unobserve(e.target);
+  const el = e.target; if (el.dataset.video) { if (!ruhig) el.play().catch(() => {}); return; }
+  starte(el, { basis: '../deck/', standbild: ruhig }).then(() => { el.dataset.gestartet = '1'; })
+  .catch(err => { el.dataset.fehler = String(err); }); }), { threshold: .4 });
+document.querySelectorAll('figure.szene-figur [data-szene], figure.szene-figur video').forEach(el => io.observe(el));
+</script>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      const newWindowLabel = "(se abre en una nueva pestaña)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var opensNewContext = (link) => {
+        var target = (link.getAttribute("target") || "").toLowerCase();
+        return target !== "" && !["_self", "_parent", "_top"].includes(target);
+      }
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+        if (opensNewContext(link)) {
+          describeNewWindow(link);
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Código desplazable","output":"Salida desplazable"};
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,41 @@
+/* arxivai Tufte layout, screen edition (owner, 19-20 Nov 2026): the HTML face of the PDF's Tufte layout.
+   Oxford blue + gold, Libertinus, italic headings in regular weight with gold old-style numbers, H2 with a fine
+   gold rule, H3 in small caps, abstract without panel, captions and side notes small in the margin column.
+   One statement of the design: the format `arxivai-html` of this extension links it, and the exporter of the series
+   (landings2026/build/export_platform.py) reads it from the reference paper famulus-reader. */
+:root { --ink: #002147; --gold: #cfb53b; --gold-ink: #8c6d2a; --paper: #fdfcf8; --muted: #5b5648; --rule: #e4dccb; }
+body { background: var(--paper); color: #1a1a1a; font-family: "Libertinus Serif", "Iowan Old Style", Georgia, serif; font-size: 18px; line-height: 1.55; }
+a { color: var(--ink); text-decoration-color: var(--gold); }
+main :is(h1, h2, h3) { color: var(--ink); font-weight: 400; font-style: italic; border: 0; }
+/* a section (Markdown #, HTML h1) carries the fine gold rule, as H1 does in the PDF */
+main h1:not(.title) { border-bottom: .5px solid var(--gold); padding-bottom: .2em; margin-top: 2.2em; font-size: 1.9rem; }
+main h2 { margin-top: 1.8em; }
+main h3 { font-style: normal; font-variant: small-caps; letter-spacing: .03em; }
+main .header-section-number { color: var(--gold-ink); font-style: normal; font-variant-numeric: oldstyle-nums; margin-right: .4em; }
+#title-block-header .title { font-weight: 400; color: var(--ink); font-size: 2.3rem; line-height: 1.15; }
+#title-block-header .subtitle { font-style: italic; color: var(--ink); font-size: 1.3rem; }
+.abstract { border-left: .5px solid var(--gold); padding: .2rem 0 .2rem 1rem; margin: 1.4rem 0; }
+.abstract .abstract-title, .quarto-title-meta-heading { font-variant: small-caps; letter-spacing: .05em; color: var(--ink); text-transform: none; font-weight: 400; }
+figure figcaption, .figure-caption, .column-margin, .margin-caption, .aside { font-size: .82rem; line-height: 1.4; color: var(--muted); }
+.figure-caption .quarto-float-caption-label, figcaption strong { font-variant: small-caps; color: var(--ink); font-weight: 400; }
+figure img { border: .75px solid rgba(0,33,71,.45); border-radius: 3px; }
+.figure-caption code, .margin-caption code, .column-margin code, figcaption code { word-break: break-all; }
+/* quiet callouts, as in the PDF: small-caps title, a fine gold rule on the left, no panel, no icon */
+main .callout { border: 0 !important; border-left: 1px solid var(--gold) !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; padding-left: .9rem; }
+main .callout .callout-header { background: transparent !important; border: 0 !important; padding-left: 0; }
+main .callout .callout-icon-container { display: none; }
+main .callout .callout-title-container { font-variant: small-caps; letter-spacing: .04em; color: var(--ink); font-weight: 400; }
+main .callout .callout-body-container, main .callout .callout-body { padding-left: 0; }
+
+/* Inline code and Famulus references (owner, 22 Nov 2026: "terrible layout … last updated style directives"):
+   inline code without a box, in ink blue, breakable like a word. References (owner, 22 Nov 2026: "No footnotes in
+   the margins, shortforms for references"): no number in the text; an unnumbered margin note in short form —
+   "Author Year, locator" (margin-cites.lua, short title at the first mention) or "sigle, page" (famulus-refs.lua). */
+p code, li code, td code, figcaption code, .fr-note code { background: none; color: #002147; padding: 0;
+  font-size: 0.88em; overflow-wrap: anywhere; word-break: normal; }
+.fr-note, .cite-note { display: block; font-size: 0.82rem; line-height: 1.35; color: #2f4466; margin-bottom: .45rem; }
+.cite-note a, .cite-inline a { text-decoration: none; color: #002147; }
+.cite-note em { color: #3a4250; }
+.fr-note a { text-decoration: none; color: #002147; }
+.fr-note .fr-rule { color: #8c6d2a; font-style: italic; }
+.fr-inline { font-size: 0.92em; }

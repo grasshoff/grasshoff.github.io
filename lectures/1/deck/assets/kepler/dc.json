@@ -1,0 +1,92 @@
+{
+ "quelle": "kepler-an-ch22-23.html",
+ "sin_dfc": {
+  "winkel": "36° 51′",
+  "zeilen": [
+   {
+    "wert": null,
+    "index": 2284,
+    "page": "fr:kepler-context/Lansberge1591/0054",
+    "fr": "fr:kepler-context/Lansberge1591/0054/tabula1/r23/c3",
+    "argument": "36°. 51'",
+    "printed": "5,997,222"
+   }
+  ],
+  "tafelwert": "5997222",
+  "abgeworfen": "59972"
+ },
+ "sin_fdc": {
+  "winkel": "78° 45′ 27″",
+  "zeilen": [
+   {
+    "index": 4882,
+    "page": "fr:kepler-context/Lansberge1591/0070",
+    "fr": "fr:kepler-context/Lansberge1591/0070/tabula1/r17/c5",
+    "argument": "78°. 45'",
+    "printed": "9,807,853"
+   },
+   {
+    "index": 4883,
+    "page": "fr:kepler-context/Lansberge1591/0070",
+    "fr": "fr:kepler-context/Lansberge1591/0070/tabula1/r18/c5",
+    "argument": "78°. 46'",
+    "printed": "9,808,420"
+   }
+  ],
+  "tafelwert": "9808108",
+  "abgeworfen": "98081"
+ },
+ "division": {
+  "dividend": 5997200000,
+  "divisor": 98081,
+  "quotient": 61145,
+  "remainder": 37255,
+  "steps": [
+   {
+    "partial_dividend": 599720,
+    "quotient_digit": 6,
+    "remainder": 11234,
+    "subtracted": 588486
+   },
+   {
+    "partial_dividend": 112340,
+    "quotient_digit": 1,
+    "remainder": 14259,
+    "subtracted": 98081
+   },
+   {
+    "partial_dividend": 142590,
+    "quotient_digit": 1,
+    "remainder": 44509,
+    "subtracted": 98081
+   },
+   {
+    "partial_dividend": 445090,
+    "quotient_digit": 4,
+    "remainder": 52766,
+    "subtracted": 392324
+   },
+   {
+    "partial_dividend": 527660,
+    "quotient_digit": 5,
+    "remainder": 37255,
+    "subtracted": 490405
+   }
+  ]
+ },
+ "multiplikation": {
+  "multiplicand": 59972,
+  "multiplier": 100000,
+  "partials": [
+   {
+    "digit": 1,
+    "place": 5,
+    "product": 59972
+   }
+  ],
+  "product": 5997200000
+ },
+ "ergebnis": "61145",
+ "gedruckt": "61148",
+ "urteil": "differs"
+}

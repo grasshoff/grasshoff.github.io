@@ -1,0 +1,44 @@
+/* Szenen außerhalb des Decks (Publikation, szenen-test.html): Bühne und Kartenstapel der Szene „stapel“.
+ Abgeleitet aus slides.scss (dort unter .reveal, im Deck maßgeblich); hier ohne .reveal, für szenen.mjs. */
+.szene { position: relative; aspect-ratio: 1000 / 600; background: #050d18; border-radius: 10px; overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(227,199,102,.18); font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; color: #e6e0d0; }
+.szene > svg { width: 100%; height: 100%; display: block; }
+.st-buehne img { max-width: none; }
+.st-rahmen { width: 1180px; height: 560px; margin: 0 auto; cursor: pointer; }
+.st-buehne { position: relative; width: 1180px; height: 560px; background: radial-gradient(ellipse at 50% 40%, #102341 0%, #050d18 75%); border-radius: 10px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(227,199,102,.18); }
+.st-echo { position: absolute; inset: 0; pointer-events: none; }
+.st-echo-karte { position: absolute; width: 150px; height: 52px; overflow: hidden; font-size: 8px; line-height: 1.25; color: #9fb0c6; background: rgba(30,50,80,.35); border: 1px solid rgba(158,195,230,.18); border-radius: 3px; padding: 3px 5px; box-sizing: border-box; opacity: 0; animation: st-echo 1.4s ease-out forwards; }
+@keyframes st-echo { from { opacity: 0; } 30% { opacity: .55; } to { opacity: .22; } }
+.st-echo-zahl { position: absolute; right: 16px; top: 8px; text-align: right; color: #7f8ea4; }
+.st-echo-zahl b { display: block; font-size: 30px; color: #9ec3e6; font-variant-numeric: tabular-nums; line-height: 1; }
+.st-echo-zahl span { font-size: 11px; }
+.st-kopf { position: absolute; top: 84px; text-align: center; line-height: 1.15; }
+.st-kopf b { display: block; font-size: 15px; }
+.st-kopf span { display: block; font-size: 10px; color: #7f8ea4; }
+.st-zahl { position: absolute; top: 372px; text-align: center; font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.st-karte { position: absolute; left: 0; top: 0; width: 150px; height: 98px; overflow: hidden; background: #f7f2e4; color: #1d2733; border-top: 4px solid #c9a227; border-radius: 4px; box-shadow: 0 6px 14px rgba(0,0,0,.55); padding: 5px 7px; box-sizing: border-box; transition: transform .9s cubic-bezier(.2,.8,.2,1), opacity .6s; }
+.st-karte.st-bild { width: 112px; height: 150px; padding: 0; background: #fff; }
+.st-karte.st-bild img, .st-held.st-bild img { width: 100%; height: 100%; object-fit: cover; object-position: top; margin: 0; max-height: none; display: block; }
+.st-b-titel { display: none; }
+.st-k-kopf b { display: block; font-size: 9.5px; color: #002147; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.st-k-kopf span { display: block; font-size: 8px; color: #8c6d2a; margin-bottom: 2px; }
+.st-k-text { font-size: 8.5px; line-height: 1.3; color: #333; }
+.st-held { position: absolute; left: 50%; top: 46%; width: 420px; min-height: 160px; transform: translate(-50%, -50%) scale(.3); opacity: 0; background: #f7f2e4; color: #1d2733; border: 3px solid #e3c766; border-radius: 8px; padding: 14px 18px; box-sizing: border-box; box-shadow: 0 30px 80px rgba(0,0,0,.8), 0 0 60px rgba(227,199,102,.35); transition: transform .7s cubic-bezier(.2,.8,.2,1), opacity .5s; z-index: 5; }
+.st-held.an { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+.st-held.weg { transform: translate(-50%, -30%) scale(.25); opacity: 0; }
+.st-held.st-bild { width: 300px; height: 400px; padding: 0; overflow: hidden; }
+.st-held .st-k-kopf b { font-size: 16px; }
+.st-held .st-k-kopf span { font-size: 12px; }
+.st-held .st-k-text { font-size: 15px; line-height: 1.4; font-family: "Source Serif 4", Palatino, serif; }
+.st-pfeile i { position: absolute; top: 230px; width: 18px; height: 18px; border-top: 3px solid #3a5170; border-right: 3px solid #3a5170; transform: rotate(45deg); transition: border-color 1s, filter 1s; }
+.st-pfeile.an i { border-color: #e3c766; filter: drop-shadow(0 0 6px #e3c766); }
+.st-leiste { position: absolute; left: 0; right: 0; top: 432px; height: 2px; background: #2a3d58; }
+.st-tag { position: absolute; top: 8px; font-size: 11px; color: #7f8ea4; transform: translateX(-50%); }
+.st-zeiger { position: absolute; top: -7px; width: 3px; height: 16px; background: #e3c766; box-shadow: 0 0 10px #e3c766; transform: translateX(-50%); }
+.st-uhr { position: absolute; left: 14px; top: -34px; font-size: 14px; color: #e3c766; font-variant-numeric: tabular-nums; }
+.st-fazit { position: absolute; left: 0; right: 0; top: 468px; text-align: center; font-size: 15px; color: #d9dee6; opacity: 0; transition: opacity 1.2s; }
+.st-fazit.an { opacity: 1; }
+.st-fazit b { color: #e3c766; }
+.st-fuss { position: absolute; left: 0; right: 0; bottom: 8px; text-align: center; font-size: 10px; color: #5d6f88; }
+.st-pfeile { display: none !important; }  /* Riemann: Kommunikationsakte nebeneinander, kein Prozess */
+.st-standbild .st-echo-karte { animation: none; opacity: .2; }  /* Endzustand (im Deck: html.druck) */

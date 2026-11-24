@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.12.3">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gerd Graßhoff">
+<meta name="dcterms.date" content="2026-11-23">
+
+<title>Het Kármán-archief, geïnventariseerd met Famulus</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}@media print {
+  html {
+    color-scheme: light only;
+  }
+  html, body, pre, code {
+    background-color: transparent;
+  }
+  body, a, a:visited, blockquote {
+    color: black;
+  }
+  pre, code {
+    padding: 0;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3, h4 {
+    page-break-after: avoid;
+  }
+}</style>
+
+
+<script src="manuskript_files/libs/clipboard/clipboard.min.js"></script>
+<script src="manuskript_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="manuskript_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="manuskript_files/libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="manuskript_files/libs/quarto-html/popper.min.js"></script>
+<script src="manuskript_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="manuskript_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="manuskript_files/libs/quarto-html/quarto-syntax-highlighting-c98d46286ea6717abcfd108b4e902a4d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="manuskript_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="manuskript_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="manuskript_files/libs/bootstrap/bootstrap-1b56a5ca560d3ea7efc71d2c17a8296f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="_extensions/aiplatform/arxivai/tufte-html.css">
+<!-- famulus:publisher:start -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="publisher" content="OpenScienceTechnology GmbH">
+<meta name="DC.publisher" content="OpenScienceTechnology GmbH">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://famulus.lettre.ai/lectures/1/nl/manuskript.html", "publisher": {"@type": "Organization", "name": "OpenScienceTechnology GmbH", "address": {"@type": "PostalAddress", "streetAddress": "Im Wiesengrund 15A", "addressLocality": "47198 Duisburg", "addressCountry": "Deutschland"}}}</script>
+<!-- famulus:publisher:end -->
+</head>
+
+<body class="quarto-light"><!-- famulus-lectures:vermerk --><div style="position:sticky;top:0;z-index:50;background:#002147;color:#e3c766;font:600 14px/1.4 'Source Sans 3',sans-serif;padding:8px 16px;text-align:center">Concept – nog niet vrijgegeven door de spreker</div><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Ga naar de hoofdinhoud</a>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Inhoud</h2>
+   
+  <ul>
+  <li><a href="#k1" id="toc-k1" class="nav-link active" data-scroll-target="#k1">Opening</a></li>
+  <li><a href="#k2" id="toc-k2" class="nav-link" data-scroll-target="#k2">Wat is Famulus en wat kan het?</a></li>
+  <li><a href="#k3" id="toc-k3" class="nav-link" data-scroll-target="#k3">De nalatenschap is digitaal</a></li>
+  <li><a href="#k4" id="toc-k4" class="nav-link" data-scroll-target="#k4">Famulus leest mee</a></li>
+  <li><a href="#k5" id="toc-k5" class="nav-link" data-scroll-target="#k5">Een onderzoeksvraag</a></li>
+  <li><a href="#k6" id="toc-k6" class="nav-link" data-scroll-target="#k6">De tot nu toe gevolgde weg</a></li>
+  <li><a href="#k7" id="toc-k7" class="nav-link" data-scroll-target="#k7">Met Famulus</a></li>
+  <li><a href="#k8" id="toc-k8" class="nav-link" data-scroll-target="#k8">De bewijsruimte groeit</a></li>
+  <li><a href="#k9" id="toc-k9" class="nav-link" data-scroll-target="#k9">Kun je de antwoord vertrouwen?</a></li>
+  <li><a href="#k10" id="toc-k10" class="nav-link" data-scroll-target="#k10">Doorwerken in de notebook</a></li>
+  <li><a href="#k11" id="toc-k11" class="nav-link" data-scroll-target="#k11">Terug naar Kármán</a></li>
+  <li><a href="#diskussion" id="toc-diskussion" class="nav-link" data-scroll-target="#diskussion">Discussie</a>
+  <ul class="collapse">
+  <li><a href="#vorrede" id="toc-vorrede" class="nav-link" data-scroll-target="#vorrede">Begroeting</a></li>
+  </ul></li>
+  <li><a href="#anhang" id="toc-anhang" class="nav-link" data-scroll-target="#anhang">Over dit manuscript</a></li>
+  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatuur</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content page-columns page-full" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Het Kármán-archief, geïnventariseerd met Famulus</h1>
+<p class="subtitle lead">Famulus Deep Reading</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Auteur</div>
+  <div class="quarto-title-meta-heading">Affiliaties</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Gerd Graßhoff </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Humboldt-Universität zu Berlin
+          </p>
+        <p class="affiliation">
+            Deutsches Museum
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Publicatiedatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">23 november 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+.kicker{font-variant:small-caps;letter-spacing:.06em;color:#8a6d1d;font-size:.9em}
+.zeit{font-variant-numeric:tabular-nums;color:#002147;font-size:.8em}
+.luecke{color:#6b6b6b;font-style:italic}.sprecher{font-variant:small-caps;color:#002147}
+.ausgabenkopf{border-top:2px solid #cfb53b;border-bottom:1px solid #cfb53b;padding:.6em 0 .8em;margin:0 0 1.4em;font-size:.95em}
+.ausgabenkopf .reihe{letter-spacing:.18em;text-transform:uppercase;color:#002147;font-weight:600;font-size:.8em}
+.sprachen{font-size:.85em;margin:.3em 0 .6em}.sprachen a{color:#002147}.sprachen .aktiv{font-weight:700;color:#8a6d1d}
+.zitiervorschlag{font-size:.88em;color:#333}.abb{font-size:.88em;color:#333}.abb b{color:#002147}
+.unsicher,.ungeprueft{font-size:.8em;color:#8a6d1d}
+figure.szene-figur{margin:1.2em 0}figure.szene-figur .szene,figure.szene-figur .st-rahmen{width:100%;max-width:100%}
+figure.szene-figur .standbild{display:none;width:100%}figure.szene-figur video{width:100%}
+.st-skala{width:100%;overflow:hidden;position:relative}.st-skala>.st-rahmen{transform-origin:0 0;position:absolute;top:0;left:0}
+@media print{figure.szene-figur .szene,figure.szene-figur .st-skala,figure.szene-figur video{display:none!important}
+figure.szene-figur .standbild{display:block}}
+@media (prefers-reduced-motion: reduce){figure.szene-figur video{display:none}figure.szene-figur .standbild.video{display:block}}
+</style>
+<div class="ausgabenkopf">
+<p><span class="reihe">Famulus Lectures · Nr. 1</span></p>
+<div class="sprachen"><a href="../manuskript.html" hreflang="de" lang="de" class="sprachwahl" data-lang="de">Deutsch</a> · <a href="../en/manuskript.html" hreflang="en" lang="en" class="sprachwahl" data-lang="en">English</a> · <a href="../fr/manuskript.html" hreflang="fr" lang="fr" class="sprachwahl" data-lang="fr">Français</a> · <a href="../it/manuskript.html" hreflang="it" lang="it" class="sprachwahl" data-lang="it">Italiano</a> · <a href="../es/manuskript.html" hreflang="es" lang="es" class="sprachwahl" data-lang="es">Español</a> · <a href="../pl/manuskript.html" hreflang="pl" lang="pl" class="sprachwahl" data-lang="pl">Polski</a> · <span class="aktiv" lang="nl">Nederlands</span></div>
+<script>document.querySelectorAll('a.sprachwahl').forEach(a=>a.addEventListener('click',()=>{if(location.hash)a.href=a.href.split('#')[0]+location.hash;}));</script>
+<p>Gerd Graßhoff · Philosophisches Institut, Humboldt-Universität zu Berlin; Forschungsinstitut, Deutsches Museum</p>
+<p>Deutsches Museum, München, seminarzaal onderzoek · 23 november 2026 · Lezing in het Deutsches Museum</p>
+<p><em>Geredigeerde versie van de lezing van 23 november 2026, vervaardigd met Famulus.</em> Vertaling uit het Duits; de Duitse versie is maatgevend.</p>
+<p>Licentie: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> · Versie 1.0 (Entwurf) · Stand 2026-11-23</p>
+<p><span class="zitiervorschlag">Citeervoorstel: Gerd Graßhoff: Het Kármán-archief, geïnventariseerd met Famulus. Famulus Deep Reading. Famulus Lectures 1, Deutsches Museum, München, seminarzaal onderzoek, 23 november 2026. https://famulus.lettre.ai/lectures/1/nl/</span></p>
+</div>
+<section id="k1" class="level2 page-columns page-full">
+<h2 data-anchor-id="k1">Opening</h2>
+<div class="page-columns page-full"><p><span id="k1b1"></span> Dank u voor de mogelijkheid en voor het vroege bezoek op een maandagochtend. Ik probeer mij zeer geconcentreerd te beperken tot het punt dat ik u wil rapporteren en ter beoordeling wil voorleggen. Wij overwegen of wij een subsidieaanvraag op weg kunnen brengen om dat wat ik presenteer niet alleen als een techniek met een aha-effect te tonen, maar als een nuttig hulpmiddel voor het onderzoek, voor het museum en voor degenen die ermee werken. Daarvoor wil ik vandaag argumenteren. Ik zal de lezing opnemen om een conferentietool van Famulus voor te leggen: de opname wordt na afronding getranscribeerd, met de dia’s gecombineerd en zo gepubliceerd dat deelnemers de lezing met de dia’s geannoteerd kunnen lezen. In dit prototype lukt dat vandaag nog niet meteen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">1:11</span></span></div></div>
+<p><img src="../folien/003.jpg" class="img-fluid" alt="Titeldia met Albrecht Dürers kopergravure van Erasmus van Rotterdam uit 1526; in het monogram is de D onder de A vervangen door een F."></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Afb. 1</strong> · De Kármán-nagelaten nalatenschap, met Famulus doorgenomen <span class="zeit">(Dia 3)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k1b2"></span> Ik baseer mij niet op de meest recente technologie, maar op de grote wetenschapshistorische traditie met Erasmus (→ Afb. 1). Ik heb mij in deze traditie geplaatst, en dat waarvoor ik wil argumenteren, wil ik helemaal geen KI noemen. Dat is eerst een kwestie van terminologie: waarover spreken wij. Wij spreken niet van agenten zoals Claude of andere gepersonaliseerde actoren, maar van iets dat ik Famulus wil noemen – in navolging van het taalgebruik van de renaissance en het humanisme bij Erasmus.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">2:30</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k1b3"></span> Erasmus gebruikt de uitdrukking Famulus in zijn werken. Wij zien hier Dürer in een van zijn onnavolgbare vermoedens van de terminologie: Erasmus met de rechterhand schrijvend, in de linkerhand houdt hij iets. Zoals altijd bij de gravures van Dürer is de grote vraag wat wij hier eigenlijk zien. Rechts schrijft hij duidelijk, links duid ik het als een inktpot – maar sta mij de grap toe om de metafoor verder te drijven: dat is in mijn lezing Famulus. Famulus is in het Latijn vertaald de helper. En wij weten uit vele brieven van Erasmus dat de Famulus de helper is, die zeer geleerd kan zijn.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">3:25</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k1b4"></span> Hij heeft een netwerk van helpers die hem toewerkten. In dit toewerken mochten zij alle competentie inbrengen, alleen één ding niet: een eigen wetenschappelijk oordeel bijdragen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">4:21</span></span></div></div>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-2" aria-label="Dia 9: Riemann: vier dagen op alle kanalen"><div class="st-skala" data-breite="1180" data-hoehe="560"><div class="st-rahmen" data-szene="stapel" data-dauer="32000"></div></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/stapel.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 2</strong> · Riemann: vier dagen op alle kanalen <span class="zeit">(Dia 9)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k1b5"></span> Overgebracht op de activiteiten van de laatste vier dagen probeer ik hier nog eens op te nemen waarom in dat wat in de laatste vier dagen is gebeurd, met de verwijzing naar Riemanns theorema, wat in de laatste vier dagen in de wetenschapscommunity aan communicatiehandelingen plaatsvond (→ Afb. 2). Dat wordt live gemonitord. Ik heb een wetenschapsmonitor die alle publicaties, alle communicaties die überhaupt toegankelijk zijn, opneemt, documenteert en analyseert. Om te begrijpen, om te zien hoe dit proces van wetenschapscreatie functioneert. En hier is midden vorige week een aankondiging geweest dat het theorema, Riemanns theorema, bewezen is. Dat is eerst alleen een steile bewering, vooral wanneer men ziet dat het bewijs niet in conventionele wiskundige vorm is geleverd, maar door de inlevering van 250000 pagina’s gedrukte code.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">4:34</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/012.jpg" class="img-fluid figure-img" alt="Dia 12: Een nieuwe agent"></p>
+<figcaption><strong>Afb. 3</strong> · Een nieuwe agent <span class="zeit">(Dia 12)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k1b6"></span> Dat is het eerste probleem: wie controleert de code (→ Afb. 3)? Is dat al kennis? Natuurlijk niet. Maar – en dat is het proces dat ik hier toon – er vindt een levendig wetenschappelijk communicatieproces plaats dat uit dat wat na de aankondiging volgt, uiteindelijk iets voortbrengt waarvan ik overtuigd ben dat het zich ofwel als kennis ontpopt ofwel als een voorbarige aankondiging met lacunes die niet meer te dichten zijn. Hoe het spel afloopt, weten wij niet.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">5:40</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k1b7"></span> Ik wil de paralleliteit benutten: al in deze dialogen van de wetenschappers met de inzet van de techniek vinden wij uitspraken zoals in de eerste aankondiging: ja, ik heb dit bewijs gevonden, working with Claude. Wie is Claude? Claude is de technologie. Zij wordt op grond van de naamgeving door de Tropics gepersonaliseerd – precies dat wil ik vermijden, want het suggereert dat wij hier een wetenschappelijke actor hebben. Die hebben wij naar mijn lezing niet.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">6:18</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k1b8"></span> Lean, de bewijzer, is een wiskundige techniek van automatische bewijsvoering die hier wordt ingezet. Deze techniek heeft deze 250.000 pagina’s doorgewerkt en aangetoond dat dit bewijs sluitend en naar al het begrip van de inzet van deze technologie door de community correct is.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">6:55</span></span></div></div>
+</section>
+<section id="k2" class="level2 page-columns page-full">
+<h2 data-anchor-id="k2">Wat is Famulus en wat kan het?</h2>
+<p><span class="kicker">Proloog</span></p>
+<p><img src="../folien/013.jpg" class="img-fluid" alt="Dia 13: Het Kármán-platform"></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Afb. 4</strong> · Het Kármán-platform. Het archief omvat 1.066 mappen met 38.213 pagina’s en is met één klik als platform bereikbaar. <span class="zeit">(Dia 13)</span></span></p>
+</div><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/014.jpg" class="img-fluid figure-img" alt="Dia 14: Wat Famulus kan"></p>
+<figcaption><strong>Afb. 5</strong> · Wat Famulus kan <span class="zeit">(Dia 14)</span></figcaption>
+</figure>
+</div>
+</div></div>
+<div class="page-columns page-full"><p><span id="k2b1"></span> Mijn lezing is: wat Lean voor de wiskunde is, wil ik als Famulus voor de geschiedenis van techniek en wetenschap introduceren (→ Afb. 4, Afb. 5). Dat is een grote aankondiging op een maandagochtend – vergeef het me, onder vrienden is dit mijn poging om de nek een beetje uit te steken. Om dat te laten zien, wil ik het verbinden met de publicatie van het Kármán-archief, zoals ik het heb bewerkt en ontsloten. Het archief dat u hier ziet, is in zoverre toegankelijk; er wordt nog aan gewerkt, zodat momenteel van 1066 boxen 328 volledig gedigitaliseerd zijn.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">7:20</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b2"></span> De machines draaien allemaal op de achtergrond en domineren mijn pensioen. We zitten immers op een derde, en in de komende twee weken worden naar verwachting alle resterende pagina’s gedigitaliseerd. U vindt hier al een automatische categorisering. U ziet dat dit archief ongeveer 204 correspondenten omvat, wat men in de inventaris niet ziet. De aantallen kunnen door de bewerking nog veranderen; dat is voorlopig.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">8:15</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b3"></span> 240 papieren, 142 manuscripten van Kármán enzovoort. Octrooien, maar ook onderwerpen als turbines, tubuline, beoordelaarsfuncties, bruggen die door trillingsverschijnselen instortten, en dergelijke. Dat is gesystematiseerd en door Famulus al automatisch in categorieën onderverdeeld.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">8:50</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b4"></span> Dat is allemaal al in te zien en te gebruiken. U ziet aan de linkerkant van de website een registratuur die gefilterd kan worden door de categorieën, dus of het nu om manuscripten gaat, om correspondentie; dan zijn alle correspondentie opgevoerd, die kan men groeperen. In het midden zal men zien dat men de afzonderlijke documenten kan openen. Aan de linkerkant hier ingesteld de facsimile’s, dus alle facsimile’s zijn onmiddellijk zichtbaar. Aan de rechterkant de transcriptie. Die is ook in staat om wiskunde en dergelijke ingewikkelder teksten, ook alle anderstalige teksten, OCR-gerecht te transcriberen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">9:26</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b5"></span> Men kan ze kopiëren om daaruit LaTeX of andere publicatiedocumenten te maken. Bovenaan kan men navigeren, dat kan men zo snel doen dat op het scherm ook een, denk ik, goede leesbaarheid gegarandeerd is. Hier is de facsimile-edi- variant van deze brief. Dan heeft men in deze omgeving al bewerkingstools. Dus dat is nu het gebruikersperspectief, hoe kan ik de toegang tot deze stand gebruiken. U hebt gezien, het zijn ongeveer 700.000 zinnen die afzonderlijk gedigitaliseerd geïdentificeerd zijn.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">10:17</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b6"></span> Famulus is dus niet alleen in staat om facsimile’s in vertaling te tonen; de analyse die ik u nu kan tonen, werkt zinprecies en nog veel preciezer, inclusief mediale toevoegingen, aanduidingen en andere informatiedragers. Men kan zinnen aanklikken. Als men ze aanklikt, selecteert men een segment – zo heb ik het in de terminologie genoemd – om daarmee iets te doen. Een neveneffect is dat men elk van deze segmenten kan citeren en in eigen publicaties als citaat kan opgeven; het publicatiemedium van dit citaat wordt dan als klikbare link aangeduid, en de gelinkte plaats toont zich aan de gebruiker. Men kan dus zinprecies citeren. En niet alleen dat: door te selecteren – nu ben ik wat snel – kan men ook, en dat moet de KI, moet Famulus sowieso leveren, de zin volledig transparant interpreteren.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">10:57</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/020.jpg" class="img-fluid figure-img" alt="Dia 20: De gereedschappen rechts"></p>
+<figcaption><strong>Afb. 6</strong> · De gereedschappen rechts. Markeert men een plaats, dan verklaart Famulus die in de paginacontext, vertaalt die en toont via het woordenboek alle bewijsplaatsen. <span class="zeit">(Dia 20)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k2b7"></span> Dus dat betekent, tekstbegrip tonen (→ Afb. 6). Wat wordt hier eigenlijk gezegd? Wat zijn de ver- stilzwijgende vooronderstellingen van deze tekstpassage? Dat alles ziet men in de rechterbalk weergegeven. Men kan dit, dus dit systeem zou leren; op basis van nieuwere documenten zal dit tekstbegrip steeds weer geactualiseerd, herzien worden en daardoor ook steeds gevalideerder, correcter en zekerder.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">12:18</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b8"></span> Vertalingen kan men naar believen instellen. Ik heb de belangrijkste Europese talen geconfigureerd, maar het is naar believen in alle talen vertaalbaar, in 140 of 70 talen. Men kan ook hele passages live laten vertalen; men hoeft niets te conserveren. Dat gaat zo snel dat een vertaling binnen enkele seconden plaatsvindt.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">12:50</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b9"></span> In enkele klikken kan men ook hele alinea’s selecteren. Dan kan men naar namen en vakgebieden vragen en de overeenkomstige mappen laten oproepen. Of – Famulus legt via de verwerking van deze bronnen automatisch dossiers aan.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">13:20</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b10"></span> Hij verwerkt ze ook met andere bibliografische of biografische referentiewerken, zodat de dossiers steeds gevalideerder, omvangrijker en treffender worden. Ik kan hier in de rechterkolom bij een bepaalde pagina het dossier openen, zoals hier te vermoeden is, en een dossier bij een persoon laten tonen die hier genoemd wordt. Het bevat typisch de biografische hoofdstations, de hoofdwerken en wat voor de context bijzonder interessant zou kunnen zijn. Men kan ook verzoeken doen, vragen van allerlei aard over deze plaats, over deze tekst, maar ook in wat ik in het geheel de evidentiale ruimte noem – dus dat wat als bewijs voor een antwoord in aanmerking komt. Ik wil straks uitleggen waarom het antwoord niet zoals bij een ChatGPT-verzoek uit een of andere Wikipedia geput en gevalideerd is, maar de validatie is hier een streng wetenschapstheoretisch gefundeerde rechtvaardiging van de correctheid van het antwoord. Dat noem ik validatie.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">13:48</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b11"></span> Men kan dus willekeurige verzoeken doen, hier iets over de correspondentie van Prandtl. Ik toon dat alleen; dat zijn de mogelijkheden die u krijgt als Famulus bruikbaar zou zijn. U hebt tekstbegrip, u hebt de vertaling, u hebt woordenboeken. De woordenboeken heb ik opgebouwd uit een concept van het Oxford English Dictionary gecombineerd met Wittgensteins taalflosofie van het regelvolgen. Dat betekent dat deze woordenboeken door Famulus op basis van de evidentiale documentenruimte zelf worden gemaakt, en wel in de stijl van alle relevante karakteristieke vindplaatsen, met toelichtingen van de terminologie in de oorspronkelijke taal.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">15:33</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b12"></span> Of Hongaars, Latijn, Grieks of Engels, maakt niet uit. Het woordenboek is niet alleen universeel volgens de beste procedures van de linguïstische lexicografie gemaakt, maar ook contextrelatief. U kunt betekenissen voor een bepaalde periode kiezen. U kunt zelfs betekenissen voor bepaalde auteurs en relatieve spreekwijzen identificeren. En als u het in het onderzoek zo echt hard wilt, kunt u ook verschillen in het taalgebruik van terminologie tussen twee verschillende auteurs van hetzelfde tijdperk uitwerken. Dat zijn de woordenboeken.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">16:31</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b13"></span> Vertalingen zijn daarmee verbonden. Dat moet zo fijn op elkaar afgestemd zijn dat de vertalingen ook de tekstbegripsanalyses van de woordenboeken gebruiken. Dat zijn de gereedschappen die de gebruikende onderzoeker met een dergelijk archiefbestand al kan gebruiken. Nog een voorbeeld, om te laten zien dat dat nog niet alles zou moeten zijn.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">17:20</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b14"></span> Terug naar wat Lean of het huidige Riemann-debat zo interessant maakt: de bewijzer neemt deel aan de wetenschappelijke communicatie, hij is een participant van deze kennisgenerering. Zo versta ik ook Famulus: een instrument in de zin van Erasmus, zonder eigen oordeelsvermogen en zonder licentie daartoe. Dat is de rol van de onderzoeker, van de geleerde; Famulus is de hulpmiddelenproducent.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">17:54</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b15"></span> In de uitvoering en doorvoering van de hulpmiddelen werken beide handen van Erasmus: de schrijvende onderzoeker, de inktpotproducent, die met Famulus werkt.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">18:35</span></span><span class="cite-note"><span class="citation" data-cites="grasshoff2026erasmus"><a href="#ref-grasshoff2026erasmus" role="doc-biblioref">Graßhoff 2026</a></span>, <em>The New Erasmus</em></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b16"></span> Zo, dat is nog de visualisering daarbij. Oeps. Oh, nu heb ik helaas verkeerd gebladerd.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">18:56</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k2b17"></span> We komen bij het archief. Het archief bestaat uit nu 38.000 gedigitaliseerde pagina’s; het gehele archief is gedigitaliseerd.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">19:10</span></span></div></div>
+</section>
+<section id="k3" class="level2 page-columns page-full">
+<h2 data-anchor-id="k3">De nalatenschap is digitaal</h2>
+<p><span class="kicker">Akte I</span></p>
+<p><img src="../folien/024.jpg" class="img-fluid" alt="Dia met de vermelding 38.213 gedigitaliseerde pagina's en een facsimile-viewer die 32 willekeurig getrokken pagina's van de nalatenschap toont."></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Afb. 7</strong> · De Kármán-nalatenschap – alles online. 32 willekeurig getrokken pagina’s tonen de gemengde mediale vorm van de nalatenschap, telkens als facsimile, transcriptie, vertaling en toelichting. <span class="zeit">(Dia 24)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k3b1"></span> Zoals u hier ziet: een gemengde mediale vorm (→ Afb. 7). Gedrukt en getypt typoscript, manuscripten, diagrammen – van alles ligt in een archief. De OCR-kwaliteit is in Famulus zo goed uitgebouwd dat ook Hongaarse brieven met allerlei accenten, die ik zelf niet versta, getranscribeerd en goed vertaald kunnen worden. Facsimile, transcriptie, vertaling en toelichting hebben we.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">19:24</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/025.jpg" class="img-fluid figure-img" alt="Dia met de getallen 1.066 mappen, 38.213 pagina's, 668.346 zinnen en 8.726 gedateerde stukken van 1839 tot 1980."></p>
+<figcaption><strong>Afb. 8</strong> · Een object zonder origineel in huis <span class="zeit">(Dia 25)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k3b2"></span> Wat kunnen we nog meer met Famulus doen (→ Afb. 8)? Om dat aan dit voorbeeld kort te illustreren: we hebben hier objecten, zonder de originelen in huis te hebben. De originelen liggen in Caltech en zijn daar in een omvangrijke actie gedigitaliseerd. Ik heb de microfiches van de Universiteit Bern kunnen kopen, met de mogelijkheid om ermee te werken.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">20:02</span></span></div></div>
+</section>
+<section id="k4" class="level2 page-columns page-full">
+<h2 data-anchor-id="k4">Famulus leest mee</h2>
+<p><span class="kicker">Akte II</span></p>
+<div class="page-columns page-full"><p><span id="k4b1"></span> Dat heb ik dan tien jaar geleden volledig gedigitaliseerd; deze digitale facsimile liggen eraan ten grondslag en zijn nu door mij bewerkt. Dit Kármán-archief hebben we net gezien. Nu zijn er interessante onderzoeksvragen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">20:34</span></span></div></div>
+<p><img src="../folien/029.jpg" class="img-fluid" alt="Dia 29: Noteren met bewijs"></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Afb. 9</strong> · Noteren met bewijs. In het dossier worden feiten over Hopf met bewijs genoteerd, aangenomen, verworpen en gecorrigeerd; het oordeel van de onderzoekster geldt. <span class="zeit">(Dia 29)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k4b2"></span> Slechts een paar voorbeelden, zodat u een idee krijgt waar het om gaat (→ Afb. 9). U kunt vragen identificeren uit het archief die u in het onderzoek verder interesseren; u kunt vertalen – dat hebben we allemaal gedaan.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">20:52</span></span></div></div>
+</section>
+<section id="k5" class="level2 page-columns page-full">
+<h2 data-anchor-id="k5">Een onderzoeksvraag</h2>
+<p><span class="kicker">Akte III</span></p>
+<p><img src="../folien/031.jpg" class="img-fluid" alt="Dia 31: Wat zag Kármán in Aken?"></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Afb. 10</strong> · Wat zag Kármán in Aken? <span class="zeit">(Dia 31)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k5b1"></span> Maar we kunnen ook interessante vragen vinden, zoals in deze brief aan Fromm van Kármán uit de tijd na de nazi-overname (→ Afb. 10). Het is een brief van Kármán uit Pasadena, 26 november 1934, met de mededeling dat hij net weer in Aken was. Zoals u hier ziet – of niet ziet, ik heb in ieder geval geprobeerd het te onderstrepen –: Wat zegt Kármán over Aken, hoe vond hij zijn bezoek in Aken?</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">21:08</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k5b2"></span> I was in Aachen this summer and found conditions quite unchanged. [vert.: Ik was deze zomer in Aken en vond de omstandigheden vrijwel onveranderd.] Dus, dat is eigenlijk in eerste instantie verbazingwekkend. 34, hij is in ballingschap en vindt de situatie of de omstandigheden onveranderd. Schrijft hij Fromm. Hij schrijft iets verder, not advisable to express one’s disapproval in a café. [vert.: het is niet raadzaam om in een café zijn afkeuring te uiten.] Dus daar komen een paar voetnoten bij, waar de situatie waarschijnlijk niet helemaal was zoals vroeger.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">21:45</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/035.jpg" class="img-fluid figure-img" alt="Dia 35: Hopf aan Kármán, 15.5.1933"></p>
+<figcaption><strong>Afb. 11</strong> · Hopf aan Kármán, 15.5.1933. Hopf schrijft op 15 mei 1933 dat hij „wohl nur als Jude entfernt“ [vert.: waarschijnlijk alleen als Jood verwijderd] is; wat dat betekent, is een kwestie van interpretatie. <span class="zeit">(Dia 35)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k5b3"></span> En dan schrijft Fromm terug: „und zwar bin ich wohl nur als Jude entfernt“ [vert.: en wel ben ik waarschijnlijk alleen als Jood verwijderd] (→ Afb. 11). Wat hij daarmee precies bedoelde, is een kwestie van interpretatie van deze tekst, waarmee men Famulus kan lastigvallen. Of men met het antwoord tevreden is, is in deze fase vooralsnog een andere zaak. Maar dat zijn de interessante onderzoeksvragen die men met zo’n instrument kan bespreken – al is het alleen als Famulus, als hulpassistent, als u wilt. Het beoordelingsvermogen ligt bij de onderzoeker, die het instrument zelf heeft.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">22:22</span></span></div></div>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-12" aria-label="Dia 37: Wie vroeg Kármán om hulp?"><div class="szene" data-szene="zeitleiste" data-dauer="9000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/zeitleiste.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 12</strong> · Wie vroeg Kármán om hulp? <span class="zeit">(Dia 37)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k5b4"></span> Dus: onveranderd – voor wie (→ Afb. 12)? Waarom schrijft Kármán dat? Wie vroeg Kármán om hulp? Nu ziet u mogelijkheden om dit archief te gebruiken die men handmatig niet meer praktisch kan uitvoeren: het gehele archief doorvoeren. En bij deze eenvoudige vraag – wie vroeg Kármán om hulp? – falen de normale indexeringstechnieken voor de omgang met zulke actieve archieven; men kan ze niet beantwoorden. Hier kan men ze direct met Kármán oplossen, en u ziet een chronologie van alle documenten waarin een of andere correspondent om hulp vraagt.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">23:04</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k5b5"></span> Maar dan gaat het verder: Wat kon Kármán doen? Kármán zegt dat zijn invloed zeer gering is; hij raadt Hopf aan een andere bron te zoeken. Aan de rechterkant – helaas is het contrast niet goed – ziet u een diagram van alle boxen die het archief bevat, en een verwijzing naar de vindplaatsen van alle correspondenten die om hulp vroegen. U ziet dat dit zich over verschillende boxen verdeelt.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">23:50</span></span></div></div>
+</section>
+<section id="k6" class="level2 page-columns page-full">
+<h2 data-anchor-id="k6">De tot nu toe gevolgde weg</h2>
+<p><span class="kicker">Akte IV</span></p>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-13" aria-label="Dia 40: Elk stuk geclassificeerd"><div class="szene" data-szene="klassen" data-dauer="8000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/klassen.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 13</strong> · Elk stuk geclassificeerd. Elk stuk is naar zijn aard geclassificeerd: 5.676 brieven, 3.903 notities, 3.347 rapporten, daarnaast patenten in 64 mappen. <span class="zeit">(Dia 40)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k6b1"></span> Met een archiefinventaris hebt u geen kans om zo’n eenvoudige vraag te beantwoorden (→ Afb. 13). Famulus kan het wel. Hier blijkt een geval waarin onderzoeksvragen te beantwoorden zijn die op traditionele wijze alleen al vanwege de omvang van het archief niet op te lossen zijn. Elk afzonderlijk stuk is geclassificeerd, en elke afzonderlijke zin kunt u citeren en in elke publicatie hergebruiken.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">24:15</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/043.jpg" class="img-fluid figure-img" alt="Dia 43: Vinden is geen begrijpen"></p>
+<figcaption><strong>Afb. 14</strong> · Vinden is geen begrijpen <span class="zeit">(Dia 43)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-15" aria-label="Dia 42: Milliseconden"><div class="szene" data-szene="tempo" data-dauer="6000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/tempo.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 15</strong> · Milliseconden. De lemmazoekopdracht naar „beurlauben“ vindt in 8.745.834 woorden zes treffers in 0,7 milliseconden. <span class="zeit">(Dia 42)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k6b2"></span> Bepalend om ook überhaupt tot eindige resultaten te komen is de snelheid waarmee dat alles gebeurt (→ Afb. 14, Afb. 15). Dat was een groot deel waaraan ik beslist enkele maanden heb gezeten, om een zoekopdracht naar een lemma, dus naar de taalkundige grondvorm van de grammaticaal geflecteerde vormen, dus niet alleen hulp, wanneer iemand schrijft, hoe verzoekt iemand in een brief om hulp, dan kan men niet naar hulp zoeken, maar men moet de verschillende uitdrukkingswijzen waarop om hulp wordt verzocht, mee in beschouwing nemen. Dat maakt deze zoekopdracht mogelijk, en wel, zoals u ziet, de lemmazoekopdracht door het gehele bestand van 700000 zinnen toont zes treffers in 0,7 milliseconden. Deze snelheid hebt u nodig, opdat u dan zulke snelheden kunt benutten om de grotere samenhangen ook te kunnen doorlopen en ook in eindige tijd te kunnen bewerken. Dus opvragingen naar het dossier over een persoon en zijn achtergronden, wanneer binnen een tijdsbestek van 1,3 milliseconden opgeroepen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">24:51</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k6b3"></span> Famulus heeft de persoonlijke profielen van alle personen van wie in een tekst sprake is, binnen 1,3 milliseconden ter beschikking. Maar vinden is nog geen begrijpen – de volgende stap is de vraag aan de nalatenschap. Wanneer u alle vindplaatsen hebt, moet u ze verwerken om daaruit een begripsvol, correct, gehaltvol resultaat te produceren waarmee u verder kunt werken.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">26:13</span></span></div></div>
+</section>
+<section id="k7" class="level2 page-columns page-full">
+<h2 data-anchor-id="k7">Met Famulus</h2>
+<p><span class="kicker">Akte V</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/046.jpg" class="img-fluid figure-img" alt="Dia 46: Elke plaats heeft een adres"></p>
+<figcaption><strong>Afb. 16</strong> · Elke plaats heeft een adres. Elke vindplaats draagt een adres tot op de zin, zodat Famulus onder openlegging van alle evidentie kan rechtvaardigen. <span class="zeit">(Dia 46)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-17" aria-label="Dia 45: Uit vier boxen een dossier"><div class="szene" data-szene="vorgang" data-dauer="9000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/vorgang.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 17</strong> · Uit vier boxen een dossier <span class="zeit">(Dia 45)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k7b1"></span> U kunt dus vragen aan de nalatenschap stellen (→ Afb. 16, Afb. 17). Het zoeken in boxen is omvangrijk, zoals we nu kunnen vermoeden, maar het vereist deze snelheid om in enkele seconden een samenstelling van alle relevante vindplaatsen te vinden. Elke plaats heeft een adres. Dat is belangrijk, zodat Famulus onder openlegging van alle evidentie kan rechtvaardigen. Geen zwarte box, niets verborgen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">26:53</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/050.jpg" class="img-fluid figure-img" alt="Dia 50: Een „uitstapje“"></p>
+<figcaption><strong>Afb. 18</strong> · Een „uitstapje“. Kármán raadt Hopf op 15.7.1936 een andere bron te vinden om zijn „uitstapje“ te financieren. <span class="zeit">(Dia 50)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k7b2"></span> Zo vinden we antwoorden in deze correspondentie, waarin Kármán bij een concrete vraag om hulp en ondersteuning zegt: „Leider muss ich gestehen, dass mein Einfluss sehr gering ist.“ [vert.: Helaas moet ik bekennen dat mijn invloed zeer gering is.] In deze brief blijkt een typische situatie: Hopf schrijft aan Kármán, hebt u ooit aan Courant geschreven (→ Afb. 18). Voor insiders is dat een echte tip, hoe men verdere hulp krijgt, die Kármán blijkbaar niet kan geven. En in de brief aan Hopf schrijft Kármán, u moet een andere bron vinden om uw uitstapje te financieren – dus het exil.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">27:26</span></span></div></div>
+</section>
+<section id="k8" class="level2 page-columns page-full">
+<h2 data-anchor-id="k8">De bewijsruimte groeit</h2>
+<p><span class="kicker">Akte VI</span></p>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-19" aria-label="Dia 51: Het antwoord heeft open uiteinden"><div class="szene" data-szene="zeitleiste" data-dauer="7000" data-luecken="1"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/zeitleiste-luecken.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 19</strong> · Het antwoord heeft open uiteinden. De chronologie eindigt open: Courant en Heisenberg worden genoemd, maar hun bestanden zijn niet in de nalatenschap aangetroffen. <span class="zeit">(Dia 51)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k8b1"></span> Dublin, december 39 (→ Afb. 19). Zo, dit zijn allemaal nog vindplaatsen uit de sector Vind iets relevants. Nu hebben we hier iets, als we deze vindplaatsen allemaal bij elkaar zetten, zien we dat natuurlijk ook deze nalatenschap Kármán, ik heb het met open handen genoemd, juist deze aanwijzing naar Courant. Courant maakt echter geen deel uit van deze nalatenschap. Of Heisenberg wordt genoemd, maar de Heisenberg-briefwisseling of alles wat zijn nalatenschap betreft, is hier niet in begrepen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">28:23</span></span></div></div>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-20" aria-label="Dia met een net van bestanden: Deutsches Museum, Hochschularchiv RWTH Aachen, nalatenschap Courant, Caltech Archives, bibliotheken en HU Berlin."><div class="szene" data-szene="netz" data-dauer="7000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/netz.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 20</strong> · Een net van bestanden. Geregistreerde, ondertekende knooppunten koppelen vreemde bestanden, zodat elke plaats decentraal identificeerbaar en citeerbaar blijft. <span class="zeit">(Dia 52)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k8b2"></span> Het idee is om een Famulus-netwerk op te bouwen: Famulus Reference (→ Afb. 20). Daarmee worden bestanden gekoppeld, en technisch moet dat zo eenvoudig te installeren zijn dat elke geïnteresseerde instelling die zulke archiefbestanden beheert, zich kan registreren en aanmelden. Een minimale technische installatie is nodig, een internettoegang eveneens, alles moet veilig zijn, alles wordt lokaal berekend, de gebruikelijke EU-normen worden nageleefd. Famulus kan dan met deze snelheid niet alleen de lokale bestanden verwerken, maar een netwerk van alle onderling relevant gekoppelde bestanden. Decentraal, ondertekend: elke afzonderlijke plaats, elke afzonderlijke zin is identificeerbaar en citeerbaar.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">29:01</span></span></div></div>
+</section>
+<section id="k9" class="level2 page-columns page-full">
+<h2 data-anchor-id="k9">Kun je de antwoord vertrouwen?</h2>
+<p><span class="kicker">Akte VII</span></p>
+<div class="page-columns page-full"><p><span id="k9b1"></span> Vergissingen zijn altijd mogelijk, ook bij een Famulus, hoe goed hij ook is. Men hoeft hem niet meteen te vervangen of weg te gooien, alleen omdat er fouten optreden – zoals hier bij een OCR, waarbij een herkenningsfout voorkomt en in plaats van „Zensur“ „Lessor“ wordt herkend. Dat komt voor, juist bij de handschriftherkenning. Het is verreweg beter dan Transkribus, zeer goed, maar fouten treden op. Famulus maakt een curatie van het bestand mogelijk, en wel uiterst efficiënt: wanneer een fout eenmaal is geïdentificeerd, kan hij met versiebeheer worden gecorrigeerd en gaat hij mee in de verbetering van de bestanden.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">30:10</span></span></div></div>
+<p><img src="../folien/058.jpg" class="img-fluid" alt="Dia met een tegenoverstelling: taalmodel alleen tegen Famulus, over plausibiliteit, bron, lacunes en natrekbaarheid."></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Afb. 21</strong> · Zakelijk gevalideerd. Een taalmodel alleen klinkt plausibel en vlakt lacunes glad; Famulus geeft elke opgave met adres en wijst lacunes aan. <span class="zeit">(Dia 58)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k9b2"></span> Daar ga ik niet verder op in (→ Afb. 21). Belangrijk is het aspect van de eis van Famulus, dat hem van alle andere KI-aanbiedingen onderscheidt – in mijn uitspraak vrij drastisch duidelijk: de resultaten die hier worden bereikt, zijn zakelijk gevalideerd.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">31:08</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/063.jpg" class="img-fluid figure-img" alt="Dia 63: Deep Reading"></p>
+<figcaption><strong>Afb. 22</strong> · Deep Reading. Een zin uit Keplers Astronomia nova, kap. 23, wordt met zijn grootheden, hoeken en de proportie als Deep Reading gevat. <span class="zeit">(Dia 63)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k9b3"></span> Dat wil zeggen, hun correctheid laat zich navolgen, natrekken door de onderzoeker (→ Afb. 22). En hier zijn we weer bij de analogie met Lean. Lean heeft nu, is een programma, analoog aan Famulus, wat de berekening van het bewijs van de Riemann-hypothese heeft uitgevoerd, die in detail niemand zelf kan navolgen. En wat u ziet, wat nu juist plaatsvindt in de wetenschapscommunicatie, is namelijk een taalkundige afstemming van de taal van de symboolverwerking door Lean, ongenietbaar voor de mens, op een niveau dat dit bewijs wordt vertaald in een voor wiskundigen begrijpelijk bewijs. En dat heeft al na vijf dagen eerste resultaten en voorstellen opgeleverd. Dus er zijn nu de 250000 pagina’s gedrukte code gereduceerd tot 55 pagina’s gecomprimeerde wetenschappelijke bewijstekst en die wordt juist door de gehele community bewerkt.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">31:31</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b4"></span> Typerend daarvoor dat kennis geen individueel proces is en inzicht een collaboratief aspect van de globale research. Nu komen we bij het Deep Reading. In de feestbundel voor Lieber Tauch heb ik de term Deep Reading geïntroduceerd: er is het Distant Reading, het Close Reading, en nu is er iets derde, en dat doet Famulus – Deep Reading. De KI-technieken maken het mogelijk naar de betekenissen van de uitdrukkingen en de wetenschappelijke teksten te vragen. Niet alleen naar symboliek, niet alleen naar syntaxis, naar uitdrukkingen, naar uitdrukkingswijzen, naar strings, maar naar inhoud.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">32:40</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b5"></span> Dat toon ik aan de hand van de studie van Keplers verzamelde werken.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">33:41</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b6"></span> Hier ziet u een passage uit hoofdstuk 23, waarin Kepler een zin introduceert. Hij heeft een resultaat voor een astronomisch model gepubliceerd, waarmee hij werkt, en stelt de numerieke opgave vast dat een bepaalde grootheid, afgekort DC, de waarde 61 148 heeft. Ik heb nog geen mij bekende publicatie gezien die deze waarde heeft nagerekend. Waar komt hij eigenlijk vandaan? Hoe komt Kepler erop? Normale wetenschapshistorici gaan aan zulke plaatsen voorbij en zeggen dat iemand dat ooit wel eens zal uitrekenen. Dat gebeurt nu niet meer. Nu hebben we Famulus.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">33:46</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b7"></span> Wat doet Famulus? Zoals bij Kármán heeft hij de gehele tekst tot op elke afzonderlijke symboliek en elk afzonderlijk diagram geanalyseerd. Dat maakt plausibele aanwijzingen mogelijk. Kepler legt zijn werkwijze vrij openlijk uit, maar niet altijd consistent – een uiterst moeilijke auteur, doch vrijgevig met de informatie hoe hij iets doet. En inderdaad is er in de verzamelde werken, hoofdstuk 15, een passage waarin hij zegt dat hij hier tafels gebruikt om te rekenen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">34:45</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b8"></span> Alleen heel in het algemeen, namelijk de tafels van Landsbergius, driehoekstafels, dus als u wilt sinustafels en verwante trigonometrische tafels. Zo, wat heeft Famulus gedaan? Het heeft uit de ETH Zürich het facsimile van deze tafel automatisch geladen, is meteen in het bestand overgenomen, gedigitaliseerd, kost dan ook zo’n halve dag tot men een tafel correct heeft gedigitaliseerd. Alle afzonderlijke, dat is zo’n tafelpagina, tafels moeten zo worden gedigitaliseerd dat elke afzonderlijke rekeningscel correct wordt weergegeven. Dus de eisen aan de OCR zijn zeer hoog. Zo, en nu is de opgave Famulus, je bent een Famulus, hoeft niet te oordelen, eenvoudige opgave, reken de getallen na, heeft hij dan deze tafel, deze tafels gebruikt?</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">35:28</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b9"></span> En zo ja, hoe?</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">36:27</span></span></div></div>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-23" aria-label="Dia 71: De berekening gereconstrueerd"><div class="szene" data-szene="division" data-dauer="9000"></div><img class="standbild figure-img column-page-right" src="../deck/publikation/szenen/division.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 23</strong> · De berekening gereconstrueerd. De berekening levert nagerekend 61145 op, gedrukt staat 61148: de laatste twee cijfers werden weggelaten. <span class="zeit">(Dia 71)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k9b10"></span> Deze opgave heeft nog niemand als Kepler-onderzoeker uitgevoerd, daar reken ik mijzelf ook toe (→ Afb. 23). Eenvoudig te vervelend, bewerkelijk, tijdintensief. Aan Famulus kan men de opgave overdragen. Men moet de probleemsituatie vatten waarom het gaat, een sinusfunctie omzetten – dat voltrekt zich automatisch in het Deep Reading –, en dan wordt de berekening doorgespeeld.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">36:29</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b11"></span> En u ziet intussen waarom de hoge snelheden nodig zijn. De tabel, elke afzonderlijke cel wordt zo vermenigvuldigd als de omgang met deze tafels vereist. En u krijgt eruit, nagerekend, dat in de druk 61148 verschijnt, in de narekening 61145. Kleine afwijking nog, maar toch zo dat men als historicus hiermee tevreden kan zijn. De verdere vragen zijn zo alweer interessant en rijk, waarom deze differentie. Heeft hij misschien een andere tafel, een andere uitgave, heeft hij zich verrekend, wat Kepler vaak doet.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">37:00</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b12"></span> Hij heeft ja ook niet altijd zelf gerekend, maar had, zoals Erasmus, enige in de literatuur overigens niet in aanmerking genomen Famuli, die voor hem werkten, juist om de berekeningen uit te voeren. Elke afzonderlijke stap wordt gecontroleerd. De validatie van een resultaat maakt het mogelijk bij elke berekening na te vragen, die het Deep Reading van een tekst als de Astronomia mogelijk maakt: hoe is het stapsgewijs voor Kepler tot dit resultaat gekomen? Elke afzonderlijke stap wordt aangewezen. Dat kan men benutten om eigen nieuwe publicatiereeksen te genereren. Ik heb ze expertise genoemd.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">37:39</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b13"></span> Expertises zouden bepaalde berekeningsblokken in een werk als dat van Kepler reconstrueren, doorrekenen en becommentariëren – hier de tweedeling van de excentriciteit op basis van de plaatsvervangende hypothese –, zoals een goede, kritische editor van deze werken dat ook doet.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">38:35</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k9b14"></span> Automatisch gegenereerd. Dan zijn er eisen voor de publicatie, die ik tot een Famulus-certificaat heb samengesteld: voorwaarden waaraan deze tekst moet voldoen om de hoge eis aan correctheid te vervullen. Wanneer men dit certificaat heeft, krijgt men een publicatie die niet alleen het bewijs volledig transparant verduidelijkt, maar ook de gebruikte grafische middelen, de diagrammen, interpreteert en toont.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">38:58</span></span></div></div>
+</section>
+<section id="k10" class="level2 page-columns page-full">
+<h2 data-anchor-id="k10">Doorwerken in de notebook</h2>
+<p><span class="kicker">Akt VIII</span></p>
+<div class="page-columns page-full">
+<figure class="szene-figur figure page-columns page-full" id="abb-24" aria-label="Dia met het model bij Keplers Fig. 4.10, 14 objecten, de aarde op haar cirkel en de Mars gezien vanaf twee plaatsen."><video data-video="1" src="../deck/assets/notebook/modell.mp4" poster="../deck/assets/notebook/modell-ende.png" muted="" playsinline="" loop="" preload="none"></video><img class="standbild video figure-img column-page-right" src="../deck/assets/notebook/modell-ende.png" alt=""></figure>
+<p><span class="abb"><strong>Afb. 24</strong> · Het model beweegt. Keplers Fig. 4.10 wordt als model met 14 objecten bewogen en over de parameterruimte getoetst. <span class="zeit">(Dia 83)</span></span></p>
+</div>
+<div class="page-columns page-full"><p><span id="k10b1"></span> Om te begrijpen wat er in de gebruikte geometrische modellen eigenlijk gebeurt: al deze tekeningen zijn door Famulus gegenereerd; het zijn geen uit publicaties overgenomen tekeningen (→ Afb. 24).</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">39:33</span></span><span class="cite-note"><span class="citation" data-cites="swerdlow2026renaissance"><a href="#ref-swerdlow2026renaissance" role="doc-biblioref">Swerdlow 2026</a></span>, <em>The Renaissance of Astronomy</em>, 522–529</span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/087.jpg" class="img-fluid figure-img" alt="Dia met de tegenoverstelling Lean en Famulus, de regels Eukleides I.4, III.7, III.20 en het resultaat van de toetsingsakten."></p>
+<figcaption><strong>Afb. 25</strong> · Wat Lean voor Riemann is, Lean toetst elke stap in het rekenprocédé, Famulus elke stap in het model; 165 toetsingsakten, 14 van 14 teksten op alle niveaus geslaagd. <span class="zeit">(Dia 87)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k10b2"></span> Ik moet nu naar het einde komen (→ Afb. 25). Wat dus? Wat Lean voor Riemann is, is Famulus voor Kepler. En ik hoop dat ik u heb kunnen duidelijk maken dat het naar mijn inzicht een bewijzer en een bewijsvoerend instrument voor de wetenschaps- en techniekgeschiedenis is, zo hoop ik, in een dergelijk verband van werken uit de astronomiegeschiedenis.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">39:58</span></span></div></div>
+</section>
+<section id="k11" class="level2 page-columns page-full">
+<h2 data-anchor-id="k11">Terug naar Kármán</h2>
+<p><span class="kicker">Epiloog</span></p>
+<p><img src="../folien/090.jpg" class="img-fluid" alt="Dia 90: Een machine voor dit huis"></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><span class="abb"><strong>Afb. 26</strong> · Een machine voor dit huis. Kármán schrijft op 2 november 1923 aan het Deutsches Museum, omdat Junkers’ allereerste oliemotoren gesloopt dreigen te worden. <span class="zeit">(Dia 90)</span></span></p>
+</div></div><div class="page-columns page-full"><p><span id="k11b1"></span> Nu we in het Deutsches Museum zijn, zou men zich kunnen afvragen of er in de nalatenschap van Kármán iets te vinden is waarin het Deutsches Museum al wordt genoemd (→ Afb. 26). Met Famulus is dat een eenvoudige vraag. Via het findboek is deze vraag, geloof ik, niet te beantwoorden; ik heb het niet echt gecontroleerd. Famulus vindt een briefwisseling van 2 november 1923, namelijk Kármán aan het Deutsches Museum. Hier was er een vraag van een collega uit Wenen, wat er met Junkers’ allereerste oliemotoren gebeurt, want die zouden in Aken worden verschroot. Eerste generatie, weg naar de schroothoop.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">40:28</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k11b2"></span> Toen kwam de vraag: Dat zijn toch heel belangrijke unica, zouden we daar niet iets mee moeten doen? De vraag luidt juist, omdat ik het in het algemeen belang voor grote schade zou houden, wanneer de uiterst interessante en leerzame voorwerpen tot schroot worden gemaakt.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">41:16</span></span></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../folien/093.jpg" class="img-fluid figure-img" alt="Dia 93: Kwam de motor in het museum?"></p>
+<figcaption><strong>Afb. 27</strong> · Kwam de motor in het museum? Het museum antwoordt op 20 november 1923 dat het zich direct tot Junkers in Dessau zal wenden; of de motor kwam, blijft open. <span class="zeit">(Dia 93)</span></figcaption>
+</figure>
+</div>
+</div></div><div class="page-columns page-full"><p><span id="k11b3"></span> Zo (→ Afb. 27). Keerzijde.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">41:36</span></span></div></div>
+<div class="page-columns page-full"><p><span id="k11b4"></span> Nu moet ik zien, aan wie – maar aan het Deutsches Museum met de vraag of men deze voorwerpen niet in de museumcollectie zou kunnen opnemen. Wij zullen ons overeenkomstig uw voorstel direct tot professor Junkers in Dessau wenden met het verzoek om een of meer van de genoemde proefmotoren af te staan. En zo hebt u weer een dergelijk netwerk van communicaties, die er uiteindelijk toe leiden, neem ik aan, dat in de collectie van het Deutsches Museum ten minste tijdelijk deze instrumenten, deze machines zijn geweest. Het antwoord ligt in het archief, maar de randen zijn open: Het wacht erop te worden verbonden met de archiefbestanden van het Deutsches Museum, om het beeld te vervolledigen en de onderzoeksdichtheid zo te verhogen dat het nut van Famulus in een dergelijk verband zich nog verder versterkt. Dank u wel, dat wilde ik u presenteren.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">41:42</span></span></div></div>
+</section>
+<section id="diskussion" class="level2 unnumbered page-columns page-full">
+<h2 class="unnumbered" data-anchor-id="diskussion">Discussie</h2>
+<section id="vorrede" class="level3 unnumbered page-columns page-full">
+<h3 class="unnumbered" data-anchor-id="vorrede">Begroeting</h3>
+<div class="page-columns page-full"><p> <span class="sprecher">Spreker 1:</span> Dus u bent ook een bepalende persoon geweest bij het Jobcenter en sinds januari vorig jaar bent u Senior Scholar hier bij ons in het Deutsches Museum. En omdat wij dus — ik heb gezien wat Gerd Kasseckert had ontwikkeld — eigenlijk ook in de richting van KI-edities, KI-projecten in de toekomst veel willen doen, hebben wij nu eerst een kring van geïnteresseerden verzameld om dat eens voor te stellen en te bespreken. En ik geloof dat jullie daar ergens feedback op nodig hebben.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">0:43</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d3"></span> <span class="sprecher">Spreker 1:</span> Hartelijk dank voor de heldere presentatie en het idee om verschillende expertises uit archief, bibliotheek en onderzoeksinstituut aan tafel te brengen. Wat kan men onder technologie doen, en hoe zou men dat kunnen verbinden met projecten zoals het voorbeeld van de Seelenplan-nachlassen, die media en deze kleuren inzetten? Er is in de afgelopen maanden en jaren het een en ander ontwikkeld, vragen met betrekking tot de ontsluiting, ook bij de ontsluiting van bestanden hier in het museum. Ik stop nu en maak ruimte voor commentaren, indrukken en vragen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">42:55</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d4"></span> <span class="sprecher">Gerd Graßhoff:</span> Heb ik het goed begrepen: alles zou gedigitaliseerd moeten voorliggen om Famulus op een convoluut te kunnen toepassen? Er zijn interfaces waarmee men in het snelheidsonderzoek zoiets als een registratie kan laten plaatsvinden, zodat men weet dat een bepaald object ergens in een catalogus ligt, dan een fotografie- of digitaliseringsopdracht uitgeeft en naar de betreffende afdeling stuurt; zodra dat is uitgevoerd, wordt de bewerking van de informatie verder verwerkt. Ik heb de grootste digitale collectie van de bestanden van antieke zonnewijzers van 700 bewaarde vindplaatsen, inclusief 3D-digitalisering van 250 objecten. Er loopt een project in Zwitserland, en er loopt een registratie van verdere zonnewijzervondsten in Israël, misschien 10, 15 objecten, die dan ook gedigitaliseerd zouden worden, in welke vorm dan ook, en die men kan integreren. Een dergelijk onderzoeksplatform moet zeer flexibel zijn en integrerend nieuwe bestanden kunnen opnemen. Vroeger hebben wij in eindeloze commissievergaderingen over normen en standaarden gediscussieerd; dat is vandaag niet meer nodig. De KI stelt binnen 5 minuten een volledig notatiesysteem op het eigen systeem op. De structurele analyse van de teksten, waar men lang heeft gediscussieerd of het TEI-standaard versie 18 of 19 moest zijn, kan men zich besparen. Ik heb een nieuwe notatie ingevoerd, FR voor Famulus Register, met een code erachter die alles eenduidig identificeert, en men kan het op elkaar afbeelden. Ik hoop in de komende dagen met de collega [naam weggelaten] uit Basel over de nalatenschap van de Bennington te kunnen spreken. Die hebben het na TEI jarenlang handmatig geprobeerd, veel moeite. Voor Famulus maakt het niet uit of de nummering TEI of iets anders gebruikt; dat zo te transformeren dat het integreerbaar is, is 0 moeite. De flexibiliteit van de integriteit is zodanig dat wat vroeger de eerste hoofdpijn was, of men dat überhaupt kan toepassen, wegvalt. Wij hebben 400 jaar registratietraditie in onze catalogi, dat hoeft men niet om te digiveren.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">43:46</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d5"></span> <span class="sprecher">Spreker 2:</span> <em>Ik ben geïnteresseerd in hoe wij de nalatenschap uitwerten. Mijn vraag: wat zou het Deutsches Museum kunnen doen, hoe zou het zich niet alleen kunnen betrekken, maar zijn specifieke kracht kunnen inbrengen als geïntegreerde kennisruimte, als ruimte die niet alleen tweedimensionale documenten aan de bibliotheek nalevert, maar ook driedimensionale objecten — dat is nog helemaal niet aan de orde geweest —, naast is een digitaliseringslaboratorium voor objecten, en die meerwaarde mobiliseren? Ik was medeverantwoordelijk voor een groot project, alle Duitse onderzoeksmusea, het open platform voor collectie-informatie, waar wij naar schatting 160 miljoen objecten in musea in Duitsland gezamenlijk zouden registreren, van natuurhistorische musea tot kunstmusea tot techniekmusea, om deze kennisruimte te creëren. Zulke tools zouden nuttig zijn; van de 54 miljoen euro die wij hebben aangevraagd, zou daar een deel door gedekt zijn. Hoe hebben jullie dat meegedacht, deze mogelijkheid van integratie, wat zou dat voor de instellingen van het Deutsches Museum betekenen om deze specifieke kracht te kunnen mobiliseren?</em></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">47:10</span></span><span class="cite-note"><span class="citation" data-cites="misof2023bibliothek"><a href="#ref-misof2023bibliothek" role="doc-biblioref">Misof e.a. 2023</a></span>, <em>Die Bibliothek des biologischen, technischen…</em></span></div></div>
+<div class="page-columns page-full"><p><span id="d6"></span> <span class="sprecher">Gerd Graßhoff:</span> De omvang van deze collectie gaat alle mogelijkheden te boven die ik als individu heb. Het geheel groeit uit de ervaring die ik met [naam weggelaten] heb opgedaan, waar de spreker van [naam weggelaten] al veel middelen en precies deze integratieopgave had. Die was zonder deze technologie in deze omvang nog niet mogelijk, nog een jaar geleden was dat zo niet mogelijk. De ontwikkeling van deze technologie is snel; de TEI werd ergens als Elements gepubliceerd en de aanbesteding van het federale ministerie. Element is in de kern eerst alleen een Large Language Model, dus taalverwerkende competentie. Wat wij hier hebben gezien, is een kennisverwerkende component, het gaat verder dan de afzonderlijke competenties naar een verbond van een netwerk door de applicaties. Deze technologie heeft men nodig met de verknopingsmogelijkheid om op het netwerk te gaan, met alle mogelijkheden van de interfaces, transformatie, die ad hoc gebeurt. Een dergelijk netwerk heeft voor de gebruiker een uniformerende structuur nodig, maar de structuur daarachter kan globaal verdeeld zijn, over vele instellingen heen, en kan hun infrastructuur, architectuur behouden. Het maakt geen verschil of het groot verdeeld is; de gebruiker is een lokale computer met geringe computervaardigheid ter plaatse en hoge overdrachtssnelheid via het internet, een netwerktopologie is geen probleem. Bij grote bestanden van materiële objecten zijn er verschillende versies en verschillend ver voortgezette inspanningen om deze objecten te registreren. Hier in huis hebben wij drie omvangrijke 3D-registraties. Men heeft een 3D-mesh waarmee men iets kan doen. Ik heb met een groep 20 jaar geleden het eerste en tot vandaag enige 3D-model van het Pantheon in Rome gedigitaliseerd, van buiten en binnen, volledig gesloten oppervlak. Dat is inmiddels een IT-standaard van de architectuuropleiding in Amerika. Dit model wordt in de teksten gesegmenteerd, zodat men elk afzonderlijk deel van een dergelijk gebouw kan aanspreken om die dan verder te bestuderen. Dat wordt gedaan in een mengeling van de lokaal vervaardigde digitalisaten, dus van het 3D-model ter plaatse, met de mogelijkheid om dit uit te werten, door Famulus op een andere plaats. De bewerking zelf is verdeeld. Zo kan men de 3D-ruwmodellen of de gedigitaliseerde interpretatie maken; bij zonnewijzers kan men automatisch de transcriptie uitlezen, bepalen, uitwerten, een 3D-model van een zonnewijzer wordt uitgewert, de schaalvormen worden uitgewert, het type, dan kan men zeggen voor welke geografische breedte dit object gemaakt was. Met aanvullende informatie over de materiaalgesteldheid heeft men zoveel informatie dat men de maker gedeeltelijk bij naam kan identificeren. De beschikbaar stellende instelling heeft meestal ook de kennis. De kennis kan worden gedeeld in verschillende secties en bijdragen, die dan worden samengevoegd om een totaaluitspraak over dit object te vinden. Kennis is geen individueel vermogen, niet de competentie van een individu als onderzoeker, maar per se collaboratief, collectief. Dat zou in een dergelijk model gereflecteerd moeten worden. De infrastructuur van de instellingen blijft bestaan. Men moet een soort registratuur arrangeren. In een Deutsches Museum zou een leidfiguur kunnen overleven. Ik kan Famulus alleen op weg brengen, maar ik kan haar niet bedrijven. Daarvoor hebben wij bakeninstellingen zoals het Deutsches Museum nodig. Bij Kármán zijn er archieven 24/7 van de nalatenschap in New York, en voorarchieven, daar is veel van de nalatenschap al gedigitaliseerd. Als deze bestanden allemaal bewerkt zouden worden, is de inspanning nu niet meer zo hoog. Vroeger waren dat aanvragen, die waren 1000000 hoog. Nu is de inspanning ook hoog, maar haalbaar in planmatige tijd. Hoe meer men toevoegt, des te zeggingskrachtiger wordt het. Men mag niet verwachten dat een bestand, een archief alleen alle vragen lokaal ter beschikking stelt, maar dat moet op het netwerk worden samengebracht. Zulk een voorwerk dat u hebt gedaan, is precies wat men nu zou moeten inzetten.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">49:45</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d7"></span> <span class="sprecher">Spreker 1:</span> Je hebt het steekwoord tijd genoemd. Wij zijn gebonden, wij hebben 11 uur, het instituut heeft nog een zitting nodig, maar dat is het begin van een discussie en niet het einde. Ik heb nog 2 aanmeldingen gekregen, met korte vragen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">56:34</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d8"></span> <span class="sprecher">Spreker 3:</span> <em>Als hoofd van het archief hier van het Deutsches Museum ben ik geïnteresseerd in deze tools. Juist wat de netwerken betreft, zou men veel natuurkundigen of andere wetenschappers kunnen nemen en die niet bewerken. Mijn vraag gaat misschien nog over deze camera’s: wat had u aangetroffen als metadata, toen u over boxen sprak? Deze fysieke eenheden zijn belangrijk om dingen te digitaliseren, anders zou dat een enorme rommel van stukken zijn die men misschien niet zou kunnen uitwerten. Wat hebt u aangetroffen?</em></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">56:57</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d9"></span> <span class="sprecher">Spreker 4:</span> <em>Ja, dat was nu zeer, zeer verhelderend, hartelijk dank voor deze 2 minuten, dat was geweldig. Misschien neem ik dan eerst een vraag, dus mij zou zeer interesseren wat uw technische basis is, van welk LLLLM-basismodel bent u uitgegaan en waar ligt dat? Zo, probeer eens heel kort, over het.</em></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">57:39</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d11"></span> <span class="sprecher">Gerd Graßhoff:</span> Aangetroffen heb ik de bewerkingsmogelijkheid in boxen, de bestanden van het boekje. Dat dient eerst alleen de grof systematische ordening. Alleen al de volgende lijn is dan een manuscript of 3 basisteksten, dat wordt automatisch door het systeem voorgegeven. De digitalisaten die ik heb gekregen, zijn in boxen per microfilm, die liggen nog bij mij in huis. Die heb ik op mijn eigen kosten laten digitaliseren. Bij deze digitalisaten moet men over meerdere rechtsvragen met het Caltech nog duidelijkheid scheppen. Rechtens is duidelijk dat het in huis gebruikt mag worden, ook publiekelijk erover citeren en gebruiken, ook wetenschappelijk gebruiken en citeren, in de klassieke zin van het citaat. Wat rechtens nog duidelijk moet worden, is of dat ook in de algemene openbaarheid gesteld kan worden. Dat heb ik nog niet gedaan. Technisch gebruik ik alles wat ooit gelopen heeft; de probleemoplossingswegen worden opgesplitst in de meest verschillende deeltaken. De huidige actuele architectuur voorziet voor elke deeltaak een zo goed mogelijk, maar kostengunstig model. Er opereert niet meer een taalmodel alleen; voor bepaalde taken neemt men het duurste of niet eens het duurste, maar omdat het het beste is, voor andere taken de indices. Het doel is dat aan het einde van het volgende half jaar naar mijn schatting deze modellen in wezen in huis lopen. Er is geen vendor lock-in in een propriëtaire technologie. Als de eisen laag zijn, kan men dat met een Mac doen, ik denk dat Mac de beste machine op het moment is voor het virtuele geheugenbeheer, maar men kan ook IBM verwerven. Zo een machine kost op het moment 26.000, als men ze moet kopen. Daarmee kan men in huis al deze processen bewerken.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">58:02</span></span></div></div>
+<div class="page-columns page-full"><p><span id="d12"></span> <span class="sprecher">Spreker 1:</span> Ik mag er tot slot op wijzen dat wij bijna de hele week bij Deutsches Museum Digital twee bijeenkomsten hebben: het Energie Community Forum, dat op woensdag begint, en het digitale object op donderdag en vrijdag, vele mogelijkheden om de gesprekken over digitaliteit en digitalisering voort te zetten. Hartelijk dank voor deze eerste avond en u allen een goede start.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="zeit">61:02</span></span></div></div>
+</section>
+</section>
+<section id="anhang" class="level2 unnumbered">
+<h2 class="unnumbered" data-anchor-id="anhang">Over dit manuscript</h2>
+<p>De passages berusten op de opname; elke passage draagt aan de rand haar tijdmarkering. Dia-citaten staan in de bewoording van de dia; wat niet te horen was, is als hiaat aangemerkt.</p>
+<p><strong>Validatie van de uitspraken.</strong> Elke uitspraak van de tekst is op haar grondslag gecontroleerd: in het gesprokene (tijdmarkering), op de dia en, bij gegevens over bronnen, in de bronbestanden van de lezing. Rechtvaardiging, geen verificatie: een ontbrekende grondslag is geen oordeel over de waarheid van de uitspraak. bewijs: 35 · alleen gesproken: 193 · ongecontroleerd: 0 · Tegenstrijdigheid: 0.</p>
+<ul>
+<li>Gecorrigeerde herkenningsfouten: „FileMaker“ → „Famulus“ (register:title; apple-lezing „Alphamulus“); „verseh“ → „verstehen“ (notizen name-famulus); „Erstan“ → „Stand“ (folie erkenntnis); „Karmann-Nachlasses“ → „Kármán-Nachlasses“ (register:title; apple-lezing „Kan-Nachlasses“); „Karmann“ → „Kármán“ (folie schau); „Beweisar“ → „Beweiser“ (notizen riemann; apple-lezing „Beweiser“); „Kaltech“ → „Caltech“ (notizen bibliothek); „Kammer-Nachlass“ → „Kármán-Nachlass“ (register:title; apple-lezing „Karma-Nachlass“); „Kurand“ → „Courant“ (notizen einfluss); „twenty third, second November“ → „2. November 1923“ (folie (Datum)); „Inskription“ → „Transkription“ (folie schau); „Pamulus“ → „Famulus“ (register:title); „Kalttech“ → „Caltech“ (notizen bibliothek)</li>
+<li>Onzekere herkenning (ongewijzigd, gemarkeerd): Partizipient, Passav, Kuratierung, kollaborativer, zeitgiemig, Ähm, Pinarddrücke, Distributiert, kollaborativ</li>
+<li>Sprekers van de discussie: 5 stemmen, bepaald door stemafdruk+inhoud; allen behalve de spreker anoniem.</li>
+<li>Dia’s zonder gesproken tekst: plattform, dossier, finden, anfrage, vorgang, einfluss, reference, conductor, kepler-notebook, fuer-sie, schluss, danke</li>
+<li>Redactieronde: ronde 1: cijfer 0.50, gate niet gehaald; ronde 2: cijfer 0.51, gate gehaald; ronde 3: cijfer 0.53, gate gehaald; ronde 4: cijfer 0.51, gate gehaald (beste ronde 3).</li>
+<li>Geredigeerde passages: 50; woordnabij: 11; dia-citaten in de bewoording: 0; hiaten: 0.</li>
+<li>Hiaat: 11 passage(s) in woordnabije versie (toetsing van de manuscriptversie niet gehaald of door het model weggelaten)</li>
+<li>Hiaat: 12 dia(’s) zonder gesproken tekst (in de voordracht getoond of overgeslagen): Het Kármán-platform, Noteren met bewijs, Vinden is niet begrijpen, Een vraag aan het archief, Uit vier boxen één dossier, „Mijn invloed zeer gering“, Gedecentraliseerd, gesigneerd, citeerbaar, De dirigent, Astronomia nova, toegelicht, Wat dat voor u betekent, Het archief is open, Dank</li>
+<li>nl: 71 · 9 → 6</li>
+</ul>
+<p><strong>Alinea’s met een openstaande bevinding van de vertaalcontrole (na drie reparatieronden):</strong></p>
+<ul>
+<li><a href="#k2b5">k2b5</a>: Rückübersetzung: neuer Name „LaTeX“</li>
+<li><a href="#k11b3">k11b3</a>: Rückübersetzung: Inhaltswörter verloren (0% erhalten)</li>
+<li><a href="#d1">d1</a>: Rückübersetzung: neuer Name „KI-Editionen“</li>
+<li><a href="#d4">d4</a>: Rückübersetzung: neuer Name „TEI-Standard“</li>
+<li><a href="#d6">d6</a>: Rückübersetzung: neue Zahl „3D-Registrierungen“</li>
+<li><a href="#k9b12">k9b12</a>: Namen fehlen: Expertise</li>
+</ul>
+<p><strong>Openstaande bewijzen (nog niet gecontroleerd):</strong></p>
+<ul>
+<li>Met 19.73.120 (Titelfolie, Bildnachweis) — ungeprüft</li>
+</ul>
+</section>
+<section id="literatur" class="level2 unnumbered">
+<h2 class="unnumbered" data-anchor-id="literatur">Literatuur</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-grasshoff2026erasmus" class="csl-entry" role="listitem">
+Graßhoff, Gerd. 2026. <em>The New Erasmus. The Philosophy of an AI Famulus for Scholars</em>. OpenScienceTechnology GmbH.
+</div>
+<div id="ref-misof2023bibliothek" class="csl-entry" role="listitem">
+Misof, Bernhard, Klement Tockner, en Helmuth Trischler. 2023. <span>‘Die Bibliothek des biologischen, technischen und kulturellen Wissens – Warum brauchen wir eine integrierte Sammlungsinfrastruktur?’</span> <em>Bibliothek Forschung und Praxis</em> 47 (3): 495-502. <a href="https://doi.org/10.1515/bfp-2023-0054">https://doi.org/10.1515/bfp-2023-0054</a>.
+</div>
+<div id="ref-swerdlow2026renaissance" class="csl-entry" role="listitem">
+Swerdlow, Noel M. 2026. <em>The Renaissance of Astronomy</em>. Sources and Studies in the History of Mathematics and Physical Sciences. Springer Nature Switzerland. <a href="https://doi.org/10.1007/978-3-031-84760-8">https://doi.org/10.1007/978-3-031-84760-8</a>.
+</div>
+</div>
+<link rel="stylesheet" href="../deck/assets/szenen.css">
+<script src="../deck/assets/facts.js"></script>
+<script type="module">
+import { starte } from './../deck/assets/szenen.mjs';   // a relative specifier (a bare one is refused)
+const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function skala(){ document.querySelectorAll('.st-skala').forEach(s => { const r = s.firstElementChild,
+  b = +s.dataset.breite, h = +s.dataset.hoehe, k = s.clientWidth / b; r.style.width = b + 'px'; r.style.height = h + 'px';
+  r.style.transform = 'scale(' + k + ')'; s.style.height = (h * k) + 'px'; }); }
+addEventListener('resize', skala); skala();
+const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; io.unobserve(e.target);
+  const el = e.target; if (el.dataset.video) { if (!ruhig) el.play().catch(() => {}); return; }
+  starte(el, { basis: '../deck/', standbild: ruhig }).then(() => { el.dataset.gestartet = '1'; })
+  .catch(err => { el.dataset.fehler = String(err); }); }), { threshold: .4 });
+document.querySelectorAll('figure.szene-figur [data-szene], figure.szene-figur video').forEach(el => io.observe(el));
+</script>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Gekopieerd!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Gekopieerd!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      const newWindowLabel = "(opent in een nieuw tabblad)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var opensNewContext = (link) => {
+        var target = (link.getAttribute("target") || "").toLowerCase();
+        return target !== "" && !["_self", "_parent", "_top"].includes(target);
+      }
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+        if (opensNewContext(link)) {
+          describeNewWindow(link);
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollbare code","output":"Scrollbare uitvoer"};
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<!-- famulus:publisher:start -->
+<p class="famulus-publisher" style="max-width:46rem;margin:2.5rem auto 1.5rem;padding:.7rem 16px 0;border-top:2px solid #c8a22a;font:13px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;opacity:.8">Published by OpenScienceTechnology GmbH · <a style="color:inherit" href="/impressum/">Legal notice</a> · <a style="color:inherit" href="/datenschutz/">Privacy</a></p>
+<script>(function(){try{var C="https://lettre.ngrok.dev/famulus-counter/api/hit",L=C.replace(/hit$/,'leave'),q=new URLSearchParams(location.search),v=Math.random().toString(36).slice(2,12),u=location.pathname;function S(a,b){navigator.sendBeacon?navigator.sendBeacon(a,b):fetch(a,{method:'POST',body:b,keepalive:true,mode:'no-cors'})}S(C,JSON.stringify({u:u,r:document.referrer,m:"",v:v,c:q.get('c')||q.get('utm_campaign')||''}));var a=0,t=document.visibilityState=='visible'?Date.now():0,s=0,x='',g='',k='';function sc(){var h=document.documentElement;s=Math.max(s,Math.min(100,Math.round((scrollY+innerHeight)/Math.max(h.scrollHeight,1)*100)))}addEventListener('scroll',sc,{passive:true});addEventListener('load',sc);sc();document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a[href]');if(l&&/^https?:$/.test(l.protocol)){var i=l.host==location.host;x=i?'in':'out';g=i?l.pathname+l.hash:l.host;k=(l.getAttribute('aria-label')||l.textContent||'').replace(/\s+/g,' ').trim().slice(0,80);B()}},true);function B(){S(L,JSON.stringify({u:u,v:v,d:Math.round((a+(t?Date.now()-t:0))/1000),s:s,x:x,t:g,k:k}))}function F(){if(t){a+=Date.now()-t;t=0}B()}document.addEventListener('visibilitychange',function(){document.visibilityState=='hidden'?F():t=Date.now()});addEventListener('pagehide',function(){if(t)F()})}catch(e){}})();</script>
+<noscript><img src="https://lettre.ngrok.dev/famulus-counter/api/hit.gif?u=/lectures/1/nl/manuskript.html&amp;m=" width="1" height="1" alt=""></noscript>
+<!-- famulus:publisher:end -->
+</body></html>

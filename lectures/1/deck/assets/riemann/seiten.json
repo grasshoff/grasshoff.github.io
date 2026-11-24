@@ -1,0 +1,92 @@
+[
+ {
+  "bild": "assets/riemann/seiten/alpoge-1.jpg",
+  "stufe": "ankuendigung",
+  "url": "https://alpo.ge/remark.pdf",
+  "titel": "L. Alpöge, Remark, S. 1 (20.11.2026)"
+ },
+ {
+  "bild": "assets/riemann/seiten/alpoge-2.jpg",
+  "stufe": "ankuendigung",
+  "url": "https://alpo.ge/remark.pdf",
+  "titel": "L. Alpöge, Remark, S. 2 (20.11.2026)"
+ },
+ {
+  "bild": "assets/riemann/seiten/alpoge-3.jpg",
+  "stufe": "ankuendigung",
+  "url": "https://alpo.ge/remark.pdf",
+  "titel": "L. Alpöge, Remark, S. 3 (20.11.2026)"
+ },
+ {
+  "bild": "assets/riemann/seiten/alpoge-4.jpg",
+  "stufe": "ankuendigung",
+  "url": "https://alpo.ge/remark.pdf",
+  "titel": "L. Alpöge, Remark, S. 4 (20.11.2026)"
+ },
+ {
+  "bild": "assets/riemann/seiten/tao.jpg",
+  "stufe": "verstehen",
+  "url": "https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/",
+  "titel": "Unforced Euler singularity, unforced Navier-Stokes singularity, and the Generalized Rieman"
+ },
+ {
+  "bild": "assets/riemann/seiten/loh.jpg",
+  "stufe": "verstehen",
+  "url": "https://poshenloh.com/posts/20261120-riemann",
+  "titel": "Riemann Hypothesis solved? Rethink math. Education. And the meaning of life"
+ },
+ {
+  "bild": "assets/riemann/seiten/borretti.jpg",
+  "stufe": "verstehen",
+  "url": "https://borretti.me/article/re-riemann",
+  "titel": "Re: Riemann"
+ },
+ {
+  "bild": "assets/riemann/seiten/ahm.jpg",
+  "stufe": "verstehen",
+  "url": "https://proofsandprompts.com/2026/11/21/ahm-statement-on-the-announced-proof-of-the-riemann-hypothesis/",
+  "titel": "AHM Statement on the Announced Proof of the Riemann Hypothesis"
+ },
+ {
+  "bild": "assets/riemann/seiten/leanblog.jpg",
+  "stufe": "validieren",
+  "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+  "titel": "Lean-Community-Blog_RH (Fassung 2026-11-22)"
+ },
+ {
+  "bild": "assets/riemann/seiten/sutherland.jpg",
+  "stufe": "validieren",
+  "url": "https://math.mit.edu/~drew/grh/",
+  "titel": "Verification files for the Lean proof of the Riemann Hypothesis"
+ },
+ {
+  "bild": "assets/riemann/seiten/audit.jpg",
+  "stufe": "validieren",
+  "url": "https://math.mit.edu/~drew/grh/audit.log",
+  "titel": "Sutherland_audit.log (Fassung 2026-11-22)"
+ },
+ {
+  "bild": "assets/riemann/seiten/nature.jpg",
+  "stufe": "veroeffentlichen",
+  "url": "https://www.nature.com/articles/d41586-026-03812-7",
+  "titel": "Mathematicians astounded by AI and human-written proofs of iconic Riemann hypothesis"
+ },
+ {
+  "bild": "assets/riemann/seiten/independent.jpg",
+  "stufe": "veroeffentlichen",
+  "url": "https://www.the-independent.com/tech/riemann-hypothesis-solved-levent-alpoge-b3088927.html",
+  "titel": "Anthropic mathematician claims to have proved Riemann hypothesis with help of Claude"
+ },
+ {
+  "bild": "assets/riemann/seiten/zwanzigmin.jpg",
+  "stufe": "veroeffentlichen",
+  "url": "https://www.20min.ch/story/riemann-vermutung-ki-soll-heiligen-gral-der-mathematik-geknackt-haben-103670945",
+  "titel": "Riemann-Vermutung: Anthropic-Mathematiker will Beweis mit Claude gefunden haben"
+ },
+ {
+  "bild": "assets/riemann/seiten/ingenieur.jpg",
+  "stufe": "veroeffentlichen",
+  "url": "https://www.ingenieur.de/riemannsche-vermutung-ki-liefert-moeglichen-beweis-fuer-167-jahre-altes-raetsel-134e428c-97fd-4992-ac52-45e3ed87b957/",
+  "titel": "Riemannsche Vermutung: Hat KI das größte Mathe-Rätsel nach 167 Jahren geknackt?"
+ }
+]

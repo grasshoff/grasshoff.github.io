@@ -27,7 +27,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-@media print {
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}@media print {
   html {
     color-scheme: light only;
   }
@@ -80,28 +99,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhalt</h2>
    
   <ul>
-  <li><a href="#kernaussagen" id="toc-kernaussagen" class="nav-link active" data-scroll-target="#kernaussagen">Kernaussagen</a></li>
-  <li><a href="#folie-titel" id="toc-folie-titel" class="nav-link" data-scroll-target="#folie-titel">Der Kármán-Nachlass, mit Famulus gesichtet</a></li>
-  <li><a href="#folie-name-famulus" id="toc-folie-name-famulus" class="nav-link" data-scroll-target="#folie-name-famulus">Famulus</a></li>
-  <li><a href="#folie-erkenntnis" id="toc-folie-erkenntnis" class="nav-link" data-scroll-target="#folie-erkenntnis">Riemann: vier Tage auf allen Kanälen</a></li>
-  <li><a href="#folie-riemann" id="toc-folie-riemann" class="nav-link" data-scroll-target="#folie-riemann">Ein neuer Agent</a></li>
-  <li><a href="#folie-plattform" id="toc-folie-plattform" class="nav-link" data-scroll-target="#folie-plattform">Die Kármán-Plattform</a></li>
-  <li><a href="#folie-schau" id="toc-folie-schau" class="nav-link" data-scroll-target="#folie-schau">Was Famulus kann</a></li>
-  <li><a href="#folie-werkzeuge" id="toc-folie-werkzeuge" class="nav-link" data-scroll-target="#folie-werkzeuge">Die Werkzeuge rechts</a></li>
-  <li><a href="#folie-bibliothek" id="toc-folie-bibliothek" class="nav-link" data-scroll-target="#folie-bibliothek">Der Kármán-Nachlass – alles online</a></li>
-  <li><a href="#folie-ohne-original" id="toc-folie-ohne-original" class="nav-link" data-scroll-target="#folie-ohne-original">Ein Objekt ohne Original im Haus</a></li>
-  <li><a href="#folie-transkript" id="toc-folie-transkript" class="nav-link" data-scroll-target="#folie-transkript">Faksimile und Transkript</a></li>
-  <li><a href="#folie-verstehen" id="toc-folie-verstehen" class="nav-link" data-scroll-target="#folie-verstehen">Erläutern und übersetzen</a></li>
-  <li><a href="#folie-dossier" id="toc-folie-dossier" class="nav-link" data-scroll-target="#folie-dossier">Notieren mit Beleg</a></li>
-  <li><a href="#folie-fromm-1934" id="toc-folie-fromm-1934" class="nav-link" data-scroll-target="#folie-fromm-1934">Was sah Kármán in Aachen?</a></li>
-  <li><a href="#folie-fromm-zitat" id="toc-folie-fromm-zitat" class="nav-link" data-scroll-target="#folie-fromm-zitat">Kármán an Fromm, 26.11.1934</a></li>
-  <li><a href="#folie-hopf-1933" id="toc-folie-hopf-1933" class="nav-link" data-scroll-target="#folie-hopf-1933">Hopf an Kármán, 15.5.1933</a></li>
-  <li><a href="#folie-frage" id="toc-folie-frage" class="nav-link" data-scroll-target="#folie-frage">Wer bat Kármán um Hilfe?</a></li>
-  <li><a href="#folie-lesesaal" id="toc-folie-lesesaal" class="nav-link" data-scroll-target="#folie-lesesaal">In den Lesesaal</a></li>
-  <li><a href="#folie-klassen" id="toc-folie-klassen" class="nav-link" data-scroll-target="#folie-klassen">Jedes Stück klassifiziert</a></li>
-  <li><a href="#folie-tempo" id="toc-folie-tempo" class="nav-link" data-scroll-target="#folie-tempo">Millisekunden</a></li>
-  <li><a href="#folie-finden" id="toc-folie-finden" class="nav-link" data-scroll-target="#folie-finden">Finden ist nicht Verstehen</a></li>
+  <li><a href="#eroeffnung" id="toc-eroeffnung" class="nav-link active" data-scroll-target="#eroeffnung">Eröffnung</a></li>
+  <li><a href="#erasmus" id="toc-erasmus" class="nav-link" data-scroll-target="#erasmus">Der Famulus des Erasmus</a></li>
+  <li><a href="#riemann" id="toc-riemann" class="nav-link" data-scroll-target="#riemann">Lean und die Riemannsche Vermutung</a></li>
+  <li><a href="#famulus" id="toc-famulus" class="nav-link" data-scroll-target="#famulus">Ein Famulus für die Technik- und Wissenschaftsgeschichte</a></li>
+  <li><a href="#werkzeuge" id="toc-werkzeuge" class="nav-link" data-scroll-target="#werkzeuge">Werkzeuge für die Forschung</a></li>
+  <li><a href="#nachlass" id="toc-nachlass" class="nav-link" data-scroll-target="#nachlass">Der Nachlass ist digital</a></li>
+  <li><a href="#aachen" id="toc-aachen" class="nav-link" data-scroll-target="#aachen">Was sah Kármán in Aachen?</a></li>
+  <li><a href="#finden" id="toc-finden" class="nav-link" data-scroll-target="#finden">Finden ist nicht Verstehen</a></li>
+  <li><a href="#fragen" id="toc-fragen" class="nav-link" data-scroll-target="#fragen">Fragen an den Nachlass</a></li>
+  <li><a href="#evidenzraum" id="toc-evidenzraum" class="nav-link" data-scroll-target="#evidenzraum">Der Evidenzraum wächst</a></li>
+  <li><a href="#vertrauen" id="toc-vertrauen" class="nav-link" data-scroll-target="#vertrauen">Kann man der Antwort trauen?</a></li>
+  <li><a href="#kepler" id="toc-kepler" class="nav-link" data-scroll-target="#kepler">Deep Reading: Kepler</a></li>
+  <li><a href="#notebook" id="toc-notebook" class="nav-link" data-scroll-target="#notebook">Weiterarbeiten im Notebook</a></li>
+  <li><a href="#zurueck" id="toc-zurueck" class="nav-link" data-scroll-target="#zurueck">Zurück zu Kármán</a></li>
   <li><a href="#zu-diesem-manuskript" id="toc-zu-diesem-manuskript" class="nav-link" data-scroll-target="#zu-diesem-manuskript">Zu diesem Manuskript</a></li>
+  <li><a href="#literatur" id="toc-literatur" class="nav-link" data-scroll-target="#literatur">Literatur</a></li>
   </ul>
 </nav>
 </div>
@@ -112,20 +125,30 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Der Kármán-Nachlass, mit Famulus gesichtet</h1>
-<p class="subtitle lead">Vortragsmanuskript · Famulus Lectures 1</p>
+<p class="subtitle lead">Famulus Deep Reading</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor:in</div>
+  <div class="quarto-title-meta-heading">Zugehörigkeiten</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Gerd Graßhoff </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Humboldt-Universität zu Berlin
+          </p>
+        <p class="affiliation">
+            Deutsches Museum
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor:in</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gerd Graßhoff </p>
-          </div>
-  </div>
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
@@ -136,291 +159,284 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
-<div>
-  <div class="abstract">
-    <div class="block-title">Zusammenfassung</div>
-    <p>Gerd Graßhoff unternimmt den ersten Versuch, einen Vortrag aufzunehmen, wobei die Medien aktiv sind. Das Vorgehen umfasst das Anschließen des HDMI-Kabels. Als Ergebnis wird der Vorgang als wunderbar bezeichnet.</p>
-  </div>
-</div>
 
 
 </header>
 
 
-<style>.kicker{font-variant:small-caps;letter-spacing:.06em;color:#8a6d1d;font-size:.9em}.zeit{font-variant-numeric:tabular-nums;color:#002147}.luecke{color:#7a7a7a;font-style:italic}.famulus-vermerk{border-left:3px solid #c9a227;padding:.4em .9em;color:#333;font-size:.92em}.sprecher{font-variant:small-caps;color:#555}</style>
+<style>
+.famulus-vermerk{border-left:3px solid #c9a227;padding:.4em .9em;color:#333;font-size:.92em}
+.abbildung{margin:1.6em 0 1.8em}
+.abbildung img{width:100%;height:auto;display:block;border:1px solid #e4e0d6}
+.abbildung .unterschrift{font-size:.9em;line-height:1.45;color:#444;margin-top:.5em}
+</style>
 <div class="famulus-vermerk">
-<p>Vortrag von Gerd Graßhoff, Deutsches Museum, München, Seminarraum Forschung, 23. November 2026. Autor des Manuskripts ist der Vortragende. Famulus hat es als famulus aus der Audioaufnahme und den Folien erstellt: Transkription (nemotron-3.5-transcribe (mlx 8bit) + apple-zeitachse + sortformer), Zuordnung zu den Folien, wortnahe Glättung (deepseek-v4.1-flash:cloud) und Manuskriptfassung (deepseek-v4.1-flash:cloud, Anweisung instr:vortrag-manuskript v1.0). Jede Passage trägt am Rand ihre Zeitmarke in der Aufnahme; vorgelesene Folientexte stehen im Wortlaut der Folie; was nicht zu hören war, ist als Lücke ausgewiesen.</p>
+<p><strong>Famulus Lectures · Nr. 1</strong> · Deutsches Museum, München, 23. November 2026 · Vom Autor revidierte Lesefassung (Version 1.1, Entwurf, Stand 24. November 2026) · CC BY-NC-ND 4.0.</p>
+<p>Zitiervorschlag: Gerd Graßhoff: Der Kármán-Nachlass, mit Famulus erschlossen. Famulus Deep Reading. Famulus Lectures 1, Deutsches Museum, München, Montag, 23. November 2026. <a href="https://famulus.lettre.ai/lectures/1/" class="uri">https://famulus.lettre.ai/lectures/1/</a></p>
 </div>
-<section id="kernaussagen" class="level2 unnumbered">
-<h2 class="unnumbered" data-anchor-id="kernaussagen">Kernaussagen</h2>
-<ul>
-<li>Ein erster Versuch, einen Vortrag aufzunehmen, wird gestartet, wobei die Medien aktiv sind. [<span class="zeit">0:04</span>]</li>
-<li>Das HDMI-Kabel wird angeschlossen. [<span class="zeit">0:44</span>]</li>
-<li>Gerd Graßhoff bewertet den Vorgang als wunderbar. [<span class="zeit">0:56</span>]</li>
-</ul>
+<section id="eroeffnung" class="level2">
+<h2 data-anchor-id="eroeffnung">Eröffnung</h2>
+<p>Vielen Dank für die Einladung – und dafür, dass Sie an einem Montagmorgen so früh gekommen sind.</p>
+<p>Was ich Ihnen heute zeige, soll deshalb nicht als Technik mit Aha-Effekt erscheinen, sondern als ein Hilfsmittel, das der Forschung nützt, dem Museum und allen, die mit seinen Beständen arbeiten. Dafür möchte ich argumentieren.</p>
 </section>
-<section id="folie-titel" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-titel">Der Kármán-Nachlass, mit Famulus gesichtet</h2>
-<p><span class="kicker">Eröffnung</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/003.jpg" class="img-fluid figure-img" alt="Folie 3: Der Kármán-Nachlass, mit Famulus gesichtet"></p>
-<figcaption>Folie 3: Der Kármán-Nachlass, mit Famulus gesichtet</figcaption>
-</figure>
+<section id="erasmus" class="level2 page-columns page-full">
+<h2 data-anchor-id="erasmus">Der Famulus des Erasmus</h2>
+<div class="abbildung column-page-right">
+<p><img src="folien/003.jpg" class="img-fluid" alt="Albrecht Dürer, Erasmus von Rotterdam, Kupferstich 1526, Monogramm AF"></p>
+<p><span class="unterschrift"><strong>Abb. 1</strong> · Albrecht Dürer, <em>Erasmus von Rotterdam</em>, Kupferstich 1526. Im Monogramm ist das D durch ein F ersetzt: AF – <em>Famulus</em>. Metropolitan Museum of Art, New York, Inv. 19.73.120 (Fletcher Fund, 1919), gemeinfrei (CC0); Bearbeitung des Autors.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
+<p>Ich berufe mich heute nicht auf die neueste Technologie, sondern auf eine große Tradition der Wissenschaftsgeschichte: auf Erasmus. Das, wofür ich argumentieren möchte, will ich gar nicht KI nennen. Das ist zunächst eine Frage der Terminologie – wovon sprechen wir eigentlich? Wir sprechen nicht von Agenten wie Claude oder anderen personalisierten Akteuren, sondern von etwas, das ich im Sprachgebrauch des Humanismus <em>Famulus</em> nennen möchte.</p>
+<p>Erasmus verwendet das Wort in seinen Werken. Sehen Sie sich Dürers Stich an: Erasmus schreibt mit der rechten Hand, in der linken hält er etwas. Wie immer bei Dürer ist die große Frage, was wir hier eigentlich sehen. Ich deute es als Tintenfass – aber erlauben Sie mir den Gag, um die Metapher weiterzutreiben: In meiner Lesart ist das Famulus.</p>
+<p><em>Famulus</em> heißt auf Lateinisch der Gehilfe. Aus vielen Briefen des Erasmus wissen wir, dass ein Famulus sehr gelehrt sein konnte. Erasmus hatte ein ganzes Netz von Gehilfen, die ihm zuarbeiteten. In diese Zuarbeit durften sie jede Kompetenz einbringen – nur eines nicht: ein eigenes wissenschaftliches Urteil.</p>
 </section>
-<section id="folie-name-famulus" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-name-famulus">Famulus</h2>
-<p><span class="kicker">Eröffnung</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/008.jpg" class="img-fluid figure-img" alt="Folie 8: Famulus"></p>
-<figcaption>Folie 8: Famulus</figcaption>
-</figure>
+<section id="riemann" class="level2 page-columns page-full">
+<h2 data-anchor-id="riemann">Lean und die Riemannsche Vermutung</h2>
+<p>Wie aktuell das ist, zeigen die letzten vier Tage. Ich betreibe einen Wissenschaftsmonitor, der alle zugänglichen Publikationen und Kommunikationen aufzeichnet, dokumentiert und auswertet – um zu sehen, wie Wissen in der Gemeinschaft der Forschenden entsteht. Seit dem 20. November verfolgt er live, was um die Riemannsche Vermutung geschieht.</p>
+<div class="abbildung column-page-right">
+<p><img src="deck/publikation/szenen/stapel.png" class="img-fluid" alt="Kommunikationsakte zur Riemannschen Vermutung seit dem 20. November 2026"></p>
+<p><span class="unterschrift"><strong>Abb. 2</strong> · Riemann: vier Tage auf allen Kanälen. Jede Karte ist ein Kommunikationsakt – Ankündigung, Zuarbeit, Frage, Prüfung, Validierung, Veröffentlichung.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-erkenntnis" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-erkenntnis">Riemann: vier Tage auf allen Kanälen</h2>
-<p><span class="kicker">Eröffnung · Jetzt</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/009.jpg" class="img-fluid figure-img" alt="Folie 9: Riemann: vier Tage auf allen Kanälen"></p>
-<figcaption>Folie 9: Riemann: vier Tage auf allen Kanälen</figcaption>
-</figure>
+<p>An diesem Tag wurde angekündigt, die Riemannsche Vermutung sei bewiesen. Das ist zunächst nur eine steile Behauptung – erst recht, wenn man sieht, dass der Beweis nicht in herkömmlicher mathematischer Form vorgelegt wurde, sondern als 250 000 Seiten gedruckter Code.</p>
+<p>Damit beginnt das erste Problem: Wer prüft diesen Code? Ist das schon Wissen? Natürlich nicht. Aber Sie sehen hier einen regen wissenschaftlichen Kommunikationsprozess. Ich bin überzeugt, dass am Ende entweder Wissen steht – oder eine vorlaute Ankündigung mit Lücken, die sich nicht mehr schließen lassen. Wie das Spiel ausgeht, wissen wir noch nicht.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/012.jpg" class="img-fluid" alt="Ein neuer Agent: L. Alpöge, working with Claude"></p>
+<p><span class="unterschrift"><strong>Abb. 3</strong> · Ein neuer Agent. Levent Alpöge, 20. November 2026: „… working with Claude …“ – und Lean, der Beweiser, nimmt an der Kommunikation teil.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-riemann" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-riemann">Ein neuer Agent</h2>
-<p><span class="kicker">Eröffnung · Jetzt</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/012.jpg" class="img-fluid figure-img" alt="Folie 12: Ein neuer Agent"></p>
-<figcaption>Folie 12: Ein neuer Agent</figcaption>
-</figure>
+<p>Mich interessiert die Parallele. Schon die Erstankündigung lautet: Ich habe diesen Beweis gefunden, <em>working with Claude</em>. Wer ist Claude? Claude ist eine Technologie. Durch die Namensgebung von Anthropic wird sie personalisiert, und genau das möchte ich vermeiden: Es suggeriert, wir hätten einen wissenschaftlichen Akteur vor uns. Den haben wir nach meiner Lesart nicht.</p>
+<p>Lean, der Beweiser, ist ein Verfahren der automatischen Beweisführung. Er hat diese 250 000 Seiten durchgearbeitet und nachgewiesen, dass der Beweis lückenlos ist – und, nach allem, was die Gemeinschaft über den Einsatz dieser Technik weiß, korrekt.</p>
+<div class="lean-hinweis">
+<p>Mit „Lean“ bezeichne ich hier und im Folgenden das System als Ganzes: die Sprachdefinition Lean, in der die mathematischen Aussagen und die Inferenzregeln formuliert sind, zusammen mit der Sprachmaschine (Claude Opus), die in dieser Sprache arbeitet. Zur Sprache Lean: Jeremy Avigad, Patrick Massot, <em>Mathematics in Lean</em> (<a href="materialien/lean/mathematics_in_lean.pdf">PDF</a> in den Materialien zu diesem Heft; Originalquelle <a href="https://leanprover-community.github.io/mathematics_in_lean/" class="uri">https://leanprover-community.github.io/mathematics_in_lean/</a>).</p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
 </section>
-<section id="folie-plattform" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-plattform">Die Kármán-Plattform</h2>
-<p><span class="kicker">Prolog · Live</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/013.jpg" class="img-fluid figure-img" alt="Folie 13: Die Kármán-Plattform"></p>
-<figcaption>Folie 13: Die Kármán-Plattform</figcaption>
-</figure>
+<section id="famulus" class="level2 page-columns page-full">
+<h2 data-anchor-id="famulus">Ein Famulus für die Technik- und Wissenschaftsgeschichte</h2>
+<p>Meine Lesart ist: Was Lean für die Mathematik ist, möchte ich als Famulus für die Technik- und Wissenschaftsgeschichte einführen. Das ist eine große Ankündigung für einen Montagmorgen – verzeihen Sie mir; unter Freunden ist es mein Versuch, den Kopf ein wenig herauszustrecken. Zeigen will ich es an der Erschließung des Kármán-Nachlasses, so wie ich ihn bearbeitet und aufbereitet habe.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/013.jpg" class="img-fluid" alt="Die Kármán-Plattform: 1.066 Ordner, 38.213 Seiten"></p>
+<p><span class="unterschrift"><strong>Abb. 4</strong> · Die Kármán-Plattform. Der Nachlass umfasst 1.066 Ordner mit 38.213 Seiten und ist mit einem Klick als Plattform erreichbar.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
+<p>Der Nachlass ist bereits zugänglich, soweit er digitalisiert ist; an der Digitalisierung wird aber noch gearbeitet: Von 1.066 Boxen sind derzeit 328 vollständig digitalisiert. Die Maschinen laufen alle im Hintergrund und verursachen Kosten. Immerhin sind wir bei einem Drittel, und in den nächsten zwei Wochen werden voraussichtlich auch alle übrigen Seiten digitalisiert sein.</p>
+<p>Sie sehen hier schon eine automatische Kategorisierung. Der Nachlass umfasst etwa 204 Korrespondenten – das sieht man im Findbuch nicht –, dazu 240 Papiere, 142 Manuskripte von Kármán, Patente, aber auch Themen wie Turbinen, Turbulenz, Gutachten oder Brücken, die durch Schwingungen eingestürzt sind. Famulus hat das alles bereits selbständig in Kategorien geordnet. Die Zahlen sind vorläufig und können sich durch die weitere Bearbeitung noch ändern.</p>
+<p>Das alles ist schon einsehbar und nutzbar. Links auf der Webseite sehen Sie eine Registratur, die sich nach Kategorien filtern lässt – Manuskripte, Korrespondenz –; die Korrespondenzen sind einzeln aufgeführt und lassen sich gruppieren. In der Mitte öffnen Sie die einzelnen Dokumente: links das Faksimile, rechts die Transkription. Sie erfasst auch Mathematik und andere schwierige Texte, ebenso alle fremdsprachigen. Man kann sie kopieren, um daraus LaTeX- oder andere Publikationsdokumente zu erstellen, und man blättert so schnell, dass das Lesen am Bildschirm angenehm bleibt. Etwa 700 000 Sätze sind auf diese Weise einzeln erfasst.</p>
 </section>
-<section id="folie-schau" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-schau">Was Famulus kann</h2>
-<p><span class="kicker">Prolog · Klick für Klick</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/014.jpg" class="img-fluid figure-img" alt="Folie 14: Was Famulus kann"></p>
-<figcaption>Folie 14: Was Famulus kann</figcaption>
-</figure>
+<section id="werkzeuge" class="level2 page-columns page-full">
+<h2 data-anchor-id="werkzeuge">Werkzeuge für die Forschung</h2>
+<div class="abbildung column-page-right">
+<p><img src="folien/014.jpg" class="img-fluid" alt="Was Famulus kann"></p>
+<p><span class="unterschrift"><strong>Abb. 5</strong> · Was Famulus kann.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-werkzeuge" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-werkzeuge">Die Werkzeuge rechts</h2>
-<p><span class="kicker">Prolog · Die Leiste rechts</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/020.jpg" class="img-fluid figure-img" alt="Folie 20: Die Werkzeuge rechts"></p>
-<figcaption>Folie 20: Die Werkzeuge rechts</figcaption>
-</figure>
+<p>So weit die Sicht der Nutzerin, des Nutzers: Wie greife ich auf diesen Bestand zu? Famulus kann aber weit mehr, als Faksimiles und Übersetzungen zu zeigen. Die Analyse arbeitet satzgenau, ja noch genauer, bis zu Abbildungen, Bezeichnungen und anderen Informationsträgern.</p>
+<p>Sie können einen Satz anklicken und wählen damit ein <em>Segment</em> aus, wie ich es nenne, um damit etwas zu tun. Ein Nebeneffekt: Jedes Segment ist zitierbar. Zitieren Sie es in einer eigenen Publikation, erscheint es dort als Link, der auf genau diese Stelle führt. Sie können also satzgenau zitieren. Und mehr noch: Famulus muss den Sinn der gewählten Stelle offenlegen können.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/020.jpg" class="img-fluid" alt="Die Werkzeuge rechts: Erläuterung, Übersetzung, Wörterbuch"></p>
+<p><span class="unterschrift"><strong>Abb. 6</strong> · Die Werkzeuge rechts. Markiert man eine Stelle, erklärt Famulus sie im Seitenzusammenhang, übersetzt sie und zeigt über das Wörterbuch alle Belege.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
+<p>Das heißt: Textverständnis. Was wird hier eigentlich gesagt? Welches sind die stillschweigenden Voraussetzungen der Passage? All das erscheint in der rechten Leiste. Das System lernt dabei: Mit jedem neuen Dokument wird dieses Textverständnis aktualisiert und überarbeitet und dadurch immer besser belegt, korrekter und sicherer.</p>
+<p>Die Übersetzungen lassen sich frei einstellen. Ich habe die großen europäischen Sprachen konfiguriert, übersetzen kann man aber in nahezu jede Sprache. Auch ganze Passagen lassen sich live übersetzen, ohne dass vorher etwas gespeichert sein müsste – in wenigen Sekunden.</p>
+<p>Mit wenigen Klicks wählen Sie ganze Absätze aus, fragen nach Namen und Sachgebieten und lassen sich die zugehörigen Ordner anzeigen. Zugleich legt Famulus aus diesen Quellen selbständig Dossiers an und gleicht sie mit bibliographischen und biographischen Nachschlagewerken ab; so werden sie immer umfangreicher und zutreffender. In der rechten Spalte öffnen Sie zu einer Person, die auf einer Seite genannt wird, ihr Dossier: die biographischen Hauptstationen, die Hauptwerke und das, was für den Zusammenhang besonders interessant sein könnte.</p>
+<p>Sie können auch Fragen jeder Art stellen – zu dieser Stelle, zu diesem Text, aber auch an das, was ich den <em>Evidenzraum</em> nenne: alles, was als Beleg für eine Antwort in Frage kommt. Ich werde gleich erläutern, warum die Antwort hier nicht wie bei einer ChatGPT-Anfrage aus irgendeinem Wikipedia gespeist ist. Ihre Validierung ist eine wissenschaftstheoretisch streng begründete Rechtfertigung ihrer Korrektheit. Das nenne ich Validierung. Hier etwa fragen wir nach der Korrespondenz mit Prandtl.</p>
+<p>Zu Textverständnis und Übersetzung kommen die Wörterbücher. Ich habe sie nach dem Konzept des Oxford English Dictionary aufgebaut, verbunden mit Wittgensteins Sprachphilosophie des Regelfolgens. Famulus erstellt sie selbst aus dem Evidenzraum der Dokumente: mit allen charakteristischen Belegstellen und mit Erläuterungen der Terminologie in der Originalsprache – ob Ungarisch, Latein, Griechisch oder Englisch.</p>
+<p>Diese Wörterbücher folgen nicht nur den besten Verfahren der Lexikographie, sie sind auch kontextbezogen. Sie können Bedeutungen für eine bestimmte Epoche auswählen, sogar für einzelne Autoren und ihre Redeweisen. Und wenn Sie es in der Forschung so richtig hart wollen, arbeiten Sie heraus, wie zwei Autoren derselben Epoche dieselbe Terminologie unterschiedlich gebrauchen. Die Übersetzungen sind so fein darauf abgestimmt, dass sie die Analysen der Wörterbücher mitbenutzen.</p>
+<div class="page-columns page-full"><p>Das sind die Handwerkszeuge, die Forschende an einem solchen Archivbestand schon heute nutzen können. Halten wir fest, was Lean und die Riemann-Debatte so interessant macht: Der Beweiser nimmt an der wissenschaftlichen Kommunikation teil, er wirkt an der Entstehung von Wissen mit. So verstehe ich auch Famulus – als Instrument im Sinne des Erasmus, ohne eigenes Urteilsvermögen und ohne Lizenz dazu. Das Urteil ist Sache des Forschers, des Gelehrten; Famulus stellt die Hilfsmittel her. Bei der Arbeit sind beide Hände des Erasmus beteiligt: der schreibende Forscher und der Famulus mit dem Tintenfass.</p><div class="no-row-height column-margin column-container"><span class="cite-note"><span class="citation" data-cites="grasshoff2026erasmus"><a href="#ref-grasshoff2026erasmus" role="doc-biblioref">Graßhoff 2026</a></span>, <em>The New Erasmus</em></span></div></div>
 </section>
-<section id="folie-bibliothek" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-bibliothek">Der Kármán-Nachlass – alles online</h2>
-<p><span class="kicker">Akt I · Deutsches Museum</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/024.jpg" class="img-fluid figure-img" alt="Folie 24: Der Kármán-Nachlass – alles online"></p>
-<figcaption>Folie 24: Der Kármán-Nachlass – alles online</figcaption>
-</figure>
+<section id="nachlass" class="level2 page-columns page-full">
+<h2 data-anchor-id="nachlass">Der Nachlass ist digital</h2>
+<p>Kommen wir zum Nachlass. Er besteht inzwischen aus 38.000 digitalisierten Seiten – der gesamte Bestand ist digitalisiert.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/024.jpg" class="img-fluid" alt="32 zufällig gezogene Seiten des Kármán-Nachlasses"></p>
+<p><span class="unterschrift"><strong>Abb. 7</strong> · Der Kármán-Nachlass – alles online. 32 zufällig gezogene Seiten zeigen die gemischte mediale Form des Nachlasses, jeweils als Faksimile, Transkription, Übersetzung und Erläuterung.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-ohne-original" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-ohne-original">Ein Objekt ohne Original im Haus</h2>
-<p><span class="kicker">Akt I · Der Nachlass ist digital</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/025.jpg" class="img-fluid figure-img" alt="Folie 25: Ein Objekt ohne Original im Haus"></p>
-<figcaption>Folie 25: Ein Objekt ohne Original im Haus</figcaption>
-</figure>
+<p>Sie sehen, wie gemischt das Material ist: Gedrucktes und Typoskript, Manuskripte, Diagramme – alles Mögliche liegt in einem Archiv. Die Texterkennung ist in Famulus so weit ausgebaut, dass auch ungarische Briefe mit all ihren Akzenten, die ich selbst nicht verstehe, transkribiert und gut übersetzt werden. Faksimile, Transkription, Übersetzung und Erläuterung – alles liegt vor.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/025.jpg" class="img-fluid" alt="Ein Objekt ohne Original im Haus"></p>
+<p><span class="unterschrift"><strong>Abb. 8</strong> · Ein Objekt ohne Original im Haus.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
+<p>Was können wir mit Famulus noch anfangen? Dieses Beispiel zeigt es: Wir arbeiten mit Objekten, deren Originale gar nicht im Haus sind. Sie liegen am Caltech und wurden dort in einer großen Aktion verfilmt. Ich konnte die Mikrofiches von der Universität Bern erwerben, mit dem Recht, damit zu arbeiten, und habe sie vor zehn Jahren vollständig digitalisiert. Diese digitalen Faksimiles liegen allem zugrunde, was Sie heute sehen.</p>
 </section>
-<section id="folie-transkript" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-transkript">Faksimile und Transkript</h2>
-<p><span class="kicker">Akt II · Famulus liest mit</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/026.jpg" class="img-fluid figure-img" alt="Folie 26: Faksimile und Transkript"></p>
-<figcaption>Folie 26: Faksimile und Transkript</figcaption>
-</figure>
+<section id="aachen" class="level2 page-columns page-full">
+<h2 data-anchor-id="aachen">Was sah Kármán in Aachen?</h2>
+<p>Jetzt zu den Forschungsfragen. Sie können im Nachlass Fragen entdecken, die Sie in Ihrer Forschung weiter beschäftigen. Hier ist eine.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/031.jpg" class="img-fluid" alt="Kármán an Fromm, Pasadena, 26. November 1934"></p>
+<p><span class="unterschrift"><strong>Abb. 9</strong> · Was sah Kármán in Aachen? Kármán an Carl Fromm, Pasadena, 26. November 1934.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-verstehen" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-verstehen">Erläutern und übersetzen</h2>
-<p><span class="kicker">Akt II · Famulus liest mit</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/027.jpg" class="img-fluid figure-img" alt="Folie 27: Erläutern und übersetzen"></p>
-<figcaption>Folie 27: Erläutern und übersetzen</figcaption>
-</figure>
+<p>Es ist ein Brief Kármáns an Carl Fromm, geschrieben in Pasadena am 26. November 1934, also nach der Machtübernahme der Nationalsozialisten. Fromm will nach Deutschland reisen und fragt, ob das ratsam sei. Kármán berichtet, er sei gerade wieder in Aachen gewesen. Was sagt er über seinen Besuch?</p>
+<blockquote class="blockquote">
+<p>I was in Aachen this summer and found conditions quite unchanged.</p>
+</blockquote>
+<p>Das ist zunächst verblüffend: 1934, Kármán lebt im Exil und findet die Verhältnisse unverändert. Etwas weiter schreibt er, es sei <em>not advisable to express one’s disapproval of the present system on the street or in a cafe</em>, aber das sei die Einschränkung, die man spüre. Da kommen also einige Fußnoten hinzu, die zeigen, dass die Lage wohl doch nicht ganz so war wie früher.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/035.jpg" class="img-fluid" alt="Hopf an Kármán, Aachen, 15. Mai 1933"></p>
+<p><span class="unterschrift"><strong>Abb. 10</strong> · Hopf an Kármán, Aachen, 15. Mai 1933: Er sei „wohl nur als Jude entfernt“.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-dossier" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-dossier">Notieren mit Beleg</h2>
-<p><span class="kicker">Akt II · Famulus liest mit</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/029.jpg" class="img-fluid figure-img" alt="Folie 29: Notieren mit Beleg"></p>
-<figcaption>Folie 29: Notieren mit Beleg</figcaption>
-</figure>
+<p>Anderthalb Jahre zuvor hatte Ludwig Hopf, Kármáns Kollege an der TH Aachen, ihm geschrieben:</p>
+<blockquote class="blockquote">
+<p>Ich bin hier beurlaubt, Blumenthal ebenso, und auch einige andere Kollegen; und zwar bin ich wohl nur als Jude entfernt …</p>
+</blockquote>
+<p>Was Hopf damit genau meinte, ist eine Frage der Interpretation, und mit ihr kann man Famulus behelligen. Ob man mit seiner Antwort zufrieden ist, steht in dieser Phase auf einem anderen Blatt. Aber das sind die Forschungsfragen, die sich mit einem solchen Instrument erörtern lassen – und sei es nur mit einem Famulus, einem Hilfsassistenten, wenn Sie so wollen. Die Urteilsfähigkeit liegt beim Forscher, der das Instrument in der Hand hat.</p>
+<div class="abbildung column-page-right">
+<p><img src="deck/publikation/szenen/zeitleiste.png" class="img-fluid" alt="Chronologie: Wer bat Kármán um Hilfe?"></p>
+<p><span class="unterschrift"><strong>Abb. 11</strong> · Wer bat Kármán um Hilfe? Die Chronologie aller Dokumente, in denen ein Korrespondenzpartner um Hilfe bittet.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
+<p>Also: unverändert – für wen? Warum schreibt Kármán das? Und wer bat ihn um Hilfe? Hier sehen Sie, wie sich dieses Archiv nutzen lässt, wie es von Hand praktisch nicht mehr möglich ist: Man durchsucht den gesamten Bestand. An der einfachen Frage „Wer bat Kármán um Hilfe?“ scheitern die üblichen Verfahren der Indizierung; sie können sie nicht beantworten. Mit Famulus lässt sie sich direkt am Nachlass lösen, und Sie erhalten eine Chronologie aller Dokumente, in denen ein Korrespondenzpartner um Hilfe bittet.</p>
+<p>Die Frage geht weiter: Was konnte Kármán tun? Er schreibt, sein Einfluss sei sehr gering, und rät Hopf, sich eine andere Quelle zu suchen. Rechts in Abbildung 11 sehen Sie ein Diagramm aller Boxen des Archivs mit den Fundstellen aller Korrespondenzpartner, die um Hilfe baten. Sie verteilen sich auf ganz unterschiedliche Boxen.</p>
 </section>
-<section id="folie-fromm-1934" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-fromm-1934">Was sah Kármán in Aachen?</h2>
-<p><span class="kicker">Akt III · Eine Forschungsfrage</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/031.jpg" class="img-fluid figure-img" alt="Folie 31: Was sah Kármán in Aachen?"></p>
-<figcaption>Folie 31: Was sah Kármán in Aachen?</figcaption>
-</figure>
+<section id="finden" class="level2 page-columns page-full">
+<h2 data-anchor-id="finden">Finden ist nicht Verstehen</h2>
+<div class="abbildung column-page-right">
+<p><img src="deck/publikation/szenen/klassen.png" class="img-fluid" alt="Jedes Stück klassifiziert"></p>
+<p><span class="unterschrift"><strong>Abb. 12</strong> · Jedes Stück klassifiziert: 5.676 Briefe, 3.903 Notizen, 3.347 Berichte, dazu Patente in 64 Mappen.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-fromm-zitat" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-fromm-zitat">Kármán an Fromm, 26.11.1934</h2>
-<p><span class="kicker">Akt III · Eine Forschungsfrage</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/033.jpg" class="img-fluid figure-img" alt="Folie 33: Kármán an Fromm, 26.11.1934"></p>
-<figcaption>Folie 33: Kármán an Fromm, 26.11.1934</figcaption>
-</figure>
+<p>Mit einem Findbuch haben Sie keine Chance, eine so einfache Frage zu beantworten. Famulus kann es. Hier lassen sich Forschungsfragen beantworten, die auf herkömmlichem Weg allein am Umfang des Archivs scheitern. Jedes einzelne Stück ist klassifiziert, und jeden einzelnen Satz können Sie zitieren und in jeder Publikation wiederverwenden.</p>
+<div class="abbildung column-page-right">
+<p><img src="deck/publikation/szenen/tempo.png" class="img-fluid" alt="Lemmasuche nach beurlauben: sechs Treffer in 0,7 Millisekunden"></p>
+<p><span class="unterschrift"><strong>Abb. 13</strong> · Millisekunden. Die Lemmasuche nach „beurlauben“ findet in 8.745.834 Wörtern sechs Treffer in 0,7 Millisekunden.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-hopf-1933" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-hopf-1933">Hopf an Kármán, 15.5.1933</h2>
-<p><span class="kicker">Akt III · Eine Forschungsfrage</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/035.jpg" class="img-fluid figure-img" alt="Folie 35: Hopf an Kármán, 15.5.1933"></p>
-<figcaption>Folie 35: Hopf an Kármán, 15.5.1933</figcaption>
-</figure>
+<p>Dass man überhaupt in endlicher Zeit zu Ergebnissen kommt, entscheidet die Geschwindigkeit. Daran habe ich einige Monate gesessen. Es geht um die Suche nach dem Lemma, der Grundform aller flektierten Formen eines Wortes – und um mehr: Wer in einem Brief um Hilfe bittet, schreibt nicht unbedingt „Hilfe“. Man muss die verschiedenen Ausdrucksweisen berücksichtigen, in denen jemand um Hilfe bittet. Diese Suche leistet das. Die Lemmasuche durch den gesamten Bestand von 700 000 Sätzen ergibt sechs Treffer in 0,7 Millisekunden.</p>
+<p>Diese Geschwindigkeit brauchen Sie, um auch die größeren Zusammenhänge durchlaufen und in endlicher Zeit bearbeiten zu können. Das Dossier zu einer Person und ihrem Hintergrund steht in 1,3 Millisekunden bereit; Famulus hat die Profile aller Personen, von denen in einem Text die Rede ist, sofort zur Hand.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/043.jpg" class="img-fluid" alt="Finden ist nicht Verstehen"></p>
+<p><span class="unterschrift"><strong>Abb. 14</strong> · Finden ist nicht Verstehen.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
+<p>Aber Finden ist noch nicht Verstehen. Der nächste Schritt ist die Frage an den Nachlass. Wenn Sie alle Fundstellen haben, müssen Sie sie verarbeiten, um ein verständiges, korrektes und gehaltvolles Ergebnis zu gewinnen, mit dem Sie weiterarbeiten können.</p>
 </section>
-<section id="folie-frage" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-frage">Wer bat Kármán um Hilfe?</h2>
-<p><span class="kicker">Akt III · Eine Forschungsfrage</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/037.jpg" class="img-fluid figure-img" alt="Folie 37: Wer bat Kármán um Hilfe?"></p>
-<figcaption>Folie 37: Wer bat Kármán um Hilfe?</figcaption>
-</figure>
+<section id="fragen" class="level2 page-columns page-full">
+<h2 data-anchor-id="fragen">Fragen an den Nachlass</h2>
+<div class="abbildung column-page-right">
+<p><img src="deck/publikation/szenen/vorgang.png" class="img-fluid" alt="Aus vier Boxen ein Vorgang"></p>
+<p><span class="unterschrift"><strong>Abb. 15</strong> · Aus vier Boxen ein Vorgang.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-lesesaal" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-lesesaal">In den Lesesaal</h2>
-<p><span class="kicker">Akt IV · Der bisherige Weg</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/039.jpg" class="img-fluid figure-img" alt="Folie 39: In den Lesesaal"></p>
-<figcaption>Folie 39: In den Lesesaal</figcaption>
-</figure>
+<p>Fragen an den Nachlass können Sie also stellen. Die Suche in den Boxen ist umfangreich, wie wir inzwischen ahnen, und sie braucht diese Geschwindigkeit, damit in wenigen Sekunden alle einschlägigen Fundstellen zusammengestellt sind.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/046.jpg" class="img-fluid" alt="Jede Stelle hat eine Adresse"></p>
+<p><span class="unterschrift"><strong>Abb. 16</strong> · Jede Stelle hat eine Adresse – bis zum Satz.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
-</section>
-<section id="folie-klassen" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-klassen">Jedes Stück klassifiziert</h2>
-<p><span class="kicker">Akt IV · Neben dem Findbuch</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/040.jpg" class="img-fluid figure-img" alt="Folie 40: Jedes Stück klassifiziert"></p>
-<figcaption>Folie 40: Jedes Stück klassifiziert</figcaption>
-</figure>
+<p>Jede Stelle hat eine Adresse. Das ist wichtig, damit Famulus seine Antwort unter Offenlegung aller Belege rechtfertigen kann. Keine Blackbox, nichts verborgen.</p>
+<p>So finden sich Antworten in dieser Korrespondenz. Auf eine konkrete Bitte um Hilfe und Unterstützung antwortet Kármán Hopf im Januar 1936: „Leider muss ich gestehen, dass mein Einfluss sehr gering ist.“ Und er fragt: „Haben Sie einmal Courant geschrieben?“ Für Eingeweihte ist das ein echter Tipp, wo man die Hilfe bekommt, die Kármán offensichtlich nicht geben kann.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/050.jpg" class="img-fluid" alt="Kármán an Hopf, 15. Juli 1936"></p>
+<p><span class="unterschrift"><strong>Abb. 17</strong> · Ein „Ausflug“. Kármán rät Hopf am 15. Juli 1936, eine andere Quelle zu finden, um seinen „Ausflug“ zu finanzieren.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
+<p>Im Juli 1936 schreibt Kármán an Hopf: „Wir müssen also eine andere Quelle finden, um Ihren Ausflug zu finanzieren.“ Der „Ausflug“ – das ist das Exil.</p>
 </section>
-<section id="folie-tempo" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-tempo">Millisekunden</h2>
-<p><span class="kicker">Akt IV · Neben dem Findbuch</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="folien/042.jpg" class="img-fluid figure-img" alt="Folie 42: Millisekunden"></p>
-<figcaption>Folie 42: Millisekunden</figcaption>
-</figure>
+<section id="evidenzraum" class="level2 page-columns page-full">
+<h2 data-anchor-id="evidenzraum">Der Evidenzraum wächst</h2>
+<div class="abbildung column-page-right">
+<p><img src="deck/publikation/szenen/zeitleiste-luecken.png" class="img-fluid" alt="Die Chronologie endet offen"></p>
+<p><span class="unterschrift"><strong>Abb. 18</strong> · Die Antwort hat offene Enden. Die Chronologie endet in Dublin, Dezember 1939; Courant und Heisenberg sind genannt, ihre Bestände aber nicht im Nachlass.</span></p>
 </div>
-</div></div><p><span class="luecke">[Dieser Folie ist in der Aufnahme kein gesprochener Text zugeordnet.]</span></p>
+<p>Dublin, Dezember 1939. Das alles sind noch Fundstellen aus dem Bereich „Finde etwas Relevantes“. Stellt man sie zusammen, sieht man: Auch dieser Nachlass hat offene Enden, wie ich es genannt habe. Da ist der Hinweis auf Courant – aber Courant gehört nicht zu diesem Nachlass. Heisenberg wird genannt, doch sein Briefwechsel und alles, was seinen Nachlass betrifft, ist hier nicht erfasst.</p>
+<div class="abbildung column-page-right">
+<p><img src="deck/publikation/szenen/netz.png" class="img-fluid" alt="Ein Netz von Beständen: Famulus Reference"></p>
+<p><span class="unterschrift"><strong>Abb. 19</strong> · Ein Netz von Beständen. Registrierte, signierte Knoten verknüpfen fremde Bestände, sodass jede Stelle dezentral identifizierbar und zitierbar bleibt.</span></p>
+</div>
+<p>Deshalb die Idee eines Famulus-Netzwerks: <em>Famulus Reference</em>. Es verknüpft Bestände, und es soll technisch so einfach zu installieren sein, dass jede interessierte Institution, die Archivbestände hält, sich registrieren und teilnehmen kann. Nötig sind eine minimale technische Installation und ein Internetzugang; alles soll sicher sein, alles wird lokal gerechnet, die üblichen EU-Normen werden eingehalten. Famulus bearbeitet dann mit derselben Geschwindigkeit nicht nur die lokalen Bestände, sondern ein Netz aller sinnvoll miteinander verknüpften Bestände – dezentral und signiert. Jede einzelne Stelle, jeder einzelne Satz bleibt identifizierbar und zitierbar.</p>
 </section>
-<section id="folie-finden" class="level2 page-columns page-full">
-<h2 data-anchor-id="folie-finden">Finden ist nicht Verstehen</h2>
-<p><span class="kicker">Akt IV · Der bisherige Weg</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="folien/043.jpg" class="img-fluid" alt="Folie 43: Finden ist nicht Verstehen"> <span class="zeit">0:04</span></p>
-</div></div><p>Erster Versuch, einen Vortrag aufzunehmen. Die Medien sind aktiv. Jetzt wird das HDMI-Kabel angeschlossen. Wunderbar.</p>
+<section id="vertrauen" class="level2 page-columns page-full">
+<h2 data-anchor-id="vertrauen">Kann man der Antwort trauen?</h2>
+<p>Irrtümer sind immer möglich, auch bei einem noch so guten Famulus. Man muss ihn deshalb nicht gleich ersetzen oder wegwerfen. Hier etwa hat die Texterkennung einen Fehler gemacht und „Lessor“ gelesen, wo „Zensur“ steht. Das kommt vor, gerade bei Handschriften. Famulus ist dabei bei Weitem besser als Transkribus, aber Fehler treten auf. Famulus erlaubt es, den Bestand höchst effizient zu kuratieren: Ist ein Fehler einmal erkannt, wird er unter Versionskontrolle berichtigt und geht in die Verbesserung des Bestands ein.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/056.jpg" class="img-fluid" alt="Irren, prüfen, korrigieren"></p>
+<p><span class="unterschrift"><strong>Abb. 20</strong> · Irren, prüfen, korrigieren. Die Maschine liest „Lessor“, wo „Zensur“ steht; die zweite Lesung prüft am Faksimile, die Korrektur trägt den Vermerk der Herkunft.</span></p>
+</div>
+<p><span class="unterschrift"><strong>Tabelle</strong> · Sachlich validiert.</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sprachmodell allein</th>
+<th>Famulus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>klingt plausibel</td>
+<td>jede Angabe mit Adresse</td>
+</tr>
+<tr class="even">
+<td>Quelle unklar</td>
+<td>Grund registriert, Knoten genannt</td>
+</tr>
+<tr class="odd">
+<td>glättet Lücken</td>
+<td>weist Lücken aus</td>
+</tr>
+<tr class="even">
+<td>nicht nachprüfbar</td>
+<td>nachrechenbar, nachlesbar</td>
+</tr>
+</tbody>
+</table>
+<p>Entscheidend ist, was Famulus von allen anderen KI-Angeboten unterscheidet, und ich sage es ganz drastisch: Die Ergebnisse, die man hier erzielt, sind sachlich validiert. Ihre Korrektheit lässt sich durch den Forscher nachprüfen.</p>
+<p>Hier sind wir wieder bei der Analogie zu Lean. Lean ist, wie Famulus, ein Programm. Es hat die Rechnung der Beweisführung für die Riemannsche Vermutung durchgeführt, die im Einzelnen niemand selbst nachvollziehen kann. Was gerade in der Wissenschaftskommunikation geschieht, ist eine Übersetzung: Die Symbolsprache von Lean, für Menschen ungenießbar, wird in einen Beweis übertragen, den Mathematiker verstehen. Schon nach fünf Tagen gibt es erste Ergebnisse und Vorschläge: Aus 250 000 Seiten gedrucktem Code sind 55 Seiten verdichteter Beweistext geworden, an dem nun die ganze Gemeinschaft arbeitet. Das ist typisch: Wissen ist kein individueller Prozess, Erkenntnis entsteht in der Zusammenarbeit der globalen Forschung. Wichtig ist in meinem Vorschlag des Erkenntnisprozesses, dass eine notwendige Bedingung für Wissen auch die Verständnis übertragende Ausdrucksweise ist, also die Sprache, die von den Teilnehmern der epistemischen Gemeinschaft zur Verständigung geteilt wird. Das ist eine Bedingung, die in der bekannten platonischen Definition des Wissens fehlt: Wissen als wahre gerechtfertigte Meinung enthält keine Bedingung für geteiltes Verständnis der Wissen vermittelnden Sprache. An diesem Fall wird die unerlässliche Wichtigkeit dieser Erkenntnisbedingung sehr deutlich.</p>
+</section>
+<section id="kepler" class="level2 page-columns page-full">
+<h2 data-anchor-id="kepler">Deep Reading: Kepler</h2>
+<div class="page-columns page-full"><p>In der Festschrift für Liba Taub habe ich den Begriff <em>Deep Reading</em> eingeführt. Es gibt das Distant Reading, es gibt das Close Reading – und jetzt gibt es ein Drittes, und das leistet Famulus: Deep Reading. Die KI-Techniken erlauben es, nach der Bedeutung der Ausdrücke wissenschaftlicher Texte zu fragen – nicht nur nach Symbolen, nach Syntax, nach Zeichenketten, sondern nach Inhalten. Ich zeige das an Keplers Gesammelten Werken.</p><div class="no-row-height column-margin column-container"><span class="cite-note"><span class="citation" data-cites="grasshoff2025deep"><a href="#ref-grasshoff2025deep" role="doc-biblioref">Graßhoff 2025</a></span>, <em>Deep Reading of Kepler’s New Astronomy</em></span></div></div>
+<div class="abbildung column-page-right">
+<p><img src="folien/063.jpg" class="img-fluid" alt="Deep Reading eines Satzes aus Keplers Astronomia nova, Kapitel 23"></p>
+<p><span class="unterschrift"><strong>Abb. 21</strong> · Deep Reading. Ein Satz aus Keplers <em>Astronomia nova</em>, Kap. 23, wird mit seinen Größen, Winkeln und der Proportion erfasst.</span></p>
+</div>
+<p>Hier sehen Sie eine Passage aus Kapitel 23 der <em>Astronomia nova</em>. Kepler führt einen Satz ein: Er legt ein Ergebnis für das astronomische Modell vor, mit dem er arbeitet, und gibt an, dass eine bestimmte Strecke, DC, den Wert 61 148 hat. Mir ist keine Publikation bekannt, die diesen Wert nachgerechnet hat. Woher stammt er? Wie kommt Kepler darauf? Wissenschaftshistoriker gehen über solche Stellen gewöhnlich hinweg und sagen, irgendwann werde das schon jemand ausrechnen. Das ist jetzt vorbei. Jetzt haben wir Famulus.</p>
+<p>Was macht Famulus? Wie bei Kármán hat er den gesamten Text analysiert, bis zum einzelnen Symbol und zum einzelnen Diagramm. Das liefert plausible Hinweise. Kepler legt seine Arbeitsweise ziemlich offen dar, wenn auch nicht immer konsequent – ein höchst schwieriger Autor, aber freigebig mit Auskünften darüber, wie er vorgeht. Tatsächlich sagt er in Kapitel 15, er rechne mit Tafeln, allerdings nur ganz allgemein: mit den Dreieckstafeln des Lansbergius, also, wenn Sie so wollen, mit Sinustafeln und verwandten trigonometrischen Tafeln.</p>
+<p>Was hat Famulus getan? Er hat das Faksimile dieser Tafeln von der ETH Zürich geladen, in den Bestand übernommen und digitalisiert. Das dauert etwa einen halben Tag, denn eine Tafel muss so erfasst werden, dass jede einzelne Rechenzelle korrekt wiedergegeben ist – die Ansprüche an die Texterkennung sind sehr hoch. Dann die Aufgabe: Famulus, du bist ein Famulus, du musst nicht urteilen. Eine einfache Aufgabe: Rechne die Zahlen nach. Hat Kepler diese Tafeln benutzt – und wenn ja, wie?</p>
+<div class="abbildung column-page-right">
+<p><img src="deck/publikation/szenen/division.png" class="img-fluid" alt="Die Rechnung rekonstruiert: 61145 nachgerechnet, 61148 gedruckt"></p>
+<p><span class="unterschrift"><strong>Abb. 22</strong> · Die Rechnung rekonstruiert. Nachgerechnet ergibt sich 61 145, gedruckt steht 61 148; die letzten zwei Stellen wurden abgeworfen.</span></p>
+</div>
+<p>Diese Aufgabe hat noch kein Kepler-Forscher durchgeführt, mich eingeschlossen – zu lästig, zu aufwendig, zu zeitraubend. Famulus kann man sie übergeben. Man muss die Problemlage erfassen, um die es geht, eine Sinusfunktion umformen – das geschieht im Deep Reading von selbst –, und dann wird die Rechnung durchgespielt.</p>
+<p>Jetzt sehen Sie auch, warum die hohen Geschwindigkeiten nötig sind: Jede einzelne Zelle der Tafel wird so verrechnet, wie es der Umgang mit diesen Tafeln verlangt. Das Ergebnis: Gedruckt steht 61 148, nachgerechnet ergibt sich 61 145. Eine kleine Abweichung bleibt, aber schon so, dass man als Historiker damit zufrieden sein kann. Und die weiteren Fragen sind wieder reichhaltig: Woher kommt die Differenz? Hat Kepler eine andere Tafel benutzt, eine andere Ausgabe – oder hat er sich verrechnet, was ihm oft passiert?</p>
+<p>Er hat ja auch nicht immer selbst gerechnet. Wie Erasmus hatte er Famuli, die in der Literatur sonst kaum beachtet werden und die für ihn gerade die Rechnungen ausführten. Jeder einzelne Schritt wird geprüft. Die Validierung erlaubt es, bei jeder Rechnung, die das Deep Reading eines Textes wie der <em>Astronomia nova</em> erschließt, nachzufragen: Wie ist Kepler Schritt für Schritt zu diesem Ergebnis gekommen? Jeder Schritt wird ausgewiesen.</p>
+<p>Daraus lassen sich neue Publikationsreihen gewinnen. Ich habe sie <em>Expertisen</em> genannt. Eine Expertise rekonstruiert bestimmte Rechenblöcke in einem Werk wie dem Keplers, rechnet sie durch und kommentiert sie – hier die Halbierung der Exzentrizität auf der Grundlage der stellvertretenden Hypothese –, so wie es ein guter, kritischer Editor dieser Werke auch tut. Automatisch erzeugt. Für die Publikation habe ich die Anforderungen zu einem Famulus-Zertifikat zusammengestellt: Bedingungen, die ein Text erfüllen muss, um dem hohen Anspruch an Korrektheit zu genügen. Mit diesem Zertifikat erhält man eine Publikation, die nicht nur die Beweisführung vollständig offenlegt, sondern auch die verwendeten grafischen Mittel, die Diagramme, deutet und zeigt.</p>
+</section>
+<section id="notebook" class="level2 page-columns page-full">
+<h2 data-anchor-id="notebook">Weiterarbeiten im Notebook</h2>
+<div class="abbildung column-page-right">
+<p><img src="deck/assets/notebook/modell-ende.png" class="img-fluid" alt="Keplers Fig. 4.10 als bewegtes Modell"></p>
+<p><span class="unterschrift"><strong>Abb. 23</strong> · Das Modell bewegt sich. Keplers Fig. 4.10 wird als Modell mit 14 Objekten bewegt und über den Parameterraum geprüft.</span></p>
+</div>
+<div class="page-columns page-full"><p>Um zu verstehen, was in diesen geometrischen Modellen eigentlich vorgeht: Alle diese Zeichnungen hat Famulus erzeugt; keine ist aus einer Publikation übernommen.</p><div class="no-row-height column-margin column-container"><span class="cite-note">vgl. <span class="citation" data-cites="swerdlow2026renaissance"><a href="#ref-swerdlow2026renaissance" role="doc-biblioref">Swerdlow 2026</a></span>, <em>The Renaissance of Astronomy</em>, 522–529</span></div></div>
+<div class="abbildung column-page-right">
+<p><img src="folien/087.jpg" class="img-fluid" alt="Was Lean für Riemann ist, ist Famulus für Kepler"></p>
+<p><span class="unterschrift"><strong>Abb. 24</strong> · Was Lean für Riemann ist: Lean prüft jeden Schritt im Kalkül, Famulus jeden Schritt im Modell; 165 Prüfakte, 14 von 14 Texten auf allen Stufen bestanden.</span></p>
+</div>
+<p>Was also? Was Lean für Riemann ist, ist Famulus für Kepler. Ich hoffe, ich konnte Ihnen vermitteln, dass Famulus nach meinem Verständnis ein beweisführendes Instrument für die Wissenschafts- und Technikgeschichte ist – im Verbund von Werken der Astronomiegeschichte wie hier.</p>
+</section>
+<section id="zurueck" class="level2 page-columns page-full">
+<h2 data-anchor-id="zurueck">Zurück zu Kármán</h2>
+<div class="abbildung column-page-right">
+<p><img src="folien/090.jpg" class="img-fluid" alt="Kármán an das Deutsche Museum, 2. November 1923"></p>
+<p><span class="unterschrift"><strong>Abb. 25</strong> · Eine Maschine für dieses Haus. Kármán schreibt am 2. November 1923 an das Deutsche Museum, weil Junkers’ allererste Ölmotoren abgebrochen werden sollen.</span></p>
+</div>
+<p>Da wir im Deutschen Museum sind, liegt die Frage nahe: Wird das Deutsche Museum im Kármán-Nachlass irgendwo erwähnt? Mit Famulus ist das eine einfache Frage. Über das Findbuch lässt sie sich, glaube ich, nicht beantworten – ich habe es allerdings nicht wirklich geprüft. Famulus findet einen Brief vom 2. November 1923: Kármán an das Deutsche Museum. In der Junkers-Versuchsanstalt in Aachen stehen die allerersten Ölmotoren von Junkers, und sie sollen verschrottet werden. Die erste Generation – weg auf den Schrott.</p>
+<p>Kármán fragt also: Das sind doch wichtige Unikate, sollte man damit nicht etwas anfangen? Er schreibt, „weil ich es im allgemeinen Interesse für grossen Schaden halten würde, wenn die höchst interessanten und lehrreichen Gegenstände zum Schrott verwandelt werden“.</p>
+<div class="abbildung column-page-right">
+<p><img src="folien/093.jpg" class="img-fluid" alt="Das Deutsche Museum antwortet Kármán am 20. November 1923"></p>
+<p><span class="unterschrift"><strong>Abb. 26</strong> · Kam der Motor ins Museum? Das Museum antwortet am 20. November 1923, es werde sich direkt an Junkers in Dessau wenden; ob der Motor kam, bleibt offen.</span></p>
+</div>
+<p>Und hier die Antwort des Museums:</p>
+<blockquote class="blockquote">
+<p>Wir werden uns, Ihrem Vorschlag entsprechend, direkt an Herrn Professor Junkers in Dessau mit der Bitte um Ueberlassung des einen oder anderen der genannten Versuchsmotore wenden …</p>
+</blockquote>
+<p>Schon haben Sie wieder ein Netz von Kommunikationen, das am Ende, nehme ich an, dazu geführt hat, dass diese Maschinen zumindest zeitweise im Bestand des Deutschen Museums waren. Die Antwort liegt im Archiv, aber die Ränder sind offen. Sie wartet darauf, mit den Archivbeständen des Deutschen Museums verknüpft zu werden – damit das Bild vollständig wird und die Forschung so dicht, dass der Nutzen von Famulus in einem solchen Verbund noch weiter wächst.</p>
+<p>Vielen Dank – das wollte ich Ihnen vorstellen.</p>
 </section>
 <section id="zu-diesem-manuskript" class="level2 unnumbered">
 <h2 class="unnumbered" data-anchor-id="zu-diesem-manuskript">Zu diesem Manuskript</h2>
-<p>Passagen in Manuskriptfassung: 1; in wortnaher Fassung: 0; Folienzitate im Wortlaut: 0; ausgewiesene Lücken: 19.</p>
-<p>Lücken und Hinweise:</p>
-<ul>
-<li>24 Folie(n) nach der letzten mit gesprochenem Text ohne Zuordnung: Eine Frage an den Nachlass, Aus vier Boxen ein Vorgang, Jede Stelle hat eine Adresse, „Mein Einfluss sehr gering“, Ein „Ausflug“, Die Antwort hat offene Enden, Ein Netz von Beständen, Dezentral, signiert, zitierbar, Irren, prüfen, korrigieren, Sachlich validiert, Deep Reading, Famulus forscht: das Werkzeug …</li>
-</ul>
+<p>Der Vortrag wurde aufgezeichnet. Famulus hat die Aufnahme transkribiert, mit den Folien verbunden und daraus eine erste Lesefassung erstellt; der Autor hat sie am 24. November 2026 überarbeitet. Die Sprache ist dem Lesen angepasst, die direkte Anrede an das Publikum bleibt erhalten. Bemerkungen zur Bedienung der Folien sind gestrichen, Erkennungsfehler berichtigt; Namen, Daten und Briefzitate folgen den Folien und den Briefen des Nachlasses. Die an den Vortrag anschließende Diskussion ist nicht Teil dieser Fassung.</p>
+</section>
+<section id="literatur" class="level2 unnumbered">
+<h2 class="unnumbered" data-anchor-id="literatur">Literatur</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-grasshoff2025deep" class="csl-entry" role="listitem">
+Graßhoff, Gerd. 2025. <span>„Deep Reading of Kepler’s <span>New Astronomy</span>: An Exercise in Computational History of Science“</span>. In <em>Tools, Techniques, and Technologies: Essays on Ancient Science and Its Reception in Honour of Liba Taub</em>, herausgegeben von Laurence Totelin und Emma Perkins, 65–81. De Gruyter.
+</div>
+<div id="ref-grasshoff2026erasmus" class="csl-entry" role="listitem">
+Graßhoff, Gerd. 2026. <em>The New Erasmus. The Philosophy of an AI Famulus for Scholars</em>. OpenScienceTechnology GmbH.
+</div>
+<div id="ref-swerdlow2026renaissance" class="csl-entry" role="listitem">
+Swerdlow, Noel M. 2026. <em>The Renaissance of Astronomy</em>. Sources and Studies in the History of Mathematics and Physical Sciences. Springer Nature Switzerland. <a href="https://doi.org/10.1007/978-3-031-84760-8">https://doi.org/10.1007/978-3-031-84760-8</a>.
+</div>
+</div>
 </section>
 
 </main>

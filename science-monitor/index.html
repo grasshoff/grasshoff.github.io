@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Famulus Science Monitor</title>
+<meta name="description" content="A live record of the open debate on AI in research: open problems of mathematics and physics, open letters, authorship, open knowledge.">
+<link rel="stylesheet" href="https://famulus.lettre.ai/assets/fonts.css">
+<link rel="stylesheet" href="static/monitor.css">
+<!-- famulus:publisher:start -->
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="publisher" content="OpenScienceTechnology GmbH">
+<meta name="DC.publisher" content="OpenScienceTechnology GmbH">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://famulus.lettre.ai/science-monitor/", "publisher": {"@type": "Organization", "name": "OpenScienceTechnology GmbH", "address": {"@type": "PostalAddress", "streetAddress": "Im Wiesengrund 15A", "addressLocality": "47198 Duisburg", "addressCountry": "Deutschland"}}}</script>
+<!-- famulus:publisher:end -->
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#/"><span>Famulus</span> Science Monitor</a>
+  <nav id="nav">
+    <a href="#/" data-v="live">Live</a>
+    <a href="#/fields" data-v="fields">Fields</a>
+    <a href="#/letters" data-v="letters">Open letters</a>
+    <a href="#/timeline" data-v="timeline">Timeline</a>
+    <a href="#/sources" data-v="sources">Sources</a>
+  </nav>
+  <div class="air">
+    <span class="dot" id="dot" title="status of the harvest"></span>
+    <span id="airtext">connecting</span>
+    <span class="clock" id="clock"></span>
+    <a class="kiosk" id="kioskbtn" href="?kiosk=1" title="Broadcast mode for a second screen">Broadcast&nbsp;mode</a>
+  </div>
+</header>
+<div class="ticker" id="ticker" aria-label="Latest acts"><div class="track" id="track"></div></div>
+<main id="main" tabindex="-1"><p class="wait">Loading the record …</p></main>
+<footer class="foot">
+  <p>Famulus Science Monitor records public communication on open problems and on AI in research. Every count is a lower
+  bound: it counts what the monitor could reach. Excerpts are at most 280 characters and link to their source.
+  <a href="#/sources">Sources and gaps</a> · <a href="https://famulus.lettre.ai/">famulus.lettre.ai</a></p>
+</footer>
+<div class="tip" id="tip" hidden></div>
+<script src="static/monitor.js"></script>
+<!-- famulus:publisher:start -->
+<p class="famulus-publisher" style="max-width:46rem;margin:2.5rem auto 1.5rem;padding:.7rem 16px 0;border-top:2px solid #c8a22a;font:13px/1.5 -apple-system,BlinkMacSystemFont,sans-serif;opacity:.8">Published by OpenScienceTechnology GmbH · <a style="color:inherit" href="/impressum/">Legal notice</a> · <a style="color:inherit" href="/datenschutz/">Privacy</a> · <a style="color:inherit" href="/certificate/1.0/regeln/en/">Certificate and rules</a></p>
+<script>(function(){try{var C="https://lettre.ngrok.dev/famulus-counter/api/hit",L=C.replace(/hit$/,'leave'),q=new URLSearchParams(location.search),v=Math.random().toString(36).slice(2,12),u=location.pathname;function S(a,b){navigator.sendBeacon?navigator.sendBeacon(a,b):fetch(a,{method:'POST',body:b,keepalive:true,mode:'no-cors'})}S(C,JSON.stringify({u:u,r:document.referrer,m:"",v:v,c:q.get('c')||q.get('utm_campaign')||''}));var a=0,t=document.visibilityState=='visible'?Date.now():0,s=0,x='',g='',k='';function sc(){var h=document.documentElement;s=Math.max(s,Math.min(100,Math.round((scrollY+innerHeight)/Math.max(h.scrollHeight,1)*100)))}addEventListener('scroll',sc,{passive:true});addEventListener('load',sc);sc();document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a[href]');if(l&&/^https?:$/.test(l.protocol)){var i=l.host==location.host;x=i?'in':'out';g=i?l.pathname+l.hash:l.host;k=(l.getAttribute('aria-label')||l.textContent||'').replace(/\s+/g,' ').trim().slice(0,80);B()}},true);function B(){S(L,JSON.stringify({u:u,v:v,d:Math.round((a+(t?Date.now()-t:0))/1000),s:s,x:x,t:g,k:k}))}function F(){if(t){a+=Date.now()-t;t=0}B()}document.addEventListener('visibilitychange',function(){document.visibilityState=='hidden'?F():t=Date.now()});addEventListener('pagehide',function(){if(t)F()})}catch(e){}})();</script>
+<noscript><img src="https://lettre.ngrok.dev/famulus-counter/api/hit.gif?u=/science-monitor/&amp;m=" width="1" height="1" alt=""></noscript>
+<!-- famulus:publisher:end -->
+</body>
+</html>

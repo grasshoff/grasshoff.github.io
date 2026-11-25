@@ -1,0 +1,243 @@
+{
+ "format": "famulus-authorship/1",
+ "author": "Gerd Graßhoff",
+ "text_sha": "448ea3748dc80485e31390bfd8e8c173605d2fd65997a1dc7bc070d9c5d882de",
+ "sources": [
+  {
+   "id": "S1",
+   "kind": "recording",
+   "sha256": "642e8baa5a433f7521647b12069235a9b4b94e79239a17ce3331be48f3c540a6",
+   "note": "Aufnahme des Vortrags (Transkript der Rede des Autors)",
+   "file": "_famulus/quellen/segments.json"
+  },
+  {
+   "id": "S2",
+   "kind": "outline",
+   "sha256": "4e0a112ddb4a87cc2cdd80569a4636d7139aa162f52d95b4ca156c376f0b894e",
+   "note": "Folien des Autors (Aufbau und Inhalt des Vortrags)",
+   "file": "_famulus/quellen/deck/vortrag.json"
+  },
+  {
+   "id": "S3",
+   "kind": "manuscript",
+   "sha256": "fad97f382fa68e88b7e50c6f4cf1f70b82a9867f22c0dc6ccb9ab65a689bb298",
+   "note": "vom Autor revidierte Lesefassung",
+   "file": "fassungen/f1-autor.qmd"
+  },
+  {
+   "id": "S9",
+   "kind": "annotations",
+   "sha256": "81a0632f786815f75fee35e8c3ccc2173b29872337cd9a8b264ea181cbd8dfc2",
+   "note": "Anmerkungen und Entscheidungen des Autors (Journal)",
+   "file": "anmerkungen/anmerkungen.jsonl"
+  }
+ ],
+ "theses": [],
+ "sections": [
+  {
+   "id": "h41",
+   "title": "Eröffnung",
+   "origin": "author",
+   "source": "S2",
+   "line": 41
+  },
+  {
+   "id": "h47",
+   "title": "Der Famulus des Erasmus",
+   "origin": "author",
+   "source": "S3",
+   "line": 47
+  },
+  {
+   "id": "h70",
+   "title": "Lean und die Riemannsche Vermutung",
+   "origin": "author",
+   "source": "S3",
+   "line": 70
+  },
+  {
+   "id": "h112",
+   "title": "Ein Famulus für die Technik- und Wissenschaftsgeschichte",
+   "origin": "author",
+   "source": "S3",
+   "line": 112
+  },
+  {
+   "id": "h140",
+   "title": "Werkzeuge für die Forschung",
+   "origin": "author",
+   "source": "S3",
+   "line": 140
+  },
+  {
+   "id": "h202",
+   "title": "Der Nachlass ist digital",
+   "origin": "author",
+   "source": "S2",
+   "line": 202
+  },
+  {
+   "id": "h230",
+   "title": "Was sah Kármán in Aachen?",
+   "origin": "author",
+   "source": "S2",
+   "line": 230
+  },
+  {
+   "id": "h285",
+   "title": "Finden ist nicht Verstehen",
+   "origin": "author",
+   "source": "S2",
+   "line": 285
+  },
+  {
+   "id": "h324",
+   "title": "Fragen an den Nachlass",
+   "origin": "author",
+   "source": "S1",
+   "line": 324
+  },
+  {
+   "id": "h359",
+   "title": "Der Evidenzraum wächst",
+   "origin": "author",
+   "source": "S2",
+   "line": 359
+  },
+  {
+   "id": "h387",
+   "title": "Kann man der Antwort trauen?",
+   "origin": "author",
+   "source": "S2",
+   "line": 387
+  },
+  {
+   "id": "h426",
+   "title": "Deep Reading: Kepler",
+   "origin": "author",
+   "source": "S2",
+   "line": 426
+  },
+  {
+   "id": "h488",
+   "title": "Weiterarbeiten im Notebook",
+   "origin": "author",
+   "source": "S3",
+   "line": 488
+  },
+  {
+   "id": "h511",
+   "title": "Zurück zu Kármán",
+   "origin": "author",
+   "source": "S2",
+   "line": 511
+  },
+  {
+   "id": "h549",
+   "title": "Zu diesem Manuskript {.unnumbered}",
+   "origin": "author",
+   "source": "S3",
+   "line": 549
+  },
+  {
+   "id": "h557",
+   "title": "Literatur {.unnumbered}",
+   "origin": "author",
+   "source": "S3",
+   "line": 557
+  }
+ ],
+ "protocol": {
+  "versions": [
+   {
+    "id": "f0",
+    "kind": "maschinell",
+    "sha256": "3bcd62b2f3a9f7e98e2121e75e2b27c82100ca51944f7825c2ef8a1f5093d2c6",
+    "date": "2026-11-24T07:59:06"
+   },
+   {
+    "id": "f1",
+    "kind": "autor",
+    "sha256": "fad97f382fa68e88b7e50c6f4cf1f70b82a9867f22c0dc6ccb9ab65a689bb298",
+    "date": "2026-11-24T07:59:06"
+   },
+   {
+    "id": "f2",
+    "kind": "freigabe",
+    "sha256": "00953d7ec6d07e40bfaa6e339cb67a55865a05c491262c3e042dc2f3ce22f7db",
+    "date": "2026-11-24T15:27:26"
+   },
+   {
+    "id": "f3",
+    "kind": "freigabe",
+    "sha256": "c8bb52c73b7ee27f6599827f3fac28a5ee4a452320cd82855fbe54daa94c457e",
+    "date": "2026-11-24T18:22:39"
+   },
+   {
+    "id": "f4",
+    "kind": "freigabe",
+    "sha256": "448ea3748dc80485e31390bfd8e8c173605d2fd65997a1dc7bc070d9c5d882de",
+    "date": "2026-11-24T18:48:53"
+   }
+  ],
+  "author_notes": 17,
+  "proposals_inserted": 13,
+  "proposals_discarded": 6,
+  "hand_edits": 0,
+  "direct_changes": [
+   {
+    "datum": "2026-11-24T19:16:33",
+    "von": "Claude (Assistent, auf Hinweis der Mail-Prüfung)",
+    "was": "Zitiervorschlag: „mit Famulus erschlossen“ → „mit Famulus gesichtet“ (Titel des Vortrags), direkt in lektorat.fam statt als Vorschlag",
+    "zeilen": "37"
+   }
+  ],
+  "unseen_changes": 1
+ },
+ "findings": [
+  {
+   "id": "616da82ad409",
+   "rule": "T3",
+   "status": "decided",
+   "art": "hoerfehler",
+   "text": "„ruinieren meine Pension“ steht im Lesetext, beide Erkennungen haben aber „dominieren meine Pension“ (8:15–8:49). „Dominieren“ ergibt im Satz keinen Sinn; „ruinieren“ (die Maschinen kosten Geld) ist d"
+  },
+  {
+   "id": "60da4b1a002a",
+   "rule": "P2",
+   "status": "decided",
+   "art": "darstellung",
+   "text": "Anmerkung des Autors: es fehlen die Bilder, fehler beseitigung für alle des notebooks"
+  },
+  {
+   "id": "44896266ab79",
+   "rule": "Q1",
+   "status": "decided",
+   "art": "zitat-offen",
+   "text": "„not advisable to express one's disapproval … in a cafe“: Wortlaut am Faksimile fr:karman-nachlass/10-6_fromm_carl_1921_1937/0052 prüfen (über den Resolver nicht prüfbar)."
+  },
+  {
+   "id": "d2a8420cb0d5",
+   "rule": "Q2",
+   "status": "decided",
+   "art": "beleg-offen",
+   "text": "Met 19.73.120 (Titelfolie, Bildnachweis) – Bildnachweis nicht gegen den Katalog des Metropolitan Museum geprüft"
+  },
+  {
+   "id": "2ad79d07e803",
+   "rule": "B3",
+   "status": "decided",
+   "art": "sinn",
+   "text": "Der Lesetext sagt „Der Nachlass ist bereits zugänglich, an ihm wird aber noch gearbeitet“; die Erkennung hat „der ist auch soweit zugänglich. An ihm wird auch noch gearbeitet“ (7:20–8:15). „Soweit zug"
+  }
+ ],
+ "rules": "https://famulus.lettre.ai/certificate/1.0/regeln/",
+ "release": {
+  "by": "owner",
+  "on": "2026-11-24T18:48:53",
+  "version": "f4",
+  "text_sha": "448ea3748dc80485e31390bfd8e8c173605d2fd65997a1dc7bc070d9c5d882de"
+ },
+ "confirmed_by": null,
+ "confirmed_on": null
+}

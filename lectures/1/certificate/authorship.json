@@ -1,7 +1,7 @@
 {
  "format": "famulus-authorship/1",
  "author": "Gerd Graßhoff",
- "text_sha": "448ea3748dc80485e31390bfd8e8c173605d2fd65997a1dc7bc070d9c5d882de",
+ "text_sha": "eb342a0c8d8ab7f1dc265c3f6bf8968f3aa4839a6ee8c6a4c9fd5a27c3533c5a",
  "sources": [
   {
    "id": "S1",
@@ -27,7 +27,7 @@
   {
    "id": "S9",
    "kind": "annotations",
-   "sha256": "81a0632f786815f75fee35e8c3ccc2173b29872337cd9a8b264ea181cbd8dfc2",
+   "sha256": "2a42b6062ab1f79a24c41e52a82194e0e854379065de9e88b896bdfde78a2740",
    "note": "Anmerkungen und Entscheidungen des Autors (Journal)",
    "file": "anmerkungen/anmerkungen.jsonl"
   }
@@ -56,95 +56,95 @@
    "line": 70
   },
   {
-   "id": "h112",
+   "id": "h114",
    "title": "Ein Famulus für die Technik- und Wissenschaftsgeschichte",
    "origin": "author",
    "source": "S3",
-   "line": 112
+   "line": 114
   },
   {
-   "id": "h140",
+   "id": "h142",
    "title": "Werkzeuge für die Forschung",
    "origin": "author",
    "source": "S3",
-   "line": 140
+   "line": 142
   },
   {
-   "id": "h202",
+   "id": "h204",
    "title": "Der Nachlass ist digital",
    "origin": "author",
    "source": "S2",
-   "line": 202
+   "line": 204
   },
   {
-   "id": "h230",
+   "id": "h232",
    "title": "Was sah Kármán in Aachen?",
    "origin": "author",
    "source": "S2",
-   "line": 230
+   "line": 232
   },
   {
-   "id": "h285",
+   "id": "h287",
    "title": "Finden ist nicht Verstehen",
    "origin": "author",
    "source": "S2",
-   "line": 285
+   "line": 287
   },
   {
-   "id": "h324",
+   "id": "h326",
    "title": "Fragen an den Nachlass",
    "origin": "author",
    "source": "S1",
-   "line": 324
+   "line": 326
   },
   {
-   "id": "h359",
+   "id": "h361",
    "title": "Der Evidenzraum wächst",
    "origin": "author",
    "source": "S2",
-   "line": 359
+   "line": 361
   },
   {
-   "id": "h387",
+   "id": "h389",
    "title": "Kann man der Antwort trauen?",
    "origin": "author",
    "source": "S2",
-   "line": 387
+   "line": 389
   },
   {
-   "id": "h426",
+   "id": "h417",
    "title": "Deep Reading: Kepler",
    "origin": "author",
    "source": "S2",
-   "line": 426
+   "line": 417
   },
   {
-   "id": "h488",
+   "id": "h479",
    "title": "Weiterarbeiten im Notebook",
    "origin": "author",
    "source": "S3",
-   "line": 488
+   "line": 479
   },
   {
-   "id": "h511",
+   "id": "h502",
    "title": "Zurück zu Kármán",
    "origin": "author",
    "source": "S2",
-   "line": 511
+   "line": 502
   },
   {
-   "id": "h549",
+   "id": "h540",
    "title": "Zu diesem Manuskript {.unnumbered}",
    "origin": "author",
    "source": "S3",
-   "line": 549
+   "line": 540
   },
   {
-   "id": "h557",
+   "id": "h548",
    "title": "Literatur {.unnumbered}",
    "origin": "author",
    "source": "S3",
-   "line": 557
+   "line": 548
   }
  ],
  "protocol": {
@@ -180,8 +180,8 @@
     "date": "2026-11-24T18:48:53"
    }
   ],
-  "author_notes": 17,
-  "proposals_inserted": 13,
+  "author_notes": 21,
+  "proposals_inserted": 17,
   "proposals_discarded": 6,
   "hand_edits": 0,
   "direct_changes": [
@@ -189,10 +189,12 @@
     "datum": "2026-11-24T19:16:33",
     "von": "Claude (Assistent, auf Hinweis der Mail-Prüfung)",
     "was": "Zitiervorschlag: „mit Famulus erschlossen“ → „mit Famulus gesichtet“ (Titel des Vortrags), direkt in lektorat.fam statt als Vorschlag",
-    "zeilen": "37"
+    "zeilen": "37",
+    "uebernommen_am": "2026-11-25T15:24:02",
+    "uebernommen_von": "owner"
    }
   ],
-  "unseen_changes": 1
+  "unseen_changes": 0
  },
  "findings": [
   {
@@ -234,10 +236,10 @@
  "rules": "https://famulus.lettre.ai/certificate/1.0/regeln/",
  "release": {
   "by": "owner",
-  "on": "2026-11-24T18:48:53",
-  "version": "f4",
-  "text_sha": "448ea3748dc80485e31390bfd8e8c173605d2fd65997a1dc7bc070d9c5d882de"
+  "on": "2026-11-25T15:24:07",
+  "version": "f5",
+  "text_sha": "eb342a0c8d8ab7f1dc265c3f6bf8968f3aa4839a6ee8c6a4c9fd5a27c3533c5a"
  },
- "confirmed_by": null,
- "confirmed_on": null
+ "confirmed_by": "owner",
+ "confirmed_on": "2026-11-25T15:24:02"
 }

@@ -2,9 +2,9 @@
  "reihe": "Famulus Lectures",
  "nummer": 1,
  "titel": "Der Kármán-Nachlass, mit Famulus gesichtet",
- "status": "entwurf",
+ "status": "veroeffentlicht",
  "manuskript": "manuskript.html",
- "entwurf": true,
+ "entwurf": false,
  "fassung": "f5611c05ba529fe8",
  "sprache": "es",
  "sprachen": [
@@ -16,5 +16,5 @@
   "pl",
   "nl"
  ],
- "stand": "2026-11-25T14:24:20+00:00"
+ "stand": "2026-11-25T14:25:52+00:00"
 }
